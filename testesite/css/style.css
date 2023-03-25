@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #fff;
+    --gray: #e2e1e1;
+
+    --font: "Roboto"; 
+}
+
+body{
+    background-color: white;
+    background-image: url(../img/Sem-título.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-position-y: -15px; */
+}
+
+header figure{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    /* background-color: blue; */
+    width: 80px;
+}
+
+header figure img{
+    width: 80px;
+}
+
+/* MAIN */
+
+main h1{
+    font-family: var(--font);
+    font-weight: 700;
+    text-align: center;
+    color: var(--white);
+}
+
+main form p{
+    max-width: 310px;
+    margin: auto;
+    /* background-color: blue; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+main form p label{
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 1.5em;
+    /* font-weight: 700; */
+}
+
+main form p input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--white);
+}
+
+main form p input[type="text"], main form p input[type="password"]{
+    padding-left: 15px;
+    font-size: 1em;
+}
+
+main form p input[type="submit"]{
+    height: 60px;
+    font-size: 1.3em;
+}
+
+main form p input[type="submit"]:active{
+    background-color: var(--gray);
+}
