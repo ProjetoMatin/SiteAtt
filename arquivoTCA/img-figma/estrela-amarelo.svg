@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1049"
+   width="682.66669"
+   height="682.66669"
+   viewBox="0 0 682.66669 682.66669"
+   sodipodi:docname="cart-add.png"
+   inkscape:export-filename="estrela.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1053" />
+  <sodipodi:namedview
+     id="namedview1051"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1055">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2"
+       id="path1697"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="216.7928"
+       sodipodi:cy="129.15315"
+       sodipodi:r1="262.48361"
+       sodipodi:r2="131.24181"
+       sodipodi:arg1="0.94135405"
+       sodipodi:arg2="1.5696726"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 371.31533,341.33335 216.94028,260.39488 62.747534,341.6801 92.020079,169.84934 -32.93494,48.321835 139.53154,23.063055 216.49784,-133.33029 293.81544,22.889682 466.33824,47.760779 341.65667,169.56881 Z"
+       inkscape:transform-center-x="0.12959591"
+       inkscape:transform-center-y="-35.510596"
+       transform="matrix(1.4216605,0,0,1.4216605,33.257165,193.232)" />
+  </g>
+</svg>
