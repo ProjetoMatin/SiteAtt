@@ -1,0 +1,187 @@
+main{
+    background-color: var(--bege);
+    padding-top: 20px;
+    padding-bottom: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .table-container{
+    width: 1051px;
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+main .table-container table{
+    border-collapse: collapse;
+}
+
+main .table-container table tr th{
+    gap: 0;
+    color: var(--branco);
+    padding: 20px;
+    font-size: 1.3em;
+    margin-left: -5px;
+}
+
+main .table-container table tr #th1{
+    background-color: var(--verdeescuroTabela);
+    border-top-left-radius: 25px;
+    width: 400px;
+}
+
+main .table-container table tr #th2{
+    background-color: var(--verdeescuro);
+    width: 250px;
+}
+
+main .table-container table tr #th3{
+    background-color: var(--verdeescuroTabela2);
+    width: 200px;
+}
+
+main .table-container table tr #th4{
+    width: 200px;
+    background-color: var(--verdeescuroTabela3);
+    border-top-right-radius: 25px;
+}
+
+main .table-container tr td{
+    background-color: var(--branco);
+    font-size: 1.3em;
+}
+
+main .table-container tr td .info-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+main .table-container tr td .nome-foto{
+    display: flex;
+    max-width:320px;
+    justify-content: left;
+}
+
+main .table-container tr td .info-table img{
+    display: inline;
+    width: 70px;
+    margin-right: 10px;
+    height: 70px;
+}
+
+main .table-container tr td .info-table input{
+    padding: 5px;
+    width: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+main .table-container tr td .info-table .subtrair{
+    background-color: var(--laranjaBtn);
+    color: var(--branco);
+}
+
+main .table-container tr td .info-table .subtrair:active{
+    background-color: var(--laranjaBtnActive);
+}
+
+main .table-container tr td .info-table .qnt_prod{
+    border-top: 1px solid black;
+    font-size: 0.7em;
+    height: 38px;
+    width: 45px;
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+}
+
+main .table-container tr td .info-table .adicionar{
+    background-color: var(--verdeBtn);
+    color: var(--branco);
+    
+}
+
+main .table-container tr td .info-table .adicionar:active{
+    background-color: var(--verdeBtnActive);
+
+}
+
+main .table-container tr td .precos{
+    width: 70%;
+    margin: auto;
+}
+
+main .table-container tr td .precos .precoAntigo{
+    font-size: 0.7em;
+    color: var(--cinza3);
+    text-decoration: line-through;
+}
+
+main .subtotal{
+    display: block;
+    text-align: center;
+    max-width: 100px;
+    margin: auto;
+    color: var(--laranjaClaro);
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+main .resumo{
+    border-radius: 25px;
+    width: 350px;
+    background-color: var(--branco);
+    border: 1px solid black;
+    padding: 15px;
+}
+
+main .resumo h1{
+    text-align: center;
+    color: var(--laranja);
+}
+
+main .resumo p{
+    border-bottom: 1px solid var(--cinza3);
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+main .resumo .resBtn{
+    padding: 10px;
+    width: 100%;
+    color: var(--branco);
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+main .resumo .pagar{
+    background-color: var(--verdeescuro);
+    margin-bottom: 10px;
+    transition: transform 0.1s ease;
+}
+
+main .resumo .pagar:active{
+    background-color: var(--verdeescuroTabela);
+    transform: scale(0.9);
+    
+}
+
+main .resumo .continuarComp{
+    border: 3px solid var(--laranja);
+    color: var(--laranja);
+    transition: transform 0.1s ease;
+}
+
+main .resumo .continuarComp:active{
+    background-color: var(--laranjaBtn);
+    color: var(--branco);
+    transform: scale(0.9);
+    
+}
