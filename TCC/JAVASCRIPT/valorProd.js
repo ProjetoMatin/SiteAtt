@@ -17,7 +17,6 @@ function calcPreco(acao) {
                 inputQntProd.value = qntAtual;
                 valorTotal = qntAtual * valorAtual;
                 InputValorTotal.value = valorTotal.toFixed(2).toString().replace(".", ",");
-                alert(valorTotal.toFixed(2));
             }
             break;
         case "aumentar":

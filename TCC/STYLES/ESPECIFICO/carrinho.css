@@ -2,13 +2,18 @@ main{
     background-color: var(--bege);
     padding-top: 20px;
     padding-bottom: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-row: 1fr 1fr;
+    /* align-items: center;
+    justify-content: space-around; */
 }
 
 main .table-container{
+    background-color: var(--branco);
     width: 1051px;
+    margin: auto;
+    box-shadow: 1px 1px 5px var(--pretoOpac);
     border: 1px solid black;
     border-radius: 25px;
     overflow: hidden;
@@ -49,7 +54,6 @@ main .table-container table tr #th4{
 }
 
 main .table-container tr td{
-    background-color: var(--branco);
     font-size: 1.3em;
 }
 
@@ -130,12 +134,52 @@ main .subtotal{
     font-size: 1em;
 }
 
+main .cupom{
+    padding: 0px 0 0px 10px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: var(--branco);
+    max-width: 1051px;
+    box-shadow: 1px 1px 5px var(--pretoOpac);
+}
+
+main .cupom input[type='text']{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 75%;
+    height: 45px;
+    font-size: 1.2em;
+    padding: 15px;
+}
+
+main .cupom input[type='button']{
+    width: 235.8px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 10px;
+    height: 60px;
+    margin-left: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    transition: transform 0.1s ease;
+}
+
+main .cupom input[type='button']:active{
+    background-color: var(--laranjaBtn);
+    transform: scale(0.9);
+}
+
 main .resumo{
     border-radius: 25px;
     width: 350px;
     background-color: var(--branco);
     border: 1px solid black;
     padding: 15px;
+    box-shadow: 1px 1px 5px var(--pretoOpac);
 }
 
 main .resumo h1{

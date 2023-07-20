@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="../../STYLES/basico.css">
+<link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
+<link rel="stylesheet" href="../../STYLES/GERAL/header.css">
 <header>
     <div class='logodiv'>
         <a href="../PRINCIPAL/index.php">
