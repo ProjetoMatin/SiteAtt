@@ -14,8 +14,13 @@ main .fotos-prod{
     display: flex;
     justify-content: center;
     background-color: var(--branco);
-    height: 600px;
-    width: 700px;
+    height: 500px;
+    width: 600px;
+}
+
+main .fotos-prod img{
+    width: 500px;
+    height: 500px;
 }
 
 main .info-prod{
@@ -30,7 +35,7 @@ main .info-prod h1{
 
 main .info-prod .text-adic-peq{
     font-size: 1.5em;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: 10px;
 }
 
@@ -41,12 +46,12 @@ main .info-prod .text-adic-peq strong{
 
 main .info-prod .precoAtual{
     color: var(--verdeescuro);
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 2.5em;
 }
 
 main .info-prod .highlight-btn {
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: #f0f0f0;
     border: none;
     padding: 10px 20px;
@@ -137,6 +142,11 @@ main .info-prod .botoesCompra .add-carrinho img{
     margin-right: 10px;
 }
 
+main .info-prod .botoesCompra .add-carrinho a{
+    text-decoration: none;
+    color: var(--verdeescuro);
+}
+
 hr{
     border: 1px solid black;
     width: 80%;
@@ -153,12 +163,13 @@ section{
     background-color: var(--bege);
     padding: 25px 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 section .info-Vend, section .melhor-Av{
     background-color: var(--branco);
-    width: 700px;
+    min-width: 700px;
     border-radius: 15px;
     box-shadow: 1px 2px 3px black;
     padding: 35px;

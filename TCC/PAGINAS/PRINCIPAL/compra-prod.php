@@ -24,7 +24,7 @@
 
         <div class="info-prod">
             <h1>Kiwi Gold</h1>
-            <p class='text-adic-peq' style="margin-top: 40px;">De: <strong>R$69,99</strong></p>
+            <p class='text-adic-peq' style="margin-top: 10px;">De: <strong>R$69,99</strong></p>
             <h1 class="precoAtual">R$44,99</h1>
             <p class='text-adic-peq'>em 12x R$5,80</p>
 
@@ -41,7 +41,7 @@
 
             <div class="botoesCompra">
                 <button class="btns compra-btn">Comprar</button>
-                <button class="btns add-carrinho"><img src="../../IMG/cart-add-verde.png" alt=""> Adicionar ao carrinho</button>
+                <button class="btns add-carrinho"><img src="../../IMG/cart-add-verde.png" alt=""><a href="carrinho.php"> Adicionar ao carrinho</a></button>
             </div>
         </div>
 
