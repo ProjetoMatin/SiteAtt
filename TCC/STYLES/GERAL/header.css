@@ -1,5 +1,6 @@
 header{
     justify-content: space-between;
+    background-color: var(--branco);
 }
 
 header, header .logodiv, header .logindiv, header .pesquisadiv{

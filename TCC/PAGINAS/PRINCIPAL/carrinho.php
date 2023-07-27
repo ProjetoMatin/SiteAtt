@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../STYLES/ESPECIFICO/carrinho.css">
+    <link rel="shortcut icon" href="../../IMG/logo.png" type="image/x-icon">
 </head>
 
 <body>
     <?php
 
-    require_once '../PAGS-REP/header.php';
+    require_once '../../PAGINAS/PAGS-REP/header.php';
 
     ?>
 
@@ -300,6 +301,6 @@
     ?>
 
 </body>
-<script src="../../JAVASCRIPT/valorProd.js"></script>
+<script src="../../JAVASCRIPT/ESPECIFICO/CARRINHO/valorProd.js"></script>
 
 </html>

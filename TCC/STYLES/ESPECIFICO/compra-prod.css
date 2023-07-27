@@ -1,0 +1,297 @@
+body{
+    background-color: var(--bege);
+}
+
+main{
+    background-color: var(--bege);
+    display: flex;
+    padding: 25px 50px;
+}
+
+main .fotos-prod{
+    border-radius: 25px;
+    box-shadow: 1px 2px 3px black;
+    display: flex;
+    justify-content: center;
+    background-color: var(--branco);
+    height: 600px;
+    width: 700px;
+}
+
+main .info-prod{
+    margin-left: 20px;
+}
+
+main .info-prod h1{
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+main .info-prod .text-adic-peq{
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+main .info-prod .text-adic-peq strong{
+    text-decoration: line-through;
+    color: var(--laranjaClaro);
+}
+
+main .info-prod .precoAtual{
+    color: var(--verdeescuro);
+    margin-top: 30px;
+    font-size: 2.5em;
+}
+
+main .info-prod .highlight-btn {
+    margin-top: 50px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: 3px dotted var(--cinza3);
+}
+
+main .info-prod .highlight-btn.clicked {
+    border: 1px solid black;
+}
+
+main .info-prod .pesoInpts{
+    margin-top: 40px;
+    font-size: 1.7em;
+}
+
+main .info-prod .botoespeso{
+    margin-top: 20px;
+}
+
+main .info-prod .botoespeso .btnAumDim{
+    font-size: 1.4em;
+    width: 40px;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+main .info-prod .botoespeso span{
+    display: inline-block;
+    background-color: var(--preto);
+    color: var(--branco);
+    width: 70px;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+main .info-prod .botoespeso .aumentar{
+    box-shadow: 1px 1px 3px black;
+    background-color: var(--branco);
+    
+}
+
+main .info-prod .botoesCompra{
+    display: flex;
+    align-items: center;
+}
+
+main .info-prod .botoesCompra .btns{
+    width: 300px;
+    border-radius: 10px;
+    font-size: 1.7em;
+    height: 50px;
+    margin-top: 30px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+main .info-prod .botoesCompra .btns:active{
+    transform: scale(0.9);
+    
+}
+
+main .info-prod .botoesCompra .compra-btn{
+    background-color: var(--laranja);
+    color: var(--branco);
+    box-shadow: 1px 2px 3px black;
+    border: 1px solid black;
+}
+
+main .info-prod .botoesCompra .add-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verdeescuro);
+    border: 1px solid var(--verdeescuro);
+    font-size: 1em;
+    margin-left:20px;
+}
+
+main .info-prod .botoesCompra .add-carrinho img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+hr{
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+/*
+
+SECTION
+
+*/
+
+section{
+    background-color: var(--bege);
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+section .info-Vend, section .melhor-Av{
+    background-color: var(--branco);
+    width: 700px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px black;
+    padding: 35px;
+}
+
+section .info-Vend .info-encl{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+section .info-Vend h1, section .melhor-Av h1{
+    font-size: 2em;
+}
+
+section .info-Vend .info-encl h1, section .melhor-Av .info-user-encl .info-user h1{
+    font-size: 1.5em;
+}
+
+section .info-Vend .info-encl figure img, section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
+    width: 35px;
+    border-radius: 50%;
+}
+
+section .info-Vend .info-encl #logo img, section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
+    background-color: var(--preto);
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+section .info-Vend .info-encl p strong, section .melhor-Av .info-user-encl .info-user-nomefoto p strong{
+    color: var(--verdeescuro);
+}
+
+section .info-Vend .avalEstrela, section .melhor-Av .avalEstrela{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin-top: 100px;
+}
+
+section .info-Vend .avalEstrela img, section .melhor-Av .avalEstrela img{
+    width: 40px;
+}
+
+section .info-Vend .avalEstrela .estrelaCortada{
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+section .info-Vend .nmrsAval{
+    float: right;
+    margin-top: 125px;
+}
+
+section .info-Vend .nmrsAval .perg{
+    color: var(--laranja);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+section .info-Vend .nmrsAval .aval{
+    color: var(--Amarelo);
+    font-weight: bold;
+}
+
+section .melhor-Av .info-user-encl{
+    display: flex;
+    justify-content: space-between;
+}
+
+section .melhor-Av .info-user-encl .info-user{
+    display: flex;
+    flex-direction: column;
+}
+
+section .melhor-Av .info-user-encl .info-user-nomefoto{
+    display: flex;
+    align-items: center;
+}
+
+section .melhor-Av .textoAv{
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+
+section .melhor-Av .avalEstrela{
+    margin-top: 15px;
+}
+
+/* 
+
+INFO-ADD
+
+*/
+
+.info-add{
+    background-color: var(--branco);
+    padding: 15px;
+}
+
+.info-add .links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.info-add .links h1 a{
+    color: var(--preto);
+    text-decoration: none;
+}
+
+.info-add .links .pagAtual{
+    color: var(--laranja);
+    text-decoration: underline;
+}
+
+.info-add .desc .desc-encl{
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 40px;
+    /* background-color: red; */
+}
+
+.info-add .desc .desc-encl p{
+    font-size: 1.5em;
+    margin: 40px 0;
+    text-align: justify;
+}
+
+.info-add .desc .desc-encl hr{
+    width: 95%;
+    border: 1px solid var(--cinza3)
+}
