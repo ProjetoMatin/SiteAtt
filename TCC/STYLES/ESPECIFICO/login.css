@@ -87,7 +87,7 @@ label {
     font-weight: 600;
 }
 
-.campo {
+.campo{
     text-align: left;
     display: flex;
     background-color: var(--verdeescuro);
@@ -109,6 +109,7 @@ label {
 .campo i:hover {
     cursor: default;
 }
+
 .campo .formInput {
     background-color: var(--cinza);
     font-size: 1rem;
