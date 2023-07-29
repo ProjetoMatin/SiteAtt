@@ -5,3 +5,8 @@ Favor botar seu nome respectivo com seu texto de diálogo.
 1- Eu criei uma pasta chamada pags-rep, elas vão servir basicamente pra ficar replicando várias vezes o mesmo elemento, tipo o header e footer.
 
 2-Se quiser adicionar uma página nova, bote o arquivo dentro da pasta TCC/PAGINAS/PRINCIPAL. 
+
+
+--Lucas--
+
+1. Ajustei questões de design na página do carrinho (borda, arredondamento) e criei as páginas de 
