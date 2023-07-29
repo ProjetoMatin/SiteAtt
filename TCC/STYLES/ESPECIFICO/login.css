@@ -3,7 +3,7 @@
 .imgLogin {
     display: block;
     background-image: url("../../IMG/img-login.jpg");
-    width: 40vw;
+    width: 65vw;
     height: 100vh;
     background-position: center center;
     background-size: cover;
@@ -27,13 +27,18 @@ main {
     position: relative;
 }
 
-.logo {
-    display: flex;
-    width: 200px;
-    flex-direction: row;
-    align-items: center;
+.divTop {
     position: absolute;
     top: 0;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    width: max-content;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem auto;
 }
 
 .logo figure {
@@ -46,5 +51,19 @@ main {
 
 .logo h1 {
     display: inline;
+    font-size: 2rem;
+}
+
+.tituloLogin {
+    padding: 0.5rem;
+}
+
+.tituloLogin h1 {
+    text-align: center;
     font-size: 1.5rem;
+}
+
+.linkLogo {
+    color: var(--preto);
+    text-decoration: none;
 }

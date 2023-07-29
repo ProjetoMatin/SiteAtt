@@ -11,14 +11,18 @@
 <body>
     <section class="imgLogin"></section>
     <main>
-        <div class="logo">
-            <figure>
-                <img src="../../IMG/logo.png" alt="Mat-in logo">
-            </figure>
-            <h1>Mat-in</h1>
-        </div>
-        <div class="tituloLogin">
-            <h1>Seja bem-vindo!</h1>
+        <div class="divTop">
+            <div class="logo">
+                <figure>
+                    <a href="index.php" class="linkLogo"><img src="../../IMG/logo.png" alt="Mat-in logo"></a>
+                </figure>
+                <a href="index.php" class="linkLogo">
+                    <h1>Mat-in</h1>
+                </a>
+            </div>
+            <div class="tituloLogin">
+                <h1>Seja bem-vindo!</h1>
+            </div>
         </div>
         <div class="formulario">
             <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
