@@ -27,19 +27,15 @@
         <div class="formulario">
             <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
                 <div class="formInputs">
+                    <label for="email">E-mail</label>
                     <div class="campo">
-                        <label for="email">E-mail</label>
-                        <div>
-                            <i class="material-icons">mail</i>
-                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="formInput">
-                        </div>
+                        <i class="material-icons">mail</i>
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." class="formInput" maxlength="100">
                     </div>
+                    <label for="email">Senha</label>
                     <div class="campo">
-                        <label for="email">Senha</label>
-                        <div>
-                            <i class="material-icons">password</i>
-                            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="formInput">
-                        </div>
+                        <i class="material-icons">vpn_key</i>
+                        <input type="password" name="email" id="email" placeholder="Digite sua senha..." class="formInput" autocomplete="on" >
                     </div>
                     <div class="naoCad">
                         <p>Não possui cadastro? <a href="cadastro.php">Cadastre-se</a></p>
