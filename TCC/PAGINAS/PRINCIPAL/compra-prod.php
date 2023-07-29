@@ -63,7 +63,7 @@
                 </figure>
                 <p>Vendedor <strong>Premium</strong></p>
             </div>
-            
+
             <div class="nmrsAval">
                 <p class="perg">|19 perguntas respondidas</p>
                 <p class="aval">(5.832) Avaliações</p>
@@ -85,7 +85,7 @@
         <div class="melhor-Av">
             <div class="info-user-encl">
                 <h1>Melhor avaliação</h1>
-                
+
                 <div class="info-user">
                     <h1>Osiris Nóbrega</h1>
                     <div class="info-user-nomefoto">
@@ -115,25 +115,14 @@
 
     <div class="info-add">
         <div class="links">
-            <h1><a href="compra-prod.php" class="pagAtual">Descrição</a></h1>
-            <h1><a href="#">Avaliações</a></h1>
-            <h1><a href="#">Perguntas</a></h1>
-        </div>
 
-        <div class="desc">
-            <div class="desc-encl">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias fugit doloribus quaerat consequuntur, incidunt ea, eligendi vel minima iusto molestiae enim nihil soluta, at voluptas reprehenderit harum beatae ad voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolorum soluta amet ipsum quia. Quo est ipsum consectetur minus sunt placeat delectus aut. Aspernatur recusandae distinctio eius enim repellendus sequi?</p>
-                <hr>
-            </div>
-            <div class="desc-encl">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis quos pariatur saepe, eos reiciendis minima laboriosam! Voluptas eius blanditiis impedit maiores, quam quisquam minima sint dolores expedita nulla atque autem.
-                Et harum consectetur, laboriosam veniam dolorem corporis recusandae optio quam cum alias exercitationem accusamus veritatis officia quidem cumque illum corrupti, voluptatum a beatae enim totam dicta iusto quis. Fuga, exercitationem!</p>
-                <hr>
-            </div>
-            <div class="desc-encl">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At suscipit ipsam recusandae eligendi esse, cumque vel doloremque reiciendis, minima illo asperiores incidunt laudantium sit, voluptates dolorem perspiciatis molestiae modi nemo.
-                Error aut doloribus laborum iusto possimus minus sit tenetur, corporis repudiandae repellendus vitae consectetur cum dignissimos eum mollitia libero quibusdam, magnam quam illum voluptate distinctio at laudantium alias odio! Modi.</p>
-            </div>
+            <input type="submit" value="Descrição" class="botaoDC" onclick="return conteudo(1)">
+            <input type="submit" value="Avaliações" class="botaoAV" onclick="return conteudo(2)">
+            <input type="submit" value="Perguntas" class="botaoPE" onclick="return conteudo(3)">
+
+        </div>
+        <div class="conteudo">
+            
         </div>
     </div>
 
@@ -144,6 +133,7 @@
 
     ?>
 </body>
+<script src="../../JAVASCRIPT/ESPECIFICO/COMPRAPROD/aparecerConteudo.js"></script>
 <script src="../../JAVASCRIPT/GERAL/btn-highlight.js"></script>
 <script src="../../JAVASCRIPT/ESPECIFICO/COMPRAPROD/qnt-prod.js"></script>
 

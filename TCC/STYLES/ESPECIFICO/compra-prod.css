@@ -279,9 +279,13 @@ INFO-ADD
     gap: 15px;
 }
 
-.info-add .links h1 a{
+.info-add .links input{
     color: var(--preto);
-    text-decoration: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    background: none;
+    margin-right: 15px;
+    font-weight: bold;
 }
 
 .info-add .links .pagAtual{
@@ -289,11 +293,16 @@ INFO-ADD
     text-decoration: underline;
 }
 
+/*
+
+DESCRIÇÃO
+
+*/
+
 .info-add .desc .desc-encl{
     max-width: 1300px;
     margin: auto;
     margin-top: 40px;
-    /* background-color: red; */
 }
 
 .info-add .desc .desc-encl p{
@@ -305,4 +314,100 @@ INFO-ADD
 .info-add .desc .desc-encl hr{
     width: 95%;
     border: 1px solid var(--cinza3)
+}
+
+/* 
+
+AVALIAÇÕES
+
+*/
+
+.info-add .aval-encl{
+    display: flex;
+    margin-top:100px;
+    gap: 15px;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+}
+
+.info-add .aval-encl .avaliacao{
+    max-width: 450px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data figure img{
+    width: 30px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data p{
+    font-size: 1.2em;
+    
+}
+
+.info-add .aval-encl .avaliacao h1{
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.info-add .aval-encl .avaliacao .estado{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .aval-encl .avaliacao .estado img{
+    width: 15px;
+    margin: 25px 10px 25px 35px;
+}
+
+.info-add .aval-encl .avaliacao .txt{
+    font-weight: normal;
+    font-size: 1.15em;
+}
+
+.info-add .aval-encl .avaliacao .info-adic{
+    margin-top: 250px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart figure img{
+    width: 25px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart h3, .info-add .aval-encl .avaliacao .info-adic .likeDeslike h3{
+    font-weight: normal;
+    margin-left: 15px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike{
+    display: flex;
+    align-items: center;
+}
+
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike h3{
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike img{
+    width: 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike .invertido{
+    rotate: 180deg;
 }
