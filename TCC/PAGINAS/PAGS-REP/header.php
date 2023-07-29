@@ -37,11 +37,11 @@
 
         <div class='loginbtn'>
             <figure>
-                <a href='#'>
+                <a href='../PRINCIPAL/login.php'>
                     <img src='../../IMG/guest-vetor-branco.png' alt=''>
                 </a>
             </figure>
-            <a href='#'>Login</a>
+            <a href='../PRINCIPAL/login.php'>Login</a>
         </div>
     </div>
 </header>

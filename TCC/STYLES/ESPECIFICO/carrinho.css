@@ -55,6 +55,8 @@ main .table-container table tr #th4{
 
 main .table-container tr td{
     font-size: 1.3em;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    padding: 0.3rem;
 }
 
 main .table-container tr td .info-table{
@@ -87,6 +89,8 @@ main .table-container tr td .info-table input{
 main .table-container tr td .info-table .subtrair{
     background-color: var(--laranjaBtn);
     color: var(--branco);
+    border: 0.5px solid black;
+    border-radius: 0.5rem 0 0 0.5rem;
 }
 
 main .table-container tr td .info-table .subtrair:active{
@@ -96,7 +100,7 @@ main .table-container tr td .info-table .subtrair:active{
 main .table-container tr td .info-table .qnt_prod{
     border-top: 1px solid black;
     font-size: 0.7em;
-    height: 38px;
+    height: 41px;
     width: 45px;
     padding-left: 10px;
     border-bottom: 1px solid black;
@@ -105,12 +109,12 @@ main .table-container tr td .info-table .qnt_prod{
 main .table-container tr td .info-table .adicionar{
     background-color: var(--verdeBtn);
     color: var(--branco);
-    
+    border: 0.5px solid black;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 main .table-container tr td .info-table .adicionar:active{
     background-color: var(--verdeBtnActive);
-
 }
 
 main .table-container tr td .precos{
@@ -180,6 +184,7 @@ main .resumo{
     border: 1px solid black;
     padding: 15px;
     box-shadow: 1px 1px 5px var(--pretoOpac);
+    height: max-content;
 }
 
 main .resumo h1{

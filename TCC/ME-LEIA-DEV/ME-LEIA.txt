@@ -5,3 +5,14 @@ Favor botar seu nome respectivo com seu texto de diálogo.
 1- Eu criei uma pasta chamada pags-rep, elas vão servir basicamente pra ficar replicando várias vezes o mesmo elemento, tipo o header e footer.
 
 2-Se quiser adicionar uma página nova, bote o arquivo dentro da pasta TCC/PAGINAS/PRINCIPAL. 
+
+
+--Lucas--
+
+1. Ajustei questões de design na página do carrinho (borda, arredondamento e tamanho) e criei as páginas de login e cadastro.
+
+2. Index: Adicionado div na seção de categorias mais buscadas para melhor gerenciamento no CSS. Também adicionei mais propriedades em displays flex. Borda, arredondamento e tamanho também foram ajustados nesta página.
+
+3. Login: Adicionado os inputs e CSS (arquivo login.css dentro da pasta ESPECIFICO). A primeira página de login já foi feita, faltam as páginas de pré-cadastro.
+
+4. Premium: Criei a estrutura HTML da mesma.
