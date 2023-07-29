@@ -9,4 +9,4 @@ Favor botar seu nome respectivo com seu texto de diálogo.
 
 --Lucas--
 
-1. Ajustei questões de design na página do carrinho (borda, arredondamento) e criei as páginas de 
+1. Ajustei questões de design na página do carrinho (borda, arredondamento e tamanho) e criei as páginas de login e cadastro.
