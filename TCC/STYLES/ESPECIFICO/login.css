@@ -79,11 +79,12 @@ main {
 
 .formInputs {
     text-align: left;
+    margin: 2.5rem 0;
 }
 
 label {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .campo {
@@ -99,7 +100,7 @@ label {
 
 .campo i {
     width: 40px;
-    margin: 0.8rem 0;
+    margin: 0.81rem 0;
     color: var(--branco);
     font-size: 2.3em;
 }
@@ -115,5 +116,43 @@ label {
     width: calc(100% - 43.8px);
     height: 100%;
     padding: 1rem;
-    transform: translate(44px, -62px);
+    font-weight: normal;
+    transform: translate(44px, -63px);
+    color: var(--preto);
+}
+
+.naoCad {
+    padding: 0.5rem 0;
+}
+
+.naoCad a {
+    font-weight: bold;
+    color: var(--verdeescuro);
+    text-decoration: none;
+}
+
+.inputEntrar {
+    width: fit-content;
+    margin: 0.5rem auto;
+}
+
+.inputEntrar input, .formInputs input {
+    width: 300px;
+    height: 50px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    -webkit-box-shadow: 27px 23px 65px -36px rgba(0,0,0,0.38);
+    -moz-box-shadow: 27px 23px 65px -36px rgba(0,0,0,0.38);
+    box-shadow: 27px 23px 65px -36px rgba(0,0,0,0.38);
+}
+
+.clicado {
+    transform: scale(0.9);
+}
+
+.inputEntrar input {
+    transition: .2s;
 }
