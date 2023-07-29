@@ -195,12 +195,13 @@ FOOTER TIPO 1
 */
 
 #tipo1{
+    margin: 0;
+    border-top: 1px solid black;
     background-color: var(--branco);
 }
 
 #tipo1 h1{
     text-align: center;
-    margin-top: 55px;
     font-size: var(--ftamheader);
 }
 

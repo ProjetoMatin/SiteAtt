@@ -14,6 +14,7 @@
     <title>Mat-in</title>
     <link rel="shortcut icon" href="../../IMG/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../STYLES/ESPECIFICO/home.css">
+    <link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
 </head>
 
 <body>
@@ -34,50 +35,50 @@
         </div>
 
         <!--Não sei fazer carrossel-->
-
-        <h1 class="cath1">Categorias mais buscadas</h1>
-        <section>
-
-            <div class="catitem">
-
-                <figure>
-                    <a href="#"><img src="../../IMG/sementes-salvas.jpg" alt=""></a>
-                </figure>
-
-                <div class="infoitem">
-                    <h1><a href="#">Sementes</a></h1>
-                    <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
-                    <input type="button" value="Saiba mais">
+<div class="sectionCinza">
+    
+            <h1 class="cath1">Categorias mais buscadas</h1>
+            <section>
+    
+                <div class="catitem">
+    
+                    <figure>
+                        <a href="#"><img src="../../IMG/sementes-salvas.jpg" alt=""></a>
+                    </figure>
+    
+                    <div class="infoitem">
+                        <h1><a href="#">Sementes</a></h1>
+                        <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
+                        <input type="button" value="Saiba mais">
+                    </div>
+    
                 </div>
-
-            </div>
-
-            <div class="catitem">
-                <figure>
-                    <a href="#"><img src="../../IMG/nutritious-breakfast-based-milk-1536x1024.jpg" alt=""></a>
-                </figure>
-
-                <div class="infoitem">
-                    <h1><a href="#">Laticinios</a></h1>
-                    <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
-                    <input type="button" value="Saiba mais">
+    
+                <div class="catitem">
+                    <figure>
+                        <a href="#"><img src="../../IMG/nutritious-breakfast-based-milk-1536x1024.jpg" alt=""></a>
+                    </figure>
+    
+                    <div class="infoitem">
+                        <h1><a href="#">Laticinios</a></h1>
+                        <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
+                        <input type="button" value="Saiba mais">
+                    </div>
+    
                 </div>
-
-            </div>
-
-            <div class="catitem">
-                <figure>
-                    <a href="#"><img src="../../IMG/97f9675f-8982-47ab-84ca-64782e01187c.jpeg" alt=""></a>
-                </figure>
-
-                <div class="infoitem">
-                    <h1><a href="#">Hortifruti</a></h1>
-                    <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
-                    <input type="button" value="Saiba mais">
+    
+                <div class="catitem">
+                    <figure>
+                        <a href="#"><img src="../../IMG/97f9675f-8982-47ab-84ca-64782e01187c.jpeg" alt=""></a>
+                    </figure>
+                    <div class="infoitem">
+                        <h1><a href="#">Hortifruti</a></h1>
+                        <p><a href="#">160.000 vendidos nesta ultima semana!</a></p>
+                        <input type="button" value="Saiba mais">
+                    </div>
                 </div>
-
-            </div>
-        </section>
+            </section>
+</div>
 
     </main>
 
