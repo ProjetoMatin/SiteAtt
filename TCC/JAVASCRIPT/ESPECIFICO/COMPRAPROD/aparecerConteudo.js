@@ -33,15 +33,15 @@ function conteudo(cont) {
 
             botaoAV.style.color = 'var(--preto)';
             botaoAV.style.textDecoration = 'none';
-            
+
             botaoPE.style.color = 'var(--preto)';
             botaoPE.style.textDecoration = 'none';
 
             botaoDC.style.color = 'var(--laranja)';
             botaoDC.style.textDecoration = 'underline';
             break;
-            
-            case 2: //Avaliação
+
+        case 2: //Avaliação
             const conteudoAval = `
             
                 <div class="aval-encl">
@@ -160,21 +160,88 @@ function conteudo(cont) {
             //NÃO MUDA NADA AQUI PELOAMORDEDEUS ISSO É UMA GAMBIARRA QUE EU FIZ
 
             //AQUI VAI TROCAR A COR E O TXT-DECOR PARA PRETO E NONE PARA QUE QUANDO CLICAR EM OUTRO BOTÃO TRANSFORME OS OUTROS BOTÕES EM TEXTO NORMAL, SERIO NAO MEXE AQUI
-            
+
             conteudo.innerHTML = conteudoAval;
-            
+
             botaoDC.style.color = 'var(--preto)';
             botaoDC.style.textDecoration = 'none';
-            
+
             botaoPE.style.color = 'var(--preto)';
             botaoPE.style.textDecoration = 'none';
-            
+
             botaoAV.style.color = 'var(--laranja)';
             botaoAV.style.textDecoration = 'underline';
             break;
 
         case 3:
+            const conteudoPerg = `
+            
+                <div class="pergunta">
+                <div class="nome-data">
+                    <h1>Nome do Usuario</h1>
+                    <p>dia/mes/ano</p>
+                </div>
 
+                <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti at et hic assumenda doloribus! Voluptatibus nobis corrupti nesciunt, esse magnam culpa velit beatae ipsa, mollitia commodi a! Unde, iste.</p>
+
+                <div class="respostas">
+                    <div class="respTxt">
+                        <img src="../../IMG/kisspng-computer-icons-dialog-box-conversation-online-chat-dialogue-5abcd7505a9191.760984061522325328371.png" alt="">
+                        <p>Respostas (1):</p>
+                    </div>
+                    <div class="resp-vend">
+                        <div class="foto-nome-data">
+                            <img src="../../IMG/vetor-guest.png" alt="">
+                            <h3>Yuri Esteves</h3>
+                            <p>dia/mes/ano</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quisquam deleniti officiis magnam quo beatae, dolores corporis omnis est voluptatem veniam error fugiat hic! Sequi, id omnis. Provident, doloremque eius.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pergunta">
+                <div class="nome-data">
+                    <h1>Nome do Usuario</h1>
+                    <p>dia/mes/ano</p>
+                </div>
+
+                <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corrupti at et hic assumenda doloribus! Voluptatibus nobis corrupti nesciunt, esse magnam culpa velit beatae ipsa, mollitia commodi a! Unde, iste.</p>
+
+                <div class="respostas">
+                    <div class="respTxt">
+                        <img src="../../IMG/kisspng-computer-icons-dialog-box-conversation-online-chat-dialogue-5abcd7505a9191.760984061522325328371.png" alt="">
+                        <p>Respostas (1):</p>
+                    </div>
+                    <div class="resp-vend">
+                        <div class="foto-nome-data">
+                            <img src="../../IMG/vetor-guest.png" alt="">
+                            <h3>Yuri Esteves</h3>
+                            <p>dia/mes/ano</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quisquam deleniti officiis magnam quo beatae, dolores corporis omnis est voluptatem veniam error fugiat hic! Sequi, id omnis. Provident, doloremque eius.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            `;
+
+            conteudo.innerHTML = conteudoPerg;
+
+            //NÃO MUDA NADA AQUI PELOAMORDEDEUS ISSO É UMA GAMBIARRA QUE EU FIZ
+
+            //AQUI VAI TROCAR A COR E O TXT-DECOR PARA PRETO E NONE PARA QUE QUANDO CLICAR EM OUTRO BOTÃO TRANSFORME OS OUTROS BOTÕES EM TEXTO NORMAL, SERIO NAO MEXE AQUI
+
+            botaoAV.style.color = 'var(--preto)';
+            botaoAV.style.textDecoration = 'none';
+
+            botaoDC.style.color = 'var(--preto)';
+            botaoDC.style.textDecoration = 'none';
+
+            botaoPE.style.color = 'var(--laranja)';
+            botaoPE.style.textDecoration = 'underline';
+            break;
         default:
             break;
     }

@@ -411,3 +411,74 @@ AVALIAÇÕES
 .info-add .aval-encl .avaliacao .info-adic .likeDeslike .invertido{
     rotate: 180deg;
 }
+
+/* 
+
+PERGUNTAS 
+
+*/
+
+.info-add .pergunta{
+    border: 1px solid black;
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px;
+    border-radius: 25px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.info-add .pergunta .nome-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 380px;
+}
+
+.info-add .pergunta .nome-data h1{
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.info-add .pergunta .txt{
+    margin-top: 50px;
+    font-size: 1.2em;
+}
+
+.info-add .pergunta .respostas .respTxt{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.info-add .pergunta .respostas .respTxt img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.info-add .pergunta .respostas .resp-vend{
+    border-left: 7px solid var(--laranja);
+    height: 180px;
+    margin: 15px 0 0 50px;
+    padding-left: 25px;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data h3{
+    margin: 0 25px;
+    font-weight: normal;
+}
+
+.info-add .pergunta .respostas .resp-vend p{
+    margin: 10px 0 0 40px;
+    text-align: justify;
+}
