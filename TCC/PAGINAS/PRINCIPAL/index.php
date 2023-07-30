@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
     <link rel="stylesheet" href="../../STYLES/ESPECIFICO/carrosel.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 
 <body>
@@ -30,6 +29,7 @@
 
     <main>
         <div class="carrosel show" id="primeiraPagCarrosel">
+
             <div class="produtosInteresse">
                 <h2 class="interesseTexto">Produtos que possam ser do seu interesse</h2>
             </div>
@@ -76,6 +76,7 @@
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+
                     </div>
                 </div>
                 <div class="cardProduto">
@@ -98,6 +99,7 @@
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -132,6 +134,7 @@
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+
                     </div>
                 </div>
                 <div class="cardProduto">
@@ -154,6 +157,7 @@
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+
                     </div>
                 </div>
                 <div class="cardProduto">
@@ -176,6 +180,7 @@
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -185,7 +190,6 @@
             </div>
         </div>
         <div class="sectionCinza">
-
             <h1 class="cath1">Categorias mais buscadas</h1>
             <section>
 
@@ -242,6 +246,7 @@
     <script src="../../JAVASCRIPT/ESPECIFICO/CARROSEL/carrosel.js"></script>
     <script src="../../JAVASCRIPT/GERAL/trocapag.js"></script>
     <script src="../../JAVASCRIPT/ESPECIFICO/CARROSEL/trocaicone.js"></script>
+
 </body>
 
 </html>
