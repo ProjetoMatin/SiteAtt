@@ -160,6 +160,7 @@ aside .adminbtn a, aside .cepbtn .divcpf a{
 aside nav ul li{
     display: inline-block;
     margin-left: 15px;
+    transition: .2s;
 }
 
 aside nav ul li:hover{
