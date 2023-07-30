@@ -11,7 +11,7 @@ function calcPreco(acao) {
     switch (acao) {
         case "diminuir":
             if (qntAtual <= 0) {
-                alert("Não tem como diminuir!");
+                qntAtual.value = 0;
             } else {
                 qntAtual--;
                 inputQntProd.value = qntAtual;

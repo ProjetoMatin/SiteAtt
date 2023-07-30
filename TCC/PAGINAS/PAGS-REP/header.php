@@ -30,9 +30,8 @@
     <div class='logindiv'>
 
         <figure id='cart-btn'>
-            <a href='../PRINCIPAL/carrinho.php'>
-                <img src='../../IMG/cart.png' alt=''>
-            </a>
+            <img src='../../IMG/cart.png' alt='' onclick="trocapag(2)">
+
         </figure>
 
         <div class='loginbtn'>
@@ -79,3 +78,5 @@
         </figure>
     </div>
 </aside>
+
+<script src="../../JAVASCRIPT/GERAL/trocapag.js"></script>
