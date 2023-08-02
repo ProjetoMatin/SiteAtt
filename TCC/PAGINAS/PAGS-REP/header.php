@@ -1,3 +1,8 @@
+<!-- BOOTSTRAP ESTÁ NO ARQUIVO BASICO.CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
 <link rel="stylesheet" href="../../STYLES/GERAL/header.css">
 <header>
@@ -58,7 +63,7 @@
     <nav>
         <ul>
             <li><a href='#'>Categorias</a></li>
-            <li><a href='#'><img src='../../IMG/estrela-branco.png' alt=''>Favoritos</a></li>
+            <li><a href='../PRINCIPAL/favoritos.php'><img src='../../IMG/estrela-branco.png' alt=''>Favoritos</a></li>
             <li><a href='#'>Histórico</a></li>
             <li><a href='#'>Contato</a></li>
         </ul>

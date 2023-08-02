@@ -6,6 +6,8 @@ Favor botar seu nome respectivo com seu texto de diálogo.
 
 2-Se quiser adicionar uma página nova, bote o arquivo dentro da pasta TCC/PAGINAS/PRINCIPAL. 
 
+3. Para resetar algum elemento que ta sempre se repetindo no bootstrap, basta usar o nome do elemento no CSS do header (já que ele se repete para praticamente todas as páginas) e botar a margem/padding/border para 0 (foto1)
+
 
 --Lucas--
 

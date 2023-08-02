@@ -31,7 +31,7 @@
 
 .cardProduto {
     width: 400px;
-    height: 380px;
+    height: 390px;
     border-radius: 20px;
     padding: 1rem;
     background-color: var(--branco);
@@ -153,6 +153,7 @@
     height: 10px;
     margin: auto;
     text-align: center;
+    cursor: pointer;
 }
 
 .pagCarrosel {

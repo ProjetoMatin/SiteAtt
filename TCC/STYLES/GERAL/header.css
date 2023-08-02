@@ -1,3 +1,7 @@
+figure, ul, p, h1{
+    margin: 0;
+}
+
 header{
     justify-content: space-between;
     background-color: var(--branco);
@@ -27,6 +31,7 @@ header .logodiv figure{
 
 header .logodiv figure img{
     width: 50px;
+    
 }
 
 header .logodiv h1{
@@ -43,7 +48,6 @@ header .pesquisadiv select{
     background-color: var(--verdeescuro);
     color: var(--branco);
     height: 36px;
-    width: 100px;
     text-align: center;
     font-size: var(--ftampeq);
     font-weight: bold;
@@ -99,6 +103,7 @@ header .logindiv figure{
 
 header .logindiv figure img{
     width: 30px;
+    cursor: pointer;
 }
 
 header .logindiv #cart-btn{
