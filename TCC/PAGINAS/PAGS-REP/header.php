@@ -52,11 +52,13 @@
 
 <aside>
     <div class='adminbtn'>
-        <figure>
-            <img src='../../IMG/admin-icon-branco.png' alt=''>
-        </figure>
-        <a href='#'>
-            <p>Admin</p>
+            <a href="../DASHBOARD/adminDash.php">
+            <figure>
+                <img src='../../IMG/admin-icon-branco.png' alt=''>
+            </figure>
+            <a href='../DASHBOARD/adminDash.php'>
+                <p>Admin</p>
+            </a>
         </a>
     </div>
 

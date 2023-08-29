@@ -1,0 +1,46 @@
+.sidebar {
+    background-color: var(--marrom);
+    min-height: 85vh;
+}
+
+.sidebar .conta-encl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.sidebar .conta-encl figure img {
+    width: 100px;
+}
+
+.sidebar .conta-encl h1 {
+    color: var(--branco);
+    font-size: 1.6em;
+    margin-top: 10px;
+}
+
+.sidebar .list-group button {
+    background-color: transparent;
+    border: none;
+    color: var(--branco);
+    font-size: 1.6em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.sidebar .list-group button:hover {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+.first{
+    margin-top: 15px;
+}
+
+.sidebar .list-group hr{
+    border: 2px solid var(--branco);
+    width: 80px;
+    margin: auto;
+}

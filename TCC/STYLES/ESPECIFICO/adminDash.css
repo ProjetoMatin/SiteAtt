@@ -1,0 +1,9 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--bege)!important;
+}
+
+main{
+    /* background-color: blue; */
+}
