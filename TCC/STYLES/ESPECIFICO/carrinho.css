@@ -11,7 +11,7 @@ main{
 
 main .table-container{
     background-color: var(--branco);
-    width: 1051px;
+    max-width: 60rem;
     margin: auto;
     box-shadow: 1px 1px 5px var(--pretoOpac);
     border: 1px solid black;
@@ -80,7 +80,6 @@ main .table-container tr td .info-table img{
 }
 
 main .table-container tr td .info-table input{
-    padding: 5px;
     width: 40px;
     font-size: 1.2em;
     cursor: pointer;
@@ -100,9 +99,9 @@ main .table-container tr td .info-table .subtrair:active{
 main .table-container tr td .info-table .qnt_prod{
     border-top: 1px solid black;
     font-size: 0.7em;
-    height: 41px;
+    height: 39px;
     width: 45px;
-    padding-left: 10px;
+    text-align:center;
     border-bottom: 1px solid black;
 }
 
@@ -139,26 +138,29 @@ main .subtotal{
 }
 
 main .cupom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0px 0 0px 10px;
     margin: auto;
     margin-top: 20px;
     border-radius: 10px;
     background-color: var(--branco);
-    max-width: 1051px;
+    max-width: 60rem;
     box-shadow: 1px 1px 5px var(--pretoOpac);
 }
 
 main .cupom input[type='text']{
     border: 1px solid black;
     border-radius: 10px;
-    width: 75%;
+    width: 42rem;
     height: 45px;
     font-size: 1.2em;
     padding: 15px;
 }
 
 main .cupom input[type='button']{
-    width: 235.8px;
+    width: 14.738rem;
     font-size: 1em;
     cursor: pointer;
     font-weight: bolder;
@@ -179,7 +181,7 @@ main .cupom input[type='button']:active{
 
 main .resumo{
     border-radius: 25px;
-    width: 350px;
+    max-width: 20rem;
     background-color: var(--branco);
     border: 1px solid black;
     padding: 15px;

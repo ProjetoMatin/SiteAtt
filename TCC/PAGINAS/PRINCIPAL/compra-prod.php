@@ -82,7 +82,38 @@
 
         </div>
 
-        <div class="melhor-Av">
+        <div class="info-Vend">
+            <h1>Informações do vendedor</h1>
+
+            <div class="info-encl">
+                <figure>
+                    <img src="../../IMG/vetor-guest.png" alt="">
+                </figure>
+                <h1>Yuri Esteves</h1>
+                <figure id="logo">
+                    <img src="../../IMG/logo.png" alt="">
+                </figure>
+                <p>Vendedor <strong>Premium</strong></p>
+            </div>
+
+            <div class="nmrsAval">
+                <p class="perg">|19 perguntas respondidas</p>
+                <p class="aval">(5.832) Avaliações</p>
+            </div>
+
+            <div class="avalEstrela">
+                <h2>4,5</h2>
+                <figure>
+                    <img src="../../IMG/estrela-amarelo.png" alt="">
+                    <img src="../../IMG/estrela-amarelo.png" alt="">
+                    <img src="../../IMG/estrela-amarelo.png" alt="">
+                    <img src="../../IMG/estrela-amarelo.png" alt="">
+                    <img src="../../IMG/estrela-amarelo.png" alt="" class="estrelaCortada">
+                </figure>
+            </div>
+
+        </div>
+        <!-- <div class="melhor-Av">
             <div class="info-user-encl">
                 <h1>Melhor avaliação</h1>
 
@@ -107,7 +138,7 @@
                     <img src="../../IMG/estrela-amarelo.png" alt="" class="estrelaCortada">
                 </figure>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <hr>
