@@ -14,13 +14,12 @@
         <hr>
         <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont('content2')">Vendedores</button>
         <hr>
-        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont(3)">Compradores</button>
+        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont('content3')">Compradores</button>
         <hr>
-        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont(4)">Pedidos</button>
+        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont('content4')">Pedidos</button>
         <hr>
-        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont(5)">Pagamentos pendentes</button>
+        <button type="button" class="list-group-item list-group-item-action" onclick="trocarCont('content5')">Pagamentos pendentes</button>
     </div>
 </div>
 <script src="../../JAVASCRIPT/GERAL/DASHBOARD/sidebar-dash.js"></script>
 
-<!-- TERMINAR -->

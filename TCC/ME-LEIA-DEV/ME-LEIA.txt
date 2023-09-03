@@ -8,6 +8,7 @@ Favor botar seu nome respectivo com seu texto de diálogo.
 
 3. Para resetar algum elemento que ta sempre se repetindo no bootstrap, basta usar o nome do elemento no CSS do header (já que ele se repete para praticamente todas as páginas) e botar a margem/padding/border para 0 (foto1)
 
+4. Localstorage serve para salvar dados temporários no navegador, mesmo se fechar e abrir dnv...
 
 --Lucas--
 

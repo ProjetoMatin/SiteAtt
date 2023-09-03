@@ -1,9 +1,13 @@
+h3{
+    font-size: 1.2em!important;
+}
+
 body{
-    background-color: var(--bege);
+    background-color: var(--cinza)!important;
 }
 
 main{
-    background-color: var(--bege);
+    background-color: var(--cinza);
     display: flex;
     padding: 25px 50px;
 }
@@ -107,8 +111,7 @@ main .info-prod .botoesCompra{
 main .info-prod .botoesCompra .btns{
     width: 300px;
     border-radius: 10px;
-    font-size: 1.7em;
-    height: 50px;
+    font-size: 1em;
     margin-top: 30px;
     padding: 10px;
     cursor: pointer;
@@ -116,8 +119,7 @@ main .info-prod .botoesCompra .btns{
 }
 
 main .info-prod .botoesCompra .btns:active{
-    transform: scale(0.9);
-    
+    transform: scale(0.9); 
 }
 
 main .info-prod .botoesCompra .compra-btn{
@@ -148,9 +150,10 @@ main .info-prod .botoesCompra .add-carrinho a{
 }
 
 hr{
+    text-align: center;
     border: 1px solid black;
     width: 80%;
-    margin: auto;
+    margin: 0.5rem auto!important;
 }
 
 /*
@@ -167,9 +170,9 @@ section{
     gap: 10px;
 }
 
-section .info-Vend, section .melhor-Av{
+section .info-Vend{
     background-color: var(--branco);
-    min-width: 700px;
+    width: 620px;
     border-radius: 15px;
     box-shadow: 1px 2px 3px black;
     padding: 35px;
@@ -261,6 +264,11 @@ section .melhor-Av .textoAv{
 section .melhor-Av .avalEstrela{
     margin-top: 15px;
 }
+
+main, section {
+    background-color: #C1C1C1!important;
+}
+
 
 /* 
 

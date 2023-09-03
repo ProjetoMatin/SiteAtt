@@ -18,7 +18,7 @@ main .fav-div{
     flex-wrap: wrap;
     margin: auto;
     margin-bottom: 50px;
-    max-width: 1400px;
+    max-width: 1300px;
     background-color: var(--branco);
     border-radius: 15px;
     border: 2px solid var(--preto);

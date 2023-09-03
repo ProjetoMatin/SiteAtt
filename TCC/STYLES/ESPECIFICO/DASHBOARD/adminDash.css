@@ -1,0 +1,68 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--bege) !important;
+}
+
+.content {
+    display: none;
+}
+
+.content h1{
+    padding: 30px;
+}
+
+.card{
+    margin: auto;
+    max-width: 75vw!important;
+    background: none;
+    padding: 10px 30px;
+    box-shadow: -1px 1px 3px var(--cinza4);
+}
+
+.card-body h6, p{
+    display: inline;
+}
+
+.card-body h6{
+    font-weight: bolder;
+}
+
+.card-body p{
+    margin-right: 30px;
+}
+
+.card-body .btnEncl{
+    float: right;
+    text-decoration: none;
+    color: var(--preto);
+    margin-left: 30px;
+    background-color: transparent !important;
+}
+
+.card-body .cardBtn{
+    padding: 10px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.card-body .excluir{
+    border: 2px solid var(--verdeescuro);
+    color: var(--verdeescuro);
+}
+
+.card-body .excluir:active{
+    background-color: var(--verdeescuro);
+    color: var(--branco);
+}
+
+.card-body .editar{
+    color: var(--branco);
+    background-color: var(--laranja);
+}
+
+
+.card-body .editar:active{
+    background-color: var(--laranjaBtn);
+}

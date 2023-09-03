@@ -38,7 +38,7 @@ main {
     width: max-content;
     flex-direction: row;
     align-items: center;
-    margin: 3rem auto;
+    margin: 3rem auto 7px auto;
 }
 
 .logo figure {

@@ -129,6 +129,27 @@ ASIDE
 
 */
 
+.txtCEP{
+    display: none;
+}
+
+.txtCEP button{
+    color: var(--branco);
+    background-color: var(--laranja)!important;
+    height: 34px;
+    padding: 0 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.txtCEP input{
+    border-radius: 15px;
+    margin-right: 15px;
+    outline-color: var(--laranja);
+    padding: 0 10px;
+    color: var(--laranja);
+}
+
 aside{
     display: flex;
     align-items: center;
@@ -148,7 +169,7 @@ aside .adminbtn figure img, aside .cepbtn figure img{
 }
 
 aside .adminbtn a{
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 aside a{
@@ -191,10 +212,20 @@ aside .cepbtn .divcpf a p{
     font-size: var(--ftampeq);
 }
 
-aside .cepbtn .divcpf #CEPletra{
+.cepbtn button{
+    display: flex;
+    align-items: center;
+    background: none;
+}
+
+.cepbtn button .divcpf p{
+    color: var(--branco);
+    margin-right: 15px;
+}
+
+.cepbtn button .divcpf #cepTxt{
     float: right;
-    font-weight: bold;
-    font-size: var(--ftamloginbtn);
+    font-weight: bolder;
 }
 
 /*

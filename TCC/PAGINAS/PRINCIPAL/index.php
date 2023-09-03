@@ -15,7 +15,6 @@
     <link rel="shortcut icon" href="../../IMG/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../STYLES/ESPECIFICO/home.css">
     <link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
-    <link rel="stylesheet" href="../../STYLES/ESPECIFICO/carrosel.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -34,21 +33,19 @@
                 <h2 class="interesseTexto">Produtos que possam ser do seu interesse</h2>
             </div>
             <div class="container">
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Kiwi Gold</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">Kiwi Gold</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
                         </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/kiwi.png" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
+                        <figure>
+                            <img src="../../IMG/kiwi.png" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="btnAcoes">
                             <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
@@ -56,57 +53,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Molho Pesto</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">Maracujá Prata</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
                         </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/molho-pesto.png" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
+                        <figure>
+                            <img src="../../IMG/maracuja.png" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="btnAcoes">
                             <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">Quejo Tofu</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
+                        </div>
+                        <figure>
+                            <img src="../../IMG/tofu.jpg" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="btnAcoes">
+                            <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
+                            <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
+                            <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
+                        </div>
+                    </div>
+                </div>
 
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Patinho Kg</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
-                        </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/patinho.png" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
-                        <div class="btnAcoes">
-                            <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
-                            <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
-                            <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
-                        </div>
-
-                    </div>
-                </div>
             </div>
             <div class="pagsCarrosel">
                 <span class="pagCarrosel ativo" onclick="mudarSecao(1)"></span>
                 <span class="pagCarrosel" onclick="mudarSecao(2)"></span>
             </div>
+        </div>
+        </div>
         </div>
 
         <div class="carrosel hide" id="segundaPagCarrosel">
@@ -114,73 +108,64 @@
                 <h2 class="interesseTexto">Produtos que possam ser do seu interesse</h2>
             </div>
             <div class="container">
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Maracujá Prata</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">Kiwi Gold</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
                         </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/maracuja.png" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
+                        <figure>
+                            <img src="../../IMG/kiwi.png" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="btnAcoes">
                             <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
-
                     </div>
                 </div>
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Tofu</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">Kiwi Gold</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
                         </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/tofu.jpg" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
+                        <figure>
+                            <img src="../../IMG/kiwi.png" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="btnAcoes">
                             <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
-
                     </div>
                 </div>
-                <div class="cardProduto">
-                    <div class="infoProduto">
-                        <div class="nomeProduto">
-                            <h2>Frutas Vermelhas</h2>
-                            <div class="nomeUser">
-                                <i class="material-icons">person</i>
-                                <p>Vendedor</p>
-                            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="infoVend">
+                            <h3 class="card-title">CACHORRO Gold</h5>
+                                <div class="fotoVend">
+                                    <i class="material-icons">person</i>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
+                                </div>
                         </div>
-                        <div class="descProduto">
-                            <figure>
-                                <img src="../../IMG/frutas-vermelhas.png" alt="">
-                            </figure>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellendus deserunt similique saepe, aliquid quis molestiae eligendi ipsum minima dolores!</p>
-                        </div>
+                        <figure>
+                            <img src="../../IMG/kiwi.png" alt="">
+                        </figure>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="btnAcoes">
                             <img src="../../IMG/cart.png" alt="" class="icone" onclick="trocaIcone(2, this)">
                             <button class="btnComprar" onclick="trocapag(1)">Comprar</button>
                             <img src="../../IMG/heartpng.png" alt="" class="icone" onclick="trocaIcone(1, this)">
                         </div>
-
                     </div>
                 </div>
             </div>

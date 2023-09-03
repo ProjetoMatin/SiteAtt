@@ -52,7 +52,7 @@
 
 <aside>
     <div class='adminbtn'>
-            <a href="../DASHBOARD/adminDash.php">
+        <a href="../DASHBOARD/adminDash.php">
             <figure>
                 <img src='../../IMG/admin-icon-branco.png' alt=''>
             </figure>
@@ -72,18 +72,55 @@
     </nav>
 
     <div class='cepbtn'>
-        <div class='divcpf'>
-            <a href='#'>
+        <button onclick="return btnCEP(0)" id='CEPletra'>
+            <div class='divcpf'>
                 <p>Informe seu</p>
-            </a>
-            <a href='#' id='CEPletra'>
-                <p>CEP</p>
-            </a>
+                <p id="cepTxt">CEP</p>
+            </div>
+            <figure>
+                <a href='#'><img src='../../IMG/cep-icon-vetor-branco.png' alt=''></a>
+            </figure>
+        </button>
+
+        <div class="txtCEP">
+            <input type="text" name="cep" id="cep" min='0'>
+            <button class="confirm" onclick="return btnCEP(1)">
+                <p>OK</p>
+            </button>
         </div>
-        <figure>
-            <a href='#'><img src='../../IMG/cep-icon-vetor-branco.png' alt=''></a>
-        </figure>
     </div>
+
 </aside>
+
+<!-- SCRIPT QUE SERVE PARA QUE QUANDO CLICADO NO BOTÃO DE CEP, APARECER UMA CAIXA DE DIÁLOGO PARA O USUARIO INFORMAR O CEP, E SALVAR EM UM LOCALSTORAGE! (4 - YURI - me-leia-dev) -->
+
+<script>
+    function btnCEP(value) {
+        let cepL = document.querySelector('#CEPletra');
+        let txtC = document.querySelector('.txtCEP');
+        if (value == 0) {
+            cepL.style.display = 'none';
+            txtC.style.display = 'flex';
+        } else if (value == 1) {
+            let inpuser = document.querySelector('#cep').value
+            let regex = /^[0-9]+$/;
+
+            if (regex.test(inpuser) || inpuser != '') {
+                cepL.style.display = 'flex';
+
+                //
+                // CORRIGIR ISSO AQUI
+                //
+
+                localStorage.setItem('cepInput', inpuser);
+                txtC.style.display = 'none';
+
+            } else {
+                alert("Preencha o campo somente com numeros!");
+            }
+
+        }
+    }
+</script>
 
 <script src="../../JAVASCRIPT/GERAL/trocapag.js"></script>

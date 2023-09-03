@@ -1,8 +1,11 @@
 header {
-    padding: 10px 0;
     background-color: var(--branco);
     grid-column-start: 1;
     grid-column-end: 3;
+}
+
+button .btn-primary{
+    padding-bottom: 0 !important;
 }
 
 header nav {
