@@ -1,6 +1,6 @@
 .sidebar {
     background-color: var(--marrom);
-    min-height: 85vh;
+    min-height: 750px;
 }
 
 .sidebar .conta-encl {

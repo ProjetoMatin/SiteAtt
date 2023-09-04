@@ -8,8 +8,16 @@ body {
     display: none;
 }
 
-.content h1{
+.content .add_comp_encl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 30px;
+}
+
+.add_comp_encl .btnAdd{
+    background-color: var(--laranja);
+    border-radius: 25px;
 }
 
 .card{
@@ -40,7 +48,7 @@ body {
     background-color: transparent !important;
 }
 
-.card-body .cardBtn{
+.cardBtn{
     padding: 10px 40px;
     text-decoration: none;
     font-weight: bold;
@@ -57,12 +65,45 @@ body {
     color: var(--branco);
 }
 
-.card-body .editar{
+.card-body .editar, .add_comp_encl .cardBtn{
     color: var(--branco);
     background-color: var(--laranja);
 }
 
 
-.card-body .editar:active{
+.card-body .editar:active, .add_comp_encl .cardBtn:active{
     background-color: var(--laranjaBtn);
 }
+
+/* 
+
+CONTENT 6
+
+*/
+
+form{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.form-check-input{
+    width: 2em !important;
+    height: 2em !important;
+    cursor: pointer;
+}
+
+.form-check-label{
+    font-size: 1.7rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.input-group{
+    margin-top: 15px;
+}
+
+.input-group-text, .form-control{
+    font-size: 1.2rem!important;
+}
+
+
