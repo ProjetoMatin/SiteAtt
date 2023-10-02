@@ -1,0 +1,110 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--bege) !important;
+}
+
+.content {
+    display: none;
+}
+
+.content .add_comp_encl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.add_comp_encl .btnAdd{
+    background-color: var(--laranja);
+    border-radius: 25px;
+}
+
+.card{
+    margin: auto;
+    margin-top: 15px;
+    max-width: 75vw!important;
+    background: none;
+    padding: 10px 30px;
+    box-shadow: -1px 1px 3px var(--cinza4);
+}
+
+.card-body h6, p{
+    display: inline;
+}
+
+.card-body h6{
+    font-weight: bolder;
+}
+
+.card-body p{
+    margin-right: 30px;
+}
+
+.card-body .btnEncl{
+    float: right;
+    text-decoration: none;
+    color: var(--preto);
+    margin-left: 30px;
+    background-color: transparent !important;
+}
+
+.cardBtn{
+    padding: 10px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.card-body .excluir{
+    border: 2px solid var(--verdeescuro);
+    color: var(--verdeescuro);
+}
+
+.card-body .excluir:active{
+    background-color: var(--verdeescuro);
+    color: var(--branco);
+}
+
+.card-body .editar, .add_comp_encl .cardBtn{
+    color: var(--branco);
+    background-color: var(--laranja);
+}
+
+
+.card-body .editar:active, .add_comp_encl .cardBtn:active{
+    background-color: var(--laranjaBtn);
+}
+
+/* 
+
+CONTENT 6
+
+*/
+
+form{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.form-check-input{
+    width: 2em !important;
+    height: 2em !important;
+    cursor: pointer;
+}
+
+.form-check-label{
+    font-size: 1.7rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.input-group{
+    margin-top: 15px;
+}
+
+.input-group-text, .form-control{
+    font-size: 1.2rem!important;
+}
+
+

@@ -1,0 +1,278 @@
+figure, ul, p, h1{
+    margin: 0;
+}
+
+header{
+    justify-content: space-between;
+    background-color: var(--branco);
+}
+
+header, header .logodiv, header .logindiv, header .pesquisadiv{
+    display: flex;
+    align-items: center;
+}
+
+/*
+
+LOGO DIV
+
+*/
+
+header .logodiv a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--preto);
+}
+
+header .logodiv figure{
+    display: inline;
+}
+
+header .logodiv figure img{
+    width: 50px;
+    
+}
+
+header .logodiv h1{
+    font-size: var(--ftamheader);
+}
+
+/*
+
+PESQUISA DIV
+
+*/
+
+header .pesquisadiv select{
+    background-color: var(--verdeescuro);
+    color: var(--branco);
+    height: 36px;
+    text-align: center;
+    font-size: var(--ftampeq);
+    font-weight: bold;
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0.4rem;
+}
+
+header .pesquisadiv select option{
+    background-color: var(--cinza);
+    padding: 0.5rem;
+    color: var(--preto);
+    font-weight: bold;
+    text-align: left;
+}
+
+header .pesquisadiv input[type="search"]{
+    background-color: var(--cinza);
+    font-size: var(--ftampeq);
+    width: 800px;
+    height: 36px;
+    padding-left: 10px;
+}
+
+header .pesquisadiv figure{
+    display: flex;
+}
+
+header .pesquisadiv figure img{
+    height: 36px;
+    background-color: var(--verdeescuro);
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*
+
+LOGIN DIV
+
+*/
+
+
+header .loginbtn{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--laranja);
+}
+
+header .logindiv figure{
+    margin-right: 5px;
+}
+
+header .logindiv figure img{
+    width: 30px;
+    cursor: pointer;
+}
+
+header .logindiv #cart-btn{
+    margin-right: 10px;
+}
+
+header .logindiv #cart-btn img{
+    padding: 1px;
+}
+
+header .logindiv a{
+    font-weight: bold;
+    color: var(--preto);
+    text-decoration: none;
+    display: inline;
+    color: var(--branco);
+    font-size: var(--ftamloginbtn);
+}
+
+/*
+
+ASIDE
+
+*/
+
+.txtCEP{
+    display: none;
+}
+
+.txtCEP button{
+    color: var(--branco);
+    background-color: var(--laranja)!important;
+    height: 34px;
+    padding: 0 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.txtCEP input{
+    border-radius: 15px;
+    margin-right: 15px;
+    outline-color: var(--laranja);
+    padding: 0 10px;
+    color: var(--laranja);
+}
+
+aside{
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    background-color: black;
+}
+
+aside .adminbtn, aside .cepbtn {
+    display: flex;
+    align-items: center;
+
+}
+
+aside .adminbtn figure img, aside .cepbtn figure img{
+    height: 30px;
+}
+
+aside .adminbtn a{
+    margin: 10px 0;
+}
+
+aside a{
+    text-decoration: none;
+    color: var(--branco);
+    font-size: var(--ftamloginbtn);
+    font-weight: bold;
+}
+
+aside .adminbtn a, aside .cepbtn .divcpf a{
+    font-weight: normal;
+}
+
+aside nav ul li{
+    display: inline-block;
+    margin-left: 15px;
+    transition: .2s;
+}
+
+aside nav ul li:hover{
+    background-color: var(--branco);
+}
+
+aside nav ul li a{
+    display: block;
+    padding: 15px;
+}
+
+aside nav ul li a:hover{
+    color: var(--preto);
+}
+
+aside nav ul li img{
+    height: 15px;
+    margin-right: 5px;
+}
+
+aside .cepbtn .divcpf a p{
+    margin-right: 5px;
+    font-size: var(--ftampeq);
+}
+
+.cepbtn button{
+    display: flex;
+    align-items: center;
+    background: none;
+}
+
+.cepbtn button .divcpf p{
+    color: var(--branco);
+    margin-right: 15px;
+}
+
+.cepbtn button .divcpf #cepTxt{
+    float: right;
+    font-weight: bolder;
+}
+
+/*
+
+FOOTER TIPO 1
+
+*/
+
+#tipo1{
+    padding: 1.5rem 0;
+    border-top: 1px solid black;
+    background-color: var(--branco);
+}
+
+#tipo1 h1{
+    text-align: center;
+    font-size: var(--ftamheader);
+}
+
+#tipo1 input[type="button"]{
+    display: block;
+    margin: auto;
+    background-color: var(--laranja);
+    color: var(--branco);
+    box-shadow: 2px 2px 1px black;
+    border: 1px solid var(--preto);
+    width: 250px;
+    margin-top: 10px;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#tipo1 input[type="button"]:active{
+    transform: scale(0.9);
+}
+
+#tipo1 p{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#tipo1 p strong a{
+    color: var(--verdeescuro);
+    text-decoration: none;
+    font-size: var(--ftampeq);
+}

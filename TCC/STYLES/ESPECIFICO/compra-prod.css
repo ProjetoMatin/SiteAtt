@@ -1,0 +1,492 @@
+h3{
+    font-size: 1.2em!important;
+}
+
+body{
+    background-color: var(--cinza)!important;
+}
+
+main{
+    background-color: var(--cinza);
+    display: flex;
+    padding: 25px 50px;
+}
+
+main .fotos-prod{
+    border-radius: 25px;
+    box-shadow: 1px 2px 3px black;
+    display: flex;
+    justify-content: center;
+    background-color: var(--branco);
+    height: 500px;
+    width: 600px;
+}
+
+main .fotos-prod img{
+    width: 500px;
+    height: 500px;
+}
+
+main .info-prod{
+    margin-left: 20px;
+}
+
+main .info-prod h1{
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+main .info-prod .text-adic-peq{
+    font-size: 1.5em;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+main .info-prod .text-adic-peq strong{
+    text-decoration: line-through;
+    color: var(--laranjaClaro);
+}
+
+main .info-prod .precoAtual{
+    color: var(--verdeescuro);
+    margin-top: 10px;
+    font-size: 2.5em;
+}
+
+main .info-prod .highlight-btn {
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: 3px dotted var(--cinza3);
+}
+
+main .info-prod .highlight-btn.clicked {
+    border: 1px solid black;
+}
+
+main .info-prod .pesoInpts{
+    margin-top: 40px;
+    font-size: 1.7em;
+}
+
+main .info-prod .botoespeso{
+    margin-top: 20px;
+}
+
+main .info-prod .botoespeso .btnAumDim{
+    font-size: 1.4em;
+    width: 40px;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+main .info-prod .botoespeso span{
+    display: inline-block;
+    background-color: var(--preto);
+    color: var(--branco);
+    width: 70px;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+main .info-prod .botoespeso .aumentar{
+    box-shadow: 1px 1px 3px black;
+    background-color: var(--branco);
+    
+}
+
+main .info-prod .botoesCompra{
+    display: flex;
+    align-items: center;
+}
+
+main .info-prod .botoesCompra .btns{
+    width: 300px;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 30px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+main .info-prod .botoesCompra .btns:active{
+    transform: scale(0.9); 
+}
+
+main .info-prod .botoesCompra .compra-btn{
+    background-color: var(--laranja);
+    color: var(--branco);
+    box-shadow: 1px 2px 3px black;
+    border: 1px solid black;
+}
+
+main .info-prod .botoesCompra .add-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verdeescuro);
+    border: 1px solid var(--verdeescuro);
+    font-size: 1em;
+    margin-left:20px;
+}
+
+main .info-prod .botoesCompra .add-carrinho img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+main .info-prod .botoesCompra .add-carrinho a{
+    text-decoration: none;
+    color: var(--verdeescuro);
+}
+
+hr{
+    text-align: center;
+    border: 1px solid black;
+    width: 80%;
+    margin: 0.5rem auto!important;
+}
+
+/*
+
+SECTION
+
+*/
+
+section{
+    background-color: var(--bege);
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+section .info-Vend{
+    background-color: var(--branco);
+    width: 620px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px black;
+    padding: 35px;
+}
+
+section .info-Vend .info-encl{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+section .info-Vend h1, section .melhor-Av h1{
+    font-size: 2em;
+}
+
+section .info-Vend .info-encl h1, section .melhor-Av .info-user-encl .info-user h1{
+    font-size: 1.5em;
+}
+
+section .info-Vend .info-encl figure img, section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
+    width: 35px;
+    border-radius: 50%;
+}
+
+section .info-Vend .info-encl #logo img, section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
+    background-color: var(--preto);
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+section .info-Vend .info-encl p strong, section .melhor-Av .info-user-encl .info-user-nomefoto p strong{
+    color: var(--verdeescuro);
+}
+
+section .info-Vend .avalEstrela, section .melhor-Av .avalEstrela{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin-top: 100px;
+}
+
+section .info-Vend .avalEstrela img, section .melhor-Av .avalEstrela img{
+    width: 40px;
+}
+
+section .info-Vend .avalEstrela .estrelaCortada{
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+section .info-Vend .nmrsAval{
+    float: right;
+    margin-top: 125px;
+}
+
+section .info-Vend .nmrsAval .perg{
+    color: var(--laranja);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+section .info-Vend .nmrsAval .aval{
+    color: var(--Amarelo);
+    font-weight: bold;
+}
+
+section .melhor-Av .info-user-encl{
+    display: flex;
+    justify-content: space-between;
+}
+
+section .melhor-Av .info-user-encl .info-user{
+    display: flex;
+    flex-direction: column;
+}
+
+section .melhor-Av .info-user-encl .info-user-nomefoto{
+    display: flex;
+    align-items: center;
+}
+
+section .melhor-Av .textoAv{
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+
+section .melhor-Av .avalEstrela{
+    margin-top: 15px;
+}
+
+main, section {
+    background-color: #C1C1C1!important;
+}
+
+
+/* 
+
+INFO-ADD
+
+*/
+
+.info-add{
+    background-color: var(--branco);
+    padding: 15px;
+}
+
+.info-add .links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.info-add .links input{
+    color: var(--preto);
+    font-size: 1.5em;
+    cursor: pointer;
+    background: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.info-add .links .pagAtual{
+    color: var(--laranja);
+    text-decoration: underline;
+}
+
+/*
+
+DESCRIÇÃO
+
+*/
+
+.info-add .desc .desc-encl{
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.info-add .desc .desc-encl p{
+    font-size: 1.5em;
+    margin: 40px 0;
+    text-align: justify;
+}
+
+.info-add .desc .desc-encl hr{
+    width: 95%;
+    border: 1px solid var(--cinza3)
+}
+
+/* 
+
+AVALIAÇÕES
+
+*/
+
+.info-add .aval-encl{
+    display: flex;
+    margin-top:100px;
+    gap: 15px;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+}
+
+.info-add .aval-encl .avaliacao{
+    max-width: 450px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data figure img{
+    width: 30px;
+}
+
+.info-add .aval-encl .avaliacao .estr-data p{
+    font-size: 1.2em;
+    
+}
+
+.info-add .aval-encl .avaliacao h1{
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.info-add .aval-encl .avaliacao .estado{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .aval-encl .avaliacao .estado img{
+    width: 15px;
+    margin: 25px 10px 25px 35px;
+}
+
+.info-add .aval-encl .avaliacao .txt{
+    font-weight: normal;
+    font-size: 1.15em;
+}
+
+.info-add .aval-encl .avaliacao .info-adic{
+    margin-top: 250px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart figure img{
+    width: 25px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .compart h3, .info-add .aval-encl .avaliacao .info-adic .likeDeslike h3{
+    font-weight: normal;
+    margin-left: 15px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike{
+    display: flex;
+    align-items: center;
+}
+
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike h3{
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike img{
+    width: 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.info-add .aval-encl .avaliacao .info-adic .likeDeslike .invertido{
+    rotate: 180deg;
+}
+
+/* 
+
+PERGUNTAS 
+
+*/
+
+.info-add .pergunta{
+    border: 1px solid black;
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px;
+    border-radius: 25px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.info-add .pergunta .nome-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 380px;
+}
+
+.info-add .pergunta .nome-data h1{
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+.info-add .pergunta .txt{
+    margin-top: 50px;
+    font-size: 1.2em;
+}
+
+.info-add .pergunta .respostas .respTxt{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.info-add .pergunta .respostas .respTxt img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.info-add .pergunta .respostas .resp-vend{
+    border-left: 7px solid var(--laranja);
+    height: 180px;
+    margin: 15px 0 0 50px;
+    padding-left: 25px;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data{
+    display: flex;
+    align-items: center;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.info-add .pergunta .respostas .resp-vend .foto-nome-data h3{
+    margin: 0 25px;
+    font-weight: normal;
+}
+
+.info-add .pergunta .respostas .resp-vend p{
+    margin: 10px 0 0 40px;
+    text-align: justify;
+}

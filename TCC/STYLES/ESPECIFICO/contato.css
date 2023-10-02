@@ -1,0 +1,92 @@
+body{
+    background-color: var(--bege)!important;
+}
+
+.tit-pag{
+    margin: 3k5px;
+}
+.cards-encl{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    /* background-color: blue; */
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 1020px;
+    /* background-color: red; */
+    justify-content: center;
+}
+
+.cards-encl .card{
+    background-color: var(--branco);
+    width: 500px;
+    border-radius: 15px;
+    border: 0px!important;
+    filter: drop-shadow(0px 4px 3px var(--preto));
+    padding-bottom: 20px;
+}
+
+.cards-encl .card .card-top img{
+    width: 100%;
+    height: 97px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.cards-encl .card .card-content{
+    text-align: center;
+
+}
+
+.cards-encl .card .card-content img{
+    width: 60px;
+    margin-top: -32px;
+    filter: drop-shadow(0px 3px 3px var(--preto));
+    border-radius: 50%;
+}
+
+.cards-encl .card .card-content .card-title{
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.cards-encl .card .card-content .card-desc{
+    color: var(--cinza4);
+    font-weight: normal;
+    font-size: 0.9em;
+    max-width: 250px;
+    margin: auto;
+}
+
+.cards-encl .card .card-content .btnAcessar{
+    background-color: var(--pretoAzulado);
+    padding: 5px 45px;
+    color: var(--branco);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.cards-encl .card .card-content .whatsapp{
+    background-color: var(--verdeescuro);
+}
+
+.cards-encl .card .card-content .instagram{
+    background-color: var(--laranja);
+}
+
+.cards-encl .card .card-content .telegram{
+    background-color: var(--azulClaro);
+}
+
+.email{
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.email strong{
+    color: var(--verdeescuro);
+}
