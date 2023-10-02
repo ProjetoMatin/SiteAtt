@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+
+    FAVOR DEIXAR O NOME DE TODAS AS VARIÁVEIS, CLASSES, ID'S E NAMES EM PORTUGUES!
+
+    revisar linha 132
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte01);
+}
+
+:root{
+
+    /* FONTES */
+
+    --fonte01: 'Roboto', sans-serif;
+
+    /* CORES */
+
+    --preto: #000;
+    --pretoOpac: #0000006c;
+    --pretoAzulado: #0F172A;
+
+    --cinza: #C1C1C1;
+    --cinza2: #F5F5F5;
+    --cinza3: #BFBFBF;
+    --cinza4: #676767;
+
+    --branco: #fff;
+
+    --verdeescuro: #008000;
+    --verdeescuroTabela: #046504;
+    --verdeescuroTabela2: #00AA00;
+    --verdeescuroTabela3: #00C500;
+    --verdeBtn: #04B004;
+    --verdeBtnActive: #059705;
+    --verdeSideBar: #002900;
+
+    --laranja: #FF6600;
+    --laranjaClaro: #FF9F5F;
+    --laranjaBtn: #D25502;
+    --laranjaBtnActive: #bd4d03;
+
+    --vermelho: #FF2A2A;
+
+    --Amarelo: #BBA800;
+
+    --bege: #E5E0E0;
+
+    --marrom: #481D00;
+
+    --azulClaro: #009EBB;
+    
+    /* FONTE TAMANHO */
+    
+    --ftamheader: 1.5em;
+    --ftamloginbtn: 1em;
+    --ftampeq: 0.9em;
+
+    --sombra: 0 2px 3px var(--preto);
+}

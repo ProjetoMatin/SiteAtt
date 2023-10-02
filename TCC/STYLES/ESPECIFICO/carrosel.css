@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+.interesseTexto {
+    text-align: left;
+    left: 0;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: var(--branco);
+    text-shadow: 2px 1px 2px rgb(0, 0, 0);
+}
+
+.carrosel {
+    background-image: url("../../IMG/pexels-oleksandr-pidvalnyi-321542.jpg");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: max-content;
+    padding: 1rem 1rem 3rem;
+    transition: .2s;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0px;
+    margin: 1.5rem;
+    align-items: center;
+}
+
+.cardProduto {
+    width: 400px;
+    height: 390px;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: var(--branco);
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.418);
+    transition: .2s;
+}
+
+.infoProduto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.descProduto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.infoProduto .descProduto figure {
+    width: 150px;
+    margin: 0.5rem auto;
+}
+
+.infoProduto .descProduto figure img {
+    width: 100%;
+}
+
+.nomeProduto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nomeUser {
+    display: flex;
+}
+
+.btnAcoes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 1.3rem 0.5rem;
+}
+
+.btnAcoes .material-icons{
+    cursor: pointer;
+}
+
+.btnAcoes .icone{
+    width: 23px;
+    height: 23px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.btnAcoes .icone:active{
+    transform: scale(0.9);
+}
+
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffca28;
+    border-radius: 50%;
+    animation: confeteAnimation 3s ease-out;
+}
+
+@keyframes confeteAnimation {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.btnAcoes .btnComprar {
+    background-color: var(--laranja);
+    color: var(--branco);
+    font-weight: bold;
+    width: 150px;
+    height: 35px;
+    border-top: 1px solid var(--preto);
+    border-right: 3px solid var(--preto);
+    border-bottom: 3px solid var(--preto);
+    border-left: 1px solid var(--preto);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.btnAcoes .btnComprar:active {
+    transform: scale(0.9);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.pagsCarrosel {
+    width: 200px;
+    height: 10px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pagCarrosel {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0.2rem;
+    border-radius: 50%;
+    background-color: var(--cinza);
+}
+
+.ativo {
+    background-color: var(--branco);
+    border: 1px solid var(--preto);
+}

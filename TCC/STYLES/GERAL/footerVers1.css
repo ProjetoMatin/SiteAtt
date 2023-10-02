@@ -1,0 +1,33 @@
+footer{
+    background-color: var(--preto);
+    padding: 20px 0;
+}
+
+footer p{
+    color: var(--branco);
+    text-align: center;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer input{
+    margin: auto;
+    font-weight: bolder;
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 10px;
+    display: block;
+    background-color: var(--verdeescuro);
+    color: var(--branco);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+footer input:active{
+    transform: scale(0.9);
+}
