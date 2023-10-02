@@ -11,5 +11,5 @@ function trocarCont(id) {
 
 window.addEventListener('DOMContentLoaded', function () {
   // Mostrar "content1" por padrão
-  trocarCont('content6');
+  trocarCont('content2');
 });

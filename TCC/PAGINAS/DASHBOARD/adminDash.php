@@ -261,8 +261,7 @@
 
                     echo '<script>window.location.href = "../PRINCIPAL/index.php";</script>';
                     exit;
-                }
-                else {
+                } else {
                     $lnu = $selectP2->fetch();
                     $idCep = $lnu['idCep'];
                     $insertQ4 = "INSERT INTO usuario(nomeUsu, ativo, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep , fotosUsu, premium, NR, comp) VALUES ('$nomeInput', '$ativo', '$dataAtual', '$emailInput', '$TCIR', '$NRCIR', '$senhaInput', '$telefoneInput', '$idCep', '$fotoInput', '$premium', '$NR', '$comp')";
