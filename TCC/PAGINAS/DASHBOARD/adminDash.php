@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../../STYLES/ESPECIFICO/DASHBOARD/adminDash.css">
 </head>
 
@@ -38,78 +38,84 @@
                 <button class="btnAdd" onclick="return trocarCont('content6')"><a href="#" class="cardBtn">Adicionar</a></button>
             </div>
             <?php while ($dados = $selectP->fetch()) {
-                if ($total != 0) { ?>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $dados['nomeUsu'] ?></h5>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Nome:</h6>
-                            <p class="card-text"><?= $dados['nomeUsu'] ?></p>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Tel:</h6>
-                            <p class="card-text"><?= $dados['telUsu'] ?></p>
-                            <br>
-                            <?php
-                            if ($dados['TCIR'] == 'CNPJ') {
-                                echo "<h6 class='card-subtitle mb-2 text-body-secondary'>CNPJ:</h6>";
-                                echo "<p class='card-text'>{$dados['NRCIR']}</p>";
-                            } else {
-                                echo "<h6 class='card-subtitle mb-2 text-body-secondary'>CPF:</h6>";
-                                echo "<p class='card-text'>{$dados['NRCIR']}</p>";
-                            }
-                            ?>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Bairro:</h6>
-                            <p class="card-text"><?= $dados['bairro'] ?></p>
-                            <button class="btnEncl"><a href="excluir.php?ref=<?= $dados['idUsu'] ?>&tbl=usuario" class="cardBtn excluir">Excluir</a></button>
-                            <button class="btnEncl"><a href="#" class="cardBtn editar">Editar</a></button>
+                if ($total != 0) {
+                    echo "<div class='card'>";
+                    echo "<div class='card-body'>";
 
-                        </div>
-                    </div>
-            <?php } else {
+                    echo "<h5 class='card-title'>{$dados['nomeUsu']}</h5>";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Nome:</h6>";
+                    echo "<p class='card-text'>{$dados['nomeUsu']}</p>";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Tel:</h6>";
+                    echo "<p class='card-text'>{$dados['telUsu']}</p>";
+                    echo "<br>";
+
+                    if ($dados['TCIR'] == 'CNPJ') {
+                        echo "<h6 class='card-subtitle mb-2 text-body-secondary'>CNPJ:</h6>";
+                        echo "<p class='card-text'>{$dados['NRCIR']}</p>";
+                    } else {
+                        echo "<h6 class='card-subtitle mb-2 text-body-secondary'>CPF:</h6>";
+                        echo "<p class='card-text'>{$dados['NRCIR']}</p>";
+                    }
+
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Bairro:</h6>";
+                    echo "<p class='card-text'>{$dados['bairro']}</p>";
+                    echo "<button class='btnEncl'><a href='excluir.php?ref={$dados['idUsu']}&tbl=usuario' class='cardBtn excluir'>Excluir</a></button>";
+                    echo "<button class='btnEncl'><a href='editar.php?ref={$dados['idUsu']}&tbl=usuario' class='cardBtn editar'>Editar</a></button>";
+                    // MODAL LINK BOTAO
+                    echo "<button class='btnEncl' onclick='return trocarCont(\'content8\')'>";
+                    echo "<a href='#?ref={$dados['idUsu']}&tbl=usuario' class='cardBtn visualizar'>Visualizar</a>";
+                    echo "</button>";
+
+                    echo "</div>";
+                    echo "</div>";
+                } else {
                     echo "VAZIO";
                 }
             } ?>
+
         </div>
 
         <div class="content" id="content3"> <!-- Localidade -->
             <div class="add_comp_encl">
                 <h1>LOCALIDADES</h1>
-                <button class="btnAdd" onclick="return trocarCont('content6')"><a href="#" class="cardBtn">Adicionar</a></button>
+                <button class="btnAdd" onclick="return trocarCont('content7')"><a href="#" class="cardBtn">Adicionar</a></button>
             </div>
 
             <?php
 
-            $selectQ = "SELECT * FROM localidade l";
-            $selectP = $cx->prepare($selectQ);
-            $selectP->setFetchMode(PDO::FETCH_ASSOC);
-            $selectP->execute();
-            $total = $selectP->rowCount();
+            $selectQ2 = "SELECT * FROM localidade l";
+            $selectP2 = $cx->prepare($selectQ2);
+            $selectP2->setFetchMode(PDO::FETCH_ASSOC);
+            $selectP2->execute();
+            $total2 = $selectP2->rowCount();
 
             ?>
 
-            <?php while ($dados = $selectP->fetch()) {
-                if ($total != 0) { ?>
-                    <div class="card">
-                        <div class="card-body">
-                            <?php
+            <?php while ($dados = $selectP2->fetch()) {
+                if ($total2 = 0) {
+                    echo "Oi";
+                } else {
+                    echo "<div class='card'>";
+                    echo "<div class='card-body'>";
 
-                            echo "<h5 class='card-title'>{$dados['bairro']} - {$dados['cidade']}</h5>";
-                            echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Cep: </h6>";
-                            echo "<p class='card-text'>{$dados['idCep']}</p>";
-                            echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Logradouro: </h6>";
-                            echo "<p class='card-text'>{$dados['logradouro']}</p>";
-                            echo "<br>";
-                            echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Logradouro: </h6>";
-                            echo "<p class='card-text'>{$dados['bairro']}</p>";
+                    echo "<h5 class='card-title'>{$dados['bairro']} - {$dados['cidade']}</h5>";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Cep: </h6>";
+                    echo "<p class='card-text'>{$dados['idCep']}</p>";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Logradouro: </h6>";
+                    echo "<p class='card-text'>{$dados['logradouro']}</p>";
+                    echo "<br>";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Logradouro: </h6>";
+                    echo "<p class='card-text'>{$dados['bairro']}</p>";
 
-                            echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Uf: </h6>";
-                            echo "<p class='card-text'>{$dados['uf']}</p>";
-                            echo "<button class='btnEncl' onclick='return confirm('Deseja excluir?')'><a href='excluir.php?ref={$dados['idCep']}&tbl=localidade' class='cardBtn excluir'>Excluir</a></button>";
-                            echo "<button class='btnEncl'><a href='#' class='cardBtn editar'>Editar</a></button>";
-                            ?>
-
-                        </div>
-                    </div>
-            <?php } else {
-                    echo "VAZIO";
+                    echo "<h6 class='card-subtitle mb-2 text-body-secondary'>Uf: </h6>";
+                    echo "<p class='card-text'>{$dados['uf']}</p>";
+                    echo "<button class='btnEncl' onclick='return confirm('Deseja excluir?')'><a href='excluir.php?ref={$dados['idCep']}&tbl=localidade' class='cardBtn excluir'>Excluir</a></button>";
+                    echo "<button class='btnEncl'><a href='editar.php?ref={$dados['idCep']}' class='cardBtn editar'>Editar</a></button>";
+                    echo "<button class='btnEncl' onclick='return trocarCont(\'content8\')'>";
+                    echo "<a href='#?ref={$dados['idCep']}&tbl=usuario' class='cardBtn visualizar'>Visualizar</a>";
+                    echo "</button>";
+                    echo "</div>";
+                    echo "</div>";
                 }
             } ?>
         </div>
@@ -147,8 +153,12 @@
                         </div>
 
                         <div class="input">
-                            <input type="number" required name="telefoneInput" id="telefoneInput" placeholder="Numero de telefone">
-                            <input type="file" name="fotoInput" id="fotoInput">
+                            <input type="tel" required name="telefoneInput" id="telefoneInput" placeholder="Numero de telefone" minlength="14" maxlength="14" value="+55">
+                            <select name="nivel" id="nivel">
+                                <option value="C">Cliente</option>
+                                <option value="A">Administração</option>
+                                <option value="F">Funcionário</option>
+                            </select>
                         </div>
 
                         <div class="input">
@@ -174,6 +184,10 @@
                             <input type="number" required name="NRCIR" id="NRCIR" placeholder="Insira seu CPF">
                         </div>
 
+                        <div class="input">
+                            <input type="file" name="fotoInput" id="fotoInput">
+                        </div>
+
                         <h4>Residencia</h4>
 
                         <div class="input">
@@ -195,8 +209,8 @@
                         </div>
 
                         <div class="input">
-                            <input type="text" required name="NR" id="NR" placeholder="Numero da residencia">
-                            <input type="text" required name="comp" id="comp" placeholder="Complemento">
+                            <input type="number" required name="NR" id="NR" placeholder="Numero da residencia">
+                            <input type="text" name="comp" id="comp" placeholder="Complemento">
                         </div>
 
                         <div class="input">
@@ -206,6 +220,45 @@
                 </form>
             </div>
         </div>
+
+        <div class="content" id="content7"> <!-- ADICIONARBTN -->
+            <div class="add_comp_encl">
+                <h1>Adicionar</h1>
+            </div>
+            <div class="form-encl">
+                <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+                    <div class="inputs-encl">
+
+                        <div class="input">
+                            <input type="text" required name="CEP" id="CEP" placeholder="CEP">
+                        </div>
+
+                        <div class="input">
+                            <input type="text" required name="logradouro" id="logradouro" placeholder="Logradouro">
+                            <select name="UF" id="UF">
+                                <option value="RJ">Rio de janeiro</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="MG">Minas Gerais</option>
+                            </select>
+                        </div>
+
+                        <div class="input">
+                            <input type="text" required name="bairro" id="bairro" placeholder="Bairro">
+                            <input type="text" required name="cidade" id="cidade" placeholder="Cidade">
+                        </div>
+
+                        <div class="input">
+                            <input type="submit" value="Cadastrar" name="cadastrarLoc">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="content8">
+            CU XERECA PEIDO BUNDA
+        </div>
+
     </main>
 
     <?php
@@ -229,6 +282,7 @@
         $comp = $_REQUEST['comp'] ?? '';
         $CEP = $_REQUEST['CEP'] ?? '';
         $dataAtual = date('Y-m-d');
+        $nvl = $_REQUEST['nivel'];
 
         $selectQ = "SELECT * FROM usuario WHERE NRCIR = :NRCIR";
         $selectP = $cx->prepare($selectQ);
@@ -253,13 +307,12 @@
                     $insertP3 = $cx->prepare($insertQ3);
                     $insertP3->execute();
 
-                    echo "<script>alert('continuando')</script>";
-                    $insertQ4 = "INSERT INTO usuario(nomeUsu, ativo, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep , fotosUsu, premium, NR, comp) VALUES ('$nomeInput', '$ativo', '$dataAtual', '$emailInput', '$TCIR', '$NRCIR', '$senhaInput', '$telefoneInput', '$CEP', '$fotoInput', '$premium', '$NR', '$comp')";
+                    $insertQ4 = "INSERT INTO usuario(nomeUsu, ativo, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep , fotosUsu, premium, NR, comp, nvl_usu) VALUES ('$nomeInput', '$ativo', '$dataAtual', '$emailInput', '$TCIR', '$NRCIR', '$senhaInput', '$telefoneInput', '$CEP', '$fotoInput', '$premium', '$NR', '$comp', '$nvl')";
 
                     $insertP4 = $cx->prepare($insertQ4);
                     $insertP4->execute();
 
-                    echo '<script>window.location.href = "../PRINCIPAL/index.php";</script>';
+                    echo '<script>window.location.href = "../DASHBOARD/adminDash.php";</script>';
                     exit;
                 } else {
                     $lnu = $selectP2->fetch();
@@ -268,8 +321,32 @@
 
                     $insertP4 = $cx->prepare($insertQ4);
                     $insertP4->execute();
+                    echo '<script>window.location.href = "../DASHBOARD/adminDash.php";</script>';
+                    exit;
                 }
             }
+        }
+    }
+
+    if (isset($_REQUEST['cadastrarLoc'])) {
+        $CEP = $_REQUEST['CEP'] ?? '';
+        $logradouro = $_REQUEST['logradouro'] ?? '';
+        $UF = $_REQUEST['UF'] ?? '';
+        $bairro = $_REQUEST['bairro'] ?? '';
+        $cidade = $_REQUEST['cidade'] ?? '';
+
+        $selectQ2 = "SELECT * FROM localidade WHERE bairro = :bairro";
+        $selectP2 = $cx->prepare($selectQ2);
+        $selectP2->bindValue(':bairro', $bairro, PDO::PARAM_STR);
+        $selectP2->execute();
+        $total = $selectP2->rowCount();
+
+        if ($total == 0) {
+            $insertQ3 = "INSERT INTO localidade(idCep, logradouro, bairro, cidade, uf) VALUES ('$CEP', '$logradouro', '$bairro', '$cidade', '$UF')";
+            $insertP3 = $cx->prepare($insertQ3);
+            $insertP3->execute();
+            echo '<script>window.location.href = "../DASHBOARD/adminDash.php";</script>';
+            exit;
         }
     }
 

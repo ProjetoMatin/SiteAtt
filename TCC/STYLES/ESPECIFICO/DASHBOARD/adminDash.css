@@ -61,8 +61,20 @@ body {
     color: var(--verdeescuro);
 }
 
+
 .card-body .excluir:active{
     background-color: var(--verdeescuro);
+    color: var(--branco);
+}
+
+.card-body .visualizar{
+    background-color: transparent;
+    color: var(--laranja);
+    border: 2px solid var(--laranja);
+}
+
+.card-body .visualizar:active{
+    background-color: var(--laranja);
     color: var(--branco);
 }
 
@@ -107,6 +119,7 @@ form{
     font-size: 1.2rem!important;
 }
 
+
 /* ADICIONAR BTN */
 
 .inputs-encl{
@@ -124,6 +137,10 @@ form{
     font-size: 1em;
     border: 1px solid transparent;
     outline: none;
+}
+
+.inputs-encl .input input[type='file']{
+    padding: 0;
 }
 
 .inputs-encl .input label{
