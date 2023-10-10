@@ -4,6 +4,10 @@
 
 */
 
+body {
+    position: relative;
+}
+
 main{
     background-color: var(--cinza2);
 }
@@ -238,4 +242,73 @@ main section .catitem .infoitem input[type="button"]:active{
 .ativo {
     background-color: var(--branco);
     border: 1px solid var(--preto);
+}
+
+.popup-premium {
+    display: none;
+    width: 50vw;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    text-align: center;
+    margin: auto;
+    box-shadow: 1px 1px 10px var(--preto);
+    background-color: var(--branco);
+    border-radius: 25px;
+    padding: 0 0 0.5rem 0;
+    font-family: var(--fonte01);
+}
+
+.popup-premium figure, .popup-premium figure img {
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+}
+
+.popup-premium .popup-h1 {
+    margin: 1.2rem 0;
+    font-size: 1.5rem;
+}
+
+.popup-premium .popup-h3 {
+    font-size: 1.2em;
+}
+
+.strong-popup {
+    color: var(--verdeescuro);
+}
+
+.popup-premium .fechar-popup {
+    position: absolute;
+    margin-left: 0.5rem;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-weight: bolder;
+    right: -3px;
+    border-radius: 50px;
+    background-color: var(--branco);
+    text-align: center;
+    cursor: pointer;
+}
+
+.popup-premium .popup-button {
+    background-color: var(--laranja);
+    color: var(--branco);
+    font-weight: bold;
+    width: 150px;
+    height: 35px;
+    margin: 0.5rem 0;
+    border-top: 1px solid var(--preto);
+    border-right: 3px solid var(--preto);
+    border-bottom: 3px solid var(--preto);
+    border-left: 1px solid var(--preto);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.popup-premium .popup-button a{
+    text-decoration: none;
+    color: var(--branco);
 }
