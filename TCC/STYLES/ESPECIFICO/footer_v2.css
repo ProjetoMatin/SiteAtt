@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+footer {
+    width: 100%;
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+.logo {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo figure {
+    width: 50px;
+}
+
+.logo figure img {
+    width: 100%;
+    rotate: 30deg;
+}
+
+.linkLogo {
+    text-decoration: none;
+}
+
+.linkLogo h1{
+    font-size: 1.2em;
+    color: var(--branco);
+}
+
+table {
+    cursor: pointer;
+    margin: auto;
+    width: 40%;
+}
+
+.redesSociais {
+    cursor: pointer;
+    display: flex;
+}
+
+.redeSocial {
+    margin: 0.2rem;
+}
+
+.redeSocial figure {
+    width: 45px;
+}
+
+.redeSocial figure img {
+    width: 100%;
+}
