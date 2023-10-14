@@ -162,7 +162,8 @@
 }
 
 .avaliacao-premium {
-    width: 450px;
+    min-width: 450px;
+    max-width: 500px;
     border: 1px solid var(--preto);
     border-radius: 5px;
     padding: 0 0 0.5rem 0;
@@ -191,6 +192,7 @@
 
 .user-flex img {
     width: 100%;
+    rotate: 45deg;
 }
 
 .avaliacao-premium figure {
