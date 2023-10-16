@@ -76,7 +76,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="infoVend">
-                            <h3 class="card-title">Quejo Tofu</h5>
+                            <h3 class="card-title">Queijo Tofu</h5>
                                 <div class="fotoVend">
                                     <i class="material-icons">person</i>
                                     <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>

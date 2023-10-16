@@ -2,7 +2,7 @@
 
 header {    
     position: sticky;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.075) !important;
 }
 
 header {
@@ -24,7 +24,8 @@ header nav ul li a {
 }
 
 .li-premium {
-    background-image: linear-gradient(to bottom, #FF6600, #d75600);
+    background-color: var(--verdeescuro);
+    color: var(--branco);
     width: 200px;
     padding: 0.6rem;
     border-radius: 20px;
@@ -35,7 +36,12 @@ header nav ul li a {
 }
 
 .div-img-principal {
-    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 55vh;
+    line-height: 2.3rem;
     padding: 1rem;
     filter: blur();
     background-image: url(../../IMG/img-landing-page.jpg);
@@ -43,5 +49,61 @@ header nav ul li a {
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--branco);
-    text-shadow: 1px 1px 5px var(--pretoOpac);
+    text-shadow: 1px 1px 3px var(--pretoOpac);
+}
+
+.button-entrar {
+    margin: 0.5rem auto;
+    box-shadow: 1px 1px 3px var(--pretoOpac);
+    font-weight: bold;
+    width: 300px;
+    border-radius: 20px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    height: 50px;
+    transition: .2s;
+}
+
+.button-entrar:hover {
+    cursor: pointer;
+    background-color: rgb(226, 89, 15);
+}
+
+.section-fala-cliente {
+    display: flex;
+    height: 35vh;
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: var(--branco);
+    text-align: center;
+    background-image: linear-gradient(180deg, var(--verdeescuro), rgb(7, 98, 0));
+}
+
+.section-fala-cliente p {
+    width: 600px;
+}
+
+.section-fala-cliente .cliente-matin-texto {
+    margin: 0 0.5rem;
+    width: max-content;
+}
+
+.section-fala-cliente figure {
+    width: 50px;
+    rotate: 30deg;
+
+}
+
+.section-fala-cliente figure img{
+    width: 100%;
+}
+
+.cliente-matin {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

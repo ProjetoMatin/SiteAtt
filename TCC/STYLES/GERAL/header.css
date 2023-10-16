@@ -3,6 +3,7 @@ figure, ul, p, h1{
 }
 
 header{
+    padding: 0.5rem;
     justify-content: space-between;
     background-color: var(--branco);
 }

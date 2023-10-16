@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class='logodiv'>
-            <a href="../PRINCIPAL/index.php">
+            <a href="../PRINCIPAL/home.php">
                 <figure>
                     <img src='../../IMG/logo.png' alt=''>
                 </figure>
@@ -31,7 +31,7 @@
         <div class="div-img-principal">
             <h1>Agricultura de ponta a ponta para todos.</h1>
             <p>Encontre todos os tipos de produtos no ramo do agronegócio familiar.</p>
-            <button class="button-entrar">ENTRAR</button>
+            <a href="home.php"><button class="button-entrar">ENTRAR</button></a>
         </div>
         <section class="section-fala-cliente">
             <p>"Um problema que todos nós enfrentávamos nessa era da Internet, que agora foi resolvido com este incrível site!"</p>
@@ -39,7 +39,7 @@
                 <figure class="logo-matin">
                     <img src="../../IMG/logo.png" alt="">
                 </figure>
-                <p><strong>CLIENTE MAT-IN</strong></p>
+                <p class="cliente-matin-texto"><strong>CLIENTE MAT-IN</strong></p>
             </div>
         </section>
         <section class="vantagens-app">
@@ -79,7 +79,7 @@
         </section>
         <section class="entre-ja">
             <h1>Entre no site agora!</h1>
-            <button class="button-entrar">ENTRAR</button>
+            <a href="home.php"><button class="button-entrar">ENTRAR</button></a>
         </section>
     </main>
     <?php 
