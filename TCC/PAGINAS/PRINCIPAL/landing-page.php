@@ -48,29 +48,31 @@
                     <img src="../../IMG/vantagem-img.jpg" alt="">
                 </figure>
             </div>
-            <div class="vantagem">
-                <figure>
-                    <img src="../../IMG/smartphone.png" alt="App Mobile">
-                </figure>
-                <p>Aplicativo Mobile</p>
-            </div>
-            <div class="vantagem">
-                <figure>
-                    <img src="../../IMG/edit.png" alt="App Mobile">
-                </figure>
-                <p>Customize do jeito que quiser</p>
-            </div>
-            <div class="vantagem">
-                <figure>
-                    <img src="../../IMG/no-money.png" alt="Grátis para Uso">
-                </figure>
-                <p>Grátis para Uso</p>
-            </div>
-            <div class="vantagem">
-                <figure>
-                    <img src="../../IMG/global.png" alt="Acessar em qualquer lugar">
-                </figure>
-                <p>Acesso por todo o Brasil</p>
+            <div class="vantagens">
+                <div class="vantagem">
+                    <figure>
+                        <img src="../../IMG/smartphone.png" alt="App Mobile">
+                    </figure>
+                    <p>Aplicativo Mobile</p>
+                </div>
+                <div class="vantagem">
+                    <figure>
+                        <img src="../../IMG/edit.png" alt="App Mobile">
+                    </figure>
+                    <p>Customize do jeito que quiser</p>
+                </div>
+                <div class="vantagem">
+                    <figure>
+                        <img src="../../IMG/no-money.png" alt="Grátis para Uso">
+                    </figure>
+                    <p>Grátis para Uso</p>
+                </div>
+                <div class="vantagem">
+                    <figure>
+                        <img src="../../IMG/global.png" alt="Acessar em qualquer lugar">
+                    </figure>
+                    <p>Acesso por todo o Brasil</p>
+                </div>
             </div>
         </section>
         <section class="nova-era-agronegocio">
