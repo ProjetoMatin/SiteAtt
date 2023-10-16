@@ -54,34 +54,44 @@
                         <img src="../../IMG/smartphone.png" alt="App Mobile">
                     </figure>
                     <p>Aplicativo Mobile</p>
+                    <p class="subtexto-vantagem">Entre quando quiser no portal do agronegócio Mat-in</p>
                 </div>
                 <div class="vantagem">
                     <figure>
                         <img src="../../IMG/edit.png" alt="App Mobile">
                     </figure>
                     <p>Customize do jeito que quiser</p>
+                    <p class="subtexto-vantagem">Deixe o Mat-in do jeitinho que você gostar</p>
                 </div>
                 <div class="vantagem">
                     <figure>
                         <img src="../../IMG/no-money.png" alt="Grátis para Uso">
                     </figure>
                     <p>Grátis para Uso</p>
+                    <p class="subtexto-vantagem">Não é necessário pagar para utilizar nossos serviços</p>
                 </div>
                 <div class="vantagem">
                     <figure>
                         <img src="../../IMG/global.png" alt="Acessar em qualquer lugar">
                     </figure>
                     <p>Acesso por todo o Brasil</p>
+                    <p class="subtexto-vantagem">O Mat-in se expande por todo o território nacional</p>
                 </div>
             </div>
         </section>
         <section class="nova-era-agronegocio">
-            <h1>Entre em uma nova era do Agronégocio.</h1>
-            <p> Junte-se a nós nessa jornada rumo a um agronegócio mais inteligente, conectado e sustentável, onde estamos plantando as sementes da inovação para colher os frutos de um futuro agrícola promissor.</p>
+            <div class="nova-era-texto">
+                <h1>Entre em uma nova era do Agronégocio.</h1>
+                <p> Junte-se a nós nessa jornada rumo a um agronegócio mais inteligente, conectado e sustentável, onde estamos plantando as sementes da inovação para colher os frutos de um futuro agrícola promissor.</p>
+            </div>
+            <figure class="logo-matin">
+                    <img src="../../IMG/logo.png" alt="">
+                </figure>
         </section>
         <section class="entre-ja">
-            <h1>Entre no site agora!</h1>
-            <a href="home.php"><button class="button-entrar">ENTRAR</button></a>
+            <a href="home.php">
+                <h1>Entre no site agora!</h1>
+            </a>
         </section>
     </main>
     <?php 
@@ -89,3 +99,5 @@
     ?>
 </body>
 </html>
+
+

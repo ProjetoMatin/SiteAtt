@@ -79,7 +79,7 @@ header nav ul li a {
     padding: 1rem;
     color: var(--branco);
     text-align: center;
-    background-image: linear-gradient(135deg, var(--verdeescuro), rgb(4, 54, 0));
+    background-image: linear-gradient(135deg, var(--verdeescuro), rgb(52, 245, 39));
 }
 
 .section-fala-cliente p {
@@ -110,12 +110,13 @@ header nav ul li a {
 
 .vantagens-app {
     display: flex;
-    padding: 1rem;
-    font-weight: bold;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .vantagem-img {
-    width: 40%;
+    width: 35%;
 }
 
 .vantagem-img figure {
@@ -124,11 +125,13 @@ header nav ul li a {
 
 .vantagem-img img{
     width: 100%;
-    border-radius: 20px;
+    border-radius: 50%;
+    margin: 0 0.5rem;
 }
 
 .vantagem {
     width: 300px;
+    margin: 1rem;
     text-align: center;
 }
 
@@ -147,4 +150,62 @@ header nav ul li a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.subtexto-vantagem {
+    font-size: 0.8em;
+    color: var(--cinza);
+}
+
+.nova-era-agronegocio {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--cinza2);
+}
+
+.nova-era-texto {
+    width: 50%;
+    text-align: justify;
+    margin: 2.5rem;
+}
+
+.nova-era-texto h1 {
+    margin-bottom: 1rem;
+}
+
+.nova-era-agronegocio .logo-matin {
+    background-color: var(--preto);
+    border-radius: 50%;
+    width: 250px;
+    rotate: 30deg;
+}
+
+.nova-era-agronegocio .logo-matin img{
+    width: 100%;
+}
+
+.entre-ja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--laranja), rgb(107, 30, 0));
+}   
+
+.entre-ja a {
+    border: 1px solid var(--branco);
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: var(--branco);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.entre-ja a:hover {
+    color: var(--preto);
+    background-color: var(--branco);
 }
