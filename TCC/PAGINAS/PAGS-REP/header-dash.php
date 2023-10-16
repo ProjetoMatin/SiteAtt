@@ -6,7 +6,7 @@
 
 <header>
     <nav class="nav nav-pills nav-justified">
-        <a href="../PRINCIPAL/index.php">
+        <a href="../PRINCIPAL/home.php">
             <div class="logo-encl">
                 <figure>
                     <img src="../../IMG/logo.png" alt="">

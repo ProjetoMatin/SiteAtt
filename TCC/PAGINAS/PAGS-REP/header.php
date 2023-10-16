@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../../STYLES/GERAL/header.css">
 <header>
     <div class='logodiv'>
-        <a href="../PRINCIPAL/index.php">
+        <a href="../PRINCIPAL/home.php">
             <figure>
                 <img src='../../IMG/logo.png' alt=''>
             </figure>

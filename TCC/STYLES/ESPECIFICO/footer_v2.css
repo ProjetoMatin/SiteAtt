@@ -37,7 +37,7 @@ footer {
 
 table {
     cursor: pointer;
-    margin: auto;
+    text-align: left;
     width: 40%;
 }
 
