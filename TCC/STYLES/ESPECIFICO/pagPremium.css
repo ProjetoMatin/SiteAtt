@@ -54,6 +54,11 @@
     box-shadow: 0px 2px 3px var(--pretoOpac);
     border-radius: 20px;
     background-color: var(--laranja);
+    transition: .2s;
+}
+
+.botao-quero-assinar:hover {
+    background-color: #b44800;
 }
 
 .termos {
@@ -154,6 +159,11 @@
     height: 40px;
     box-shadow: 0px 2px 3px var(--pretoOpac);
     border-radius: 10px;
+    transition: .2s;
+}
+
+.botao-premium:hover {
+    background-color: rgb(0, 68, 0);
 }
 
 .avaliacoes-premium-flex {

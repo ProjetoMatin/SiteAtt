@@ -33,6 +33,11 @@ header nav ul li a {
 
 .li-premium a {
     color: var(--branco);
+    transition: .2s;
+}
+
+.li-premium:hover {
+    background-color: rgb(1, 100, 1);
 }
 
 .div-img-principal {
