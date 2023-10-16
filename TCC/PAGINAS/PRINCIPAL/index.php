@@ -51,7 +51,7 @@
     </div>
     <script>
         function mudar_pag() {
-            window.location.replace("home.php")
+            window.location.replace("landing-page.php")
         }
     </script>
 </body>

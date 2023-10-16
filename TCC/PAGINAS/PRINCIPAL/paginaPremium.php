@@ -100,7 +100,7 @@
                                     <p>José Silveira</p>
                                 </div>
                             
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure sapiente praesentium vitae veniam delectus officia ipsa quo hic, dolorum fuga ea in tempore id a ut accusamus, sit iusto distinctio!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                         </div>
                     </div>
                     <div class="avaliacao-premium">
@@ -117,7 +117,7 @@
                                     <p>Chi Hang</p>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure sapiente praesentium vitae veniam delectus officia ipsa quo hic, dolorum fuga ea in tempore id a ut accusamus, sit iusto distinctio!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                         </div>
                     </div>
                     <div class="avaliacao-premium">
@@ -134,7 +134,7 @@
                                     <p>Bernardo Ramon</p>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure sapiente praesentium vitae veniam delectus officia ipsa quo hic, dolorum fuga ea in tempore id a ut accusamus, sit iusto distinctio!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
                         </div>
                     </div>
                     <div class="avaliacao-premium">
