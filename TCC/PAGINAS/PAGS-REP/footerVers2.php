@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="../../STYLES//ESPECIFICO/pagPremium.css">
-
+<link rel="stylesheet" href="../../STYLES/ESPECIFICO/footer_v2.css">
 <footer>
     <div class="logo">
         <figure>
-            <a href="index.php" class="linkLogo"><img src="../../IMG/logo.png" alt="Mat-in logo"></a>
+            <a href="home.php" class="linkLogo"><img src="../../IMG/logo.png" alt="Mat-in logo"></a>
         </figure>
-        <a href="index.php" class="linkLogo">
+        <a href="home.php" class="linkLogo">
             <h1>Mat-in</h1>
         </a>
     </div>
@@ -43,22 +43,22 @@
     <section class="redesSociais">
         <div class="redeSocial">
             <figure>
-                <img src="" alt="Rede Social" class="logoRedeSocial">
+                <img src="../../IMG/instagram-logo.png" alt="Rede Social" class="logoRedeSocial">
             </figure>
         </div>
         <div class="redeSocial">
             <figure>
-                <img src="" alt="Rede Social" class="logoRedeSocial">
+                <img src="../../IMG/whatsapp-logo-icone.png" alt="Rede Social" class="logoRedeSocial">
             </figure>
         </div>
         <div class="redeSocial">
             <figure>
-                <img src="" alt="Rede Social" class="logoRedeSocial">
+                <img src="../../IMG/telegram-logo.png" alt="Rede Social" class="logoRedeSocial">
             </figure>
         </div>
         <div class="redeSocial">
             <figure>
-                <img src="" alt="Rede Social" class="logoRedeSocial">
+                <img src="../../IMG/fb.png" alt="Rede Social" class="logoRedeSocial">
             </figure>
         </div>
     </section>

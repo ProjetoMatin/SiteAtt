@@ -1,0 +1,208 @@
+body{
+    background-color: var(--bege) !important;
+}
+
+hr{
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0 !important;
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: 80px auto;
+}
+
+.cont-right main{
+    padding: 25px 15px;
+}
+
+.cont-right main h5{
+    font-weight: normal;
+}
+
+.cont-right main .info-tela{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+mark{
+    background-color: transparent !important;
+    color: var(--verdeescuroTabela3);
+}
+
+h6 a{
+    color: var(--preto);
+    text-decoration: none;
+}
+
+.cont-right .card-encl .cardS{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    background-color: var(--branco);
+    width: 320px;
+    padding: 25px;
+}
+
+.cont-right .card-encl .azul{
+    border-bottom: 5px solid var(--azulClaro);
+}
+.cont-right .card-encl .verde{
+    border-bottom: 5px solid var(--verdeescuroTabela2);
+}
+.cont-right .card-encl .vermelho{
+    border-bottom: 5px solid var(--vermelho);
+}
+.cont-right .card-encl .laranja{
+    border-bottom: 5px solid var(--laranjaClaro);
+}
+
+#fotocard{
+    width: 45px;
+}
+
+.cont-right .card-encl{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cont-right .card-encl .cardS .card-title h6{
+    font-weight: normal;
+}
+
+.cont-right .card-encl .cardS .card-title .azulT{
+    color: var(--azulClaro);
+}
+
+.cont-right .card-encl .cardS .card-title .verdeT{
+    color: var(--verdeescuroTabela2);
+}
+
+.cont-right .card-encl .cardS .card-title .vermelhoT{
+    color: var(--vermelho);
+}
+
+.cont-right .card-encl .cardS .card-title .laranjaT{
+    color: var(--laranjaClaro);
+}
+
+.cont-right .card-encl .cardS .card-title h4{
+    font-weight: normal;
+    /* color: var(--azulClaro); */
+}
+
+.cont-right .card-encl .cardS .card-foto img{
+    width: 35px;
+}
+
+.listas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* gap: px; */
+    justify-content: space-evenly;
+}
+
+.listUsu, .prodlist{
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--branco);
+    width: 45vw;
+}
+
+table{
+    margin-top: 10px;
+}
+
+table tr th, table tr td{
+    text-align: center;
+}
+
+.listUsu table tr th, .prodlist table tr th, .main-cont .table tr th{
+    background-color: var(--cinza5);
+    color: var(--branco);
+    border-left: 3px solid var(--cinza5);
+    border-right: 3px solid var(--cinza5);
+}
+
+.listUsu table tr, .prodlist table tr, .main-cont .table tr{
+    border-left: 3px solid var(--cinza5);
+    border-right: 3px solid var(--cinza5);
+}
+
+.listUsu table tr:last-child, .prodlist table tr:last-child, .main-cont .table tr:last-child{
+    border-bottom: 3px solid var(--cinza5);
+    
+}
+
+.ativo, .emProc{
+    color: var(--azulClaro) !important;
+}
+
+.bloqueado, .Desistencia{
+    color: var(--vermelho) !important;
+}
+
+/* 
+
+CONTEUDO2
+
+*/
+
+.top-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-cont .btnAdd, .main-cont .btnAdd:hover{
+    background-color: var(--laranjaBtn);
+    color: var(--branco);
+    transition: transform 0.1s ease;
+    padding: 10px;
+    border-radius: 10px !important;
+}
+
+.top-cont .btnAdd:active{
+    transform: scale(0.9);
+}
+
+.main-cont{
+    background-color: var(--branco);
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.main-cont .main-tit{
+    display: flex;
+    align-items: center;
+}
+
+.main-cont .main-tit h4{
+    margin-left: 10px !important;
+}
+
+.main-cont .pesq{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-cont .input-group{
+
+    width: 40% !important;
+    margin: 15px 0 !important;
+}
+
+.main-cont .input-group .form-control{
+    width: 100% !important;
+}
+
+.main-cont table{
+    width: 100%;
+}

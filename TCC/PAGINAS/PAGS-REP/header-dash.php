@@ -1,59 +1,71 @@
-<!-- BOOTSTRAP ESTÁ NO ARQUIVO BASICO.CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-<link rel="stylesheet" href="../../STYLES/GERAL/header-dash.css">
+<link rel="stylesheet" href="../../STYLES/GERAL/basico.css">
 
-<header>
-    <nav class="nav nav-pills nav-justified">
-        <a href="../PRINCIPAL/index.php">
-            <div class="logo-encl">
-                <figure>
-                    <img src="../../IMG/logo.png" alt="">
-                </figure>
-                <h1>Mat-in</h1>
-            </div>
-        </a>
+<style>
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, var(--verdeescuro), var(--verdeescuroTabela3));
+        padding: 10px 15px;
+        width: 100%;
+    }
 
-        <div class='pesquisadiv'>
+    a{
+        margin: 0;
+        text-decoration: none;
+    }
 
-            <select name='pesquisaFiltro' id='pesquisaFiltro'>
-                <option value='todos'>Todos</option>
-                <option value='op1'>Op1</option>
-                <option value='op2'>Op2</option>
-                <option value='op3'>Op3</option>
-                <option value='op4'>Op4</option>
-            </select>
+    figure,
+    h1 {
+        margin: 0;
+    }
 
-            <input type='search' name='pesquisar' id='pesquisar' placeholder='Buscar produtos, marcas e muito mais...'>
+    nav .logo,
+    nav .usuario {
+        display: flex;
+        align-items: center;
+    }
 
+    nav .logo h1 {
+        font-size: var(--ftamheader);
+        color: var(--branco);
+    }
+
+    nav .usuario h1 {
+        font-size: 1.2em;
+        color: var(--branco);
+    }
+
+    .logo figure img {
+        width: 50px;
+    }
+
+    .usuario figure img {
+        width: 30px;
+        margin-right: 5px;
+    }
+</style>
+
+<nav>
+    <a href="../PRINCIPAL/home.php">
+
+        <div class="logo">
             <figure>
-                <img src='../../IMG/search-icon-vetor-branco.png' alt=''>
+                <img src="../../IMG/logo.png" alt="Matin">
             </figure>
+            <h1>Matin</h1>
         </div>
-
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-            <img src="../../IMG/menu.png" alt="" >
-        </button>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasLabel">DashBoard</h5>
-                <img src="../../IMG/close.png" alt="" style="cursor: pointer; width: 25px;" data-bs-toggle="offcanvas">
-            </div>
-            <div class="offcanvas-body">
-                <div class="list-group">
-                    <a href="../DASHBOARD/adminDash.php" class="list-group-item list-group-item-action active" aria-current="true">
-                        <img src="../../IMG/back.png" alt="">DashBoard
-                    </a>
-                    <a href="../PRINCIPAL/index.php" class="list-group-item list-group-item-action"><img src="../../IMG/home.png" alt="">Home</a>
-                    <a href="../PRINCIPAL/carrinho.php" class="list-group-item list-group-item-action"><img src="../../IMG/shopping-cart.png" alt="">Carrinho</a>
-                    <a href="../PRINCIPAL/login.php" class="list-group-item list-group-item-action"><img src="../../IMG/logout.png" alt="">Sair</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+    </a>
+    <div class="usuario">
+        <figure>
+            <img src="../../IMG/guest-vetor-branco.png" alt="">
+        </figure>
+        <h1>Yuri</h1>
+    </div>
+</nav>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

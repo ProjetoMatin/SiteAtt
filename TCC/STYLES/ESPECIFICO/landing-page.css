@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+header {    
+    position: sticky;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.075) !important;
+}
+
+header {
+    padding: 0.5rem;
+}
+
+header nav {
+    margin: 0 0.5rem;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+header nav ul li a {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+.li-premium {
+    background-color: var(--verdeescuro);
+    color: var(--branco);
+    width: 200px;
+    padding: 0.6rem;
+    border-radius: 20px;
+}
+
+.li-premium a {
+    color: var(--branco);
+    transition: .2s;
+}
+
+.li-premium:hover {
+    background-color: rgb(1, 100, 1);
+}
+
+.div-img-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 55vh;
+    line-height: 2.3rem;
+    padding: 1rem;
+    filter: blur();
+    background-image: url(../../IMG/img-landing-page.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    text-shadow: 1px 1px 3px var(--pretoOpac);
+}
+
+.button-entrar {
+    margin: 0.5rem auto;
+    box-shadow: 1px 1px 3px var(--pretoOpac);
+    font-weight: bold;
+    width: 300px;
+    border-radius: 20px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    height: 50px;
+    transition: .2s;
+}
+
+.button-entrar:hover {
+    cursor: pointer;
+    background-color: rgb(226, 89, 15);
+}
+
+.section-fala-cliente {
+    display: flex;
+    height: 35vh;
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: var(--branco);
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgb(52, 245, 39), var(--verdeescuro));
+}
+
+.section-fala-cliente p {
+    width: 600px;
+}
+
+.section-fala-cliente .cliente-matin-texto {
+    margin: 0 0.5rem;
+    width: max-content;
+}
+
+.section-fala-cliente figure {
+    width: 50px;
+    rotate: 30deg;
+
+}
+
+.section-fala-cliente figure img{
+    width: 100%;
+}
+
+.cliente-matin {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vantagens-app {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.vantagem-img {
+    width: 35%;
+}
+
+.vantagem-img figure {
+    width: 100%;
+}
+
+.vantagem-img img{
+    width: 100%;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+
+.vantagem {
+    width: 300px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.vantagem figure {
+    margin: auto;
+    width: 100px;
+}
+
+.vantagem img {
+    width: 100%;
+}
+
+.vantagens {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtexto-vantagem {
+    font-size: 0.8em;
+    color: var(--cinza);
+}
+
+.nova-era-agronegocio {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--cinza2);
+}
+
+.nova-era-texto {
+    width: 50%;
+    text-align: justify;
+    margin: 2.5rem;
+}
+
+.nova-era-texto h1 {
+    margin-bottom: 1rem;
+}
+
+.nova-era-agronegocio .logo-matin {
+    background-color: var(--preto);
+    border-radius: 50%;
+    width: 250px;
+    rotate: 30deg;
+}
+
+.nova-era-agronegocio .logo-matin img{
+    width: 100%;
+}
+
+.entre-ja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--laranja), rgb(107, 30, 0));
+}   
+
+.entre-ja a {
+    border: 1px solid var(--branco);
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: var(--branco);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.entre-ja a:hover {
+    color: var(--preto);
+    background-color: var(--branco);
+}
