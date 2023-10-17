@@ -81,7 +81,7 @@ main section .catitem .infoitem input[type="button"]:active{
 }
 
 .card{
-    width: 350px;
+    width: 350px!important;
     /* height: 390px; */
     border-radius: 20px;
     
@@ -116,7 +116,7 @@ main section .catitem .infoitem input[type="button"]:active{
 
 .card-body .card-text{
     text-align: left!important;
-    margin: 10px;
+    margin: 10px!important;
 }
 
 .interesseTexto {

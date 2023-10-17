@@ -76,7 +76,9 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="infoVend">
+
                             <h3 class="card-title">Quejo Tofu</h5>
+
                                 <div class="fotoVend">
                                     <i class="material-icons">person</i>
                                     <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor</h6>
@@ -217,18 +219,18 @@
                 </div>
             </section>
         </div>
-    <div class="popup-premium" id="popup_premium">
-        <figure class="img-popup">
-            <div class="fechar-popup" onclick="fechar_popup()">X</div>
-            <img src="../../IMG/Premium.png" alt="">
-        </figure>
-        <div class="popup-text">
-            <h1 class="popup-h1">Não perca esta oportunidade!</h1>
-            <h3 class="popup-h3">Tenha acesso a diversos benefícios e uma página apenas para você</h3>
-            <p>Premium por apenas <strong class="strong-popup">R$39,99!</strong></p>
+        <div class="popup-premium" id="popup_premium">
+            <figure class="img-popup">
+                <div class="fechar-popup" onclick="fechar_popup()">X</div>
+                <img src="../../IMG/Premium.png" alt="">
+            </figure>
+            <div class="popup-text">
+                <h1 class="popup-h1">Não perca esta oportunidade!</h1>
+                <h3 class="popup-h3">Tenha acesso a diversos benefícios e uma página apenas para você</h3>
+                <p>Premium por apenas <strong class="strong-popup">R$39,99!</strong></p>
+            </div>
+            <button class="popup-button"><a href="paginaPremium.php">COMPRAR</a></button>
         </div>
-        <button class="popup-button"><a href="paginaPremium.php">COMPRAR</a></button>
-    </div>
     </main>
 
     <footer id="tipo1">

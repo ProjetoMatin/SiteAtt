@@ -14,9 +14,9 @@
         <div class="divTop">
             <div class="logo">
                 <figure>
-                    <a href="index.php" class="linkLogo"><img src="../../IMG/logo.png" alt="Mat-in logo"></a>
+                    <a href="home.php" class="linkLogo"><img src="../../IMG/logo.png" alt="Mat-in logo"></a>
                 </figure>
-                <a href="index.php" class="linkLogo">
+                <a href="home.php" class="linkLogo">
                     <h1>Mat-in</h1>
                 </a>
             </div>
