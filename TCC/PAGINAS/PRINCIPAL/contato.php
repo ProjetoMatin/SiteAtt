@@ -11,7 +11,7 @@
 <body>
     <?php require_once '../../PAGINAS/PAGS-REP/header.php' ?>
     <main>
-        <h1 class="tit-pag">Contate-Nos:</h1>k
+        <h1 class="tit-pag">Contate-Nos:</h1>
         <div class="cards-encl">
             <div class="card"> <!-- Facebook -->
                 <div class="card-top"><img src="../../IMG/blue-fb.png" alt=""></div>

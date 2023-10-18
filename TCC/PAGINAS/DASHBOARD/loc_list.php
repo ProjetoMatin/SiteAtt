@@ -18,6 +18,8 @@
             <a href="?page=add_loc"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
 
+        <?php require_once '../AVISOS/avisos.php' ;?>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -30,46 +32,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>Rua 1</td>
-                    <td>Estácio</td>
-                    <td>Rio de Janeiro</td>
-                    <td>RJ</td>
-                    <td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>
-                </tr>
-                <tr>
-                    <td scope="row">2</td>
-                    <td>Rua 2</td>
-                    <td>Estácio</td>
-                    <td>Rio De Janeiro</td>
-                    <td>RJ</td>
-                    <td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>
-                </tr>
-                <tr>
-                    <td scope="row">3</td>
-                    <td>Rua 3</td>
-                    <td>Estácio</td>
-                    <td>Rio de Janeiro</td>
-                    <td>RJ</td>
-                    <td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>
-                </tr>
-                <tr>
-                    <td scope="row">4</td>
-                    <td>Rua dos Franceses</td>
-                    <td>São Paulo</td>
-                    <td>Bela Vista</td>
-                    <td>SP</td>
-                    <td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>
-                </tr>
-                <tr>
-                    <td scope="row">5</td>
-                    <td>Rua 5</td>
-                    <td>Estácio</td>
-                    <td>Rio de Janeiro</td>
-                    <td>RJ</td>
-                    <td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>
-                </tr>
+                <?php
+
+                $selectQ = "SELECT * FROM localidade ORDER BY idCep";
+                $selectP = $cx->prepare($selectQ);
+                $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                $selectP->execute();
+                $total = $selectP->rowCount();
+
+                if ($total == 0) {
+                    echo "<p class='txtVermelho'>Não há registros no momento...</p>";
+                } else {
+                    while ($dados = $selectP->fetch()) {
+                        echo "<tr>";
+                        echo "<td scope='row'>{$dados['idCep']}</td>";
+                        echo "<td>{$dados['logradouro']}</td>";
+                        echo "<td>{$dados['bairro']}</td>";
+                        echo "<td>{$dados['cidade']}</td>";
+                        echo "<td>{$dados['uf']}</td>";
+                        echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idCep']}&tbl=localidade''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
+                        echo "</tr>";
+                    }
+                }
+
+                ?>
             </tbody>
         </table>
     </div>

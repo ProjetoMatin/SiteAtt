@@ -267,7 +267,7 @@
         $ativo = $_REQUEST['ativo'] ?? '';
         $premium = $_REQUEST['premium'] ?? '';
         $telefoneInput = $_REQUEST['telefoneInput'] ?? '';
-        $fotoInput = $_REQUEST['fotoInput'] ?? '';
+        
         $TCIR = $_REQUEST['TCIR'] ?? '';
         $NRCIR = $_REQUEST['NRCIR'] ?? '';
         $logradouro = $_REQUEST['logradouro'] ?? '';

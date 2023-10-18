@@ -4,31 +4,35 @@ require_once '../BANCO/abrirBanco.php';
 
 $ref = $_REQUEST['ref'] ?? '';
 $tbl = $_REQUEST['tbl'] ?? '';
-echo $tbl;
-echo $ref;
+// echo $tbl;
+// echo $ref;
 
 if (!empty($ref) || !empty($tbl)) {
     switch ($tbl) {
         case 'localidade':
-            $selectQ = "SELECT * FROM localidade WHERE idCep = '$ref'";
+            // Verificar se há usuários vinculados a esta localidade
+            $selectQ = "SELECT COUNT(*) as userCount FROM usuario WHERE idCep = '$ref'";
             $selectP = $cx->prepare($selectQ);
             $selectP->execute();
-            $total = $selectP->rowCount();
+            $selectP = $selectP->fetch(PDO::FETCH_ASSOC);
+            $total = $selectP['userCount'];
 
-            if ($total != 1) {
-                header('Location: adminDash.php');
-                die();
+            if ($total > 0) {
+                // Há usuários vinculados a esta localidade, então não exclua
+                header("Location: adminDash.php?page=loc_list&aviso=6");
+                // echo "Não é possível excluir esta localidade. Existem usuários vinculados a ela.";
             } else {
+                // Não há usuários vinculados, então prossiga com a exclusão
                 $deleteQ = "DELETE FROM localidade WHERE idCep = '$ref'";
                 $deleteP = $cx->prepare($deleteQ);
                 try {
                     $cx->beginTransaction();
                     $deleteP->execute();
                     $cx->commit();
-                    header('Location: ../DASHBOARD/adminDash.php');
+                    header("Location: adminDash.php?page=loc_list&aviso=7");
                 } catch (PDOException $e) {
                     $cx->rollBack();
-                    $e->getMessage();
+                    header("Location: adminDash.php?page=loc_list&aviso=5");
                 }
             }
             break;

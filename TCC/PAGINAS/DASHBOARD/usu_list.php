@@ -18,6 +18,8 @@
             <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
 
+        <?php require_once '../AVISOS/avisos.php' ;?>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -29,25 +31,30 @@
                 </tr>
             </thead>
             <tbody>
-                <?php 
-                
+                <?php
+
                 $selectQ = "SELECT * FROM usuario ORDER BY idUsu";
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
                 $selectP->execute();
+                $total = $selectP->rowCount();
 
-                while($dados = $selectP->fetch()){
-                    echo "<tr>";
-                    echo "<td scope='row'>{$dados['idUsu']}</td>";
-                    echo "<td>{$dados['nomeUsu']}</td>";
-                    if($dados['ativo'] == 1){
-                        echo "<td class='txtVerde'>Ativo</td>";
-                    }else{
-                        echo "<td class='bloqueado'>Bloqueado</td>";
+                if ($total == 0) {
+                    echo "<p class='txtVermelho'>Não há registros no momento...</p>";
+                } else {
+                    while ($dados = $selectP->fetch()) {
+                        echo "<tr>";
+                        echo "<td scope='row'>{$dados['idUsu']}</td>";
+                        echo "<td>{$dados['nomeUsu']}</td>";
+                        if ($dados['ativo'] == 1) {
+                            echo "<td class='txtVerde'>Ativo</td>";
+                        } else {
+                            echo "<td class='bloqueado'>Bloqueado</td>";
+                        }
+                        echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
+                        echo "<td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>";
+                        echo "</tr>";
                     }
-                    echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
-                    echo "<td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>";
-                    echo "</tr>";
                 }
                 ?>
             </tbody>

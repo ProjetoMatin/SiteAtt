@@ -2,6 +2,11 @@ body{
     background-color: var(--bege) !important;
 }
 
+.container{
+    /* margin: 0 !important; */
+    max-width: 1410px !important;
+}
+
 hr{
     margin: 0 !important;
 }
@@ -45,7 +50,7 @@ h6 a{
     justify-content: space-between;
     margin-top: 30px;
     background-color: var(--branco);
-    width: 320px;
+    min-width: 300px;
     padding: 25px;
 }
 
@@ -139,15 +144,6 @@ table tr th, table tr td{
     border-bottom: 3px solid var(--cinza5);
     
 }
-
-/* .ativo, .emProc{
-    color: var(--azulClaro) !important;
-}
-
-.bloqueado, .Desistencia{
-    color: var(--vermelho) !important;
-} */
-
 .txtVermelho{
     color: var(--vermelho) !important;
 }
@@ -256,7 +252,8 @@ CONTEUDO2
 }
 
 .inputs-encl .input select{
-    padding: 15px;
+    padding: 13px;
+    margin-right: 15px;
     font-size: 1em;
 }
 
@@ -271,4 +268,17 @@ CONTEUDO2
 
 .inputs-encl .input input[type='submit']:active{
     transform: scale(0.9);
+}
+
+.nav-link{
+    color: var(--preto) !important;
+}
+.nav-link:hover{
+    color: var(--preto) !important;
+    border-bottom: none !important;
+}
+
+td a{
+    color: var(--preto) !important;
+    /* text-decoration: underline; */
 }

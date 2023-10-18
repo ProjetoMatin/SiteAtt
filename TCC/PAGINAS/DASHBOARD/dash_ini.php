@@ -1,4 +1,4 @@
-<div class="conteudo" id="conteudo1">
+<div class="container">
     <div class="info-tela">
         <h5>Painel</h5>
         <div class="local">
@@ -6,62 +6,71 @@
         </div>
     </div>
     <div class="card-encl">
-        <div class="cardS azul">
-            <div class="card-title">
-                <h6 class="azulT">Vendas Feitas</h6>
-                <h4>40</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="cardS azul">
+                    <div class="card-title">
+                        <h6 class="azulT">Vendas Feitas</h6>
+                        <h4>40</h4>
+                    </div>
+                    <div class="card-foto">
+                        <img src="../../IMG/down-arrow.png" alt="">
+                    </div>
+                    <!-- <hr> -->
+                </div>
             </div>
-            <div class="card-foto">
-                <img src="../../IMG/down-arrow.png" alt="">
-            </div>
-            <!-- <hr> -->
-        </div>
-        <div class="cardS vermelho">
-            <?php
+            <div class="col-md-3">
+                <div class="cardS vermelho">
+                    <?php
 
-            $selectQ = "SELECT * FROM usuario";
-            $selectP = $cx->prepare($selectQ);
-            $selectP->execute();
-            $total = $selectP->rowCount();
+                    $selectQ = "SELECT * FROM usuario";
+                    $selectP = $cx->prepare($selectQ);
+                    $selectP->execute();
+                    $total = $selectP->rowCount();
 
-            ?>
-            <div class="card-title">
-                <h6 class="vermelhoT">Usuarios Cadastrados</h6>
-                <?php echo "<h4>$total</h4>"; ?>
+                    ?>
+                    <div class="card-title">
+                        <h6 class="vermelhoT">Usuarios Cadastrados</h6>
+                        <?php echo "<h4>$total</h4>"; ?>
+                    </div>
+                    <div class="card-foto">
+                        <img src="../../IMG/folder.png" alt="">
+                    </div>
+                    <!-- <hr> -->
+                </div>
             </div>
-            <div class="card-foto">
-                <img src="../../IMG/folder.png" alt="">
-            </div>
-            <!-- <hr> -->
-        </div>
+            <div class="col-md-3">
+                <div class="cardS verde">
+                    <?php
 
-        <div class="cardS verde">
-            <?php
+                    $selectQ = "SELECT * FROM usuario WHERE premium = '1'";
+                    $selectP = $cx->prepare($selectQ);
+                    $selectP->execute();
+                    $total = $selectP->rowCount();
 
-            $selectQ = "SELECT * FROM usuario WHERE premium = '1'";
-            $selectP = $cx->prepare($selectQ);
-            $selectP->execute();
-            $total = $selectP->rowCount();
-
-            ?>
-            <div class="card-title">
-                <h6 class="verdeT">Contas Premium</h6>
-                <?php echo "<h4>$total</h4>"; ?>
+                    ?>
+                    <div class="card-title">
+                        <h6 class="verdeT">Contas Premium</h6>
+                        <?php echo "<h4>$total</h4>"; ?>
+                    </div>
+                    <div class="card-foto">
+                        <img src="../../IMG/coroaPremium.png" alt="" id="fotocard">
+                    </div>
+                    <!-- <hr> -->
+                </div>
             </div>
-            <div class="card-foto">
-                <img src="../../IMG/coroaPremium.png" alt="" id="fotocard">
+            <div class="col-md-3">
+                <div class="cardS laranja">
+                    <div class="card-title">
+                        <h6 class="laranjaT">Perguntas N.R</h6>
+                        <h4>40</h4>
+                    </div>
+                    <div class="card-foto">
+                        <img src="../../IMG/question-sign.png" alt="">
+                    </div>
+                    <!-- <hr> -->
+                </div>
             </div>
-            <!-- <hr> -->
-        </div>
-        <div class="cardS laranja">
-            <div class="card-title">
-                <h6 class="laranjaT">Perguntas N.R</h6>
-                <h4>40</h4>
-            </div>
-            <div class="card-foto">
-                <img src="../../IMG/question-sign.png" alt="">
-            </div>
-            <!-- <hr> -->
         </div>
     </div>
     <div class="listas">
@@ -142,15 +151,14 @@
                                     echo "<td>{$dados['nomeProd']}</td>";
                                     if ($dados['situacao'] == 'D') {
                                         echo "<td class='txtVermelho'>Desistência</td>";
-                                    } elseif ($dados['situacao'] == 'V'){
+                                    } elseif ($dados['situacao'] == 'V') {
                                         echo "<td class='txtVerde'>Vendido</td>";
-                                    }elseif ($dados['situacao'] == 'E'){
+                                    } elseif ($dados['situacao'] == 'E') {
                                         echo "<td class='txtAzul'>Em Processamento</td>";
                                     }
                                     echo "<td>R$ {$dados['precoProd']}</td>";
                                     echo "</tr>";
                                 }
-                            
                             }
                             ?>
                         </tbody>
