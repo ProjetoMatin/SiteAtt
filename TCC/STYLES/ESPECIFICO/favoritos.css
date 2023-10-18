@@ -30,7 +30,7 @@ main .fav-div .card{
     border: none;
     border-bottom: 1px solid var(--cinza4);
     border-radius: 0;
-    max-width: 620px;
+    max-width: 600px;
 }
 
 .col-md-4{
