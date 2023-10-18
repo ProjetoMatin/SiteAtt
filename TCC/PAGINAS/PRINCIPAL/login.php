@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <?php require_once '../BANCO/abrirBanco.php';?>
     <section class="imgLogin"></section>
     <main>
         <div class="divTop">
@@ -47,5 +48,25 @@
             </form>
         </div>
     </main>
+
+    <?php 
+    
+    $email = $_REQUEST['email'] ?? '';
+    $senha = $_REQUEST['senha'] ?? '';
+
+    if(!empty($email) || !empty($senha)){
+        $selectQ = "SELECT * FROM usuario WHERE emailUsu = :email AND senhaUsu = :senha";
+        $selectP = $cx->prepare($selectQ);
+        $selectP->bindParam(':email', $email);
+        $selectP->bindParam(':senha', $senha);
+        $selectP->execute();
+        $total = $selectP->rowCount();
+
+        if($total == 0){
+            
+        }
+    }
+    
+    ?>
 </body>
 </html>

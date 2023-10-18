@@ -255,10 +255,6 @@
             </div>
         </div>
 
-        <div class="content" id="content8">
-            CU XERECA PEIDO BUNDA
-        </div>
-
     </main>
 
     <?php

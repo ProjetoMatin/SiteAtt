@@ -7,7 +7,7 @@
     .sidebar {
         background-color: var(--pretoAzulado);
         padding-bottom: 20px;
-        height: 92vh;
+        height: 100vh;
     }
 
     #offcanvasScrollingLabel {
@@ -61,11 +61,11 @@
 <div class="sidebar">
     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../../IMG/botao-de-menu.png" alt=""></button>
 
-    <button class="btn" type="button" onclick="return mostrarConteudo(1)"><img src="../../IMG/computador-portatil.png" alt=""></button>
+    <a href="?page=dash_ini"><button class="btn" type="button"><img src="../../IMG/computador-portatil.png" alt=""></button></a>
 
-    <button class="btn" type="button" onclick="return mostrarConteudo(2)"><img src="../../IMG/grupo-de-usuarios.png" alt=""></button>
+    <a href="?page=usu_list"><button class="btn" type="button"><img src="../../IMG/grupo-de-usuarios.png" alt=""></button></a>
 
-    <button class="btn" type="button" onclick="return mostrarConteudo(3)"><img src="../../IMG/local.png" alt=""></button>
+    <a href="?page=loc_list"><button class="btn" type="button"><img src="../../IMG/local.png" alt=""></button></a>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
@@ -75,23 +75,29 @@
 
         <div class="offcanvas-body">
             <div class="btnoffcanvas">
-                <button class="btn doffcanvas" type="button" onclick="return mostrarConteudo(1)"><img src=" ../../IMG/computador-portatil.png" alt="">
-                    <h6>Inicio</h6>
-                </button>
+                <a href="?page=dash_ini">
+                    <button class="btn doffcanvas" type="button"><img src=" ../../IMG/computador-portatil.png" alt="">
+                        <h6>Inicio</h6>
+                    </button>
+                </a>
 
             </div>
 
             <div class="btnoffcanvas">
-                <button class="btn doffcanvas" type="button" onclick="return mostrarConteudo(2)"><img src=" ../../IMG/grupo-de-usuarios.png" alt="">
-                    <h6>Usuarios</h6>
-                </button>
+                <a href="?page=usu_list">
+                    <button class="btn doffcanvas" type="button"><img src=" ../../IMG/grupo-de-usuarios.png" alt="">
+                        <h6>Usuarios</h6>
+                    </button>
+                </a>
 
             </div>
 
             <div class="btnoffcanvas">
-                <button class="btn doffcanvas" type="button" onclick="return mostrarConteudo(3)"><img src=" ../../IMG/local.png" alt="">
-                    <h6>Localizações</h6>
-                </button>
+                <a href="?page=loc_list">
+                    <button class="btn doffcanvas" type="button"><img src=" ../../IMG/local.png" alt="">
+                        <h6>Localizações</h6>
+                    </button>
+                </a>
 
             </div>
         </div>
