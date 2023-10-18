@@ -140,12 +140,24 @@ table tr th, table tr td{
     
 }
 
-.ativo, .emProc{
+/* .ativo, .emProc{
     color: var(--azulClaro) !important;
 }
 
 .bloqueado, .Desistencia{
     color: var(--vermelho) !important;
+} */
+
+.txtVermelho{
+    color: var(--vermelho) !important;
+}
+
+.txtVerde{
+    color: var(--verdeescuroTabela3) !important;
+}
+
+.txtAzul{
+    color: var(--azulClaro) !important;
 }
 
 /* 

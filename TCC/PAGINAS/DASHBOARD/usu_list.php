@@ -41,7 +41,7 @@
                     echo "<td scope='row'>{$dados['idUsu']}</td>";
                     echo "<td>{$dados['nomeUsu']}</td>";
                     if($dados['ativo'] == 1){
-                        echo "<td class='ativo'>Ativo</td>";
+                        echo "<td class='txtVerde'>Ativo</td>";
                     }else{
                         echo "<td class='bloqueado'>Bloqueado</td>";
                     }

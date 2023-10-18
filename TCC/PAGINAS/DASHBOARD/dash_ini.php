@@ -90,16 +90,16 @@
                             $total = $selectP->rowCount();
 
                             if ($total == 0) {
-                                echo "<p class='bloqueado'>Não há registros no momento...</p>";
+                                echo "<p class='txtVermelho'>Não há registros no momento...</p>";
                             } else {
                                 while ($dados = $selectP->fetch()) {
                                     echo "<tr>";
                                     echo "<td scope='row'>{$dados['idUsu']}</td>";
                                     echo "<td>{$dados['nomeUsu']}</td>";
                                     if ($dados['ativo'] == 1) {
-                                        echo "<td class='ativo'>Ativo</td>";
+                                        echo "<td class='txtVerde'>Ativo</td>";
                                     } else {
-                                        echo "<td class='bloqueado'>Bloqueado</td>";
+                                        echo "<td class='txtVermelho'>Bloqueado</td>";
                                     }
                                     echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
                                     echo "</tr>";
@@ -118,43 +118,41 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Nº</th>
-                                <th scope="col">Nome</th>
+                                <th scope="col">Pedido</th>
+                                <th scope="col">Produto</th>
                                 <th scope="col">Situação</th>
                                 <th scope="col">Preço</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row">1</td>
-                                <td>Banana Prata</td>
-                                <td class="emProc">Em processamento</td>
-                                <td>R$20,90</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">2</td>
-                                <td>Maracujá</td>
-                                <td class="emProc">Em processamento</td>
-                                <td>R$15,20</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">3</td>
-                                <td>Maçã</td>
-                                <td class="Desistencia">Desistencia</td>
-                                <td>R$10,00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">4</td>
-                                <td>Kiwí</td>
-                                <td class="Desistencia">Desistencia</td>
-                                <td>R$10,00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">5</td>
-                                <td>Manga</td>
-                                <td class="Desistencia">Desistencia</td>
-                                <td>R$10,00</td>
-                            </tr>
+                            <?php
+
+                            $selectP = "SELECT pr.nomeProd, pr.precoProd, pe.idPed, pe.situacao FROM produto pr INNER JOIN pedido pe ON pr.idPed = pe.idPed ORDER BY idProd DESC LIMIT 5";
+                            $selectP = $cx->prepare($selectP);
+                            $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                            $selectP->execute();
+                            $total = $selectP->rowCount();
+
+                            if ($total == 0) {
+                                echo "<p class='txtVermelho'>Não há registros no momento...</p>";
+                            } else {
+                                while ($dados = $selectP->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td scope='row'>{$dados['idPed']}</td>";
+                                    echo "<td>{$dados['nomeProd']}</td>";
+                                    if ($dados['situacao'] == 'D') {
+                                        echo "<td class='txtVermelho'>Desistência</td>";
+                                    } elseif ($dados['situacao'] == 'V'){
+                                        echo "<td class='txtVerde'>Vendido</td>";
+                                    }elseif ($dados['situacao'] == 'E'){
+                                        echo "<td class='txtAzul'>Em Processamento</td>";
+                                    }
+                                    echo "<td>R$ {$dados['precoProd']}</td>";
+                                    echo "</tr>";
+                                }
+                            
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
