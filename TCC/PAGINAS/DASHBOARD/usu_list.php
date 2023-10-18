@@ -49,10 +49,10 @@
                         if ($dados['ativo'] == 1) {
                             echo "<td class='txtVerde'>Ativo</td>";
                         } else {
-                            echo "<td class='bloqueado'>Bloqueado</td>";
+                            echo "<td class='txtVermelho'>Bloqueado</td>";
                         }
                         echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
-                        echo "<td>&#x1F4DD; Editar &#x274C; Apagar &#x2714; Visualizar</td>";
+                        echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idUsu']}&tbl=usuario''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
                         echo "</tr>";
                     }
                 }

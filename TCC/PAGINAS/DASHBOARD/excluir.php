@@ -37,7 +37,7 @@ if (!empty($ref) || !empty($tbl)) {
             }
             break;
         case 'usuario':
-            echo ' dentro do case';
+            // echo ' dentro do case';
             $selectQ = "SELECT * FROM usuario WHERE idUsu = '$ref'";
             $selectP = $cx->prepare($selectQ);
             $selectP->execute();
@@ -47,19 +47,21 @@ if (!empty($ref) || !empty($tbl)) {
                 header('Location: ../DASHBOARD/adminDash.php');
                 die();
             } else {
-                echo ' dentro do else';
+                // echo ' dentro do else';
                 $deleteQ = "DELETE FROM usuario WHERE idUsu = '$ref'";
                 $deleteP = $cx->prepare($deleteQ);
                 try {
-                    echo ' dentro do try';
+                    // echo ' dentro do try';
                     $cx->beginTransaction();
                     $deleteP->execute();
                     $cx->commit();
                     header('Location: ../DASHBOARD/adminDash.php');
+                    header("Location: adminDash.php?page=usu_list&aviso=7");
                 } catch (PDOException $e) {
-                    echo ' caí no catch';
+                    // echo ' caí no catch';
                     $cx->rollBack();
                     $e->getMessage();
+                    header("Location: adminDash.php?page=usu_list&aviso=5");
                 }
             }
             break;
