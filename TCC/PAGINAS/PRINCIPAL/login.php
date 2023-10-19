@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="formulario">
-            <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+            <form action="home.php" method="post">
                 <div class="formInputs">
                     <label for="email">E-mail</label>
                     <div class="campo">

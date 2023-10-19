@@ -59,7 +59,7 @@
                 </figure>
                 <h1>Yuri Esteves</h1>
                 <figure id="logo">
-                    <img src="../../IMG/logo.png" alt="">
+                    <img src="../../IMG/coroaPremium.png" alt="">
                 </figure>
                 <p>Vendedor <strong>Premium</strong></p>
             </div>
@@ -91,7 +91,7 @@
                 </figure>
                 <h1>Yuri Esteves</h1>
                 <figure id="logo">
-                    <img src="../../IMG/logo.png" alt="">
+                    <img src="../../IMG/coroaPremium.png" alt="">
                 </figure>
                 <p>Vendedor <strong>Premium</strong></p>
             </div>
@@ -121,7 +121,7 @@
                     <h1>Osiris Nóbrega</h1>
                     <div class="info-user-nomefoto">
                         <p>Usuario <strong>Premium</strong></p>
-                        <img src="../../IMG/logo.png" alt="">
+                        <img src="../../IMG/coroaPremium.png" alt="">
                     </div>
 
                 </div>

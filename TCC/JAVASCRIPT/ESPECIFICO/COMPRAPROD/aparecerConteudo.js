@@ -47,13 +47,16 @@ function conteudo(cont) {
                 <div class="aval-encl">
                     <div class="avaliacao">
                         <div class="estr-data">
-                            <figure>
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                            </figure>
+                            <div class="estrelas">
+                                <figure>
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                </figure>
+                                <p>5.0</p>
+                            </div>
                             <p>11/04/2023</p>
                         </div>
                         <h1>Nome do Usuário</h1>
@@ -83,13 +86,16 @@ function conteudo(cont) {
 
                     <div class="avaliacao">
                         <div class="estr-data">
-                            <figure>
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                            </figure>
+                            <div class="estrelas">
+                                <figure>
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                </figure>
+                                <p>5.0</p>
+                            </div>
                             <p>11/04/2023</p>
                         </div>
                         <h1>Nome do Usuário</h1>
@@ -119,13 +125,16 @@ function conteudo(cont) {
 
                     <div class="avaliacao">
                         <div class="estr-data">
-                            <figure>
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                                <img src="../../IMG/estrela.png" alt="">
-                            </figure>
+                            <div class="estrelas">
+                                <figure>
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                    <img src="../../IMG/estrela.png" alt="">
+                                </figure>
+                                <p>5.0</p>
+                            </div>
                             <p>11/04/2023</p>
                         </div>
                         <h1>Nome do Usuário</h1>

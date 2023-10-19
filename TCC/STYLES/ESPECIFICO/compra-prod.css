@@ -197,7 +197,12 @@ section .info-Vend .info-encl figure img, section .melhor-Av .info-user-encl .in
     border-radius: 50%;
 }
 
-section .info-Vend .info-encl #logo img, section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
+section .info-Vend .info-encl #logo img{
+    width: 30px;
+    margin: 0 5px 0 20px;
+}
+
+section .melhor-Av .info-user-encl .info-user .info-user-nomefoto img{
     background-color: var(--preto);
     width: 30px;
     margin-left: 20px;
@@ -418,6 +423,15 @@ AVALIAÇÕES
 
 .info-add .aval-encl .avaliacao .info-adic .likeDeslike .invertido{
     rotate: 180deg;
+}
+
+.estrelas{
+    display: flex;
+    align-items: center;
+}
+
+.estrelas p{
+    margin-left: 10px;
 }
 
 /* 
