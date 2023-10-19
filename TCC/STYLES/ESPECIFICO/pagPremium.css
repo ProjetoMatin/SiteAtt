@@ -18,13 +18,13 @@
 .figure-img-principal {
     width: 150px;
     height: 150px;
-    background-color: var(--preto);
+    /* background-color: var(--preto); */
     border-radius: 50%;
 }
 
 .figure-img-principal img{
     width: 100%;
-    rotate: 45deg;
+    /* rotate: 45deg; */
 }
 
 .preco-premium label {

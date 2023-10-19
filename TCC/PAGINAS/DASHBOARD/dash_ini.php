@@ -9,6 +9,15 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="cardS azul">
+
+                    <?php
+
+                    // $selectQ = "SELECT qntVendas from produto";
+                    // $selectP = $cx->prepare($selectQ);
+                    // $selectP->execute();
+                    // $total = $selectP->rowCount();
+
+                    ?>
                     <div class="card-title">
                         <h6 class="azulT">Vendas Feitas</h6>
                         <h4>40</h4>
@@ -155,6 +164,8 @@
                                         echo "<td class='txtVerde'>Vendido</td>";
                                     } elseif ($dados['situacao'] == 'E') {
                                         echo "<td class='txtAzul'>Em Processamento</td>";
+                                    } elseif ($dados['situacao'] == 'DI') {
+                                        echo "<td class='txtVerde'>Disponivel</td>";
                                     }
                                     echo "<td>R$ {$dados['precoProd']}</td>";
                                     echo "</tr>";

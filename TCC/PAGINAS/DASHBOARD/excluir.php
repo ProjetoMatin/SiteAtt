@@ -44,7 +44,7 @@ if (!empty($ref) || !empty($tbl)) {
             $total = $selectP->rowCount();
 
             if ($total != 1) {
-                header('Location: ../DASHBOARD/adminDash.php');
+                header('Location: ../DASHBOARD/adminDash.php?page=dash_ini');
                 die();
             } else {
                 // echo ' dentro do else';
@@ -55,7 +55,6 @@ if (!empty($ref) || !empty($tbl)) {
                     $cx->beginTransaction();
                     $deleteP->execute();
                     $cx->commit();
-                    header('Location: ../DASHBOARD/adminDash.php');
                     header("Location: adminDash.php?page=usu_list&aviso=7");
                 } catch (PDOException $e) {
                     // echo ' caí no catch';
@@ -65,9 +64,37 @@ if (!empty($ref) || !empty($tbl)) {
                 }
             }
             break;
+        case 'produto':
+            $selectQ = "SELECT * FROM produto WHERE idProd = '$ref'";
+            $selectP = $cx->prepare($selectQ);
+            $selectP->execute();
+            $total = $selectP->rowCount();
+
+            if ($total != 1) {
+                header('Location: ../DASHBOARD/adminDash.php?page=dash_ini');
+                die();
+            } else {
+                // echo ' dentro do else';
+                $deleteQ = "DELETE FROM produto WHERE idProd = '$ref'";
+                $deleteP = $cx->prepare($deleteQ);
+                try {
+                    // echo ' dentro do try';
+                    $cx->beginTransaction();
+                    $deleteP->execute();
+                    $cx->commit();
+                    header('Location: ../DASHBOARD/adminDash.php?page=dash_ini');
+                    header("Location: adminDash.php?page=prod_list&aviso=7");
+                } catch (PDOException $e) {
+                    // echo ' caí no catch';
+                    $cx->rollBack();
+                    $e->getMessage();
+                    header("Location: adminDash.php?page=prod_list&aviso=5");
+                }
+            }
+            break;
     }
 } else {
-    header('Location: ../DASHBOARD/adminDash.php');
+    header('Location: ../DASHBOARD/adminDash.php?page=dash_ini');
 }
 
 require_once '../BANCO/fecharBanco.php';

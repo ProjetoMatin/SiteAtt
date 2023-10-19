@@ -56,7 +56,7 @@
             <figure>
                 <img src='../../IMG/admin-icon-branco.png' alt=''>
             </figure>
-            <a href='../DASHBOARD/adminDash.php'>
+            <a href='../DASHBOARD/adminDash.php?page=dash_ini'>
                 <p>Admin</p>
             </a>
         </a>

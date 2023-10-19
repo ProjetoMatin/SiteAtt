@@ -16,11 +16,20 @@ if (isset($_REQUEST['page'])) {
             require_once '../DASHBOARD/loc_list.php';
             break;
 
-        case 'add_usu';
+        case 'add_usu':
             require_once '../DASHBOARD/add_usu.php';
             break;
-        case 'add_loc';
+
+        case 'add_loc':
             require_once '../DASHBOARD/add_loc.php';
+            break;
+
+        case 'prod_list':
+            require_once '../DASHBOARD/prod_list.php';
+            break;
+
+        case 'add_prod':
+            require_once '../DASHBOARD/add_prod.php';
             break;
     }
 }

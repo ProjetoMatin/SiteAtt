@@ -67,6 +67,8 @@
 
     <a href="?page=loc_list"><button class="btn" type="button"><img src="../../IMG/local.png" alt=""></button></a>
 
+    <a href="?page=prod_list"><button class="btn" type="button"><img src="../../IMG/caixa.png" alt=""></button></a>
+
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu</h5>
@@ -96,6 +98,14 @@
                 <a href="?page=loc_list">
                     <button class="btn doffcanvas" type="button"><img src=" ../../IMG/local.png" alt="">
                         <h6>Localizações</h6>
+                    </button>
+                </a>
+            </div>
+
+            <div class="btnoffcanvas">
+                <a href="?page=prod_list">
+                    <button class="btn doffcanvas" type="button"><img src=" ../../IMG/caixa.png" alt="">
+                        <h6>Produtos</h6>
                     </button>
                 </a>
 

@@ -28,7 +28,7 @@
                 <p class="termos">Ao assinar, você concorda com os <u>Termos e condições da empresa.</u> Você pode cancelar quando quiser.</p>
             </div>
             <figure class="figure-img-principal">
-                <img src="../../IMG/logo.png" alt="" class="img-principal">
+                <img src="../../IMG/coroaPremium.png" alt="" class="img-principal">
             </figure>
         </div>
         <div class="beneficios-premium">
