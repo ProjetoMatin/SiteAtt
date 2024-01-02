@@ -1,0 +1,50 @@
+
+p{
+    margin: 0 !important;
+}
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 30%; /* Ajuste a altura do gradiente */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); /* Gradiente transparente-branco */
+    pointer-events: none; /* Garante que o evento de clique passe através do overlay */
+}
+
+.cards-encl{
+    display: flex;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+.card{
+    width: 15rem !important;
+    padding: 5px;
+}
+
+.card .card-body h5{
+    text-align: center;
+}
+
+.card .card-body img{
+    display: block;
+    margin: 20px auto !important;
+    width: 115px;
+    height: 79px;
+}
+
+.card .card-body .precos .precoAntigo{
+    text-decoration: line-through;
+    margin-top: 16px !important;
+}
+
+.card .card-body .precos .preco-Promocao{
+    display: flex;
+    margin-bottom: 16px !important;
+}
+
+.card .card-body .precos .preco-Promocao .promocao{
+    color: var(--verde00);
+}
