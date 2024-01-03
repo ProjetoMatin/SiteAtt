@@ -1,15 +1,20 @@
-
 p{
     margin: 0 !important;
 }
+
+main{
+    background-color: var(--bege00);
+    padding-bottom: 50px;
+}
+
 .carousel-item::after {
     content: "";
     position: absolute;
-    top: 30%; /* Ajuste a altura do gradiente */
+    top: 20%; /* Ajuste a altura do gradiente */
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); /* Gradiente transparente-branco */
+    background: linear-gradient(rgba(255, 255, 255, 0), var(--bege00)); /* Gradiente transparente-branco */
     pointer-events: none; /* Garante que o evento de clique passe através do overlay */
 }
 
@@ -17,34 +22,225 @@ p{
     display: flex;
     justify-content: center;
     margin-top: -150px;
+    gap: 20px !important;
+
 }
 
 .card{
-    width: 15rem !important;
-    padding: 5px;
+    width: 12rem !important;
+}
+
+.no-photo .card-text{
+    margin-top: 12rem !important;
+    font-size: 1.2em;
+}
+
+.no-photo .card-body .btnCard{
+    width: 100%;
+    border: 0;
+    background-color: var(--bege01);
+    outline: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--verde00);
+}
+
+.card:hover .btnCard{
+    background-color: var(--verde00);
+    color: var(--branco00);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card .card-body h5{
     text-align: center;
+    font-size: 1.2em;
+}
+
+.img-coracao{
+    display: flex;
+    justify-content: center !important;
+    margin: 20px 0;
 }
 
 .card .card-body img{
     display: block;
-    margin: 20px auto !important;
     width: 115px;
     height: 79px;
 }
 
-.card .card-body .precos .precoAntigo{
+.card .card-body .precos .precoAntigo, .card-ofertas .card-body .precos .precoAntigo{
     text-decoration: line-through;
-    margin-top: 16px !important;
+    margin-top: 10px !important;
+    font-size: 0.9em;
 }
 
-.card .card-body .precos .preco-Promocao{
+.card .card-body .precos .preco-Promocao, .card-ofertas .card-body .precos .preco-Promocao{
     display: flex;
-    margin-bottom: 16px !important;
+    margin-bottom: 10px !important;
 }
 
-.card .card-body .precos .preco-Promocao .promocao{
-    color: var(--verde00);
+.card .card-body .precos .preco-Promocao .promocao, .card-ofertas .card-body .precos .preco-Promocao .promocao{
+    color: var(--verde00) !important;
+    font-size: 0.9em;
+    margin-left: 5px !important;
+}
+
+.card .card-body p mark{
+    color: var(--verde00) !important;
+    font-size: 0.9em;
+    background-color: transparent;
+}
+
+/*
+
+SECTION 1
+
+*/
+
+.tituloSection{
+    font-size: 1.4em;
+    margin-bottom: 30px !important;
+}
+
+section{
+    padding: 30px;
+}
+
+.categorias .cards-encl-categoria{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.categorias .card-text{
+    text-align: center;
+}
+
+.cards-encl-categoria .card-categorias{
+    width: 270px !important;
+    height: 360px !important;
+    box-shadow: 2px 3px 10px #8a8887;
+    padding: 15px;
+    background-color: var(--branco00);
+}
+
+/*
+
+SECTION 2
+
+*/
+
+.ofertas{
+    background-color: var(--bege00);
+}
+
+section .cards-encl-ofertas{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+    
+}
+
+section .cards-encl-ofertas .card-ofertas{
+    width: 270px !important;
+    height: 410px !important;
+    box-shadow: 2px 3px 10px #8a8887;
+    padding: 15px;
+    background-color: var(--branco00);
+}
+
+section .cards-encl-ofertas .card-ofertas .img-coracao, .cards-encl-categoria .card-categorias .img-coracao{
+    display: flex;
+}
+
+section .cards-encl-ofertas .card-ofertas .img-comida, .cards-encl-categoria .card-categorias .img-comida{
+    width: 220px !important;
+    height: 150px !important;
+}
+
+section .cards-encl-ofertas .card-ofertas button, .cards-encl-categoria .card-categorias button{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    height: 25px;
+}
+
+section .cards-encl-ofertas .card-ofertas .coracaoimg, .cards-encl-categoria .card-categorias .coracaoimg{
+    width: 25px;
+    height: 25px;
+    margin: 0 !important;
+}
+
+section .cards-encl-ofertas .card-ofertas .bottomcard-encl, .cards-encl-categoria .card-categorias .bottomcard-encl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .cards-encl-ofertas .card-ofertas .bottomcard-encl .estrelas, .cards-encl-categoria .card-categorias .bottomcard-encl .estrelas{
+    display: flex;
+    align-items: center;
+}
+
+section .cards-encl-ofertas .card-ofertas .bottomcard-encl .estrelas img, .cards-encl-categoria .card-categorias .bottomcard-encl .estrelas img{
+    width: 20px;
+    height: 20px;
+}
+
+section .cards-encl-ofertas .card-ofertas .bottomcard-encl p, .cards-encl-categoria .card-categorias .bottomcard-encl p{
+    font-size: 0.9em;
+}
+
+section .cards-encl-ofertas .card-ofertas .comprarBtn, .cards-encl-categoria .card-categorias .comprarBtn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    background-color: var(--preto00);
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--branco00);
+}
+
+section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .card-categorias button img{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px !important;
+}
+
+.setas{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.setas button{
+    border: none;
+    background-color: transparent;
+}
+
+.setas .setaEsquerda, .setas .setaDireita{
+    display: flex;
+    align-items: center;
+}
+
+.setaDireita p{
+    margin-right: 10px !important;
+    font-size: 1.2em;
+}
+
+.setaEsquerda p{
+    margin-left: 10px !important;
+    font-size: 1.2em;
+}
+
+.lifted, .lifted-ofertas {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.card, .card-ofertas {
+    transition: transform 0.3s ease; /* Define a mesma transição para o estado normal */
 }
