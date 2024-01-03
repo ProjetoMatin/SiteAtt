@@ -20,7 +20,7 @@
     }
 
     header .logo img {
-        width: 55px;
+        width: 45px;
     }
 
     header .search-inp {
@@ -110,7 +110,7 @@
 </style>
 <header>
     <div class="logo">
-        <img src="IMAGES/logo.png" alt="logo Mat-in">
+        <img src="../logos-projeto/png/logo_novo/matin-logo-png.png" alt="logo Mat-in">
 
         <h1>Mat-in</h1>
     </div>
