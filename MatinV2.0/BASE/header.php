@@ -1,11 +1,4 @@
 <style>
-    h1,
-    img,
-    ul,
-    figure,
-    .mb-3 {
-        margin: 0 !important;
-    }
 
     header {
         display: flex;
@@ -20,7 +13,8 @@
     }
 
     header .logo img {
-        width: 55px;
+        width: 40px;
+        margin-right: 10px !important;
     }
 
     header .search-inp {
@@ -110,7 +104,7 @@
 </style>
 <header>
     <div class="logo">
-        <img src="IMAGES/logo.png" alt="logo Mat-in">
+        <img src="IMAGES/matin-logo-png.png" alt="logo Mat-in">
 
         <h1>Mat-in</h1>
     </div>
@@ -125,10 +119,10 @@
 
     <div class="info">
         <ul>
-            <li><img src="IMAGES/user.png" alt=""></li>
+            <li><a href="PAGES/loginUsu.php"><img src="IMAGES/user.png" alt=""></a></li>
             <li><img src="IMAGES/heart.png" alt=""></li>
             <li><img src="IMAGES/shoppingcart.png" alt=""></li>
-            <li><img src="IMAGES/headphones.png" alt=""></li>
+            <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones.png" alt=""></a></li>
         </ul>
     </div>
 </header>
