@@ -143,7 +143,7 @@
             </div>
         </div>
 
-        <div class="chat">
+        <div class="chat chat-container">
             <div class="chat-top">
                 <img src="../IMAGES/pessoaChat.jpg" alt="">
                 <div class="txt-info">
@@ -153,41 +153,26 @@
             </div>
             <hr>
 
-            <div class="mensagens-encl">
-                <div class="mensagem laranja">
-                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat impedit, fugit provident accusantium non veniam doloremque odio accusamus labore.</span></p>
-                </div>
+            <div class="mensagens-encl" style="flex-grow: 1;">
+                <div class="mensagem">
 
-                <div class="mensagem laranja">
-                    <p><span>Lorem ipsum dolor sit amet?</span></p>
-                </div>
-
-                <div class="mensagem branco">
-                    <p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, iure.</span></p>
-                </div>
-
-                <div class="mensagem laranja">
-                    <p><span>Lorem, ipsum.</span></p>
-                </div>
-
-                <div class="mensagem branco">
-                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint architecto rerum culpa maxime deleniti laudantium aspernatur quos sit commodi modi.</span></p>
-                </div>
-
-                <div class="mensagem branco">
-                    <p><span>Lorem ipsum dolor sit amet.</span></p>
                 </div>
             </div>
 
             <div class="caixa-texto">
-                <div class="input-group mb-3">
-                    <span class="input-group-text"><img src="../IMAGES/plus.png" alt=""></span>
-                    <input type="text" class="form-control" aria-label="" placeholder="Digite sua mensagem">
-                    <span class="input-group-text"><img src="../IMAGES/Vector (3).png" alt=""></span>
-                    <span class="input-group-text"><img src="../IMAGES/arrow-right.png" alt="" style="width: 38px;"></span>
-                </div>
+                <form onsubmit="sendMessage(event)">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><img src="../IMAGES/plus.png" alt=""></span>
+                        <input type="text" class="form-control" aria-label="" id="user-msg" placeholder="Digite sua mensagem">
+                        <span class="input-group-text"><img src="../IMAGES/Vector (3).png" alt=""></span>
+                        <button type="submit" ><span class="input-group-text"><img src="../IMAGES/arrow-right.png" alt="" style="width: 38px;"></span></button>
+                    </div>
+                </form>
             </div>
         </div>
+
+        <!-- MODAL -->
+
         <div class="modal fade" id="mensagemModal" tabindex="-1" aria-labelledby="mensagemModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -207,6 +192,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>
 
     <script>
         $(document).ready(function() {

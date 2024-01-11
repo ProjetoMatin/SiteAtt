@@ -142,6 +142,13 @@ CHAT
     padding: 20px;
 }
 
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Garante que o contêiner ocupa 100% da altura da viewport */
+}
+
+
 .chat .chat-top{
     display: flex;
     align-items: center;
