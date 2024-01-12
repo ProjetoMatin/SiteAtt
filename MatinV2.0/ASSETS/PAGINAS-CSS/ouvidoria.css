@@ -74,9 +74,14 @@ main .cards-encl{
     max-height: 70vh;
 }
 
+main .cards-encl button{
+    background-color: transparent;
+}
+
 main .cards-encl .card{
     width: 85%;
-    margin: 15px;
+    margin: 15px auto;
+    /* margin: auto; */
     padding: 0 10px 10px 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -92,7 +97,7 @@ main .cards-encl .card .groupTBT{
     align-items: center;
 }
 
-main .cards-encl .card .groupTBT img{
+main .cards-encl .card .groupTBT img, main .cards-encl .card .verificado img{
     border-radius: 50%;
 }
 
@@ -100,17 +105,19 @@ main .cards-encl .card .groupTBT h5{
     margin-left: 10px !important;
 }
 
-main .cards-encl .card .groupTBT h6{
-    margin-right: 10px !important;
-    color: var(--cinza01) !important;
-}
-
-main .cards-encl .card .card-text{
+main .cards-encl .card .card-text, main .cards-encl .card .card-subtext{
     color: var(--cinza01) !important;
 }
 
 main .cards-encl .card .verificado{
+    display: flex;
+    align-items: center;
     margin: 10px 0;
+}
+
+main .cards-encl .card .verificado h6{
+    margin-right: 10px !important;
+    color: var(--cinza01) !important;
 }
 
 .premium{

@@ -44,6 +44,14 @@
         background-color: var(--branco00) !important;
         color: var(--preto00) !important;
     }
+
+    header .usuario .dropdown-menu .dropdown-item button{
+        background-color: transparent !important;
+    }
+    
+    header .usuario .dropdown-menu .dropdown-item button:active{
+        color: var(--branco00) !important;
+    }
 </style>
 
 <header>
@@ -57,15 +65,17 @@
     <div class="usuario">
         <img src="../IMAGES/login-icon.png" alt="">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" id="nomeUsuario" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Nome do Usuário
             </button>
 
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
                 <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                <li><a class="dropdown-item" href="#">Sair</a></li>
+                <li><a class="dropdown-item" href="#" id="logoutButton">Sair</a></li>
             </ul>
         </div>
     </div>
 </header>
+
+<script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>

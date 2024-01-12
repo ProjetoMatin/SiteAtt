@@ -1,5 +1,4 @@
 <style>
-
     header {
         display: flex;
         justify-content: space-between;
@@ -10,6 +9,7 @@
     header .logo {
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
 
     header .logo img {
@@ -61,45 +61,69 @@
         /* background-color: orange; */
     }
 
-    nav .ul_menus, nav .info_add {
+    nav .ul_menus,
+    nav .info_add {
         display: flex;
         align-items: center;
         list-style: none;
         padding: 0 !important;
     }
 
-    nav .ul_menus li, nav .info_add li {
+    nav .ul_menus li,
+    nav .info_add li {
         padding: 0 15px;
 
     }
 
-    nav .ul_menus li .dropdown button {
+    .dropdown button {
         background-color: var(--branco00);
         border: 0;
         color: var(--preto00);
         font-weight: bold;
     }
 
-    nav .ul_menus li .dropdown button:hover,
-    nav .ul_menus li .dropdown button:focus,
-    nav .ul_menus li .dropdown button:active {
+    .dropdown button:hover,
+    .dropdown button:focus,
+    .dropdown button:active {
         background-color: var(--branco00) !important;
         color: var(--preto00) !important;
     }
 
-    nav .ul_menus li a, nav .info_add li a {
+    nav .ul_menus li a,
+    nav .info_add li a {
         color: var(--preto00);
         font-weight: bold;
         text-decoration: none;
     }
 
-    nav .info_add, nav .info_add .redes_soc a{
+    nav .info_add,
+    nav .info_add .redes_soc a {
         display: flex;
         align-items: center;
     }
 
-    nav .info_add .redes_soc a div{
+    nav .info_add .redes_soc a div {
         margin-left: 15px;
+    }
+
+    nav .appAcesso {
+        transition: color 0.1s ease-in-out;
+    }
+
+    nav .appAcesso:hover {
+        color: var(--verde00);
+    }
+
+    nav .navBarItens {
+        transition: color 0.1s ease-in-out !important;
+    }
+
+    nav .navBarItens:hover {
+        color: var(--laranja00) !important;
+    }
+
+    .input-group {
+        margin-bottom: 0px !important;
     }
 </style>
 <header>
@@ -119,7 +143,10 @@
 
     <div class="info">
         <ul>
-            <li><a href="PAGES/loginUsu.php"><img src="IMAGES/user.png" alt=""></a></li>
+            <li><a href="index.php?page=perfil"><img src="IMAGES/user.png" alt=""></a></li>
+            <!-- <form action="" method="post">
+                <li><button name="perfilPage" style="background-color: transparent;"><img src="IMAGES/user.png" alt=""></button></li>
+            </form> -->
             <li><img src="IMAGES/heart.png" alt=""></li>
             <li><img src="IMAGES/shoppingcart.png" alt=""></li>
             <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones.png" alt=""></a></li>
@@ -127,11 +154,11 @@
     </div>
 </header>
 
-<nav>
+<nav class="navbar">
     <ul class="ul_menus">
         <li>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="navBarItens btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorias
                 </button>
 
@@ -143,13 +170,13 @@
             </div>
         </li>
 
-        <li><a href="#">Ofertas do Dia</a></li>
-        <li><a href="#">Mais Vendidos</a></li>
-        <li><a href="#">Novidades</a></li>
+        <li><a href="#" class="navBarItens">Ofertas do Dia</a></li>
+        <li><a href="#" class="navBarItens">Mais Vendidos</a></li>
+        <li><a href="#" class="navBarItens">Novidades</a></li>
     </ul>
 
     <ul class="info_add"> <!-- INFO ADICIONAL -->
-        <li><a href="#">Acesso Nosso App</a></li>
+        <li><a href="#" class="appAcesso">Acesso Nosso App</a></li>
         <li class="redes_soc">
             <a href="#">Siga-nos em:
                 <div>
@@ -158,7 +185,23 @@
                     <img src="IMAGES/layer1.png" alt="X (Twitter)">
                 </div>
             </a>
+            <input type="hidden" name="">
         </li>
     </ul>
 
 </nav>
+
+<script>
+    const logo = document.querySelector(".logo");
+    logo.addEventListener("click", () => {
+        location.href = "index.php";
+    })
+</script>
+
+<?php 
+
+    // session_start();
+
+    // if(isset($_SESSION['logado']))
+
+?>

@@ -1,0 +1,85 @@
+.div-principal{
+    height: 270px;
+    padding: 30px;
+    padding-left: 50px;
+    display: flex;
+}
+
+.aba-perfil{
+    display: flex;
+    align-items: center;
+}
+
+.area-perfil{
+    background-image: url(../../IMAGES/manguinha.png);
+    background-repeat: no-repeat;
+    width: 500px !important;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.titulo-perfil{
+    color: var(--branco00);
+}
+
+.div-button{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.div-ul{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.foto1{
+    width: 20px;
+    margin-right: 8px !important;
+}
+
+.foto2{
+    width: 23px;
+}
+
+.bonner{
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 32px;   
+    color: var(--branco00);
+    width: 230px;
+    background-color: transparent;
+    border: 1px solid var(--branco00);
+}
+
+.bonner:hover{
+    color: var(--preto00);
+    background-color: var(--branco00);
+}
+
+.bonner2{
+    font-size: 1.1em;
+    
+    height: 32px;   
+    color: var(--branco00);
+    width: 230px;
+    background-color: red;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+.div-ul li{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 0.9em;
+}
+
+mark{
+    background-color: transparent;
+    color: red;
+}

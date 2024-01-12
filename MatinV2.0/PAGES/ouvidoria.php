@@ -30,127 +30,17 @@
                 </div>
             </div>
 
-            <div class="cards-encl">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="top-card">
-                            <div class="groupTBT">
-                                <img src="../IMAGES/login-icon.png" alt="">
-                                <h5 class="card-title">Nome do usuario</h5>
-                            </div>
-
-                            <p class="card-text">2 Dias Atrás</p>
-                        </div>
-
-                        <div class="groupTBT verificado">
-                            <h6 class="card-subtitle mb-2 text-body-secondary">Vendedor verificado</h6>
-                            <img src="../IMAGES/premium.png" alt="" class="premium">
-                        </div>
-                        <p class="card-text">Olá, sou Carlos, um humilde vendedor de batatas que presa pela qualidade dos produtos que produzo e entrego via mat-in, estou aberto à negociações.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="cards-encl" id="card-container"></div>
         </div>
 
         <div class="chat chat-container">
-            <div class="chat-top">
-                <img src="../IMAGES/pessoaChat.jpg" alt="">
+            <div class="chat-top" id="chat-top">
+                <!-- <img src="../IMAGES/pessoaChat.jpg" alt="" id="imgChat">
                 <div class="txt-info">
-                    <h1>Nome do Usuario</h1>
-                    <h3>Online há 2 dias</h3>
-                </div>
-            </div>
+                    <h1 id="userHeaderChat">Nome do Usuario</h1>
+                    <h3 id="userTimeChat">Online há 2 dias</h3>
+                </div> -->
+            </div> 
             <hr>
 
             <div class="mensagens-encl" style="flex-grow: 1;">
@@ -206,22 +96,26 @@
             });
 
             // Clique em um card
-            $('.card').click(function(event) {
-                // Impede que o evento de clique no card se propague para o documento
-                event.stopPropagation();
-
-                // Remove a classe 'active' e 'enlarged' de todos os cards
-                $('.card').removeClass('active enlarged');
-
-                // Adiciona a classe 'active' ao card clicado
-                $(this).addClass('active');
-
-                // Define o tamanho maior para o card clicado
-                $(this).addClass('enlarged');
-
-                $('.cards-encl').addClass('enlarged');
-
-            });
+            try {
+                $('.card').click(function(event) {
+                    // Impede que o evento de clique no card se propague para o documento
+                    event.stopPropagation();
+                    
+                    // Remove a classe 'active' e 'enlarged' de todos os cards
+                    $('.card').removeClass('active enlarged');
+                    
+                    // Adiciona a classe 'active' ao card clicado
+                    $(this).addClass('active');
+                    
+                    // Define o tamanho maior para o card clicado
+                    $(this).addClass('enlarged');
+                    
+                    $('.cards-encl').addClass('enlarged');
+                    
+                });   
+            } catch (error) {
+                console.log(error);
+            }
 
             $('.laranja').click(function(event) {
                 $('#mensagemModal').modal('show');

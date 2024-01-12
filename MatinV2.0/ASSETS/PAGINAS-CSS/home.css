@@ -121,6 +121,11 @@ section{
     box-shadow: 2px 3px 10px #8a8887;
     padding: 15px;
     background-color: var(--branco00);
+    transition: transform 0.1s ease;
+}
+
+.card-categorias.lifted {
+    transform: scale(0.99);
 }
 
 /*

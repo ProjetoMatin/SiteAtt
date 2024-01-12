@@ -5,3 +5,21 @@
 Então, eu pensei em botar a home page na pasta BASE, pq a gnt nao vai usar tanto ela, ela vai servir só pra ser a base do programa então não tem pq ela estar dentro de PHP na minha cabeça. (e eu tb peguei referencia de um projeto q o freitas passou pra gnt em 2023 e ele fez isso então se o freitas fez, quem sou eu para julgar).
 
 O CHpages serve pra redirecionamento de páginas, qualquer <a> que vcs botarem, manda por CHpages pls. 
+
+-- Kopper --
+
+10/01/2024
+
+Então, está dando um erro simples aonde eu e o YHUREEI não conseguimos resolver, o problema envolver o css da área aonde vai ser o perfil do usuário, onde o não conseguimos linkar o css ao "perfil.php".(favor YHUREEI do futuro resolver o problema com link do css).
+
+Arquivos relacionados: "perfil.php" || "perfil.css"(precisa criar um novo).
+
+YHUREEI do futuro, não esquecer de que trocamos a cor do botão do chat para vermelho pq ele não pode conversar com ele mesmo.
+
+-- YHUREEI --
+
+11/01/2024
+
+Itens do header são coloridas qnd passa o mouse em cima.
+
+cards das categorias são pressionadas quando passa o mouse em cima.

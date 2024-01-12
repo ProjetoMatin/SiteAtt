@@ -332,7 +332,7 @@
 
 </section>
 
-<script src="JS/passarPagina.js"></script>
+<!-- <script src="JS/passarPagina.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -346,6 +346,12 @@
             $(this).addClass("lifted-ofertas");
         }, function() {
             $(this).removeClass("lifted-ofertas");
+        });
+
+        $(".card-categorias").hover(function() {
+            $(this).addClass("lifted");
+        }, function() {
+            $(this).removeClass("lifted");
         });
     });
 </script>
