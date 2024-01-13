@@ -44,28 +44,21 @@
     width: 23px;
 }
 
-.bonner{
+.btn{
     font-size: 1.1em;
     font-weight: bold;
     height: 32px;   
     color: var(--branco00);
+    padding: 0 !important;
     width: 230px;
     background-color: transparent;
     border: 1px solid var(--branco00);
+    transition: all 0.1s ease-in-out;
 }
 
-.bonner:hover{
+.btn:hover{
     color: var(--preto00);
     background-color: var(--branco00);
-}
-
-.bonner2{
-    font-size: 1.1em;
-    
-    height: 32px;   
-    color: var(--branco00);
-    width: 230px;
-    background-color: red;
 }
 
 ul{

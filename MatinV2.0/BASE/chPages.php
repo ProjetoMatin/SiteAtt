@@ -14,3 +14,4 @@ switch ($page) {
         require_once 'BASE/home.php';
         break;
 }
+

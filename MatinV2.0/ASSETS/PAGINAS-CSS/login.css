@@ -3,7 +3,7 @@
 .imgLogin {
     display: block;
     background-image: url("../../IMAGES/img-login.jpg") !important;
-    width: 80vw;
+    width: 50%;
     height: 100vh;
     background-position: center center;
     background-size: cover;
@@ -11,17 +11,17 @@
     filter: saturate(200%) sepia(40%);
 }
 
-body {
+main {
     display: flex;
 }
 
-main {
+.rightSide {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--branco00);
-    width: 100%;
+    width: 50%;
     height: 100vh;
     text-align: center;
     position: relative;

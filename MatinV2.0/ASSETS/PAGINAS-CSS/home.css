@@ -23,11 +23,18 @@ main{
     justify-content: center;
     margin-top: -150px;
     gap: 20px !important;
+}
 
+.cards-encl, .cards-encl-categoria, .cards-encl-ofertas{
+    visibility: hidden;
 }
 
 .card{
     width: 12rem !important;
+}
+
+.card .card-text{
+    margin-bottom: 10px !important;
 }
 
 .no-photo .card-text{
@@ -70,7 +77,6 @@ main{
 
 .card .card-body .precos .precoAntigo, .card-ofertas .card-body .precos .precoAntigo{
     text-decoration: line-through;
-    margin-top: 10px !important;
     font-size: 0.9em;
 }
 

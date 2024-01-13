@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/home.css">
+
+<?php require_once 'BASE/config.php'; ?>
+
 <main>
     <!-- CARROSSEL -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -36,47 +39,113 @@
                 <p>em <mark>12x R$5,80 sem juros</mark></p>
             </div>
         </div>
+
         <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Oferta do dia</h5>
+            <?php
 
-                <div class="img-coracao">
-                    <img src="IMAGES/div-img-produto (1).png" alt="">
-                </div>
+            try {
+                $selectQ = "SELECT * FROM produtos ORDER BY RAND() LIMIT 1";
+                $selectP = $cx->prepare($selectQ);
+                $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                $selectP->execute();
+                $row = $selectP->rowCount();
 
-                <p class="card-text">Ameixa Nacional Cariorta 600g</p>
+                while ($dados = $selectP->fetch()) {
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'>Oferta Recomendada</h5>";
+                    echo "<div class='img-coracao'>";
+                    echo "<img src='IMAGES-USU/PRODUTOS/{$dados['fotos_prod']}' alt=''>";
+                    echo "</div>";
+                    echo "<p class='card-text'>{$dados['nome_prod']}</p>";
+                    echo "<div class='precos'>";
 
-                <div class="precos">
-                    <p class="precoAntigo">R$60.00</p>
-                    <div class="preco-Promocao">
-                        <p class="precoNovo">R$44,99</p>
-                        <p class="promocao">12% OFF</p>
-                    </div>
-                </div>
+                    if (!is_null($dados['promocao'])) {
+                        echo "<p class='precoAntigo'>R$ {$dados['preco_prod']}</p>";
+                        echo "<div class='preco-Promocao'>";
 
-                <p>em <mark>12x R$5,80 sem juros</mark></p>
-            </div>
+                        $precoAntigo = $dados['preco_prod'];
+                        $promocao = $dados['promocao'];
+                        $formula = ($promocao / 100) * $precoAntigo;
+
+                        $formulaFormatada = number_format($formula, 2);
+
+                        echo "<p class='precoNovo'>R$ {$formulaFormatada}</p>";
+                        echo "<p class='promocao'>{$dados['promocao']}% OFF</p>";
+
+                        echo "</div>";
+
+                        if (!is_null($dados['parcela'])) {
+                            $parcela = $dados['parcela'];
+                            $formula2 = $formulaFormatada / $parcela;
+                            $formulaFormatada2 = number_format($formula2, 2);
+
+                            echo "<p>em <mark>{$dados['parcela']}x de R$ {$formulaFormatada2} sem juros.</mark></p>";
+                        }
+                    } else {
+                        echo "<div class='preco-Promocao'>";
+                        echo "<p class='precoNovo'>R$44,99</p>";
+                        echo "</div>";
+                    }
+                    echo "</div>";
+                    echo "</div>";
+                }
+            } catch (PDOException $e) {
+                $erro = $e->getMessage();
+                echo $erro;
+            }
+
+            ?>
         </div>
         <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Mais vendido</h5>
 
-                <div class="img-coracao">
-                    <img src="IMAGES/div-img-produto (2).png" alt="">
-                </div>
+            <?php
 
-                <p class="card-text">Kiwi importado Nova Zelândia Gold KG</p>
+            $selectQ = "SELECT * FROM produtos ORDER BY qnt_vendas DESC LIMIT 1";
+            $selectP = $cx->prepare($selectQ);
+            $selectP->setFetchMode(PDO::FETCH_ASSOC);
+            $selectP->execute();
 
-                <div class="precos">
-                    <p class="precoAntigo">R$60.00</p>
-                    <div class="preco-Promocao">
-                        <p class="precoNovo">R$44,99</p>
-                        <p class="promocao">12% OFF</p>
-                    </div>
-                </div>
+            while ($dados = $selectP->fetch()) {
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>Mais vendido</h5>";
+                echo "<div class='img-coracao'>";
+                echo "<img src='IMAGES-USU/PRODUTOS/{$dados['fotos_prod']}' alt=''>";
+                echo "</div>";
+                echo "<p class='card-text'>{$dados['nome_prod']}</p>";
+                echo "<div class='precos'>";
 
-                <p>em <mark>12x R$5,80 sem juros</mark></p>
-            </div>
+                if (!is_null($dados['promocao'])) {
+                    echo "<p class='precoAntigo'>R$ {$dados['preco_prod']}</p>";
+                    echo "<div class='preco-Promocao'>";
+
+                    $precoAntigo = $dados['preco_prod'];
+                    $promocao = $dados['promocao'];
+                    $formula = ($promocao / 100) * $precoAntigo;
+
+                    $formulaFormatada = number_format($formula, 2);
+
+                    echo "<p class='precoNovo'>R$ {$formulaFormatada}</p>";
+                    echo "<p class='promocao'>{$dados['promocao']}% OFF</p>";
+
+                    echo "</div>";
+
+                    if (!is_null($dados['parcela'])) {
+                        $parcela = $dados['parcela'];
+                        $formula2 = $formulaFormatada / $parcela;
+                        $formulaFormatada2 = number_format($formula2, 2);
+
+                        echo "<p>em <mark>{$dados['parcela']}x de R$ {$formulaFormatada2} sem juros.</mark></p>";
+                    }
+                } else {
+                    echo "<div class='preco-Promocao'>";
+                    echo "<p class='precoNovo'>R$44,99</p>";
+                    echo "</div>";
+                }
+                echo "</div>";
+                echo "</div>";
+            }
+
+            ?>
         </div>
         <div class="card no-photo" style="width: 18rem;">
             <div class="card-body">
@@ -95,9 +164,19 @@
 
                 <p class="card-text" style="margin-top: 8.4rem !important;">Desfrute de diversas vantagens e compre livremente</p>
 
-                <button class="btnCard">
-                    Baixar Agora
-                </button>
+                <form action="<?=$_SERVER['PHP_SELF']?>">
+                    <button class="btnCard" name="login">
+                        Entrar
+                    </button>
+                </form>
+
+                <?php 
+                
+                    if(isset($_REQUEST['login'])){
+                        echo "<script>location.href='PAGES/loginUsu.php'</script>";
+                    }
+                
+                ?>
             </div>
         </div>
         <div class="card no-photo" style="width: 18rem;">
@@ -107,7 +186,7 @@
                 <p class="card-text ultimo" style="margin-top: 8.7rem !important;">Otimize seus pagamentos e esteja seguro</p>
 
                 <button class="btnCard">
-                    Baixar Agora
+                    Pagar
                 </button>
             </div>
         </div>
@@ -332,8 +411,11 @@
 
 </section>
 
-<!-- <script src="JS/passarPagina.js"></script> -->
+<!-- Isso aqui faz um monte de animações suaves no site. -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Isso aqui faz uma animação de mostrar o conteudo quando scrolla pra baixo :) -->
+<script src="https://unpkg.com/scrollreveal"></script>
 <script>
     $(document).ready(function() {
         $(".card").hover(function() {
@@ -354,4 +436,15 @@
             $(this).removeClass("lifted");
         });
     });
+</script>
+
+<script>
+    window.sr = ScrollReveal({
+        reset: true
+    });
+    sr.reveal('.cards-encl', {
+        duration: 1000
+    });
+    sr.reveal('.cards-encl-categoria');
+    sr.reveal('.cards-encl-ofertas');
 </script>

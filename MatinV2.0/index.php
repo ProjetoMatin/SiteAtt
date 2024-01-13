@@ -12,10 +12,22 @@
 
 <body>
 
-    <?php
+    <?php 
+
+    session_start();
+
+    $config = $_REQUEST['config'] ?? "";
     
-    require_once 'BASE/config.php';
+    if($config == "sair"){
+        session_destroy();
+        header("Location: PAGES/loginUsu.php?aviso=3");
+    }
+    
+    ?>
+
+    <?php
     require_once 'BASE/header.php';
+    require_once 'BASE/config.php';
     require_once 'BASE/chPages.php';
 
     ?>

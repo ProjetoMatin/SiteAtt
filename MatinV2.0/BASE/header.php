@@ -143,10 +143,10 @@
 
     <div class="info">
         <ul>
-            <li><a href="index.php?page=perfil"><img src="IMAGES/user.png" alt=""></a></li>
-            <!-- <form action="" method="post">
+            <!-- <li><a href="index.php?page=perfil"><img src="IMAGES/user.png" alt=""></a></li> -->
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                 <li><button name="perfilPage" style="background-color: transparent;"><img src="IMAGES/user.png" alt=""></button></li>
-            </form> -->
+            </form>
             <li><img src="IMAGES/heart.png" alt=""></li>
             <li><img src="IMAGES/shoppingcart.png" alt=""></li>
             <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones.png" alt=""></a></li>
@@ -200,8 +200,9 @@
 
 <?php 
 
-    // session_start();
-
-    // if(isset($_SESSION['logado']))
+if(isset($_REQUEST['perfilPage'])){
+    echo "<script>location.href='index.php?page=perfil'</script>";
+}
 
 ?>
+
