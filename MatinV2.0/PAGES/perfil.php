@@ -10,7 +10,7 @@ require_once 'BASE/config.php';
 $id = $_SESSION['idUsu'] ?? '';
 
 if(!isset($_SESSION['idUsu'])){
-    echo "<script>location.href='PAGES/loginUsu.php?aviso=3'</script>";
+    echo "<script>location.href='CREDENTIALS/loginUsu.php?aviso=3'</script>";
 }
 
 

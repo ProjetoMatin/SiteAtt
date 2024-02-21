@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça o login</title>
-    <link rel="stylesheet" href="../ASSETS/PAGINAS-CSS/login.css">
+    <link rel="stylesheet" href="../ASSETS/CREDENTIALS/login.css">
     <link rel="stylesheet" href="../ASSETS/GERAL.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../IMAGES/matin-logo-png.png" type="image/x-icon">
 </head>
+<script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>
 
 <body>
 
@@ -36,30 +37,47 @@
             <div class="formulario">
                 <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
                     <div class="formInputs">
+                        <label for="name" style="margin-top: 30px !important;">Nome de usuario</label>
+                        <div class="campo">
+                            <img src="../IMAGES/userBranco.png" alt="" class="icon">
+                            <input type="text" name="name" id="name" placeholder="Digite seu e-mail..." class="formInput" maxlength="100">
+                        </div>
                         <label for="email">E-mail</label>
                         <div class="campo">
-                            <i class="material-icons">mail</i>
+                            <img src="../IMAGES/email.png" alt="" class="icon">
                             <input type="email" name="email" id="email" placeholder="Digite seu e-mail..." class="formInput" maxlength="100">
                         </div>
                         <label for="senha">Senha</label>
                         <div class="campo">
-                            <i class="material-icons">vpn_key</i>
+                            <img src="../IMAGES/padlock.png" alt="" class="icon">
                             <input type="password" name="senha" id="senha" placeholder="Digite sua senha..." class="formInput" autocomplete="on">
                         </div>
                         <div class="naoCad">
-                            <p>Não possui cadastro? <a href="cadastro.php">Cadastre-se</a></p>
+                            <p>Não possui cadastro? <a href="cadastroUsu.php">Cadastre-se</a></p>
                         </div>
                     </div>
                     <div class="inputEntrar">
-                        <input type="submit" value="Entrar" name="entrar">
+                        <input type="submit" value="Entrar" name="entrar" id="entrar">
                     </div>
                 </form>
             </div>
         </div>
     </main>
-</body>
 
-<script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>
+    <script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        async function submitForm() {
+            const canSubmit = await login();
+
+            if (canSubmit) {
+                loginForm.submit();
+            }
+        }
+    </script>
+
+</body>
 
 <?php
 $email = $_REQUEST['email'] ?? '';
@@ -79,7 +97,7 @@ if (isset($_REQUEST['entrar'])) {
                 header("Location: ?aviso=2");
                 die();
             } else {
-                
+
                 $fetchU = $selectP->fetch(PDO::FETCH_ASSOC);
                 $idUsu = $fetchU['idUsu'];
                 // echo "-->" . $fetchU['ativo'];

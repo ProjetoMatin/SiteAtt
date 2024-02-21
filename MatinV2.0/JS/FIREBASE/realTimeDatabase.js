@@ -6,31 +6,17 @@ let email = localStorage.getItem("email");
 let currentID;
 const refUser = ref(db, "user/");
 
-if (!userID) {
-    email = prompt("Email de usuario");
-    const password = prompt("Senha de usuario");
-
-    // ISSO AQUI VAI CRIAR UM NOVO USUARIO
-
-    if (email && password) {
-        await login(email, password);
-        updateDropdownUserName();
-        // console.log(userID);
-    }
-}
-
-if(userID){
-
-    if (localStorage.getItem("email") === "atendimentoMatin@gmail.com" || localStorage.getItem("email") === "atendimentomatin@gmail.com") {
-        localStorage.setItem("name", "AtendimentoMatin");
-        loadListClients();
-        updateDropdownUserName();
-    }else{
-        setUser(name, email);
-        updateDropdownUserName();
-        loadMessage(localStorage.getItem("userId"));
-    }
-}
+// if (userID) {
+//     if (localStorage.getItem("email") === "atendimentoMatin@gmail.com" || localStorage.getItem("email") === "atendimentomatin@gmail.com") {
+//         localStorage.setItem("name", "AtendimentoMatin");
+//         loadListClients();
+//         updateDropdownUserName();
+//     } else {
+//         setUser(name, email);
+//         updateDropdownUserName();
+//         loadMessage(localStorage.getItem("userId"));
+//     }
+// }
 
 function sendMessage(event) {
     try {
@@ -60,40 +46,59 @@ function sendMessage(event) {
 
 //SERIO
 
-async function login(email, password) {
+const entrar = document.querySelector("#entrar");
+if(entrar){
+
+    entrar.addEventListener("click", () =>{
+        console.log("oi1");
+        login();
+    })
+}
+
+async function login() {
+    console.log("oi2");
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#senha").value;
+
     try {
         const res = await signInWithEmailAndPassword(auth, email, password);
         email = res.user.email;
-        name = res.user.displayName;
 
         localStorage.setItem("userId", res.user.uid);
         localStorage.setItem("email", email);
         localStorage.setItem("name", name);
-        
+
         console.log('logado');
-        
+
         if (email === "atendimentomatin@gmail.com") {
             localStorage.setItem("name", "AtendimentoMatin");
             loadListClients();
-        }else{
-            console.log('logado2');
+        } else {
             const idUsuario = localStorage.getItem("userId");
-            loadMessage(idUsuario);
-            setUser(name, email);
-            updateDropdownUserName();
-            location.reload();
+            // loadMessage(idUsuario);
+            // setUser(name, email);
+            // updateDropdownUserName();
+            // location.reload();
         }
 
     } catch (error) {
         const errorCode = error.code;
         if (errorCode === "auth/invalid-credential") {
-            await createUser(email, password);
+            alert('Usuário não existente, cadastre-se');
+            // await createUser(email, password);
         } else {
             alert('Houve um erro, tente novamente mais tarde!');
         }
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+
+        // Retorna false para impedir o envio do formulário
+        return false;
     }
+
+    // Retorna true para permitir o envio do formulário
+    return true;
 }
 
 function loadListClients() {
@@ -154,7 +159,7 @@ function loadListClients() {
         cardBody.appendChild(verificado);
         cardBody.appendChild(cardSubtext);
 
-        card.addEventListener("click", () =>{
+        card.addEventListener("click", () => {
             currentID = snapshot.val().uid;
             setUser(snapshot.val().name, snapshot.val().email);
             loadMessage(snapshot.val().uid);
@@ -165,41 +170,43 @@ function loadListClients() {
     });
 }
 
+const cadastrar = document.querySelector("#cadastrar1");
 
-async function createUser(email, password) {
-    name = prompt("Qual é o seu nome?");
-    try {
-        const res = await createUserWithEmailAndPassword(auth, email, password);
-        email = res.user.email;
+if (cadastrar) {
+    cadastrar.addEventListener("click", async () => {
+        const nome = document.getElementById("nomeinp").value;
+        const email = document.getElementById("emailinp").value;
+        const senha = document.getElementById("senhainp").value;
 
-        await updateProfile(auth.currentUser, {
-            displayName: name,
-        });
+        try {
+            const res = await createUserWithEmailAndPassword(auth, email, senha);
+            await updateProfile(auth.currentUser, {
+                displayName: nome,
+            });
 
-        localStorage.setItem("userId", res.user.uid);
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
+            localStorage.setItem("userId", res.user.uid);
+            localStorage.setItem("name", nome);
+            localStorage.setItem("email", email);
 
-        const newMessage = push(refUser);
+            const newMessage = push(refUser);
 
-        loadListClients(res.user.uid);
-        setUser(name, email);
+            // loadListClients(res.user.uid);
+            // setUser(nome, email);
 
-        set(newMessage, {
-            name: name,
-            email: email,
-            uid: res.user.uid,
-        });
+            set(newMessage, {
+                name: nome,
+                email: email,
+                uid: res.user.uid,
+            });
 
-        location.reload();
-
-    } catch (error) {
-        console.log(error);
-        alert("houve um erro ao criar a conta!");
-    }
+        } catch (error) {
+            console.log(error);
+            alert("Houve um erro ao criar a conta!");
+        }
+    });
 }
 
-function getCurrentTime(){
+function getCurrentTime() {
     const date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -212,36 +219,36 @@ function getCurrentTime(){
     return `${hours}:${minutes}`;
 }
 
-function setUser(name, email){
+function setUser(name, email) {
     try {
         const chatTop = document.getElementById("chat-top");
         chatTop.innerHTML = "";
-    
+
         const imgChat = document.createElement("img");
         imgChat.src = "../IMAGES/pessoaChat.jpg";
         imgChat.alt = "";
         imgChat.id = "imgChat";
-    
+
         const txt_info = document.createElement("div");
         txt_info.classList.add("txt-info");
-    
+
         const userHeaderChat = document.createElement("h1");
         userHeaderChat.id = "userHeaderChat";
-    
+
         const userTimeChat = document.createElement("h3");
         userTimeChat.id = "userTimeChat";
-    
+
         userHeaderChat.innerHTML = name;
         userTimeChat.innerHTML = email;
-    
-    
+
+
         chatTop.appendChild(imgChat);
         chatTop.appendChild(txt_info);
         txt_info.appendChild(userHeaderChat);
         txt_info.appendChild(userTimeChat);
-        
+
     } catch (error) {
-        console.error(error);        
+        console.error(error);
     }
 
 }
@@ -257,9 +264,9 @@ function loadMessage(uid) {
         const elementMessageSpan = document.createElement("span");
         const data = snapshot.val();
 
-        if(data.email === email){
+        if (data.email === email) {
             elementDiv.classList.add("mensagem", "branco");
-        }else{
+        } else {
             elementDiv.classList.add("mensagem", "laranja");
         }
 
@@ -271,7 +278,7 @@ function loadMessage(uid) {
     })
 }
 
-document.getElementById("logoutButton").addEventListener("click", logout);
+// document.getElementById("logoutButton").addEventListener("click", logout);
 
 async function logout() {
     try {

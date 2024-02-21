@@ -20,7 +20,7 @@
     
     if($config == "sair"){
         session_destroy();
-        header("Location: PAGES/loginUsu.php?aviso=3");
+        header("Location: CREDENTIALS/loginUsu.php?aviso=3");
     }
     
     ?>

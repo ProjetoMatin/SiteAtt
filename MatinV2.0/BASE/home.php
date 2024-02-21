@@ -162,7 +162,8 @@
             <div class="card-body">
                 <h5 class="card-title">Entre na sua conta</h5>
 
-                <p class="card-text" style="margin-top: 8.4rem !important;">Desfrute de diversas vantagens e compre livremente</p>
+                <p class="card-text" style="margin-top: 8.4rem !important;">Desfrute de diversas vantagens e compre
+                    livremente</p>
 
                 <form action="<?=$_SERVER['PHP_SELF']?>">
                     <button class="btnCard" name="login">
@@ -183,7 +184,8 @@
             <div class="card-body">
                 <h5 class="card-title">Meios de pagamento</h5>
 
-                <p class="card-text ultimo" style="margin-top: 8.7rem !important;">Otimize seus pagamentos e esteja seguro</p>
+                <p class="card-text ultimo" style="margin-top: 8.7rem !important;">Otimize seus pagamentos e esteja
+                    seguro</p>
 
                 <button class="btnCard">
                     Pagar
@@ -203,42 +205,29 @@
     <h1 class="tituloSection">Categorias mais buscadas</h1>
 
     <div class="cards-encl-categoria">
-        <div class="card-categorias" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Nome da categoria</h5>
-                <div class="img-coracao">
-                    <img src="IMAGES/icone.png" class="img-comida" alt="">
-                </div>
-                <p class="card-text">Aqui você pode encontrar produtos como açúcar e café</p>
-            </div>
-        </div>
-        <div class="card-categorias" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Nome da categoria</h5>
-                <div class="img-coracao">
-                    <img src="IMAGES/icone.png" class="img-comida" alt="">
-                </div>
-                <p class="card-text">Aqui você pode encontrar produtos como açúcar e café</p>
-            </div>
-        </div>
-        <div class="card-categorias" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Nome da categoria</h5>
-                <div class="img-coracao">
-                    <img src="IMAGES/icone.png" class="img-comida" alt="">
-                </div>
-                <p class="card-text">Aqui você pode encontrar produtos como açúcar e café</p>
-            </div>
-        </div>
-        <div class="card-categorias" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Nome da categoria</h5>
-                <div class="img-coracao">
-                    <img src="IMAGES/icone.png" class="img-comida" alt="">
-                </div>
-                <p class="card-text">Aqui você pode encontrar produtos como açúcar e café</p>
-            </div>
-        </div>
+        <?php 
+
+        $selectQ = "SELECT * FROM categoria ORDER BY qntVis DESC LIMIT 4 ";
+        $selectP = $cx -> prepare($selectQ);
+        $selectP->setFetchMode(PDO::FETCH_ASSOC);
+        $selectP->execute();
+        $dados = $selectP->rowCount();
+    
+
+        while($dados = $selectP->fetch()){
+           
+            echo "<div class='card-categorias' style='width: 18rem;'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>{$dados['nome_cat']}</h5>";
+            echo "<div class='img-coracao'>";
+            echo "<img src='IMAGES-USU/PRODUTOS/{$dados['img_cat']}' class='img-comida' alt=''>";
+            echo "</div>";
+            echo "<p class='card-text'>{$dados['desc_cat']}</p>";
+            echo "</div>";
+            echo "</div>";
+        
+        }
+        ?>
     </div>
 
 </section>
@@ -417,34 +406,34 @@
 <!-- Isso aqui faz uma animação de mostrar o conteudo quando scrolla pra baixo :) -->
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
-    $(document).ready(function() {
-        $(".card").hover(function() {
-            $(this).addClass("lifted");
-        }, function() {
-            $(this).removeClass("lifted");
-        });
-
-        $(".card-ofertas").hover(function() {
-            $(this).addClass("lifted-ofertas");
-        }, function() {
-            $(this).removeClass("lifted-ofertas");
-        });
-
-        $(".card-categorias").hover(function() {
-            $(this).addClass("lifted");
-        }, function() {
-            $(this).removeClass("lifted");
-        });
+$(document).ready(function() {
+    $(".card").hover(function() {
+        $(this).addClass("lifted");
+    }, function() {
+        $(this).removeClass("lifted");
     });
+
+    $(".card-ofertas").hover(function() {
+        $(this).addClass("lifted-ofertas");
+    }, function() {
+        $(this).removeClass("lifted-ofertas");
+    });
+
+    $(".card-categorias").hover(function() {
+        $(this).addClass("lifted");
+    }, function() {
+        $(this).removeClass("lifted");
+    });
+});
 </script>
 
 <script>
-    window.sr = ScrollReveal({
-        reset: true
-    });
-    sr.reveal('.cards-encl', {
-        duration: 1000
-    });
-    sr.reveal('.cards-encl-categoria');
-    sr.reveal('.cards-encl-ofertas');
+window.sr = ScrollReveal({
+    reset: true
+});
+sr.reveal('.cards-encl', {
+    duration: 1000
+});
+sr.reveal('.cards-encl-categoria');
+sr.reveal('.cards-encl-ofertas');
 </script>
