@@ -86,7 +86,7 @@ $senha = $_REQUEST['senha'] ?? '';
 if (isset($_REQUEST['entrar'])) {
     if (!empty($email) || !empty($senha)) {
         try {
-            $selectQ = "SELECT * FROM usuario WHERE emailUsu = :email AND senhaUsu = :senha";
+            $selectQ = "SELECT * FROM usuario WHERE email_usu = :email AND senha_usu = :senha";
             $selectP = $cx->prepare($selectQ);
             $selectP->bindParam(":email", $email);
             $selectP->bindParam(":senha", $senha);

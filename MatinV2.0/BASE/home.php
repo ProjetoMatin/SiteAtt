@@ -42,9 +42,9 @@
 
         <div class="card" style="width: 18rem;">
             <?php
-
+            
             try {
-                $selectQ = "SELECT * FROM produtos ORDER BY RAND() LIMIT 1";
+                $selectQ = "SELECT * FROM produto ORDER BY RAND() LIMIT 1";
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
                 $selectP->execute();
@@ -91,7 +91,7 @@
                 }
             } catch (PDOException $e) {
                 $erro = $e->getMessage();
-                echo $erro;
+                echo $erro . "oi";
             }
 
             ?>
@@ -100,7 +100,7 @@
 
             <?php
 
-            $selectQ = "SELECT * FROM produtos ORDER BY qnt_vendas DESC LIMIT 1";
+            $selectQ = "SELECT * FROM produto ORDER BY qnt_vendas DESC LIMIT 1";
             $selectP = $cx->prepare($selectQ);
             $selectP->setFetchMode(PDO::FETCH_ASSOC);
             $selectP->execute();
@@ -207,7 +207,7 @@
     <div class="cards-encl-categoria">
         <?php 
 
-        $selectQ = "SELECT * FROM categoria ORDER BY qntVis DESC LIMIT 4 ";
+        $selectQ = "SELECT * FROM categoria ORDER BY qnt_vis DESC LIMIT 4 ";
         $selectP = $cx -> prepare($selectQ);
         $selectP->setFetchMode(PDO::FETCH_ASSOC);
         $selectP->execute();

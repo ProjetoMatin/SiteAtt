@@ -25,9 +25,9 @@ main{
     gap: 20px !important;
 }
 
-.cards-encl, .cards-encl-categoria, .cards-encl-ofertas{
+/* .cards-encl, .cards-encl-categoria, .cards-encl-ofertas{
     visibility: hidden;
-}
+} */
 
 .card{
     width: 12rem !important;
