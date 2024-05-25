@@ -18,6 +18,11 @@ main{
     pointer-events: none; /* Garante que o evento de clique passe através do overlay */
 }
 
+.categoria_h1 {
+    text-align: center;
+    color: var(--laranja00);
+}
+
 .cards-encl{
     display: flex;
     justify-content: center;

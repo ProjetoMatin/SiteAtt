@@ -202,7 +202,7 @@
 -->
 
 <section class="categorias">
-    <h1 class="tituloSection">Categorias mais buscadas</h1>
+    <h1 class="tituloSection categoria_h1">Categorias mais buscadas</h1>
 
     <div class="cards-encl-categoria">
         <?php 
