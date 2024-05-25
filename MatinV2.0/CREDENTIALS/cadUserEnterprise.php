@@ -184,140 +184,137 @@ button:active {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    $('#cnpjinp').mask('00.000.000/0000-00');
-    $('#telinp').mask('(00) 00000-0000');
-    $('#cepinp').mask('00000-000');
+    $(document).ready(function() {
+        $('#cnpjinp').mask('00.000.000/0000-00');
+        $('#telinp').mask('(00) 00000-0000');
+        $('#cepinp').mask('00000-000');
 
-    $(".cadastroBtn").hover(
-        function() {
-            $(this).addClass("lifted");
-        },
+        $(".cadastroBtn").hover(
+            function() {
+                $(this).addClass("lifted");
+            },
 
-        function() {
-            $(this).removeClass("lifted");
-        }
-    )
-});
+            function() {
+                $(this).removeClass("lifted");
+            }
+        )
+    });
 
-const backbtnImg = document.querySelector(".backbtnImg");
+    const backbtnImg = document.querySelector(".backbtnImg");
 
-backbtnImg.addEventListener("click", () => {
-    location.href = "cadastroUsu.php";
-})
+    backbtnImg.addEventListener("click", () => {
+        location.href = "cadastroUsu.php";
+    })
 </script>
 
 <?php
 
-if (isset($_REQUEST['cadastrar1'])) {
-    // echo "<script>alert('FOI CRIA')</script>";
-    $cep = $_REQUEST['cep'] ?? '';
+    if (isset($_REQUEST['cadastrar1'])) {
+        // echo "<script>alert('FOI CRIA')</script>";
+        $cep = $_REQUEST['cep'] ?? '';
 
-    if ($cep != "") {
-        $url = "https://viacep.com.br/ws/{$cep}/json/";
+        if ($cep != "") {
+            $url = "https://viacep.com.br/ws/{$cep}/json/";
 
-        $endereco = json_decode(file_get_contents($url));
+            $endereco = json_decode(file_get_contents($url));
 
-        if (isset($endereco->erro)) {
-            echo "<script>alert('digite um CEP válido!')</script>";
-        } else {
-            $nome = $_REQUEST['nome'] ?? '';
-            $email = $_REQUEST['email'] ?? '';
-            $senha = $_REQUEST['senha'] ?? '';
-            $cnpj = $_REQUEST['cnpj'] ?? '';
-            $cep = $_REQUEST['cep'] ?? '';
-            $telefone = $_REQUEST['telefone'] ?? '';
-            $senha = $_REQUEST['senha'] ?? '';
-            $NR = $_REQUEST['NR'] ?? '';
-            $comp = $_REQUEST['comp'] ?? '';
+            if (isset($endereco->erro)) {
+                echo "<script>alert('digite um CEP válido!')</script>";
+            } else {
+                $nome = $_REQUEST['nome'] ?? '';
+                $email = $_REQUEST['email'] ?? '';
+                $senha = $_REQUEST['senha'] ?? '';
+                $cnpj = $_REQUEST['cnpj'] ?? '';
+                $cep = $_REQUEST['cep'] ?? '';
+                $telefone = $_REQUEST['telefone'] ?? '';
+                $senha = $_REQUEST['senha'] ?? '';
+                $NR = $_REQUEST['NR'] ?? '';
+                $comp = $_REQUEST['comp'] ?? '';
 
-            if (!empty($nome && $email && $senha && $cep && $telefone && $NR && $comp) || !is_null($nome && $email && $senha && $cep && $telefone && $NR && $comp)) {
-                try {
+                if (!empty($nome && $email && $senha && $cep && $telefone && $NR && $comp) || !is_null($nome && $email && $senha && $cep && $telefone && $NR && $comp)) {
+                    try {
 
-                    date_default_timezone_set('America/Sao_Paulo');
+                        date_default_timezone_set('America/Sao_Paulo');
 
-                    $currentDate = date('Y-m-d H:i:s');
+                        $currentDate = date('Y-m-d H:i:s');
 
-                    if (!is_null($cnpj) || !empty($cnpj)) {
-                        echo "<script>console.log('foi até aqui')</script>";
-                        $selectQ = "SELECT * FROM usuario WHERE nomeUsu = :nome";
-                        $selectP = $cx->prepare($selectQ);
-                        $selectP->bindParam(":nome", $nome);
-                        $selectP->execute();
-                        $count = $selectP->rowCount();
-
-                        if ($count == 0) {
+                        if (!is_null($cnpj) || !empty($cnpj)) {
                             echo "<script>console.log('foi até aqui')</script>";
-                            $selectQ2 = "INSERT INTO usuario (nomeUsu, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep, NR, comp)VALUES (:nome, :datacriacao, :email, 'CNPJ', :nrcir, :senha, :tel, :idcep, :NR, :comp)";
-                            echo "<script>console.log('foi até aqui')</script>";
+                            $selectQ = "SELECT * FROM usuario WHERE nomeUsu = :nome";
+                            $selectP = $cx->prepare($selectQ);
+                            $selectP->bindParam(":nome", $nome);
+                            $selectP->execute();
+                            $count = $selectP->rowCount();
 
-                            $selectP2 = $cx->prepare($selectQ2);
-                            echo "<script>console.log('foi até aqui')</script>";
+                            if ($count == 0) {
+                                echo "<script>console.log('foi até aqui')</script>";
+                                $selectQ2 = "INSERT INTO usuario (nomeUsu, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep, NR, comp)VALUES (:nome, :datacriacao, :email, 'CNPJ', :nrcir, :senha, :tel, :idcep, :NR, :comp)";
+                                echo "<script>console.log('foi até aqui')</script>";
 
-                            $selectP2->bindParam(':nome', $nome);
-                            $selectP2->bindParam(':datacriacao', $currentDate);
-                            $selectP2->bindParam(':email', $email);
-                            $selectP2->bindParam(':nrcir', $cnpj);
-                            $selectP2->bindParam(':senha', $senha);
-                            $selectP2->bindParam(':tel', $telefone);
-                            $selectP2->bindParam(':idcep', $cep);
-                            $selectP2->bindParam(':NR', $NR);
-                            $selectP2->bindParam(':comp', $comp);
-                            echo "<script>console.log('foi até aqui')</script>";
+                                $selectP2 = $cx->prepare($selectQ2);
+                                echo "<script>console.log('foi até aqui')</script>";
 
-                            $selectP2->execute();
-                            
-                            echo "<script>console.log('foi até aqui')</script>";
+                                $selectP2->bindParam(':nome', $nome);
+                                $selectP2->bindParam(':datacriacao', $currentDate);
+                                $selectP2->bindParam(':email', $email);
+                                $selectP2->bindParam(':nrcir', $cnpj);
+                                $selectP2->bindParam(':senha', $senha);
+                                $selectP2->bindParam(':tel', $telefone);
+                                $selectP2->bindParam(':idcep', $cep);
+                                $selectP2->bindParam(':NR', $NR);
+                                $selectP2->bindParam(':comp', $comp);
+                                echo "<script>console.log('foi até aqui')</script>";
+
+                                $selectP2->execute();
+                                
+                                echo "<script>console.log('foi até aqui')</script>";
+                            }
                         }
+                    } catch (PDOException $e) {
+                        $erro = $e->getMessage();
+                        echo "<script>alert($erro)</script>";
                     }
-                } catch (PDOException $e) {
-                    $erro = $e->getMessage();
-                    echo "<script>alert($erro)</script>";
                 }
             }
         }
     }
-}
-
-
-
 ?>
 
 <script>
-// Obtém o elemento do botão de cadastro
-const cadastrarBtn = document.getElementById('cadastrar1');
+    // Obtém o elemento do botão de cadastro
+    const cadastrarBtn = document.getElementById('cadastrar1');
 
-// Adiciona um evento de clique ao botão
-cadastrarBtn.addEventListener('click', function() {
-    // Obtém o valor do CEP do input
-    const cep = document.getElementById('cepinp').value;
+    // Adiciona um evento de clique ao botão
+    cadastrarBtn.addEventListener('click', function() {
+        // Obtém o valor do CEP do input
+        const cep = document.getElementById('cepinp').value;
 
-    // Verifica se o CEP não está vazio
-    if (cep.trim() !== "") {
-        // Faz a verificação do CEP no servidor antes de salvar no localStorage
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(response => response.json())
-            .then(data => {
-                // Verifica se o CEP é válido
-                if (!data.erro) {
-                    // Verifica se o navegador suporta localStorage
-                    if (typeof(Storage) !== "undefined") {
-                        // Salva o CEP no localStorage com uma chave específica
-                        localStorage.setItem("cepUsuario", cep);
-                        console.log('CEP salvo no localStorage: ' + cep);
+        // Verifica se o CEP não está vazio
+        if (cep.trim() !== "") {
+            // Faz a verificação do CEP no servidor antes de salvar no localStorage
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    // Verifica se o CEP é válido
+                    if (!data.erro) {
+                        // Verifica se o navegador suporta localStorage
+                        if (typeof(Storage) !== "undefined") {
+                            // Salva o CEP no localStorage com uma chave específica
+                            localStorage.setItem("cepUsuario", cep);
+                            console.log('CEP salvo no localStorage: ' + cep);
+                        } else {
+                            // Se o navegador não suportar localStorage, exibe um aviso
+                            console.log('Seu navegador não suporta localStorage.');
+                        }
                     } else {
-                        // Se o navegador não suportar localStorage, exibe um aviso
-                        console.log('Seu navegador não suporta localStorage.');
+                        console.log('CEP inválido.');
                     }
-                } else {
-                    console.log('CEP inválido.');
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao verificar o CEP:', error);
-            });
-    } else {
-        console.log('O campo de CEP está vazio.');
-    }
+                })
+                .catch(error => {
+                    console.error('Erro ao verificar o CEP:', error);
+                });
+        } else {
+            console.log('O campo de CEP está vazio.');
+        }
 });
 </script>
