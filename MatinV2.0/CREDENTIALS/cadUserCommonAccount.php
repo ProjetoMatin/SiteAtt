@@ -86,7 +86,8 @@
     }
 </style>
 
-<?php require_once '../BASE/config.php'; ?>
+<?php require '../BASE/config.php'; ?>
+<?php require '../BASE/viaCep.php'; ?>
 
 <main>
     <div class="backbtn">
@@ -153,6 +154,7 @@
         </div>
 
         <button type="button" class="cadastroBtn" name="cadastrar" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar sua conta</button>
+
         <p class="cadTxt" style="margin-top: 0px;">Já possui um cadastro? <a href="loginUsu.php" style="color: var(--laranja00)">Faça o login</a></p>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,6 +177,7 @@
     </form>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -205,60 +208,112 @@
 
 <?php
 
+function criarBairro($cx, $endereco, $cepFormatado)
+{
+
+    if ($endereco->erro == true) {
+        try {
+            $insertQ = "INSERT INTO local (CEP, Logradouro, Bairro, Cidade, UF) VALUES (:cep, :logradouro, :bairro, :cidade, :uf)";
+            $insertP = $cx->prepare($insertQ);
+            $insertP->bindParam(":cep", $cepFormatado);
+            $insertP->bindParam(":logradouro", $endereco->logradouro);
+            $insertP->bindParam(":bairro", $endereco->bairro);
+            $insertP->bindParam(":cidade", $endereco->localidade);
+            $insertP->bindParam(":uf", $endereco->uf);
+            $insertP->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+
+            echo "<script>window.location.href='loginUsu.php?aviso=5'</script>";
+
+            return false;
+        }
+    } else {
+
+        echo "<script>window.location.href='loginUsu.php?aviso=5'</script>";
+        return false;
+    }
+}
+
+function criarusu($cx, $nome, $email, $senha, $cepFormatado, $telefone, $NR, $comp)
+{
+    try {
+        $selectQ = "SELECT * FROM usuario WHERE NRCIR = :cpf";
+        $selectP = $cx->prepare($selectQ);
+        $selectP->bindParam(":cpf", $NR);
+        $selectP->execute();
+        $count = $selectP->rowCount();
+
+        if ($count == 0) {
+            date_default_timezone_set('America/Sao_Paulo');
+            $currentDate = date('Y-m-d H:i:s');
+
+            $insertQ = "INSERT INTO usuario(nome_usu, ativo, data_criacao, email_usu, senha_usu, tel_usu, fotos_usu, premium, NR, comp, TCIR, NRCIR, nvl_usu, Local_CEP) 
+                        VALUES (:nome, '1', :dataCriacao, :email, :senha, :tel, 'sem_foto.png', '0', :NR, :comp, 'CPF', :cpf, 'C', :cep)";
+            $insertP = $cx->prepare($insertQ);
+            $insertP->bindParam(':nome', $nome);
+            $insertP->bindParam(':dataCriacao', $currentDate);
+            $insertP->bindParam(':email', $email);
+            $insertP->bindParam(':cpf', $NR);
+            $insertP->bindParam(':senha', $senha);
+            $insertP->bindParam(':tel', $telefone);
+            $insertP->bindParam(':cep', $cepFormatado);
+            $insertP->bindParam(':NR', $NR);
+            $insertP->bindParam(':comp', $comp);
+            $insertP->execute();
+
+            echo "<script>window.location.href='loginUsu.php'</script>";
+        } else {
+            echo "<script>window.location.href='loginUsu.php?aviso=5'</script>";
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
 $nome = $_REQUEST['nome'] ?? '';
 $email = $_REQUEST['email'] ?? '';
 $senha = $_REQUEST['senha'] ?? '';
 $cpf = $_REQUEST['cpf'] ?? '';
 $cep = $_REQUEST['cep'] ?? '';
 $telefone = $_REQUEST['telefone'] ?? '';
-$senha = $_REQUEST['senha'] ?? '';
 $NR = $_REQUEST['NR'] ?? '';
 $comp = $_REQUEST['comp'] ?? '';
 
-if (!empty($nome && $email && $senha && $cep && $telefone && $NR && $comp) || !is_null($nome && $email && $senha && $cep && $telefone && $NR && $comp)) {
-    try {
+if (!empty($nome) && !empty($email) && !empty($senha) && !empty($cep) && !empty($telefone) && !empty($NR) && !empty($cpf)) {
 
-        date_default_timezone_set('America/Sao_Paulo');
+    $endereco = get_endereco($cep);
 
-        $currentDate = date('Y-m-d H:i:s');
+    if ($endereco->erro == "true") {
+        echo "<script>window.location.href='loginUsu.php?aviso=5'</script>";
+        die();
+    }
 
-        if (!is_null($cpf) || !empty($cpf)) {
-            echo "<script>console.log('foi até aqui')</script>";
-            $selectQ = "SELECT * FROM usuario WHERE nomeUsu = :nome";
-            $selectP = $cx->prepare($selectQ);
-            $selectP->bindParam(":nome", $nome);
-            $selectP->execute();
-            $count = $selectP->rowCount();
+    $cepFormatado = str_replace("-", "", $cep);
+    $NRCIRFormatado1 = str_replace(".", "", $cpf);
+    $NRCIRFormatado2 = str_replace("-", "", $NRCIRFormatado1);
+    $telFormatado1 = str_replace("(", "", $telefone);
+    $telFormatado2 = str_replace(")", "", $telFormatado1);
 
-            if ($count == 0) {
-                echo "<script>console.log('foi até aqui')</script>";
-                $selectQ2 = "INSERT INTO usuario (nomeUsu, dataCriacao, emailUsu, TCIR, NRCIR, senhaUsu, telUsu, idCep, NR, comp)VALUES (:nome, :datacriacao, :email, 'CPF', :nrcir, :senha, :tel, :idcep, :NR, :comp)";
-                echo "<script>console.log('foi até aqui')</script>";
+    if (!empty($endereco)) {
+        $selectQ = "SELECT * from local WHERE CEP = :cep";
+        $selectP = $cx->prepare($selectQ);
+        $selectP->bindParam(":cep", $cepFormatado);
+        $selectP->execute();
+        $count = $selectP->rowCount();
 
-                $selectP2 = $cx->prepare($selectQ2);
-                echo "<script>console.log('foi até aqui')</script>";
-
-                $selectP2->bindParam(':nome', $nome);
-                $selectP2->bindParam(':datacriacao', $currentDate);
-                $selectP2->bindParam(':email', $email);
-                $selectP2->bindParam(':nrcir', $cpf);
-                $selectP2->bindParam(':senha', $senha);
-                $selectP2->bindParam(':tel', $telefone);
-                $selectP2->bindParam(':idcep', $cep);
-                $selectP2->bindParam(':NR', $NR);
-                $selectP2->bindParam(':comp', $comp);
-                echo "<script>console.log('foi até aqui')</script>";
-
-                $selectP2->execute();
-                echo "<script>console.log('foi até aqui')</script>";
-                // header("Location: loginUsu.php?aviso=4");
-                echo "<script>location.href='loginUsu.php?aviso=4'</script>";
+        if ($count >= 1) {
+            criarusu($cx, $nome, $email, $senha, $cepFormatado, $telFormatado2, $NRCIRFormatado2, $comp);
+        } else {
+            $criarBairroBoolean = criarBairro($cx, $endereco, $cepFormatado);
+            if ($criarBairroBoolean == true) {
+                criarusu($cx, $nome, $email, $senha, $cepFormatado, $telFormatado2, $NRCIRFormatado2, $comp);
+            } else {
+                echo "<script>window.location.href='loginUsu.php?aviso=5'</script>";
             }
         }
-    } catch (PDOException $e) {
-        $erro = $e->getMessage();
-        echo "<script>alert($erro)</script>";
     }
 }
-
 ?>

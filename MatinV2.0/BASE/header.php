@@ -125,8 +125,9 @@
     .input-group {
         margin-bottom: 0px !important;
     }
-</style>
+</style>    
 <header>
+
     <div class="logo">
         <img src="IMAGES/matin-logo-png.png" alt="logo Mat-in">
 
@@ -148,7 +149,7 @@
                 <li><button name="perfilPage" style="background-color: transparent;"><img src="IMAGES/user.png" alt=""></button></li>
             </form>
             <li><img src="IMAGES/heart.png" alt=""></li>
-            <li><img src="IMAGES/shoppingcart.png" alt=""></li>
+            <li><a href="index.php?page=carrinho"><img src="IMAGES/shoppingcart.png" alt=""></a></li>
             <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones.png" alt=""></a></li>
         </ul>
     </div>

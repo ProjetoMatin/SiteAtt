@@ -64,19 +64,6 @@
         </div>
     </main>
 
-    <script type="module" src="../JS/FIREBASE/realTimeDatabase.js"></script>
-    <script>
-        const loginForm = document.getElementById('loginForm');
-
-        async function submitForm() {
-            const canSubmit = await login();
-
-            if (canSubmit) {
-                loginForm.submit();
-            }
-        }
-    </script>
-
 </body>
 
 <?php

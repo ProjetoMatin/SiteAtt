@@ -18,6 +18,11 @@ main{
     pointer-events: none; /* Garante que o evento de clique passe através do overlay */
 }
 
+.categoria_h1 {
+    text-align: center;
+    color: var(--laranja00);
+}
+
 .cards-encl{
     display: flex;
     justify-content: center;
@@ -30,7 +35,8 @@ main{
 } */
 
 .card{
-    width: 12rem !important;
+    width: 200px !important;
+    padding: 0.5rem 0 !important;
 }
 
 .card .card-text{
@@ -49,11 +55,11 @@ main{
     outline: none;
     font-weight: bold;
     margin-top: 1rem;
-    color: var(--verde00);
+    color: var(--laranja00);
 }
 
 .card:hover .btnCard{
-    background-color: var(--verde00);
+    background-color: var(--laranja00);
     color: var(--branco00);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -66,18 +72,19 @@ main{
 .img-coracao{
     display: flex;
     justify-content: center !important;
-    margin: 20px 0;
+    margin: 20px;
 }
 
 .card .card-body img{
     display: block;
-    width: 115px;
-    height: 79px;
+    width: fit-content;
+    height: 80px;
 }
 
 .card .card-body .precos .precoAntigo, .card-ofertas .card-body .precos .precoAntigo{
     text-decoration: line-through;
-    font-size: 0.9em;
+    font-size: 1em;
+    color: #a0a0a0;
 }
 
 .card .card-body .precos .preco-Promocao, .card-ofertas .card-body .precos .preco-Promocao{
@@ -122,12 +129,14 @@ section{
 }
 
 .cards-encl-categoria .card-categorias{
-    width: 270px !important;
+    width: 300px !important;
+    border-radius: 10px;
     height: 360px !important;
-    box-shadow: 2px 3px 10px #8a8887;
+    box-shadow: 1px 1px 10px #00000038;
     padding: 15px;
     background-color: var(--branco00);
     transition: transform 0.1s ease;
+    cursor: pointer;
 }
 
 .card-categorias.lifted {
@@ -147,14 +156,13 @@ SECTION 2
 section .cards-encl-ofertas{
     display: flex !important;
     align-items: center !important;
-    justify-content: space-around;
-    
+    justify-content: space-evenly;
 }
 
 section .cards-encl-ofertas .card-ofertas{
-    width: 270px !important;
-    height: 410px !important;
-    box-shadow: 2px 3px 10px #8a8887;
+    width: 300px !important;
+    box-shadow: 1px 1px 10px #00000038;
+    border-radius: 10px;
     padding: 15px;
     background-color: var(--branco00);
 }
@@ -164,8 +172,7 @@ section .cards-encl-ofertas .card-ofertas .img-coracao, .cards-encl-categoria .c
 }
 
 section .cards-encl-ofertas .card-ofertas .img-comida, .cards-encl-categoria .card-categorias .img-comida{
-    width: 220px !important;
-    height: 150px !important;
+    width: 150px !important;
 }
 
 section .cards-encl-ofertas .card-ofertas button, .cards-encl-categoria .card-categorias button{
@@ -184,7 +191,7 @@ section .cards-encl-ofertas .card-ofertas .coracaoimg, .cards-encl-categoria .ca
 section .cards-encl-ofertas .card-ofertas .bottomcard-encl, .cards-encl-categoria .card-categorias .bottomcard-encl{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 section .cards-encl-ofertas .card-ofertas .bottomcard-encl .estrelas, .cards-encl-categoria .card-categorias .bottomcard-encl .estrelas{
@@ -254,4 +261,207 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
 
 .card, .card-ofertas {
     transition: transform 0.3s ease; /* Define a mesma transição para o estado normal */
+}
+
+.produtos {
+    background-color: var(--bege00);
+}
+
+.content {
+    background-color: var(--branco00);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.content-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-title div {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.content-title div a {
+    color: var(--laranja00);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.content-title div a:hover {
+    font-weight: bold;
+}
+
+.content-tile .mais-vendidos {
+    color: var(--laranja00);
+    text-decoration: none;
+}
+
+.botoes-carrossel span{
+    width: 10px;
+    height: 10px;
+    background-color: var(--cinza00);
+    border-radius: 20px;
+}
+
+
+.botoes-carrossel .ativo{
+    width: 40px;
+    background-color: var(--verde00);
+}
+.flex-ultimos-vistos {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.ultimo-visto .card-ofertas {
+    width: 200px;
+    padding: 1rem;
+}
+
+.flex-avaliacoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-avaliacoes img {
+    width: 15px;
+}
+
+.media-avaliacao {
+    font-style: italic;
+}
+
+.flex-img-acoes {
+    display: flex;
+    margin: 0.5rem 0;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.flex-img-acoes .acao {
+    width: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.336);
+}
+
+.flex-img-acoes img {
+    width: 100%;
+}
+
+.flex-img-acoes .acao:hover {
+    cursor: pointer;
+}
+
+.desc-produto p {
+    margin: 0.5rem 0 !important;
+}
+
+.parcela {
+    color: var(--verde00);
+}
+
+.preco-flex {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.promocao {
+    font-size: 0.8em;
+    color: var(--verde00);
+}
+
+footer {
+    background-color: var(--preto00);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 2rem 0.5rem;
+    gap: 1.5rem;
+}
+
+footer .logo {
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: var(--branco00);
+}
+
+footer .logo img {
+    width: 50%;
+}
+
+
+footer .links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 7rem;
+    align-items: flex-start;
+}
+
+footer .redes-sociais {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+footer .rede-social {
+    width: 45px;
+    margin: 10px;
+    padding: 0.5rem;
+    background-color: #3d3d3d;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+footer .rede-social:hover {
+    background-color: var(--laranja00);
+}
+
+footer .rede-social img {
+    width: 100%;
+}
+
+footer .link-title {
+    color: #3d3d3d;
+    font-weight: bold;
+}
+
+footer .link-item {
+    margin-top: 1rem!important;
+    margin-bottom: 1.5rem!important;
+}
+
+footer .link-item a {
+    color: var(--branco00);
+    text-decoration: none;
+    transition: .2s;
+}
+
+footer .link-item a:hover {
+    color: var(--laranja00);
+}
+
+.sub-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cinza00);
+    padding: 1rem;
+    background-color: var(--preto00);
+    font-size: 0.8em;
+    cursor: default;
 }

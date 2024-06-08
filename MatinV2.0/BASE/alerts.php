@@ -38,13 +38,17 @@ switch ($aviso) {
     case 3:
         echo "<p class='aviso vermelho'>Faça login!</p>";
         break;
-    
+
         //CADASTRO
 
     case 4:
         echo "<p class='aviso verde'>Cadastro realizado com sucesso</p>";
         break;
-        
+
+    case 5:
+        echo "<p class='aviso vermelho'>Houve um erro ao cadastrar usuario!</p>";
+        break;
+
     default:
         # code...
         break;

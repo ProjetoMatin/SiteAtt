@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/perfil.css">
 
 <?php require_once 'BASE/config.php'; ?>
+<?php require_once 'MODEL/autenticacao.php'; ?>
 
 <?php
 
@@ -72,7 +73,7 @@ if(!isset($_SESSION['idUsu'])){
                 $selectP->execute();
                 $linhas = $selectP->rowCount();
 
-                echo "<script>alert($linhasPU + ' ID:' + $id);</script>";
+                // echo "<script>alert($linhasPU + ' ID:' + $id);</script>";
 
                 $dado = $selectPU->fetch();
                 
