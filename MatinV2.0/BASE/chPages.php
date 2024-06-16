@@ -14,6 +14,14 @@ switch ($page) {
         require_once 'PAGES/carrinho.php';
         break;
 
+    case 'cadastro':
+        header("Location: ../CREDENTIALS/cadastroUsu.php");
+        break;
+
+    case 'login':
+        header("Location: ../CREDENTIALS/loginUsu.php");
+        break;
+
     default:
         require_once 'BASE/home.php';
         break;

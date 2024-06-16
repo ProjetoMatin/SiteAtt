@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jun-2024 às 03:09
+-- Tempo de geração: 16-Jun-2024 às 20:00
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -138,7 +138,8 @@ INSERT INTO `local` (`CEP`, `Logradouro`, `Bairro`, `Cidade`, `UF`) VALUES
 (25946497, 'Rua Oswaldo Cruz', 'Bananal', 'Guapimirim', 'RJ'),
 (26311430, 'Rua Maria Alves', 'Nossa Senhora de Fátima', 'Queimados', 'RJ'),
 (26376100, 'Rua Camboatá', 'Cidade Jardim Cabuçu', 'Queimados', 'RJ'),
-(27524302, 'Rua das Andorinhas', 'Morada da Felicidade', 'Resende', 'RJ');
+(27524302, 'Rua das Andorinhas', 'Morada da Felicidade', 'Resende', 'RJ'),
+(78058242, 'Rua Tucano-Açu', 'Morada da Serra', 'Cuiabá', 'MT');
 
 -- --------------------------------------------------------
 
@@ -246,17 +247,20 @@ CREATE TABLE `usuario` (
   `TCIR` enum('CPF','CNPJ') NOT NULL,
   `NRCIR` varchar(45) NOT NULL,
   `nvl_usu` enum('A','F','C') NOT NULL DEFAULT 'C',
-  `Local_CEP` int(11) NOT NULL
+  `Local_CEP` int(11) NOT NULL,
+  `tipoLocal` enum('Casa','Trabalho') NOT NULL,
+  `infoAddLocal` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idUsu`, `nome_usu`, `ativo`, `data_criacao`, `email_usu`, `senha_usu`, `tel_usu`, `fotos_usu`, `premium`, `NR`, `comp`, `TCIR`, `NRCIR`, `nvl_usu`, `Local_CEP`) VALUES
-(1, 'AdmMatin', '1', '2024-04-02', 'repositoriomatin@gmail.com', 'senhabraba1337#', '2198347-3957', NULL, '1', '209', 'apt 201', 'CNPJ', '26535178000120', 'A', 26311430),
-(2, 'Lucas', '1', '2024-04-01', 'repositorioLucas@gmail.com', '123123', '2198347-3952', NULL, '1', '12', '123', 'CPF', '30816990026', 'F', 27524302),
-(22, 'teste', '1', '2024-06-07', 'teste@gmail.com', '123123', '14 31421-4214', 'sem_foto.png', '0', '21391924/845765', 'S/N', 'CNPJ', '21391924/845765', 'C', 21921725);
+INSERT INTO `usuario` (`idUsu`, `nome_usu`, `ativo`, `data_criacao`, `email_usu`, `senha_usu`, `tel_usu`, `fotos_usu`, `premium`, `NR`, `comp`, `TCIR`, `NRCIR`, `nvl_usu`, `Local_CEP`, `tipoLocal`, `infoAddLocal`) VALUES
+(1, 'AdmMatin', '1', '2024-04-02', 'repositoriomatin@gmail.com', 'senhabraba1337#', '2198347-3957', 'sem_foto.png', '1', '209', 'apt 201', 'CNPJ', '26535178000120', 'A', 26311430, 'Casa', NULL),
+(2, 'Lucas', '1', '2024-04-01', 'repositorioLucas@gmail.com', '123123', '2198347-3952', 'sem_foto.png', '1', '12', '123', 'CPF', '30816990026', 'F', 27524302, 'Casa', NULL),
+(22, 'teste', '1', '2024-06-07', 'teste@gmail.com', '123123', '14 31421-4214', 'sem_foto.png', '0', '21391924/845765', 'S/N', 'CNPJ', '21391924/845765', 'C', 21921725, 'Casa', NULL),
+(33, 'Yuri Esteves', '1', '2024-06-16', 'Yuri@gmail.com', '123123', '52 18159-3114', 'sem_foto.png', '0', 'S/N', 'apto 12', 'CPF', '29834572138', 'C', 78058242, 'Casa', 'S/C');
 
 -- --------------------------------------------------------
 
@@ -433,7 +437,7 @@ ALTER TABLE `seguidores`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restrições para despejos de tabelas
