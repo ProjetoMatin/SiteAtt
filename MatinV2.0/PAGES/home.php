@@ -42,7 +42,7 @@
 
         <div class="card" style="width: 18rem;">
             <?php
-            
+
             try {
                 $selectQ = "SELECT * FROM produto ORDER BY RAND() LIMIT 1";
                 $selectP = $cx->prepare($selectQ);
@@ -51,6 +51,7 @@
                 $row = $selectP->rowCount();
 
                 while ($dados = $selectP->fetch()) {
+                    echo "<a href='?page=produto&idProd=" . $dados['idProduto'] . "' class='card-encl-texto-redirect'>";
                     echo "<div class='card-body'>";
                     echo "<h5 class='card-title'>Oferta Recomendada</h5>";
                     echo "<div class='img-coracao'>";
@@ -88,6 +89,7 @@
                     }
                     echo "</div>";
                     echo "</div>";
+                    echo "</a>";
                 }
             } catch (PDOException $e) {
                 $erro = $e->getMessage();
@@ -106,6 +108,7 @@
             $selectP->execute();
 
             while ($dados = $selectP->fetch()) {
+                echo "<a href='?page=produto&idProd=" . $dados['idProduto'] . "' class='card-encl-texto-redirect'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>Mais vendido</h5>";
                 echo "<div class='img-coracao'>";
@@ -143,6 +146,7 @@
                 }
                 echo "</div>";
                 echo "</div>";
+                echo "</a>";
             }
 
             ?>
@@ -165,18 +169,18 @@
                 <p class="card-text" style="margin-top: 8.4rem !important;">Desfrute de diversas vantagens e compre
                     livremente</p>
 
-                <form action="<?=$_SERVER['PHP_SELF']?>">
+                <form action="<?= $_SERVER['PHP_SELF'] ?>">
                     <button class="btnCard" name="login">
                         Entrar
                     </button>
                 </form>
 
-                <?php 
-                
-                    if(isset($_REQUEST['login'])){
-                        echo "<script>location.href='PAGES/loginUsu.php'</script>";
-                    }
-                
+                <?php
+
+                if (isset($_REQUEST['login'])) {
+                    echo "<script>location.href='PAGES/loginUsu.php'</script>";
+                }
+
                 ?>
             </div>
         </div>
@@ -205,16 +209,16 @@
     <h1 class="tituloSection categoria_h1">Categorias mais buscadas</h1>
 
     <div class="cards-encl-categoria">
-        <?php 
+        <?php
 
         $selectQ = "SELECT * FROM categoria ORDER BY qnt_vis DESC LIMIT 4 ";
-        $selectP = $cx -> prepare($selectQ);
+        $selectP = $cx->prepare($selectQ);
         $selectP->setFetchMode(PDO::FETCH_ASSOC);
         $selectP->execute();
         $dados = $selectP->rowCount();
-    
 
-        while($dados = $selectP->fetch()){
+
+        while ($dados = $selectP->fetch()) {
             echo "<div class='card-categorias' style='width: 18rem;'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>{$dados['nome_cat']}</h5>";
@@ -255,11 +259,11 @@
 
                 <div class="bottomcard-encl">
                     <div class="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10(2).png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/halfStar.png" alt="estrelas">
                         <p>(4.5)</p>
                     </div>
 
@@ -290,11 +294,11 @@
 
                 <div class="bottomcard-encl">
                     <div class="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10(2).png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/halfStar.png" alt="estrelas">
                         <p>(4.5)</p>
                     </div>
 
@@ -325,11 +329,11 @@
 
                 <div class="bottomcard-encl">
                     <div class="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10(2).png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/halfStar.png" alt="estrelas">
                         <p>(4.5)</p>
                     </div>
 
@@ -360,11 +364,11 @@
 
                 <div class="bottomcard-encl">
                     <div class="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10.png" alt="estrelas">
-                        <img src="IMAGES/Star 10(2).png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/fullStar.png" alt="estrelas">
+                        <img src="IMAGES/halfStar.png" alt="estrelas">
                         <p>(4.5)</p>
                     </div>
 
@@ -414,11 +418,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -447,11 +451,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -480,11 +484,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -513,11 +517,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -561,11 +565,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -594,11 +598,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -627,11 +631,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -660,11 +664,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -709,11 +713,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -742,11 +746,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -775,11 +779,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -808,11 +812,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -857,11 +861,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -890,11 +894,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -923,11 +927,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -956,11 +960,11 @@
                         <div class="flex-avaliacoes">
                             <p>350 vendidos</p>
                             <div class="estrelas">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10.png" alt="">
-                                <img src="IMAGES/Star 10(2).png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/fullStar.png" alt="">
+                                <img src="IMAGES/halfStar.png" alt="">
                                 <span class="media-avaliacao">(4.2)</span>
                             </div>
                         </div>
@@ -1022,27 +1026,27 @@
                 </figure>
             </a>
         </div>
-            <div class="rede-social">
-                <a href="#">
-                    <figure>
-                        <img src="IMAGES/whatsapp.png" alt="WhatsApp">
-                    </figure>
-                </a>
-            </div>
-            <div class="rede-social">
-                <a href="#">
-                    <figure>
-                        <img src="IMAGES/twitter.png" alt="Twitter">
-                    </figure>
-                </a>
-            </div>
-            <div class="rede-social">
-                <a href="#">
-                    <figure>
-                        <img src="IMAGES/telegram.png" alt="Telegram">
-                    </figure>
-                </a>
-            </div>
+        <div class="rede-social">
+            <a href="#">
+                <figure>
+                    <img src="IMAGES/whatsapp.png" alt="WhatsApp">
+                </figure>
+            </a>
+        </div>
+        <div class="rede-social">
+            <a href="#">
+                <figure>
+                    <img src="IMAGES/twitter.png" alt="Twitter">
+                </figure>
+            </a>
+        </div>
+        <div class="rede-social">
+            <a href="#">
+                <figure>
+                    <img src="IMAGES/telegram.png" alt="Telegram">
+                </figure>
+            </a>
+        </div>
     </div>
 </footer>
 <div class="sub-footer">
@@ -1054,53 +1058,52 @@
 <script>
     window.addEventListener("load", () => {
 
-    if (typeof jQuery === 'undefined') {
-        console.error("jQuery não está carregado.");
-        return;
-    }
-
-    let cartElements = document.getElementsByClassName("acaoCart");
-    let favoritoElements = document.getElementsByClassName("acaoFavorito");
-
-    if (cartElements.length > 0 && favoritoElements.length > 0) {
-        for(let contador = 0; contador < cartElements.length;contador++) {
-            let cart = $(cartElements[contador]);
-            let favorito = $(favoritoElements[contador]);
-
-            const cartImage1 = 'IMAGES/grocery-store.png';
-            const cartImage2 = 'IMAGES/shoppingcart.png';
-            const favoritoImage1 = 'IMAGES/Union (Stroke).png';
-            const favoritoImage2 = 'IMAGES/Union.png'; 
-    
-            favorito.on("click", () => {
-                favorito.fadeOut(200, () => {
-                    if (favorito.attr('src').includes(favoritoImage1)) {
-                        favorito.attr('src', favoritoImage2);
-                    } else {
-                        favorito.attr('src', favoritoImage1);
-                    }
-                    favorito.fadeIn(200);
-                });
-            });
-    
-            cart.on("click", () => {
-                cart.fadeOut(200, () => {
-                    if (cart.attr('src').includes(cartImage1)) {
-                        cart.attr('src', cartImage2);
-                    } else {
-                        cart.attr('src', cartImage1);
-                    }
-                    cart.fadeIn(200);
-                });
-            });
+        if (typeof jQuery === 'undefined') {
+            console.error("jQuery não está carregado.");
+            return;
         }
 
-        console.log(favorito.attr('src'), cart.attr('src'));
-    } else {
-        console.error("Os elementos com as classes especificadas não foram encontrados.");
-    }
-});
+        let cartElements = document.getElementsByClassName("acaoCart");
+        let favoritoElements = document.getElementsByClassName("acaoFavorito");
 
+        if (cartElements.length > 0 && favoritoElements.length > 0) {
+            for (let contador = 0; contador < cartElements.length; contador++) {
+                let cart = $(cartElements[contador]);
+                let favorito = $(favoritoElements[contador]);
+
+                const cartImage1 = 'IMAGES/grocery-store.png';
+                const cartImage2 = 'IMAGES/shoppingcart.png';
+                const favoritoImage1 = 'IMAGES/Union (Stroke).png';
+                const favoritoImage2 = 'IMAGES/Union.png';
+
+                favorito.on("click", () => {
+                    favorito.fadeOut(200, () => {
+                        if (favorito.attr('src').includes(favoritoImage1)) {
+                            favorito.attr('src', favoritoImage2);
+                        } else {
+                            favorito.attr('src', favoritoImage1);
+                        }
+                        favorito.fadeIn(200);
+                    });
+                });
+
+                cart.on("click", () => {
+                    cart.fadeOut(200, () => {
+                        if (cart.attr('src').includes(cartImage1)) {
+                            cart.attr('src', cartImage2);
+                        } else {
+                            cart.attr('src', cartImage1);
+                        }
+                        cart.fadeIn(200);
+                    });
+                });
+            }
+
+            console.log(favorito.attr('src'), cart.attr('src'));
+        } else {
+            console.error("Os elementos com as classes especificadas não foram encontrados.");
+        }
+    });
 </script>
 
 <!-- Isso aqui faz uma animação de mostrar o conteudo quando scrolla pra baixo :) -->

@@ -4,6 +4,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 15px;
+        background-color: var(--branco00);
     }
 
     header .logo {
@@ -58,6 +59,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 32px;
+        background-color: var(--branco00);
         /* background-color: orange; */
     }
 

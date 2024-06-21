@@ -3,7 +3,7 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 'home';
 
 switch ($page) {
     case 'home':
-        require_once 'BASE/home.php';
+        require_once 'PAGES/home.php';
         break;
 
     case 'perfil':
@@ -12,6 +12,10 @@ switch ($page) {
 
     case 'carrinho':
         require_once 'PAGES/carrinho.php';
+        break;
+
+    case 'produto':
+        require_once 'PAGES/produto.php';
         break;
 
     case 'cadastro':
@@ -23,6 +27,6 @@ switch ($page) {
         break;
 
     default:
-        require_once 'BASE/home.php';
+        require_once 'PAGES/home.php';
         break;
 }

@@ -30,6 +30,11 @@ main{
     gap: 20px !important;
 }
 
+.card-encl-texto-redirect{
+    text-decoration: none;
+    color: var(--preto00);
+}
+
 /* .cards-encl, .cards-encl-categoria, .cards-encl-ofertas{
     visibility: hidden;
 } */

@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+body {
+    background-color: var(--bege03);
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.paginasTopo {
+    font-weight: bold;
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    background-color: var(--cinza04);
+}
+
+a {
+    text-decoration: none;
+    color: var(--preto00);
+}
+
+.textoVerde {
+    color: var(--verde00) !important;
+}
+
+.qntEstoque {
+    margin-top: 30px !important;
+
+}
+
+mark,
+.laranjaTxt {
+    background-color: transparent;
+    color: var(--laranja00);
+
+}
+
+section {
+    padding: 30px;
+}
+
+.produto-encl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: var(--branco00);
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px var(--cinza04);
+}
+
+section .produto-encl .produto-main {
+    display: flex;
+}
+
+section .produto-encl .produto-main .fotos-prod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+section .produto-encl .produto-main .fotos-prod .fotoPrincipal {
+    display: flex;
+    width: 300px;
+    /* margin: auto; */
+}
+
+section .produto-encl .produto-main .fotos-prod .outras-fotos-encl {
+    display: flex;
+    gap: 10px;
+}
+
+section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .fotos-encl {
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--cinza03);
+}
+
+section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
+    width: 70px;
+    height: 70px;
+    filter: blur(1px);
+    padding: 10px;
+}
+
+.lado-lado {
+    display: flex;
+    margin-top: 10px;
+}
+
+.lado-lado hr {
+    width: 2px;
+    margin: 0 15px;
+    height: 25px;
+}
+
+.produto-info-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 543px;
+    padding: 30px;
+}
+
+.avaliacao-prod-main-encl {
+    display: flex;
+    /* align-items: center; */
+
+}
+
+.avaliacao-prod-main-encl img {
+    width: 21px;
+    height: 19px;
+}
+
+.avaliacao-prod-main-encl p {
+    margin-left: 15px;
+}
+
+#freteAD {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: var(--verde00);
+    color: var(--branco00);
+}
+
+#palavraMARCADA {
+    font-weight: bold;
+    color: var(--branco00);
+    padding: 0;
+}
+
+.resumoCompraEncl {
+    padding: 30px;
+    max-width: 100%;
+}
+
+.resumoCompra {
+    padding: 30px;
+    border: 1px solid var(--preto00);
+}
+
+.precos {
+    margin-top: 30px;
+}
+
+#precoAntigo {
+    font-weight: bold;
+    color: var(--laranja00);
+}
+
+#precoNovo #preco {
+    font-size: 1.6em !important;
+    font-weight: bolder;
+}
+
+#desconto {
+    color: var(--verde00);
+}
+
+.resumoCompraEncl {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumoCompraEncl .resumoCompra .valorFrete {
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.resumoCompraEncl .resumoCompra .descResumoCompra {
+    margin: 10px 0;
+}
+
+.btns-encl {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btns-encl button {
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: var(--laranja00);
+}
+
+.btns-encl button .comprarA {
+    color: var(--branco00);
+
+}
+
+.btns-encl .addCarrinhoBTN {
+    background-color: var(--branco00) !important;
+    border: 1px solid var(--verde00);
+}
+
+.btns-encl .addCarrinhoBTN a {
+    color: var(--verde00);
+    transition: color 0.3s;
+    /* Transição suave para a mudança de cor */
+}
+
+/* Estilo do botão em estado de hover */
+.btns-encl .addCarrinhoBTN:hover {
+    background-color: var(--verde00) !important;
+}
+
+/* Estilo do link dentro do botão em estado de hover */
+.btns-encl .addCarrinhoBTN:hover a {
+    color: var(--branco00);
+    /* Cor do link quando o botão está em hover */
+}
+
+.infoContaVendedor {
+    display: flex;
+    margin-top: 20px;
+}
+
+.infoContaVendedor .infoPerfil .nomeUsu {
+    font-weight: bolder;
+}
+
+.infoContaVendedor figure img {
+    width: 60px;
+}
+
+.infoContaVendedor .infoPerfil {
+    margin-left: 10px;
+}
+
+.infoContaVendedor .infoPerfil .qntVendas {
+    font-size: 14px;
+}
+
+.infoContaVendedor .infoPerfil .perfilVerificado {
+    display: flex;
+}
+
+.infoContaVendedor .infoPerfil .perfilVerificado p {
+    color: var(--verde00);
+    font-size: 0.95em;
+}
+
+.infoContaVendedor .infoPerfil .perfilVerificado img {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    margin-left: 10px !important;
+    object-fit: fill !important;
+}
+
+.informacoes-extras{
+    margin-top: 30px;
+}
+
+.informacoes-extras .devolucao, .informacoes-extras .segurancaCompra{
+    display: flex;
+}
+
+.informacoes-extras .devolucao p, .informacoes-extras .segurancaCompra p{
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.informacoes-extras .devolucao figure img{
+    width: 13px;
+    margin-right: 10px !important;
+}
+
+.informacoes-extras .segurancaCompra figure img{
+    width: 15px;
+    margin-right: 10px !important;
+}

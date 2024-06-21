@@ -27,8 +27,8 @@
 
     <?php
     require_once 'BASE/header.php';
-    require_once 'BASE/chPages.php';
     require_once 'BASE/config.php';
+    require_once 'BASE/chPages.php';
 
     ?>
 
