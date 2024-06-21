@@ -103,7 +103,7 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 .produto-info-main {
     display: flex;
     flex-direction: column;
-    max-width: 543px;
+    max-width: 550px;
     padding: 30px;
 }
 
@@ -114,8 +114,8 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 }
 
 .avaliacao-prod-main-encl img {
-    width: 21px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
 }
 
 .avaliacao-prod-main-encl p {
@@ -144,7 +144,8 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 
 .resumoCompra {
     padding: 30px;
-    border: 1px solid var(--preto00);
+    border: 1px solid var(--cinza00);
+    border-radius: 10px;
 }
 
 .precos {
@@ -153,6 +154,7 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 
 #precoAntigo {
     font-weight: bold;
+    text-decoration: line-through;
     color: var(--laranja00);
 }
 
