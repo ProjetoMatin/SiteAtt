@@ -78,14 +78,23 @@ if (!empty($idProd || !is_null($idProd))) {
                 $selectQPE = $cx->prepare("SELECT COUNT(*) as total FROM avaliacao WHERE idProduto = $idProd");
                 $selectQPE->execute();
                 $dadoQPE = $selectQPE->fetch(PDO::FETCH_ASSOC);
+                    // echo count($dadoQPE);
+                if($dadoQPE['total'] > 1 || $dadoQPE['total'] == 0) {
+                    echo "<p>".$dadoQPE['total'] ." Avaliações</p>";
+                } elseif($dadoQPE['total'] = 1) {
+                    echo "<p>" . $dadoQPE['total'] . " Avaliação </p>";
+                }
 
                 ?>
 
-                <p><?php echo $dadoQPE['total'] ?> Avaliações</p>
-
                 <hr>
 
-                <p>25 mil vendidos</p>
+                <?php 
+                    $select_venda = $cx->prepare("SELECT qnt_vendas as vendas FROM produto WHERE idProduto = $idProd");
+                    $select_venda->execute();
+                    $dado_venda = $select_venda->fetch(PDO::FETCH_ASSOC);
+                ?>
+                <p><?=number_format($dado_venda['vendas'], 0, ',', '.')?> vendas</p>
             </div>
 
             <p id="freteAD"><mark id="palavraMARCADA">FRETE GRÁTIS</mark> PARA COMPRAS ACIMA DE R$50,00</p>
