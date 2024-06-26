@@ -43,14 +43,17 @@
 
                     switch ($fetchU['ativo']) {
                         case '1':
-
                             $_SESSION['idUsu'] = $idUsu;
+                            header("Location: ../index.php");
                             break;
                         case '0':
+                            header("Location: ../index.php?aviso=2");
                             break;
                     }
 
-                    header("Location: ../index.php");
+                    
+                       
+
                     die();
                 }
             } catch (PDOException $e) {

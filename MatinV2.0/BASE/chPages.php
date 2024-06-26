@@ -26,6 +26,7 @@ switch ($page) {
         header("Location: ../CREDENTIALS/loginUsu.php");
         break;
 
+
     default:
         require_once 'PAGES/home.php';
         break;

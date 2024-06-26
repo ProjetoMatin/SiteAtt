@@ -7,13 +7,27 @@
 
 .aba-perfil{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.aba-perfil nav{
+    background-color: transparent;
+    padding: 0;
+}
+
+.aba-perfil nav img{
+    width: 100px;
+}
+
+.aba-perfil .acesso-dashboard img{
+    width: 30px;
 }
 
 .area-perfil{
-    background-image: url(../../IMAGES/manguinha.png);
-    background-repeat: no-repeat;
+    background-color: var(--pretoAzulado);
+    /* background-repeat: no-repeat; */
     width: 500px !important;
+    padding: 20px;
     height: 200px;
     border-radius: 10px;
 }
@@ -25,6 +39,7 @@
 .div-button{
     margin-top: 20px;
     display: flex;
+    gap: 10px;
     justify-content: space-around;
 }
 
@@ -45,11 +60,10 @@
 }
 
 .btn{
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
-    height: 32px;   
     color: var(--branco00);
-    padding: 0 !important;
+    padding: 5px 0px !important;
     width: 230px;
     background-color: transparent;
     border: 1px solid var(--branco00);

@@ -12,7 +12,6 @@ function autenticar($idUsu){
 
 function pegarIDUsuario(){
     return $_SESSION['idUsu'];
-
 }
 
 ?>

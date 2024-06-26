@@ -1,0 +1,14 @@
+aqui eu vou botar alguns termos que tem no BD pra eu nao esquecer oq eles significam
+
+NPEDIDO
+
+CF - COMPRA FINALIZADA
+CA - COMPRA EM ANDAMENTO
+CNR - COMPRA NAO REALIZADA
+A - ANALISE
+
+USUARIO_HAS_PERGUNTA
+
+A - ANALISE
+R - RESPONDIDA
+NR - NÃO RESPONDIDA

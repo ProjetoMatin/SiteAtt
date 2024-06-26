@@ -27,6 +27,7 @@
 
 :root{
     --preto00: black;
+    --pretoAzulado: #0F172A;
 
     --branco00: white;
 
@@ -37,11 +38,17 @@
     --cinza04: #ABABAB;
 
     --laranja00: #FF6600;
+    --laranja01: #FF9F5F; 
     --laranjaPressed: #d66215;
 
+    --vermelho00: #FF2A2A;
     --vermelhoAviso: #B00000;
 
+    --azulClaro: #009EBB;
+
     --verde00: #008000;
+    --verde01: #00C500;
+    --verde02: #00AA00;
     --verdePressed: #035f03;
 
     --bege00: #F1F2EB;
