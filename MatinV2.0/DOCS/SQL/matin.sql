@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Maio-2024 às 14:24
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 03-Jul-2024 às 04:05
+-- Versão do servidor: 10.4.32-MariaDB
+-- versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,7 +77,8 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`idCategoria`, `nome_cat`, `img_cat`, `desc_cat`, `qnt_vis`) VALUES
-(1, 'Sementes', 'sem_foto.png', 'Sementes de qualidade para agricultura, jardinagem e conservação.', NULL);
+(1, 'Sementes', 'sem_foto.png', 'Sementes de qualidade para agricultura, jardinagem e conservação.', 176),
+(2, 'Laticínios ', 'sem_foto.png', 'Laticinios novos', 30);
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,8 @@ CREATE TABLE `cria` (
 
 INSERT INTO `cria` (`idCria`, `idUsu`, `idProduto`) VALUES
 (1, 1, 2),
-(4, 1, 2);
+(4, 1, 2),
+(5, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -137,6 +139,7 @@ CREATE TABLE `local` (
 --
 
 INSERT INTO `local` (`CEP`, `Logradouro`, `Bairro`, `Cidade`, `UF`) VALUES
+(26083160, 'Rua Abirú', 'Rodilândia', 'Nova Iguaçu', 'RJ'),
 (26311430, 'Rua Maria Alves', 'Nossa Senhora de Fátima', 'Queimados', 'RJ'),
 (26376100, 'Rua Camboatá', 'Cidade Jardim Cabuçu', 'Queimados', 'RJ'),
 (27524302, 'Rua das Andorinhas', 'Morada da Felicidade', 'Resende', 'RJ');
@@ -148,15 +151,22 @@ INSERT INTO `local` (`CEP`, `Logradouro`, `Bairro`, `Cidade`, `UF`) VALUES
 --
 
 CREATE TABLE `npedido` (
-  `situacao` enum('0','1') NOT NULL,
+  `idNPedido` int(11) NOT NULL,
+  `situacao` enum('CF','CA','CNR','A') NOT NULL,
   `data_criacao` date NOT NULL,
   `qnt_pedida` int(11) NOT NULL,
   `tipoqnt_ped` enum('kg','unid') NOT NULL,
-  `idNPedido` int(11) NOT NULL,
   `idProduto` int(11) NOT NULL,
   `idUsuComprador` int(11) NOT NULL,
   `idUsuVendedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `npedido`
+--
+
+INSERT INTO `npedido` (`idNPedido`, `situacao`, `data_criacao`, `qnt_pedida`, `tipoqnt_ped`, `idProduto`, `idUsuComprador`, `idUsuVendedor`) VALUES
+(1, 'CF', '2024-07-02', 3, 'kg', 3, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -168,6 +178,13 @@ CREATE TABLE `pergunta` (
   `idPergunta` int(11) NOT NULL,
   `desc_perg` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `pergunta`
+--
+
+INSERT INTO `pergunta` (`idPergunta`, `desc_perg`) VALUES
+(1, 'Nao gostei do produto!');
 
 -- --------------------------------------------------------
 
@@ -195,19 +212,8 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`idProduto`, `nome_prod`, `qnt_prod_estoque`, `data_criacao_prod`, `preco_prod`, `fotos_prod`, `qnt_vendas`, `promocao`, `parcela`, `idCarrinho`, `idFavoritos`, `idCategoria`) VALUES
-(2, 'Maçã', 3, '2024-04-08', '12.00', 'sem_foto.png', 5, 2, 3, 1, 1, 1),
-(3, 'Leite', 5, '2024-04-03', '144.00', 'leite.jpg', 10, NULL, NULL, 2, 2, 1);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `produto_has_pergunta`
---
-
-CREATE TABLE `produto_has_pergunta` (
-  `idProduto` int(11) NOT NULL,
-  `idPergunta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+(2, 'Maçã', 3, '2024-04-08', 12.00, 'sem_foto.png', 5, 2, 3, 1, 1, 1),
+(3, 'Leite', 5, '2024-04-03', 144.00, 'leite.jpg', 10, NULL, NULL, 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -240,7 +246,6 @@ CREATE TABLE `usuario` (
   `ativo` enum('0','1') NOT NULL DEFAULT '1',
   `data_criacao` date NOT NULL,
   `email_usu` varchar(100) NOT NULL,
-  `CPF_usu` varchar(13) NOT NULL,
   `senha_usu` varchar(45) NOT NULL,
   `tel_usu` varchar(45) NOT NULL,
   `fotos_usu` varchar(45) DEFAULT NULL,
@@ -251,18 +256,19 @@ CREATE TABLE `usuario` (
   `NRCIR` varchar(45) NOT NULL,
   `nvl_usu` enum('A','F','C') NOT NULL DEFAULT 'C',
   `Local_CEP` int(11) NOT NULL,
-  `idCarrinho` int(11) NOT NULL,
-  `idFavoritos` int(11) NOT NULL
+  `tipoLocal` enum('casa','trabalho') NOT NULL,
+  `infoAddLocal` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idUsu`, `nome_usu`, `ativo`, `data_criacao`, `email_usu`, `CPF_usu`, `senha_usu`, `tel_usu`, `fotos_usu`, `premium`, `NR`, `comp`, `TCIR`, `NRCIR`, `nvl_usu`, `Local_CEP`, `idCarrinho`, `idFavoritos`) VALUES
-(1, 'AdmMatin', '1', '2024-04-02', 'repositoriomatin@gmail.com', '99536218020', 'senhabraba1337#', '2198347-3957', NULL, '1', '209', 'apt 201', 'CNPJ', '26535178000120', 'C', 26311430, 1, 1),
-(2, 'Lucas', '1', '2024-04-01', 'repositorioLucas@gmail.com', '30816990026', '123123', '2198347-3952', NULL, '1', '12', '123', 'CPF', '30816990026', 'F', 27524302, 2, 2),
-(3, 'Osiris', '1', '2024-04-01', 'osirisiuri@gmail.com', '29673467722', 'osiris123', '212798-2165', NULL, '0', '12', '14', 'CPF', '29673467722', 'C', 26376100, 3, 3);
+INSERT INTO `usuario` (`idUsu`, `nome_usu`, `ativo`, `data_criacao`, `email_usu`, `senha_usu`, `tel_usu`, `fotos_usu`, `premium`, `NR`, `comp`, `TCIR`, `NRCIR`, `nvl_usu`, `Local_CEP`, `tipoLocal`, `infoAddLocal`) VALUES
+(1, 'AdmMatin', '1', '2024-04-02', 'repositoriomatin@gmail.com', 'senhabraba1337#', '2198347-3957', NULL, '1', '209', 'apt 201', 'CNPJ', '26535178000120', 'A', 26311430, 'casa', ''),
+(2, 'Lucas', '1', '2024-04-01', 'repositorioLucas@gmail.com', '123123', '2198347-3952', NULL, '1', '12', '123', 'CPF', '30816990026', 'F', 27524302, 'casa', ''),
+(3, 'Osiris', '1', '2024-04-01', 'osirisiuri@gmail.com', 'osiris123', '212798-2165', NULL, '0', '12', '14', 'CPF', '29673467722', 'C', 26376100, 'casa', ''),
+(8, 'Yuri Esteves', '1', '2024-07-03', 'yhureei@gmail.com', '123123', '21 58192-3419', 'sem_foto.png', '0', 'S/N', 'apto 12', 'CPF', '12930192039', 'C', 26083160, 'casa', 'Em frente ao Supermercado Atacadão');
 
 -- --------------------------------------------------------
 
@@ -272,8 +278,19 @@ INSERT INTO `usuario` (`idUsu`, `nome_usu`, `ativo`, `data_criacao`, `email_usu`
 
 CREATE TABLE `usuario_has_pergunta` (
   `Usuario_idUsu` int(11) NOT NULL,
-  `Pergunta_idPergunta` int(11) NOT NULL
+  `Pergunta_idPergunta` int(11) NOT NULL,
+  `idProduto` int(11) NOT NULL,
+  `id_vendedor` int(11) NOT NULL,
+  `sitPerg` enum('A','R','NR') NOT NULL,
+  `dataPerg` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `usuario_has_pergunta`
+--
+
+INSERT INTO `usuario_has_pergunta` (`Usuario_idUsu`, `Pergunta_idPergunta`, `idProduto`, `id_vendedor`, `sitPerg`, `dataPerg`) VALUES
+(3, 1, 2, 2, 'NR', '2024-07-02');
 
 --
 -- Índices para tabelas despejadas
@@ -344,13 +361,6 @@ ALTER TABLE `produto`
   ADD KEY `idCategoria` (`idCategoria`);
 
 --
--- Índices para tabela `produto_has_pergunta`
---
-ALTER TABLE `produto_has_pergunta`
-  ADD KEY `produto_has_pergunta_ibfk_1` (`idProduto`),
-  ADD KEY `idPergunta` (`idPergunta`);
-
---
 -- Índices para tabela `seguidores`
 --
 ALTER TABLE `seguidores`
@@ -361,9 +371,7 @@ ALTER TABLE `seguidores`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsu`,`Local_CEP`),
-  ADD KEY `fk_Usuario_Local_idx` (`Local_CEP`),
-  ADD KEY `idCarrinho` (`idCarrinho`),
-  ADD KEY `idFavoritos` (`idFavoritos`);
+  ADD KEY `fk_Usuario_Local_idx` (`Local_CEP`);
 
 --
 -- Índices para tabela `usuario_has_pergunta`
@@ -371,7 +379,9 @@ ALTER TABLE `usuario`
 ALTER TABLE `usuario_has_pergunta`
   ADD PRIMARY KEY (`Usuario_idUsu`,`Pergunta_idPergunta`),
   ADD KEY `fk_Usuario_has_Pergunta_Pergunta1_idx` (`Pergunta_idPergunta`),
-  ADD KEY `fk_Usuario_has_Pergunta_Usuario1_idx` (`Usuario_idUsu`);
+  ADD KEY `fk_Usuario_has_Pergunta_Usuario1_idx` (`Usuario_idUsu`),
+  ADD KEY `id_vendedor` (`id_vendedor`),
+  ADD KEY `idProduto` (`idProduto`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -393,13 +403,13 @@ ALTER TABLE `carrinho`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `cria`
 --
 ALTER TABLE `cria`
-  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `favoritos`
@@ -417,13 +427,13 @@ ALTER TABLE `local`
 -- AUTO_INCREMENT de tabela `npedido`
 --
 ALTER TABLE `npedido`
-  MODIFY `idNPedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idNPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pergunta`
 --
 ALTER TABLE `pergunta`
-  MODIFY `idPergunta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPergunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
@@ -441,7 +451,7 @@ ALTER TABLE `seguidores`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para despejos de tabelas
@@ -478,26 +488,19 @@ ALTER TABLE `produto`
   ADD CONSTRAINT `produto_ibfk_3` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`);
 
 --
--- Limitadores para a tabela `produto_has_pergunta`
---
-ALTER TABLE `produto_has_pergunta`
-  ADD CONSTRAINT `produto_has_pergunta_ibfk_1` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`),
-  ADD CONSTRAINT `produto_has_pergunta_ibfk_2` FOREIGN KEY (`idPergunta`) REFERENCES `pergunta` (`idPergunta`);
-
---
 -- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_Usuario_Local` FOREIGN KEY (`Local_CEP`) REFERENCES `local` (`CEP`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCarrinho`) REFERENCES `carrinho` (`idCarrinho`),
-  ADD CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`idFavoritos`) REFERENCES `favoritos` (`idFavoritos`);
+  ADD CONSTRAINT `fk_Usuario_Local` FOREIGN KEY (`Local_CEP`) REFERENCES `local` (`CEP`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `usuario_has_pergunta`
 --
 ALTER TABLE `usuario_has_pergunta`
   ADD CONSTRAINT `fk_Usuario_has_Pergunta_Pergunta1` FOREIGN KEY (`Pergunta_idPergunta`) REFERENCES `pergunta` (`idPergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Usuario_has_Pergunta_Usuario1` FOREIGN KEY (`Usuario_idUsu`) REFERENCES `usuario` (`idUsu`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Usuario_has_Pergunta_Usuario1` FOREIGN KEY (`Usuario_idUsu`) REFERENCES `usuario` (`idUsu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `usuario_has_pergunta_ibfk_1` FOREIGN KEY (`id_vendedor`) REFERENCES `usuario` (`idUsu`),
+  ADD CONSTRAINT `usuario_has_pergunta_ibfk_2` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
