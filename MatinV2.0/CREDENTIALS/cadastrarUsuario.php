@@ -25,6 +25,7 @@ function inserirUsu($valorSwitch, $cx, $nome, $senha, $email, $cpf, $telefone, $
                 if($InfoAdd == "" || is_null($InfoAdd)){
                     $InfoAdd = "S/C";
                 }
+                echo "<script>alert('$cpf')</script>";
 
                 $insertQ = "INSERT INTO usuario (nome_usu, ativo, data_criacao, email_usu, senha_usu, tel_usu, fotos_usu, premium, NR, comp, TCIR, NRCIR, nvl_usu, Local_CEP, tipoLocal, infoAddLocal) VALUES ('$nome', '1', '$diaAtual', '$email', '$senha', '$telefone', 'sem_foto.png', '0', 'S/N', '$Complemento', 'CPF', '$cpf', 'C', '$CEP', '$escolha', '$InfoAdd')";
                 

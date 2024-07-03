@@ -24,6 +24,15 @@
         margin-top: 20px;
     }
 
+    .dropend .dropdown-toggle::after {
+        display: none;
+    }
+
+    .btn-group,
+    .btn-group-vertical {
+        display: block;
+    }
+
     .offcanvas,
     .offcanvas-lg,
     .offcanvas-md,
@@ -55,7 +64,7 @@
     }
 
     .btnoffcanvas {
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
 
     .btnoffcanvas .doffcanvas {
@@ -90,7 +99,7 @@
     }
 
     .offcanvas-body li .sub-menu {
-        padding: 6px 6px 14px 30px;
+        padding-left: 50px;
         margin-top: -10px;
         background: var(--pretoAzulado);
         display: none;
@@ -156,7 +165,35 @@ if ($idUsu == '1') {
 
         <a href="?page=usu_list"><button class="btn" type="button"><img src="../IMAGES/grupo-de-usuarios.png" alt=""></button></a>
 
+        <a href="?page=prod_list"><button class="btn" type="button"><img src="../IMAGES/caixa.png" alt=""></button></a>
+
         <a href="?page=loc_list"><button class="btn" type="button"><img src="../IMAGES/local.png" alt=""></button></a>
+
+        <div class="btnoffcanvas">
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../IMAGES/categorias.png" alt="">
+                </button>
+
+               <ul class="dropdown-menu">
+               <li><a class='dropdown-item' href='?page=cat_list&idCat=geral'>Geral</a></li>
+                <?php 
+                
+                $selectQ = "SELECT * FROM categoria";
+                $selectP = $cx->prepare($selectQ);
+                $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                $selectP->execute();
+
+                while($dados = $selectP->fetch()){
+                    echo "<li><a class='dropdown-item' href='?page=cat_list&idCat=" . $dados['idCategoria'] . "'>" . $dados['nome_cat'] . "</a></li>";
+                }
+                
+                ?>
+                </ul>
+            </div>
+        </div>
+
+        <a href="?sair=true"><button class="btn" type="button"><img src="../IMAGES/sair.png" alt=""></button></a>
 
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
             <div class="offcanvas-header">
@@ -182,6 +219,14 @@ if ($idUsu == '1') {
                 </div>
 
                 <div class="btnoffcanvas">
+                    <a href="?page=prod_list">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/caixa.png" alt="">
+                            <h6>Produtos</h6>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="btnoffcanvas">
                     <a href="?page=loc_list">
                         <button class="btn doffcanvas" type="button"><img src="../IMAGES/local.png" alt="">
                             <h6>Localizações</h6>
@@ -190,19 +235,38 @@ if ($idUsu == '1') {
                 </div>
 
                 <li>
-                    <div class="icon-link">
-                        <a href="#">
-                            <span class="link_name">Categoria</span>
+
+                    <div class="btnoffcanvas">
+                        <a href="#" class="arrow">
+                            <button class="btn doffcanvas" type="button"><img src="../IMAGES/categorias.png" alt="">
+                                <h6>Categorias</h6>
+                            </button>
                         </a>
-                        <i class="bx bxs-chevron-down arrow"></i>
                     </div>
+
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Categoria</a></li>
-                        <li><a href="#">HTML & CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">PHP & MySQL</a></li>
+                    <?php 
+                        
+                        $selectQ = "SELECT * FROM categoria";
+                        $selectP = $cx->prepare($selectQ);
+                        $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                        $selectP->execute();
+                        
+                        while($dados = $selectP->fetch()){
+                            echo "<li><a href='?page=cat_list&idCat=" . $dados['idCategoria'] .  "'>". $dados['nome_cat'] . "</a></li>";
+                        }
+
+                        ?>
                     </ul>
                 </li>
+
+                <div class="btnoffcanvas">
+                    <a href="?sair=true">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/sair.png" alt="">
+                            <h6>Sair</h6>
+                        </button>
+                    </a>
+                </div>
             </div>
 
 
@@ -219,21 +283,13 @@ if ($idUsu == '1') {
 
         <a href="?page=dash_ini"><button class="btn" type="button"><img src="../IMAGES/computador-portatil.png" alt=""></button></a>
 
-        <a href="?sair=true"><button class="btn" type="button"><img src="../IMAGES/logout.png" alt=""></button></a>
+        <a href="?page=prod_list"><button class="btn" type="button"><img src="../IMAGES/caixa.png" alt=""></button></a>
 
-        <div class="btnoffcanvas">
-            <div class="btn-group dropend">
-                <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../IMAGES/logout.png" alt="">
-                </button>
+        <a href="?page=perg_list"><button class="btn" type="button"><img src="../IMAGES/question.png" alt=""></button></a>
 
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action 1</a></li>
-                    <li><a class="dropdown-item" href="#">Action 2</a></li>
-                    <li><a class="dropdown-item" href="#">Action 3</a></li>
-                </ul>
-            </div>
-        </div>
+        <a href="?sair=true"><button class="btn" type="button"><img src="../IMAGES/sair.png" alt=""></button></a>
+
+
 
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
             <div class="offcanvas-header">
@@ -251,27 +307,30 @@ if ($idUsu == '1') {
                 </div>
 
                 <div class="btnoffcanvas">
+                    <a href="?page=prod_list">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/caixa.png" alt="">
+                            <h6>Produtos</h6>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="btnoffcanvas">
+                    <a href="?page=perg_list">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/question.png" alt="">
+                            <h6>Perguntas</h6>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="btnoffcanvas">
                     <a href="?sair=true">
-                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/logout.png" alt="">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/sair.png" alt="">
                             <h6>Sair</h6>
                         </button>
                     </a>
                 </div>
 
-                <li>
-                    <div class="icon-link">
-                        <a href="#">
-                            <span class="link_name">Categoria</span>
-                        </a>
-                        <i class="bx bxs-chevron-down arrow"></i>
-                    </div>
-                    <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Categoria</a></li>
-                        <li><a href="#">HTML & CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">PHP & MySQL</a></li>
-                    </ul>
-                </li>
+
             </div>
 
 
@@ -303,6 +362,8 @@ if ($idUsu == '1') {
                 offcanvasElement.classList.remove('transition');
             }, 400); // Duração da transição
         });
+
+        //ESSE QAUYQ
 
         arrowElements.forEach(function(arrow) {
             arrow.addEventListener('click', function() {

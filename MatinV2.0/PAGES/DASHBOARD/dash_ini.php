@@ -135,6 +135,10 @@
         border-bottom: 3px solid var(--cinza5);
 
     }
+    
+    tbody, td, tfoot, th, thead, tr{
+        border: none;
+    }
 
     .txtVermelho {
         color: var(--vermelho) !important;
@@ -157,7 +161,6 @@ if ($idUsu == '1') {
 
     <div class="container-main">
         <div class="info-tela">
-            <h5>Painel</h5>
             <div class="local">
                 <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Inicio</mark></h6>
             </div>
@@ -345,7 +348,6 @@ if ($idUsu == '1') {
 
     <div class="container-main">
         <div class="info-tela">
-            <h5>Painel</h5>
             <div class="local">
                 <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Inicio</mark></h6>
             </div>
@@ -355,7 +357,7 @@ if ($idUsu == '1') {
                 <div class="col-md-3">
                     <?php
 
-                    $selectQ = "SELECT * FROM seguidores WHERE idUsuSeguido = $idUsu";
+                    $selectQ = "SELECT * FROM seguidores WHERE idSeguido = $idUsu";
                     $selectP = $cx->prepare($selectQ);
                     $selectP->execute();
                     $RC = $selectP->rowCount();

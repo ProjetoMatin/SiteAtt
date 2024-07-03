@@ -21,17 +21,6 @@
     $telefone = $_REQUEST['telefone'] ?? "";
     
     echo $nome . $senha . $email . $cpf . $telefone;
-
-    // echo "<script>
-    //     localStorage.setItem('nome', '" . $nome . "');
-    //     localStorage.setItem('senha', '" . $senha . "');
-    //     localStorage.setItem('email', '" . $email . "');
-    //     localStorage.setItem('cpf', '" . $cpf . "');
-    //     localStorage.setItem('telefone', '" . $telefone . "');
-    // </script>";
-
-    // echo $nome . " " . $senha .  " " . $email . " " .  $cpf . " " . $telefone;
-
     ?>
 
     <?php require_once '../BASE/headerCredentials.php'; ?>
