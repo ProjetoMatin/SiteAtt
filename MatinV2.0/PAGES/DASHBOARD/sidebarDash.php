@@ -167,6 +167,8 @@ if ($idUsu == '1') {
 
         <a href="?page=prod_list"><button class="btn" type="button"><img src="../IMAGES/caixa.png" alt=""></button></a>
 
+        <a href="?page=compra_list"><button class="btn" type="button"><img src="../IMAGES/compra.png" alt=""></button></a>
+
         <a href="?page=loc_list"><button class="btn" type="button"><img src="../IMAGES/local.png" alt=""></button></a>
 
         <div class="btnoffcanvas">
@@ -222,6 +224,14 @@ if ($idUsu == '1') {
                     <a href="?page=prod_list">
                         <button class="btn doffcanvas" type="button"><img src="../IMAGES/caixa.png" alt="">
                             <h6>Produtos</h6>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="btnoffcanvas">
+                    <a href="?page=compra_list">
+                        <button class="btn doffcanvas" type="button"><img src="../IMAGES/compra.png" alt="">
+                            <h6>Compras</h6>
                         </button>
                     </a>
                 </div>

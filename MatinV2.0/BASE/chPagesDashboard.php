@@ -7,6 +7,10 @@ if ($idUsu == '1') {
 
     switch ($page) {
 
+        case 'relatorio':
+            // header("Location: ../PAGES/RELATORIO/relatorio.php");
+            echo "<script>location.href='../PAGES/RELATORIO/relatorio.php'</script>";
+
         case 'dash_ini':
             require_once '../PAGES/DASHBOARD/dash_ini.php';
             break;
@@ -18,6 +22,10 @@ if ($idUsu == '1') {
         case 'prod_list':
             require_once '../PAGES/DASHBOARD/prod_list.php';
             break;
+
+            case 'compra_list':
+                require_once '../PAGES/DASHBOARD/compra_list.php';
+                break;
 
         case 'loc_list':
             require_once '../PAGES/DASHBOARD/loc_list.php';
