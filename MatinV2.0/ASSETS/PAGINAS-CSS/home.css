@@ -1,3 +1,7 @@
+body {
+    background-color: var(--bege00);
+}
+
 p{
     margin: 0 !important;
 }
@@ -16,6 +20,10 @@ main{
     bottom: 0;
     background: linear-gradient(rgba(255, 255, 255, 0), var(--bege00)); /* Gradiente transparente-branco */
     pointer-events: none; /* Garante que o evento de clique passe através do overlay */
+}
+
+.categorias {
+    background-color: var(--branco00);
 }
 
 .categoria_h1 {
@@ -80,6 +88,10 @@ main{
     margin: 20px;
 }
 
+.card-body .img-produto {
+    width: 130px;
+}
+
 .card .card-body img{
     display: block;
     width: fit-content;
@@ -117,7 +129,7 @@ SECTION 1
 
 .tituloSection{
     font-size: 1.4em;
-    margin-bottom: 30px !important;
+    margin-bottom: 1.5rem!important;
 }
 
 section{
@@ -280,13 +292,18 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
 
 .content-title {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.content-title h1 {
+    font-size: 1.4em;
 }
 
 .content-title div {
     display: flex;
     gap: 5px;
-    align-items: flex-start;
 }
 
 .content-title div a {
@@ -311,6 +328,16 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
     border-radius: 20px;
 }
 
+.btn a {
+    text-decoration: none;
+    color: var(--laranja00);
+    font-weight: bold;    
+    transition: .2s;
+}
+
+.btn a:hover {
+    font-size: 1.2em;
+}
 
 .botoes-carrossel .ativo{
     width: 40px;
@@ -319,6 +346,7 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
 .flex-ultimos-vistos {
     display: flex;
     justify-content: space-evenly;
+    background-color: var(--branco00);
     gap: 10px;
 }
 
