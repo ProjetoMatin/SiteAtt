@@ -92,7 +92,6 @@ main{
     width: 130px;
     height: 150px;
     object-fit: contain;
-    /* background-color: red; */
 }
 
 .card .card-body img{
