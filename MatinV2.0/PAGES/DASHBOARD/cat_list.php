@@ -16,6 +16,13 @@
     .search-bar {
         margin: 20px 0 !important;
     }
+
+    table tr td a button{
+        background-color: var(--verde01);
+        color: var(--branco00) !important;
+        padding: 5px 10px;
+        border-radius: 5px ;
+    }
 </style>
 
 <?php
@@ -38,7 +45,13 @@ if ($idCat != "geral") {
             <div class="local">
                 <?php
 
-                $selectQ = "SELECT * FROM categoria WHERE idCategoria = $idCat";
+                $pagina = 1;
+
+                $limite = 4;
+
+                $inicio = ($pagina * $limite) - $limite;
+
+                $selectQ = "SELECT * FROM categoria WHERE idCategoria = $idCat ORDER BY idCategoria LIMIT $inicio,$limite";
                 $selectP = $cx->prepare($selectQ);
                 $selectP->execute();
 
@@ -88,10 +101,11 @@ if ($idCat != "geral") {
                             echo "<tr>";
                             echo "<td scope='row'>{$dados['idProduto']}</td>";
                             echo "<td>{$dados['nome_prod']}</td>";
-                            echo "<td>{$dados['data_criacao_prod']}</td>";
+                            echo "<td>{$dados['qnt_prod_estoque']}</td>";
                             echo "<td>R$ {$dados['preco_prod']}</td>";
                             echo "<td>{$dados['qnt_vendas']}</td>";
-                            echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idProduto']}&tbl=localidade''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
+                            echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                            
                             echo "</tr>";
                         }
                     }
@@ -155,7 +169,7 @@ if ($idCat != "geral") {
                         echo "<td>{$dados['img_cat']}</td>";
                         echo "<td>{$descricao}</td>";
                         echo "<td>{$dados['qnt_vis']}</td>";
-                        echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idCategoria']}&tbl=localidade''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }

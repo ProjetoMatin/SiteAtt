@@ -1,5 +1,5 @@
 <style>
-    nav {
+    .header {
         background: linear-gradient(to right, var(--verde00), var(--verde01));
         padding: 10px 15px;
         width: 100%;
@@ -53,7 +53,7 @@ if (isset($idUsu)) {
 
 ?>
 
-<nav class="d-flex justify-content-between align-items-center">
+<nav class="d-flex justify-content-between align-items-center header">
     <a href="../index.php">
         <div class="logo">
             <figure>

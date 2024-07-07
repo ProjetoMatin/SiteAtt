@@ -67,6 +67,8 @@ section .produto-encl .produto-main .fotos-prod {
 
 section .produto-encl .produto-main .fotos-prod .fotoPrincipal {
     display: flex;
+    height: 300px !important ;
+    object-fit: contain;
     width: 300px;
     /* margin: auto; */
 }

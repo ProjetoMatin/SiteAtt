@@ -53,7 +53,13 @@
             <tbody>
                 <?php
 
-                $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria INNER JOIN cria c2 ON c2.idProduto = p.idProduto WHERE c2.idUsu = $idUsu";
+                $pagina = 1;
+
+                $limite = 4;
+
+                $inicio = ($pagina * $limite) - $limite;
+
+                $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria INNER JOIN cria c2 ON c2.idProduto = p.idProduto WHERE c2.idUsu = $idUsu ORDER BY p.idProduto LIMIT $inicio, $limite";
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
                 $selectP->execute();
@@ -70,7 +76,7 @@
                         echo "<td>R$ {$dados['preco_prod']}</td>";
                         echo "<td>{$dados['qnt_vendas']}</td>";
                         echo "<td>{$dados['nome_cat']}</td>";
-                        echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idProduto']}&tbl=localidade''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }

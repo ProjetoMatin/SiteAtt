@@ -72,7 +72,7 @@ mark {
                             echo "<td class='txtVermelho'>Bloqueado</td>";
                         }
                         echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
-                        echo "<td><a href='#'>&#x1F4DD; Editar</a> <a href='excluir.php?ref={$dados['idUsu']}&tbl=usuario''>&#x274C; Apagar </a><a href='#'>&#x2714; Visualizar</a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }
