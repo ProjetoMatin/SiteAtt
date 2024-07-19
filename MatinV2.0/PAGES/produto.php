@@ -14,6 +14,12 @@ if (!empty($idProd || !is_null($idProd))) {
     $RC = $selectP->rowCount();
     if ($RC != 0) {
         $dado = $selectP->fetch(PDO::FETCH_ASSOC);
+
+        echo "
+            <script>
+            localStorage.setItem('idProdVistoPorUltimo', '" . $dado['idProduto'] . "');
+            </script>
+        ";
     } else {
         echo "<script>location.href='index.php'</script>";
     }
@@ -73,15 +79,15 @@ if (!empty($idProd || !is_null($idProd))) {
                 </div>
                 <hr>
 
-                <?php 
-                
+                <?php
+
                 $selectQPE = $cx->prepare("SELECT COUNT(*) as total FROM avaliacao WHERE idProduto = $idProd");
                 $selectQPE->execute();
                 $dadoQPE = $selectQPE->fetch(PDO::FETCH_ASSOC);
-                    // echo count($dadoQPE);
-                if($dadoQPE['total'] > 1 || $dadoQPE['total'] == 0) {
-                    echo "<p>".$dadoQPE['total'] ." Avaliações</p>";
-                } elseif($dadoQPE['total'] = 1) {
+                // echo count($dadoQPE);
+                if ($dadoQPE['total'] > 1 || $dadoQPE['total'] == 0) {
+                    echo "<p>" . $dadoQPE['total'] . " Avaliações</p>";
+                } elseif ($dadoQPE['total'] = 1) {
                     echo "<p>" . $dadoQPE['total'] . " Avaliação </p>";
                 }
 
@@ -89,12 +95,12 @@ if (!empty($idProd || !is_null($idProd))) {
 
                 <hr>
 
-                <?php 
-                    $select_venda = $cx->prepare("SELECT qnt_vendas as vendas FROM produto WHERE idProduto = $idProd");
-                    $select_venda->execute();
-                    $dado_venda = $select_venda->fetch(PDO::FETCH_ASSOC);
+                <?php
+                $select_venda = $cx->prepare("SELECT qnt_vendas as vendas FROM produto WHERE idProduto = $idProd");
+                $select_venda->execute();
+                $dado_venda = $select_venda->fetch(PDO::FETCH_ASSOC);
                 ?>
-                <p><?=number_format($dado_venda['vendas'], 0, ',', '.')?> vendas</p>
+                <p><?= number_format($dado_venda['vendas'], 0, ',', '.') ?> vendas</p>
             </div>
 
             <p id="freteAD"><mark id="palavraMARCADA">FRETE GRÁTIS</mark> PARA COMPRAS ACIMA DE R$50,00</p>
@@ -147,14 +153,14 @@ if (!empty($idProd || !is_null($idProd))) {
 
                 <div class="infoContaVendedor">
 
-                    <?php 
-                    
+                    <?php
+
                     $selectQ3 = "SELECT * FROM cria c INNER JOIN usuario u ON c.idUsu = u.idUsu INNER JOIN produto p ON c.idProduto = p.idProduto WHERE c.idProduto = $idProd";
                     $selectP3 = $cx->prepare($selectQ3);
                     $selectP3->execute();
 
                     $dado = $selectP3->fetch(PDO::FETCH_ASSOC);
-                    
+
                     ?>
 
                     <figure>
@@ -162,21 +168,21 @@ if (!empty($idProd || !is_null($idProd))) {
                     </figure>
                     <div class="infoPerfil">
                         <p class="nomeUsu"><?php echo $dado['nome_usu'] ?></p>
-                        <?php 
-                        
-                        if($dado['qnt_vendas_usuario'] > 1000){
+                        <?php
+
+                        if ($dado['qnt_vendas_usuario'] > 1000) {
                             echo "<p class='qntVendas'>+1000 vendas</p>";
-                        }else{
+                        } else {
                             echo "<p class='qntVendas'>" . $dado['qnt_vendas_usuario'] . " vendas</p>";
                         }
 
-                        if($dado['premium'] == 1){
+                        if ($dado['premium'] == 1) {
                             echo "<div class='perfilVerificado'>";
                             echo "<p class='verificado'>Vendedor verificado</p>";
                             echo "<img src='IMAGES/premium.png' alt=''>";
                             echo "</div>";
                         }
-                        
+
                         ?>
                     </div>
                 </div>

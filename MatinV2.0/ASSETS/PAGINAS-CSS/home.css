@@ -7,7 +7,7 @@ p{
 }
 
 main{
-    background-color: var(--bege00);
+    /* background-color: var(--bege00); */
     padding-bottom: 50px;
 }
 
@@ -18,17 +18,16 @@ main{
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0), var(--bege00)); /* Gradiente transparente-branco */
+    background: linear-gradient(rgba(255, 255, 255, 0), #f1f2eb 100%);
     pointer-events: none; /* Garante que o evento de clique passe através do overlay */
+}
+
+.imgtop{
+    height: 550px !important;
 }
 
 .categorias {
     background-color: var(--branco00);
-}
-
-.categoria_h1 {
-    text-align: center;
-    color: var(--laranja00);
 }
 
 .cards-encl{
@@ -57,8 +56,8 @@ main{
 }
 
 .no-photo .card-text{
-    margin-top: 12rem !important;
-    font-size: 1.2em;
+    margin-top: 9rem !important;
+    font-size: 1em;
 }
 
 .no-photo .card-body .btnCard{
@@ -145,6 +144,17 @@ section{
 }
 .categorias .card-text{
     text-align: center;
+}
+
+.cards-encl-categoria .card-redondo img{
+    width: 150px;
+    background-color: var(--laranjaClaro);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.cards-encl-categoria .card-redondo p{
+    margin-top: 10px !important;
 }
 
 .cards-encl-categoria .card-categorias{
@@ -385,6 +395,7 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
 
 .flex-img-acoes img {
     width: 100%;
+    padding: 2px;
 }
 
 .flex-img-acoes .acao:hover {

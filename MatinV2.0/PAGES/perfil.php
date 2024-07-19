@@ -5,7 +5,6 @@
 
 <?php
 
-
 require_once 'BASE/config.php';
 
 $id = $_SESSION['idUsu'] ?? '';
@@ -16,14 +15,16 @@ if (!isset($_SESSION['idUsu'])) {
 
 $selectQ = "SELECT * FROM usuario WHERE idUsu = :id";
 
+
 $selectP = $cx->prepare($selectQ);
 $selectP->setFetchMode(PDO::FETCH_ASSOC);
 $selectP->bindParam("id", $id);
 
+
 $selectP->execute();
 
-$dados = $selectP->fetch(PDO::FETCH_ASSOC);
 
+$dados = $selectP->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <main>
@@ -31,36 +32,35 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
         <div class="area-perfil">
             <div class="aba-perfil">
                 <nav>
-                    <img src="IMAGES-BD/USUARIOS/<?php echo $dados['fotos_usu']; ?>" alt="">
-                </nav>
-                <div class="titulo-perfil">
-                    <?php
-                    if ($selectP->rowCount() > 0) {
 
-                            echo "<h2>{$dados['nome_usu']}</h2>";
-                        
+                    <img src="IMAGES-BD/USUARIOS/<?php echo $dados['fotos_usu']; ?>" alt="">
+                    <?php
+
+                    if ($selectP->rowCount() > 0) {
+                        echo "<h2>{$dados['nome_usu']}</h2>";
                     } else {
-                        // Trate o caso em que o usuário não foi encontrado
+
                         echo "oi";
                     }
-
                     ?>
-                    <p>Último acesso há 14 minutos</p>
+                </nav>
+                <div class="titulo-perfil">
                 </div>
                 <div class="acesso-dashboard">
+
                     <a href="PAGES/dashboard.php"><img src="IMAGES/dashboardIcone.png" alt=""></a>
                 </div>
             </div>
             <div class="div-button">
+
                 <a href="?page=editPerfil" class="btn">Editar Perfil</a>
                 <a href="?config=sair" class="btn">Sair</a>
             </div>
         </div>
 
         <div class="div-ul">
-
             <?php
-
+            // Consulta para selecionar os seguidores do usuário
             $selectQU = "SELECT * FROM usuario u INNER JOIN seguidores s ON u.idUsu = s.idSeguido WHERE u.idUsu = :id";
             $selectPU = $cx->prepare($selectQU);
             $selectPU->setFetchMode(PDO::FETCH_ASSOC);
@@ -68,8 +68,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             $selectPU->execute();
             $linhasPU = $selectPU->rowCount();
 
-
-
+            // Consulta para selecionar os produtos criados pelo usuário
             $selectQ = "SELECT * FROM cria c WHERE c.idUsu = :id";
             $selectP = $cx->prepare($selectQ);
             $selectP->setFetchMode(PDO::FETCH_ASSOC);
@@ -77,12 +76,10 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             $selectP->execute();
             $linhas = $selectP->rowCount();
 
-            // echo "<script>alert($linhasPU + ' ID:' + $id);</script>";
-
+            // Obtém os dados dos seguidores do usuário
             $dado = $selectPU->fetch();
-
-
             ?>
+
 
             <ul>
                 <li><img src="IMAGES/bebida.png" alt="" class="foto1">Produtos: <mark><?php echo $linhas ?></mark></li>

@@ -11,8 +11,12 @@
 }
 
 .aba-perfil nav{
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
     background-color: transparent;
     padding: 0;
+    color: var(--branco00);
 }
 
 .aba-perfil nav img{
@@ -34,6 +38,7 @@
 
 .titulo-perfil{
     color: var(--branco00);
+   
 }
 
 .div-button{

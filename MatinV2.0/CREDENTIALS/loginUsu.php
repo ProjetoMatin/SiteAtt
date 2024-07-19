@@ -136,11 +136,11 @@
                     </div>
                     <div class="rede-social">
                         <img src="../IMAGES/gmail.png" alt="">
-                        <p><a href="">Facebook</a></p>
+                        <p><a href="">Gmail</a></p>
                     </div>
                     <div class="rede-social">
                         <img src="../IMAGES/apple-logo.png" alt="">
-                        <p><a href="">Facebook</a></p>
+                        <p><a href="">Apple</a></p>
                     </div>
                 </div>
             </form>

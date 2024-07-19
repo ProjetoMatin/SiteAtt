@@ -1,4 +1,9 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
+    button {
+        background-color: transparent;
+    }
+
     header {
         display: flex;
         justify-content: space-between;
@@ -46,12 +51,37 @@
         list-style: none;
     }
 
-    header .info ul li {
-        padding: 0 10px;
+    header .info ul li .dropdown-menu {
+        display: none !important;
     }
 
-    header .info ul li img {
-        max-width: 30px;
+    header .info ul li .show {
+        display: block !important;
+    }
+
+    header .info ul li button {
+
+        color: var(--laranja00);
+        font-size: 1.2em;
+        background-color: transparent !important;
+        border: 0 !important;
+    }
+
+    header .info ul li button img {
+        border-radius: 100%;
+        object-fit: contain;
+        margin-right: 5px !important;
+    }
+
+    .grande {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .normal {
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 0% !important;
     }
 
     nav {
@@ -77,9 +107,14 @@
 
     }
 
+    .sub button {
+        width: 60px !important;
+    }
+
     .dropdown button {
         background-color: var(--branco00);
         border: 0;
+        max-width: 300px !important;
         color: var(--preto00);
         font-weight: bold;
     }
@@ -127,7 +162,90 @@
     .input-group {
         margin-bottom: 0px !important;
     }
-</style>    
+
+    .btn-check:checked+.btn,
+    .btn.active,
+    .btn.show,
+    .btn:first-child:active,
+    :not(.btn-check)+.btn:active {
+        background-color: transparent;
+        color: var(--laranja00);
+    }
+
+    .dropdown button:hover,
+    .dropdown button:focus,
+    .dropdown button:active {
+        color: var(--laranja00);
+    }
+
+    .dropdown-menu li .dropdown-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-menu li .dropdown-item img {
+        width: 60px !important;
+        height: 60px !important;
+        margin-right: 10px !important;
+        border-radius: 100%;
+        border: 2px solid var(--verde00);
+        /* background-color: red; */
+    }
+
+    .dropdown-menu li .dropdown-item .top-bottom-sep {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .produtoCarrinhoHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .produtoCarrinhoHeader .foto-nome {
+        display: flex;
+        align-items: center;
+    }
+
+    .produtoCarrinhoHeader img {
+        width: 30px !important;
+        height: 30px !important;
+
+    }
+
+    .nomeProduto {
+        font-size: 1em;
+        margin-left: 10px !important;
+    }
+
+    .precoProduto {
+        font-size: 1em;
+        color: var(--verde00);
+    }
+
+    .semNome {
+        width: 50px !important;
+        /* background-color: red !important; */
+    }
+
+    .tituloMiniCard {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .carrinhoHeaderENCL{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .carrinhoIMGHeader{
+        display: flex;
+        align-items: center;
+    }
+</style>
 <header>
 
     <div class="logo">
@@ -146,18 +264,193 @@
 
     <div class="info">
         <ul>
-            <!-- <li><a href="index.php?page=perfil"><img src="IMAGES/user.png" alt=""></a></li> -->
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
-                <li><button name="perfilPage" style="background-color: transparent;"><img src="IMAGES/user.png" alt=""></button></li>
+                <?php
+                $idUsu = isset($_SESSION['idUsu']) ? $_SESSION['idUsu'] : null;
+
+                if (isset($idUsu)) {
+                    $idUsu = $_SESSION['idUsu'];
+                    $selectQ = "SELECT * FROM usuario WHERE idUsu = $idUsu";
+                    $selectP = $cx->prepare($selectQ);
+                    $selectP->execute();
+                    $dado = $selectP->fetch(PDO::FETCH_ASSOC);
+                ?>
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="navBarItens btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo "<img class='grande' src='IMAGES-BD/USUARIOS/" . $dado['fotos_usu'] . "' alt=''>" . $dado['nome_usu'] . "" ?>
+                            </button>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="?page=perfil">
+                                        <img src="<?php echo "IMAGES-BD/USUARIOS/" . $dado['fotos_usu'] ?>" alt="">
+                                        <div class="top-bottom-sep">
+                                            <h4><?php echo $dado['nome_usu'] ?></h4>
+                                            <h6>Meu Perfil ></h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Minhas Compras</a></li>
+                                <li><a class="dropdown-item" href="#">Meus Cupons</a></li>
+                                <li><a class="dropdown-item" href="#">Mensagens</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Seja um Vendedor</a></li>
+                                <li><a class="dropdown-item" href="#">Proteção ao Consumidor</a></li>
+                                <li><a class="dropdown-item" href="#">Baixar o App Mobile</a></li>
+                                <li><a class="dropdown-item" href="#">Central de Ajuda</a></li>
+                                <li><a class="dropdown-item" href="#">Mais serviços</a></li>
+                                <li><a class="dropdown-item" href="#">Acessibilidade</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                <?php
+
+                } else {
+                    echo "<li><button name='perfilPage' style='background-color: transparent;'><img src='IMAGES/profile-laranja.png' alt=''></button></li>";
+                }
+
+                ?>
+
             </form>
-            <li><img src="IMAGES/heart.png" alt=""></li>
-            <li><a href="index.php?page=carrinho"><img src="IMAGES/shoppingcart.png" alt=""></a></li>
-            <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones.png" alt=""></a></li>
+            <!-- <li></li> -->
+            <li class="semNome">
+                <?php
+
+                if (isset($idUsu)) {
+                    $selectQ2 = "SELECT * FROM favoritos WHERE idUsu = $idUsu";
+                    $selectP2 = $cx->prepare($selectQ2);
+                    $selectP2->execute();
+                    $RC = $selectP2->rowCount();
+
+                ?>
+
+                    <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="<?php echo 'Você tem ' . $RC . ' itens favoritados!'; ?>">
+                        <img src="IMAGES/heart-laranja.png" class="normal" alt="">
+                    </button>
+
+            </li>
+        <?php
+                } else {
+                    $popoverContent00 = "<p class='tituloMiniCard'>Faça Login</p>";
+                    $popoverContent00 .= "
+                    <br>
+                    <p>Para acessar seus favoritos!</p>
+                    ";
+        ?>
+
+            <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent00, ENT_QUOTES, 'UTF-8'); ?>">
+                <img src="IMAGES/heart-laranja.png" class="normal" alt="">
+            </button>
+
+        <?php
+                }
+        ?>
+
+        <li>
+            <?php
+
+            if (isset($idUsu)) {
+                $selectQ3 = "SELECT * FROM carrinho c INNER JOIN produto p ON c.idProduto = p.idProduto WHERE c.idUsu = $idUsu LIMIT 5";
+                $selectP3 = $cx->prepare($selectQ3);
+                $selectP3->execute();
+                $RC = $selectP3->rowCount();
+
+                
+                if($RC != 0){
+                    $popoverContent = "Produtos adicionados recentemente";
+                    while ($dados = $selectP3->fetch(PDO::FETCH_ASSOC)) {
+                        $nomeProduto = $dados['nome_prod'];
+    
+                        if (strlen($nomeProduto) > 20) {
+                            // Truncar o nome do produto para 20 caracteres e adicionar "..."
+                            $nomeProduto = substr($nomeProduto, 0, 20) . '...';
+                        }
+    
+    
+                        $popoverContent .= "
+                        <br>
+                        
+                        <div class='produtoCarrinhoHeader'>
+                        <div class='foto-nome'>
+                        <img src='IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' class='produtoCarrinhoFoto'>
+                        <p class='nomeProduto'>" . htmlspecialchars($nomeProduto, ENT_QUOTES, 'UTF-8') . "</p>
+                        </div>
+                        <p class='precoProduto'>R$" . $dados['preco_prod'] . "</p>
+                        </div>
+    
+                        ";
+                    }
+                }else{
+                    $popoverContent = "
+                    
+                    <div class='carrinhoHeaderENCL'>
+                    <img src='IMAGES/carrinhoVazio.png' class='carrinhoIMGHeader'>
+                    <p>O carrinho de compras está vazio!</p>
+                </div>
+
+                    ";
+
+                }
+            ?>
+                <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
+                    <img src="IMAGES/cart-laranja.png" class="normal" alt="">
+                </button>
+        </li>
+
+    <?php
+
+            }else{
+
+                $popoverContent = "";
+
+                $popoverContent .= "
+                <div class='carrinhoHeaderENCL'>
+                    <img src='IMAGES/carrinhoVazio.png' class='carrinhoIMGHeader'>
+                    <p>O carrinho de compras está vazio!</p>
+                </div>
+                ";
+                ?>
+
+<button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
+                    <img src="IMAGES/cart-laranja.png" class="normal" alt="">
+                </button>
+
+                <?php 
+            }
+    ?>
+    <li>
+        <?php
+
+        $popoverContent2 = "<p class='tituloMiniCard'>Atendimento ao Cliente</p>";
+
+        $popoverContent2 .= "
+                <br>
+
+                <p>O que podemos fazer por você?</p>
+
+                ";
+
+        ?>
+        <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent2, ENT_QUOTES, 'UTF-8'); ?>">
+            <img src="IMAGES/headphones-laranja.png" class="normal" alt="">
+        </button>
+    </li>
+    <!-- <li><a href="index.php?page=carrinho"><img src="IMAGES/cart-laranja.png" alt=""></a></li>
+            <li><a href="PAGES/ouvidoria.php"><img src="IMAGES/headphones-laranja.png" alt=""></a></li> -->
         </ul>
     </div>
 </header>
 
 <nav class="navbar">
+
     <ul class="ul_menus">
         <li>
             <div class="dropdown">
@@ -166,9 +459,17 @@
                 </button>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Template</a></li>
-                    <li><a class="dropdown-item" href="#">Template</a></li>
-                    <li><a class="dropdown-item" href="#">Template</a></li>
+                    <?php 
+                    
+                    $selectQ = "SELECT * FROM categoria ORDER BY qnt_vis LIMIT 5";
+                    $selectP = $cx->prepare($selectQ);
+                    $selectP->execute();
+
+                    while($dados = $selectP->fetch(PDO::FETCH_ASSOC)){
+                        echo "<li><a class='dropdown-item' href='#'>" . $dados['nome_cat'] ."</a></li>";
+                    }
+                    
+                    ?>
                 </ul>
             </div>
         </li>
@@ -201,11 +502,24 @@
     })
 </script>
 
-<?php 
+<?php
 
-if(isset($_REQUEST['perfilPage'])){
+if (isset($_REQUEST['perfilPage'])) {
     echo "<script>location.href='index.php?page=perfil'</script>";
 }
 
 ?>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl, {
+                trigger: 'hover'
+            });
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzWf1DwG5OZ8a8WUJqxk3z9lFtfvjxs9LMca8QvoCZ39" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-o+RDsa0BX+t0gC39QGJhO/nItp3GX2oqw1Ll1DL+Rg5WnBwD5y2Qp5/2y5K6M1nD" crossorigin="anonymous"></script>
