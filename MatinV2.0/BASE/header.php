@@ -245,6 +245,18 @@
         display: flex;
         align-items: center;
     }
+
+    .hover-laranja, .hover-verde {
+        transition: .2s;
+    }
+
+    .hover-laranja:hover {
+        color: var(--laranja00);
+    }
+
+    .hover-verde:hover {
+        color: var(--verde00);
+    }
 </style>
 <header>
 
@@ -295,18 +307,19 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Minhas Compras</a></li>
-                                <li><a class="dropdown-item" href="#">Meus Cupons</a></li>
-                                <li><a class="dropdown-item" href="#">Mensagens</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Minhas Compras</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Meus Cupons</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Mensagens</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Seja um Vendedor</a></li>
-                                <li><a class="dropdown-item" href="#">Proteção ao Consumidor</a></li>
-                                <li><a class="dropdown-item" href="#">Baixar o App Mobile</a></li>
-                                <li><a class="dropdown-item" href="#">Central de Ajuda</a></li>
-                                <li><a class="dropdown-item" href="#">Mais serviços</a></li>
-                                <li><a class="dropdown-item" href="#">Acessibilidade</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Seja um Vendedor</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Proteção ao Consumidor</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Baixar o App Mobile</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Central de Ajuda</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Mais serviços</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Acessibilidade</a></li>
+                                
                             </ul>
                         </div>
                     </li>
