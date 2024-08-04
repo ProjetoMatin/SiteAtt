@@ -12,3 +12,14 @@ USUARIO_HAS_PERGUNTA
 A - ANALISE
 R - RESPONDIDA
 NR - NÃO RESPONDIDA
+
+
+
+
+
+
+
+
+
+add as logos aqui so pra ficarem guardadas e a gnt n perder dps
+

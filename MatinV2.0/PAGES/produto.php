@@ -5,6 +5,7 @@ require_once 'BASE/config.php';
 require_once 'MODEL/FreteAPI.php';
 
 $idProd = $_REQUEST['idProd'] ?? "";
+$idUsu = $_SESSION['idUsu'] ?? "";
 
 if (!empty($idProd || !is_null($idProd))) {
     $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria WHERE idProduto = :idProd";
@@ -23,6 +24,10 @@ if (!empty($idProd || !is_null($idProd))) {
     } else {
         echo "<script>location.href='index.php'</script>";
     }
+}
+
+function formatarCEP($cep) {
+    return substr_replace($cep, '-', 5, 0);
 }
 ?>
 
@@ -135,6 +140,53 @@ if (!empty($idProd || !is_null($idProd))) {
                 ?>
 
             </div>
+
+            <div class="top-bottom">
+                <div class="btns-encl-qnt">
+                    <!-- <button id="btnUnidade" class="ativo" name="unidade" type="button">Unidade</button>
+                        <button id="btnKg" type="button">Kg</button> -->
+                    <div class="input">
+                        <label for="escolhaQntUnidade">Unidade:</label>
+                        <input type="radio" name="escolhaQnt" id="escolhaQntUnidade" value="unidade">
+                    </div>
+
+                    <div class="input">
+                        <label for="escolhaQntKG">KG:</label>
+                        <input type="radio" name="escolhaQnt" id="escolhaQntKG" value="kg">
+                    </div>
+                </div>
+
+                <label for="qntPedida">Quantidade:</label>
+                <input type="number" name="qntPedida" id="qntPedida" max="99">
+            </div>
+            
+            <div class="info-produto">
+                <div class="freteCalc">
+                    <p>Frete </p>
+                    <div class="info-resposta">
+                        <?php 
+                        
+                        $selectQ = "SELECT * FROM usuario usu INNER JOIN local loc ON usu.Local_CEP = loc.CEP WHERE idUsu = $idUsu";
+                        $selectP = $cx->prepare($selectQ);
+                        $selectP->execute();
+                        $dados = $selectP->fetch(PDO::FETCH_ASSOC);
+                        $RC = $selectP->rowCount();
+                        
+                        ?>
+                        <p class="casaUsuario"><?php echo formatarCEP($dados['CEP']) . ", " . $dados['Cidade'] . ", " . $dados['Bairro'] ?></p>
+
+                        <p class="valor">Valor: R$7,00</p>
+                    </div>
+                </div>
+
+                <div class="segurancaMatin">
+                    <div class="seguranca">
+                        <img src="IMAGES/segurancaMatinLaranja.png" alt="">
+                        <p>GARANTIA <mark>Mat-In</mark></p>
+                    </div>
+                    <p class="txtRecebaLaEleUi">Receba seu pedido ou seu dinheiro de volta. Nunca transfira dinheiro ou se comunique fora do app Mat-in.</p>
+                </div>
+            </div>
         </div>
 
         <div class="resumoCompraEncl">
@@ -147,8 +199,8 @@ if (!empty($idProd || !is_null($idProd))) {
                 <p class="qntEstoque">Estoque disponivel para entrega: <mark style="color: var(--preto00); font-weight: bolder;"><?php echo $dado['qnt_prod_estoque'] ?> Unidades</mark></p>
 
                 <div class="btns-encl">
-                    <button class="comprarBTN"><a href="#" class="comprarA">Comprar agora</a></button>
-                    <button class="addCarrinhoBTN"><a href="#" class="addCarrinho">Adicionar ao carrinho</a></button>
+                    <button class="comprarBTN"><a href="#" class="comprarA" type="button">Comprar agora</a></button>
+                    <button class="addCarrinhoBTN"><a href="#" class="addCarrinho" type="button">Adicionar ao carrinho</a></button>
                 </div>
 
                 <div class="infoContaVendedor">
@@ -206,3 +258,58 @@ if (!empty($idProd || !is_null($idProd))) {
         </div>
     </div>
 </section>
+
+<?php require_once 'BASE/footer.php'?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnUnidade = document.getElementById('btnUnidade');
+        const btnKg = document.getElementById('btnKg');
+        const btnAddCarrinho = document.getElementById('btnAddCarrinho');
+
+        // Eventos de clique nos botões "Unidade" e "Kg"
+        btnUnidade.addEventListener('click', function() {
+            btnUnidade.classList.add('ativo');
+            btnUnidade.classList.remove('inativo');
+            btnKg.classList.add('inativo');
+            btnKg.classList.remove('ativo');
+            btnUnidade.name = "unidade";
+            btnKg.name = "";
+            // atualizarUrlBotao(btnAddCarrinho, 'index.php');
+        });
+
+        btnKg.addEventListener('click', function() {
+            btnKg.classList.add('ativo');
+            btnKg.classList.remove('inativo');
+            btnUnidade.classList.add('inativo');
+            btnUnidade.classList.remove('ativo');
+            btnUnidade.name = "";
+            btnKg.name = "kg";
+            // atualizarUrlBotao(btnAddCarrinho, 'index.php');
+        });
+
+        // Inicializa o estado dos botões com base no parâmetro da URL
+        // const params = new URLSearchParams(window.location.search);
+        // const medida = params.get('medida');
+        // if (medida === 'unidadeativo') {
+        //     btnUnidade.classList.add('ativo');
+        //     btnUnidade.classList.remove('inativo');
+        //     btnKg.classList.add('inativo');
+        //     btnKg.classList.remove('ativo');
+        // } else if (medida === 'kgativo') {
+        //     btnKg.classList.add('ativo');
+        //     btnKg.classList.remove('inativo');
+        //     btnUnidade.classList.add('inativo');
+        //     btnUnidade.classList.remove('ativo');
+        // } else {
+        //     // Define o estado padrão dos botões se nenhum parâmetro estiver presente
+        //     btnUnidade.classList.add('ativo');
+        //     btnUnidade.classList.remove('inativo');
+        //     btnKg.classList.add('inativo');
+        //     btnKg.classList.remove('ativo');
+        // }
+
+        // // Atualiza o URL dos botões "Comprar agora" e "Adicionar ao carrinho" inicialmente
+        // atualizarUrlBotao(btnAddCarrinho, 'index.php');
+    });
+</script>

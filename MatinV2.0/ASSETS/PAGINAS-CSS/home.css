@@ -151,6 +151,11 @@ section{
     background-color: var(--laranjaClaro);
     padding: 20px;
     border-radius: 50%;
+    transition: .2s;
+}
+
+.card-redondo img:hover {
+    padding: 0.5rem;
 }
 
 .cards-encl-categoria .card-redondo p{
@@ -190,6 +195,16 @@ section .cards-encl-ofertas{
     border-radius: 10px;
     padding: 15px;
     background-color: var(--branco00);
+    transition: .2s;
+}
+
+section .cards-encl-ofertas:hover { 
+    box-shadow: 2px 2px 10px #0000004d;
+    cursor: pointer;
+}
+
+.card-redondo {
+    cursor: pointer;
 }
 
 section .cards-encl-ofertas .card-ofertas .img-coracao, .cards-encl-categoria .card-categorias .img-coracao{
@@ -231,19 +246,6 @@ section .cards-encl-ofertas .card-ofertas .bottomcard-encl .estrelas img, .cards
 
 section .cards-encl-ofertas .card-ofertas .bottomcard-encl p, .cards-encl-categoria .card-categorias .bottomcard-encl p{
     font-size: 0.9em;
-}
-
-section .cards-encl-ofertas .card-ofertas .comprarBtn, .cards-encl-categoria .card-categorias .comprarBtn{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-    align-items: center;
-    background-color: var(--preto00);
-    padding: 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: var(--branco00);
 }
 
 section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .card-categorias button img{
@@ -419,91 +421,4 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
 .promocao {
     font-size: 0.8em;
     color: var(--verde00);
-}
-
-footer {
-    background-color: var(--preto00);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 2rem 0.5rem;
-    gap: 1.5rem;
-}
-
-footer .logo {
-    display: flex;
-    width: 120px;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    color: var(--branco00);
-}
-
-footer .logo img {
-    width: 50%;
-}
-
-
-footer .links {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 7rem;
-    align-items: flex-start;
-}
-
-footer .redes-sociais {
-    display: flex;
-    align-items: flex-start;
-}
-
-
-footer .rede-social {
-    width: 45px;
-    margin: 10px;
-    padding: 0.5rem;
-    background-color: #3d3d3d;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .2s;
-}
-
-footer .rede-social:hover {
-    background-color: var(--laranja00);
-}
-
-footer .rede-social img {
-    width: 100%;
-}
-
-footer .link-title {
-    color: #3d3d3d;
-    font-weight: bold;
-}
-
-footer .link-item {
-    margin-top: 1rem!important;
-    margin-bottom: 1.5rem!important;
-}
-
-footer .link-item a {
-    color: var(--branco00);
-    text-decoration: none;
-    transition: .2s;
-}
-
-footer .link-item a:hover {
-    color: var(--laranja00);
-}
-
-.sub-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--cinza00);
-    padding: 1rem;
-    background-color: var(--preto00);
-    font-size: 0.8em;
-    cursor: default;
 }

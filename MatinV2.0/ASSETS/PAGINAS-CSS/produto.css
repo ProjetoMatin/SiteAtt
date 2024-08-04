@@ -4,9 +4,9 @@ body {
     background-color: var(--bege03);
 }
 
-p {
-    padding: 0;
-    margin: 0;
+p, label {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .paginasTopo {
@@ -125,9 +125,9 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 }
 
 #freteAD {
-    margin-top: 20px;
+    margin-top: 20px !important;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0 !important;
     font-size: 14px;
     background-color: var(--verde00);
     color: var(--branco00);
@@ -282,4 +282,100 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 .informacoes-extras .segurancaCompra figure img{
     width: 15px;
     margin-right: 10px !important;
+}
+
+.btns-encl-qnt{
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+    font-size: 1.1em;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.checkBoxProduto{
+    display: block;
+}
+
+.btns-encl button{
+    border: 1px solid var(--preto00);
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.ativo {
+    border-color: var(--laranja00) !important; /* Cor da margem quando ativo */
+    color: var(--laranja00); /* Cor do texto quando ativo */
+}
+
+.inativo {
+    border-color: var(--preto00); /* Cor da margem quando inativo */
+    color:  var(--preto00); /* Cor do texto quando inativo */
+}
+
+.top-bottom .btns-encl button{
+    background-color: var(--branco00);
+}
+
+.top-bottom label, #qntPedida{
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+#qntPedida{
+    width: 40%;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid var(--preto00);
+}
+
+.freteCalc{
+    display: flex;
+    margin-top: 30px;
+}
+
+.info-resposta{
+    margin-left: 30px;
+}
+
+.info-resposta .casaUsuario{
+    font-weight: bold;
+    margin-bottom: 10px !important;
+}
+
+.segurancaMatin{
+    gap: 30px;
+    margin-top: 45px;
+}
+
+.segurancaMatin .seguranca{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.segurancaMatin img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-right: 10px !important;
+}
+
+.segurancaMatin  .seguranca{
+    margin-bottom: 10px;
+}
+
+.segurancaMatin  .seguranca p{
+    display: flex;
+    align-items: center;
+}
+
+.segurancaMatin hr{
+
+}
+
+.txtRecebaLaEleUi{
+    font-size: 0.9em;
 }

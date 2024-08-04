@@ -74,8 +74,13 @@
     }
 
     .grande {
-        width: 40px !important;
-        height: 40px !important;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 0 !important;
+    }
+
+    .redondo{
+        border-radius: 100% !important;
     }
 
     .normal {
@@ -245,6 +250,18 @@
         display: flex;
         align-items: center;
     }
+
+    .hover-laranja, .hover-verde {
+        transition: .2s;
+    }
+
+    .hover-laranja:hover {
+        color: var(--laranja00);
+    }
+
+    .hover-verde:hover {
+        color: var(--verde00);
+    }
 </style>
 <header>
 
@@ -279,7 +296,7 @@
                     <li>
                         <div class="dropdown">
                             <button class="navBarItens btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo "<img class='grande' src='IMAGES-BD/USUARIOS/" . $dado['fotos_usu'] . "' alt=''>" . $dado['nome_usu'] . "" ?>
+                                <?php echo "<img class='grande redondo' src='IMAGES-BD/USUARIOS/" . $dado['fotos_usu'] . "' alt=''>" . $dado['nome_usu'] . "" ?>
                             </button>
 
                             <ul class="dropdown-menu">
@@ -295,18 +312,19 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Minhas Compras</a></li>
-                                <li><a class="dropdown-item" href="#">Meus Cupons</a></li>
-                                <li><a class="dropdown-item" href="#">Mensagens</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Minhas Compras</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Meus Cupons</a></li>
+                                <li><a class="dropdown-item hover-verde" href="#">Mensagens</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Seja um Vendedor</a></li>
-                                <li><a class="dropdown-item" href="#">Proteção ao Consumidor</a></li>
-                                <li><a class="dropdown-item" href="#">Baixar o App Mobile</a></li>
-                                <li><a class="dropdown-item" href="#">Central de Ajuda</a></li>
-                                <li><a class="dropdown-item" href="#">Mais serviços</a></li>
-                                <li><a class="dropdown-item" href="#">Acessibilidade</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Seja um Vendedor</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Proteção ao Consumidor</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Baixar o App Mobile</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Central de Ajuda</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Mais serviços</a></li>
+                                <li><a class="dropdown-item hover-laranja" href="#">Acessibilidade</a></li>
+                                
                             </ul>
                         </div>
                     </li>
@@ -314,7 +332,7 @@
                 <?php
 
                 } else {
-                    echo "<li><button name='perfilPage' style='background-color: transparent;'><img src='IMAGES/profile-laranja.png' alt=''></button></li>";
+                    echo "<li><button name='perfilPage' style='background-color: transparent;'><img src='IMAGES/profile-laranja.png' alt='' class='grande'></button></li>";
                 }
 
                 ?>
@@ -400,9 +418,11 @@
 
                 }
             ?>
-                <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
-                    <img src="IMAGES/cart-laranja.png" class="normal" alt="">
-                </button>
+                <a href="?page=carrinho">
+                    <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
+                        <img src="IMAGES/cart-laranja.png" class="normal" alt="">
+                    </button>
+                </a>
         </li>
 
     <?php
@@ -419,9 +439,11 @@
                 ";
                 ?>
 
-<button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
-                    <img src="IMAGES/cart-laranja.png" class="normal" alt="">
-                </button>
+<a href="?page=carrinho">
+    <button type="button" class="btn btn-secondary semNome" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<?php echo htmlspecialchars($popoverContent, ENT_QUOTES, 'UTF-8'); ?>">
+                        <img src="IMAGES/cart-laranja.png" class="normal" alt="">
+                    </button>
+</a>
 
                 <?php 
             }
