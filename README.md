@@ -9,7 +9,7 @@ O objetivo é facilitar transações no mercado agrícola, promovendo um mercado
 <br>
 
 <div align="center">
- <img src="https://github.com/ProjetoMatin/SiteAtt/blob/main/MatinV2.0/IMAGES/OMG.png" alt="Quiora Logo">
+ <img src="https://github.com/ProjetoMatin/SiteAtt/blob/main/MatinV2.0/IMAGES/capturaTelaMatin.png" alt="Mat-in Logo">
 </div>
 
 ## Seriedade e compromisso
@@ -17,4 +17,4 @@ O Mat-in assume a responsabilidade de proporcionar uma solução tangível para 
 
 ## Saiba mais sobre nosso sistema!
 
-A matin tem um documento listando toda a funcionalidade de nosso sistema, você pode encontra-lo no seguinte site: [Clique aqui](https://docs.google.com/document/d/1UpbN_3rA1XIqf-RKZ7DE81Xk85-ePkt3Yc9LH3i3rx8/edit). Atualmente não estamos aceitando nenhum tipo de suporte além de nossa equipe, mas você pode nos mandar ideias pelo nosso email: repositoriomatin@gmail.com
+A matin tem um documento listando toda a funcionalidade de nosso sistema, você pode encontra-lo no seguinte site: [Clique aqui](https://docs.google.com/document/d/1UpbN_3rA1XIqf-RKZ7DE81Xk85-ePkt3Yc9LH3i3rx8/edit). Nós também temos um arquivo aqui mesmo no Github onde listamos as funcionalidades do nosso sistema, você pode acessá-lo no link: [Clique aqui](https://github.com/ProjetoMatin/SiteAtt/blob/main/Funcionalidades.md) Atualmente não estamos aceitando nenhum tipo de suporte além de nossa equipe, mas você pode nos mandar ideias pelo nosso email: repositoriomatin@gmail.com
