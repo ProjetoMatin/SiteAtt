@@ -26,6 +26,10 @@ switch ($page) {
         header("Location: ../CREDENTIALS/loginUsu.php");
         break;
 
+    case 'pagar':
+        echo "<script>location.href='PAGES/pagar.php'</script>";
+        break;
+
 
     default:
         require_once 'PAGES/home.php';

@@ -1,23 +1,21 @@
 <style>
+    #conteudo2 {
+        padding: 30px;
+    }
 
-#conteudo2{
-    padding: 30px;
-}
-
-h6 a {
+    h6 a {
         color: var(--preto);
         text-decoration: none;
     }
 
-mark {
+    mark {
         background-color: transparent !important;
         color: var(--verde02);
     }
 
-    .search-bar{
+    .search-bar {
         margin: 20px 0 !important;
     }
-
 </style>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
@@ -38,7 +36,7 @@ mark {
             <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
 
-        <?php require_once '../BASE/alerts.php' ;?>
+        <?php require_once '../BASE/alerts.php'; ?>
 
         <table class="table table-striped">
             <thead>
@@ -53,7 +51,13 @@ mark {
             <tbody>
                 <?php
 
-                $selectQ = "SELECT * FROM usuario ORDER BY idUsu";
+                $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+                $limite = 4;
+                $inicio = ($pagina * $limite) - $limite;
+
+
+                $selectQ = "SELECT * FROM usuario ORDER BY idUsu LIMIT $inicio, $limite";
+
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
                 $selectP->execute();
@@ -78,6 +82,35 @@ mark {
                 }
                 ?>
             </tbody>
+
+
         </table>
+
+        <?php
+
+        $selectAllQ = "SELECT COUNT(*) AS total FROM usuario";
+        $selectAllP = $cx->prepare($selectAllQ);
+        $selectAllP->execute();
+        $totalRegistros = $selectAllP->fetch()['total'];
+        $totalPaginas = ceil($totalRegistros / $limite);
+
+        echo "<nav aria-label='Page navigation example' class='navigation'>";
+        echo "<ul class='pagination'>";
+        if ($pagina > 1) {
+            echo "<li class='page-item'><a class='page-link' href='?page=usu_list&pagina=" . ($pagina - 1) . "'>Anterior</a></li>";
+        }
+
+        for ($i = 1; $i <= $totalPaginas; $i++) {
+            $active = $i == $pagina ? "active" : "";
+            echo "<li class='page-item $active'><a class='page-link' href='?page=usu_list&pagina=$i'>$i</a></li>";
+        }
+
+        if ($pagina < $totalPaginas) {
+            echo "<li class='page-item'><a class='page-link' href='?page=usu_list&pagina=" . ($pagina + 1) . "'>Próximo</a></li>";
+        }
+        echo "</ul>";
+        echo "</nav>";
+
+        ?>
     </div>
 </div>

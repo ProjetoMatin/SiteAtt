@@ -147,7 +147,9 @@ section{
 }
 
 .cards-encl-categoria .card-redondo img{
-    width: 150px;
+    width: 134px !important;
+    object-fit: contain;
+    height: 134px !important;
     background-color: var(--laranjaClaro);
     padding: 20px;
     border-radius: 50%;

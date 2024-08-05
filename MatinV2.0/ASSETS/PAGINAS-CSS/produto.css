@@ -385,3 +385,12 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
 .txtRecebaLaEleUi{
     font-size: 0.9em;
 }
+
+.btnReformuladoLinkNaoMexe{
+    width: 100%;
+    display: block;
+}
+
+.btnReformuladoLinkNaoMexe input{
+    width: 100%;
+}

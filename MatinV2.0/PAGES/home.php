@@ -85,7 +85,7 @@
                         }
                     } else {
                         echo "<div class='preco-Promocao'>";
-                        echo "<p class='precoNovo'>R$44,99</p>";
+                        echo "<p class='precoNovo'>R$" . $dados['preco_prod'] . "</p>";
                         echo "</div>";
                     }
                     echo "</div>";
@@ -142,7 +142,7 @@
                     }
                 } else {
                     echo "<div class='preco-Promocao'>";
-                    echo "<p class='precoNovo'>R$44,99</p>";
+                    echo "<p class='precoNovo'>R$" . $dados['preco_prod'] . "</p>";
                     echo "</div>";
                 }
                 echo "</div>";

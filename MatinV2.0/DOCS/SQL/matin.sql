@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/08/2024 às 03:45
+-- Tempo de geração: 05/08/2024 às 22:18
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -83,7 +83,10 @@ CREATE TABLE `categoria` (
 
 INSERT INTO `categoria` (`idCategoria`, `nome_cat`, `img_cat`, `desc_cat`, `qnt_vis`) VALUES
 (1, 'Sementes', 'sementes.png', 'Sementes de qualidade para agricultura, jardinagem e conservação.', 176),
-(2, 'Laticínios ', 'laticinios.png', 'Laticinios novos', 30);
+(2, 'Laticínios ', 'laticinios.png', 'Laticinios novos', 30),
+(3, 'Fertilizantes', 'fertilizantes.png', 'Fertilizantes de alta qualidade para agricultura.', 100),
+(4, 'Defensivos Agrícolas', 'defensivos.png', 'Produtos para proteção de culturas agrícolas.', 150),
+(5, 'Sementes Especiais', 'especiais.png', 'Sementes com alta produtividade e resistência.', 80);
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,17 @@ INSERT INTO `cria` (`idCria`, `idUsu`, `idProduto`) VALUES
 (6, 8, 7),
 (7, 9, 5),
 (8, 1, 6),
-(9, 3, 3);
+(9, 3, 3),
+(10, 1, 8),
+(11, 2, 9),
+(12, 3, 10),
+(13, 8, 11),
+(14, 9, 12),
+(15, 10, 13),
+(16, 8, 16),
+(17, 1, 15),
+(18, 3, 17),
+(19, 9, 14);
 
 -- --------------------------------------------------------
 
@@ -245,10 +258,20 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`idProduto`, `nome_prod`, `qnt_prod_estoque`, `data_criacao_prod`, `preco_prod`, `fotos_prod`, `qnt_vendas`, `promocao`, `parcela`, `idCategoria`) VALUES
 (2, 'Maçã', 3, '2024-04-08', 12.00, 'sem_foto.png', 5, 2, 3, 1),
-(3, 'Leite', 5, '2024-04-03', 144.00, 'leite.jpg', 10, NULL, NULL, 1),
+(3, 'Leite', 5, '2024-04-03', 144.00, 'leite.jpg', 10, 10, 3, 1),
 (5, 'Leite UHT Integral', 13, '2024-07-01', 13.90, 'Leite-UHT-Integral.png', 13, 19, 2, 2),
 (6, 'Leite Condensado', 4, '2024-07-01', 19.20, 'leite_condensado.jpeg', 14, NULL, NULL, 2),
-(7, 'Carne Bovina', 41, '2024-07-22', 31.20, 'carne.png', 900, NULL, NULL, 2);
+(7, 'Carne Bovina', 41, '2024-07-22', 31.20, 'carne.png', 900, 15, 6, 2),
+(8, 'Fertilizante NPK', 50, '2024-08-05', 75.00, 'fertilizantesNPK.png', 10, 20, 4, 3),
+(9, 'Herbicida Glifosato', 30, '2024-08-05', 120.00, 'HerbicidaGlifosato.png', 5, 5, 2, 4),
+(10, 'Semente de Milho Híbrido', 100, '2024-08-05', 250.00, 'milho-hibrido.png', 20, 25, 5, 5),
+(11, 'Fertilizante Orgânico', 40, '2024-08-05', 55.00, 'fertilizanteOrganico.png', 15, NULL, NULL, 3),
+(12, 'Inseticida Biológico', 25, '2024-08-05', 85.00, 'inseticidaBiologico.png', 8, NULL, NULL, 4),
+(13, 'Semente de Soja', 200, '2024-08-05', 220.00, 'semente-soja.png', 50, NULL, NULL, 5),
+(14, 'Fertilizante Líquido', 60, '2024-08-05', 65.00, 'fertilizante-liquido.png', 18, NULL, NULL, 3),
+(15, 'Fungicida Sistêmico', 45, '2024-08-05', 95.00, 'fungicida-sistemico.png', 12, NULL, NULL, 4),
+(16, 'Semente de Trigo', 150, '2024-08-05', 180.00, 'semente-trigo.png', 35, NULL, NULL, 5),
+(17, 'Adubo Verde', 70, '2024-08-05', 40.00, 'adubo-verde.png', 25, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -471,19 +494,19 @@ ALTER TABLE `avaliacao`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `idCarrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idCarrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `cria`
 --
 ALTER TABLE `cria`
-  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `favoritos`
@@ -519,7 +542,7 @@ ALTER TABLE `pergunta`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `seguidores`

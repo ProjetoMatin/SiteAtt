@@ -1,0 +1,180 @@
+body {
+    background-color: var(--bege00) !important;
+}
+
+mark {
+    background-color: transparent !important;
+    color: var(--laranja00) !important;
+}
+
+hr {
+    border: 1px solid var(--preto00) !important;
+    height: 180px !important;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+}
+
+header .esquerda a {
+    display: flex !important;
+    padding: 20px 20px;
+    /* background-color: red; */
+    align-items: center !important;
+    /* background-color: red; */
+    text-decoration: none;
+    color: var(--preto00);
+}
+
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header .esquerda img {
+    width: 10px;
+    margin-right: 10px !important;
+    height: 15px;
+}
+
+header .direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .direita h1 {
+    font-size: 1.8em;
+}
+
+header .direita #logo {
+    width: 40px;
+}
+
+header .direita #pix {
+    width: 130px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px;
+}
+
+
+.card-esquerda {
+    background-color: var(--branco00);
+    padding: 30px;
+    width: 55%;
+    border-radius: 10px;
+    height: 490px;
+    box-shadow: -3px 5px var(--cinza02);
+}
+
+.card-direita {
+    width: 40%;
+    height: 490px;
+    background-color: var(--branco00);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: -3px 5px var(--cinza02);
+
+}
+
+.card-title {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+main .direita-esquerda {
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .direita-esquerda .esquerdaMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .direita-esquerda .esquerdaMain img {
+    width: 200px;
+}
+
+main .direita-esquerda .direitaMain {
+    max-width: 350px;
+}
+
+.txtCorrido {
+    font-size: 0.9em;
+}
+
+#txtpix {
+    width: 70%;
+}
+
+.input-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input-btn input {
+    padding: 5px 15px;
+
+}
+
+.input-btn button {
+    background-color: var(--preto00);
+    color: var(--branco00);
+    padding: 5px 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btnlaranja {
+    background-color: var(--laranja00);
+    padding: 5px 20px;
+    color: var(--branco00);
+    border-radius: 10px;
+}
+
+.top-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.vencimento {
+    text-align: end;
+}
+
+.card-direita .bolinha-txt {
+    display: flex;
+    align-items: center;
+}
+
+.card-direita .card-title{
+    margin-bottom: 20px !important;
+}
+
+.card-direita .bolinha-txt .bolinha {
+    background-color: var(--preto00);
+    color: var(--branco00);
+    border-radius: 100%;
+    width: 20px;
+    padding-left: 5px !important;
+    margin-right: 10px !important;
+}
+
+.separadorDireita{
+    width: 1px !important;
+    height: 40px !important;
+    margin-top: 0 !important;
+    margin-left: 8px;
+}
+

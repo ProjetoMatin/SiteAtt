@@ -32,7 +32,6 @@
 
     .local button a {
         color: var(--branco00);
-
     }
 </style>
 <div class="conteudo" id="conteudo2">
@@ -74,10 +73,8 @@
             <tbody>
                 <?php
 
-                $pagina = 1;
-
+                $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
                 $limite = 4;
-
                 $inicio = ($pagina * $limite) - $limite;
 
                 $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM 
@@ -114,21 +111,37 @@
 
                         echo "</tr>";
                     }
+
+                    // Paginação
+                    $selectAllQ = "SELECT COUNT(*) AS total FROM npedido";
+                    $selectAllP = $cx->prepare($selectAllQ);
+                    $selectAllP->execute();
+                    $totalRegistros = $selectAllP->fetch()['total'];
+                    $totalPaginas = ceil($totalRegistros / $limite);
+
+                    echo "</tbody>";
+                    echo "</table>";
+
+                    echo "<nav aria-label='Page navigation example' class='navigation'>";
+                    echo "<ul class='pagination'>";
+                    if ($pagina > 1) {
+                        echo "<li class='page-item'><a class='page-link' href='?page=compra_list&pagina=" . ($pagina - 1) . "'>Anterior</a></li>";
+                    }
+
+                    for ($i = 1; $i <= $totalPaginas; $i++) {
+                        $active = $i == $pagina ? "active" : "";
+                        echo "<li class='page-item $active'><a class='page-link' href='?page=compra_list&pagina=$i'>$i</a></li>";
+                    }
+
+                    if ($pagina < $totalPaginas) {
+                        echo "<li class='page-item'><a class='page-link' href='?page=compra_list&pagina=" . ($pagina + 1) . "'>Próximo</a></li>";
+                    }
+                    echo "</ul>";
+                    echo "</nav>";
                 }
 
                 ?>
-            </tbody>
-        </table>
-
-        <nav aria-label="Page navigation example" class="navigation">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
-            </ul>
-        </nav>
-
+            </div>
+        </div>
     </div>
 </div>
