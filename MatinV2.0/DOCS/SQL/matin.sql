@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/07/2024 às 20:54
+-- Tempo de geração: 05/08/2024 às 03:45
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -48,19 +48,20 @@ CREATE TABLE `avaliacao` (
 CREATE TABLE `carrinho` (
   `idCarrinho` int(11) NOT NULL,
   `idUsu` int(11) NOT NULL,
-  `idProduto` int(11) NOT NULL
+  `idProduto` int(11) NOT NULL,
+  `qntPedida` int(11) NOT NULL,
+  `tipoPedido` enum('unidade','kg') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `carrinho`
 --
 
-INSERT INTO `carrinho` (`idCarrinho`, `idUsu`, `idProduto`) VALUES
-(4, 8, 6),
-(5, 1, 3),
-(6, 8, 2),
-(7, 8, 3),
-(8, 2, 2);
+INSERT INTO `carrinho` (`idCarrinho`, `idUsu`, `idProduto`, `qntPedida`, `tipoPedido`) VALUES
+(4, 8, 6, 0, 'unidade'),
+(5, 1, 3, 0, 'unidade'),
+(6, 8, 2, 0, 'unidade'),
+(7, 8, 3, 0, 'unidade');
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,8 @@ INSERT INTO `cria` (`idCria`, `idUsu`, `idProduto`) VALUES
 (5, 2, 2),
 (6, 8, 7),
 (7, 9, 5),
-(8, 1, 6);
+(8, 1, 6),
+(9, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -137,6 +139,14 @@ CREATE TABLE `fotos` (
   `idFoto` int(11) NOT NULL,
   `fotoNome` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `fotos`
+--
+
+INSERT INTO `fotos` (`idFoto`, `fotoNome`) VALUES
+(1, 'leiteCondensadoPiracanjuba.png'),
+(2, 'leiteCondensadoPiracanjuba2.png');
 
 -- --------------------------------------------------------
 
@@ -250,6 +260,14 @@ CREATE TABLE `produto_has_foto` (
   `idProd` int(11) NOT NULL,
   `idFoto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto_has_foto`
+--
+
+INSERT INTO `produto_has_foto` (`idProd`, `idFoto`) VALUES
+(6, 1),
+(6, 2);
 
 -- --------------------------------------------------------
 
@@ -453,7 +471,7 @@ ALTER TABLE `avaliacao`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `idCarrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idCarrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`
@@ -465,7 +483,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `cria`
 --
 ALTER TABLE `cria`
-  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idCria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `favoritos`
@@ -477,7 +495,7 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de tabela `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `idFoto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `local`

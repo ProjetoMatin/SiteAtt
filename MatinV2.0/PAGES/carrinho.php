@@ -15,7 +15,7 @@ if ($idUsu) {
     $precoTotal = [];
 
     $excluir = $_REQUEST['excluir'] ?? "";
-    $idProduto = $_REQUEST['idProduto'] ?? "";
+    $idProduto = $_REQUEST['idProd'] ?? "";
     
     if($excluir == "true"){
         $selectQ2 = "DELETE FROM carrinho WHERE idUsu = $idUsu AND idProduto = $idProduto";
@@ -54,20 +54,6 @@ if ($idUsu) {
 
                 ?>
                     <div class="produtos-encl">
-                        <!-- <div class="info-vendedor">
-                            <input type="checkbox" name="checkboxUsuario" id="checkboxUsuario">
-                            <div class="nome-vendedor">
-                                <?php if ($dados['premium'] == 1) {
-                                ?>
-                                    <img src="IMAGES/matin-logo-png.png" class="logo" alt="">
-                                <?php
-                                }
-                                ?>
-                                <label for="checkboxUsuario" style="font-weight: bold;">NOME VENDEDOR</label>
-                                <img src="IMAGES/Subtract.png" alt="">
-                            </div>
-                        </div>
-                         -->
                         <label for='<?php echo "checkboxProduto" . $dados['idProduto'] ?>' class="checkBoxProduto">
 
 
@@ -105,12 +91,24 @@ if ($idUsu) {
                                     </div>
                                     <div class="top-bottom">
                                         <div class="btns-encl">
-                                            <button id="btnUnidade">Unidade</button>
-                                            <button id="btnKg">Kg</button>
+                                            <?php 
+                                            
+                                            if($dados['tipoPedido'] == 'unidade'){
+                                                echo "<button id='btnUnidade' class='ativo' style='margin-right: 10px'>Unidade</button>";
+                                                echo "<button id='btnKg'>Kg</button>";
+                                            }else if($dados['tipoPedido'] == 'kg'){
+                                                echo "<button id='btnUnidade' style='margin-right: 10px'>Unidade</button>";
+                                                echo "<button id='btnKg' class='ativo'>Kg</button>";
+                                            }
+
+                                            ?>
+                                           
+                                            
+                                            
                                         </div>
                                         
                                         <label for="qntPedida">Quantidade:</label>
-                                        <input type="number" name="qntPedida" id="qntPedida" max="99" disabled>
+                                        <input type="number" name="qntPedida" id="qntPedida" max="99" value="<?php echo $dados['qntPedida']?>"disabled>
                                     </div>
                                     <?php
 
@@ -210,66 +208,3 @@ if ($idUsu) {
 
 
 ?>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const btnUnidade = document.getElementById('btnUnidade');
-        const btnKg = document.getElementById('btnKg');
-        const btnComprarAgora = document.getElementById('btnComprarAgora');
-
-        // Função para atualizar o URL do botão "Comprar agora"
-        function atualizarUrlComprarAgora() {
-            const params = new URLSearchParams(window.location.search);
-            let medida = 'unidadeativo'; // Valor padrão
-            
-            if (btnKg.classList.contains('ativo')) {
-                medida = 'kgativo';
-            }
-
-            params.set('medida', medida);
-            btnComprarAgora.querySelector('a').href = `?page=carrinho&${params.toString()}`;
-        }
-
-        // Evento de clique nos botões "Unidade" e "Kg"
-        btnUnidade.addEventListener('click', function() {
-            btnUnidade.classList.add('ativo');
-            btnUnidade.classList.remove('inativo');
-            btnKg.classList.add('inativo');
-            btnKg.classList.remove('ativo');
-
-            atualizarUrlComprarAgora();
-        });
-
-        btnKg.addEventListener('click', function() {
-            btnKg.classList.add('ativo');
-            btnKg.classList.remove('inativo');
-            btnUnidade.classList.add('inativo');
-            btnUnidade.classList.remove('ativo');
-
-            atualizarUrlComprarAgora();
-        });
-
-        // Inicializa o estado dos botões com base no parâmetro da URL
-        const params = new URLSearchParams(window.location.search);
-        const medida = params.get('medida');
-        if (medida === 'unidadeativo') {
-            btnUnidade.classList.add('ativo');
-            btnUnidade.classList.remove('inativo');
-            btnKg.classList.add('inativo');
-            btnKg.classList.remove('ativo');
-        } else if (medida === 'kgativo') {
-            btnKg.classList.add('ativo');
-            btnKg.classList.remove('inativo');
-            btnUnidade.classList.add('inativo');
-            btnUnidade.classList.remove('ativo');
-        } else {
-            // Define o estado padrão dos botões se nenhum parâmetro estiver presente
-            btnUnidade.classList.add('ativo');
-            btnUnidade.classList.remove('inativo');
-            btnKg.classList.add('inativo');
-            btnKg.classList.remove('ativo');
-        }
-
-        // Atualiza o URL do botão "Comprar agora" inicialmente
-        atualizarUrlComprarAgora();
-    });
-</script>

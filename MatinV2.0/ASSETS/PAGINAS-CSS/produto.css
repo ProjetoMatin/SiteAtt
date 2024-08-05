@@ -190,30 +190,36 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
     margin-top: 20px;
 }
 
-.btns-encl button {
-    padding: 10px 0;
-    border-radius: 5px;
+.btns-encl .comprarA {
+    color: var(--branco00);
     background-color: var(--laranja00);
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 1px solid var(--laranja00);
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
 }
 
-.btns-encl button .comprarA {
-    color: var(--branco00);
-
+.btns-encl .comprarA:hover{
+    color: var(--laranja00) !important;
+    background-color: var(--branco00) !important;
 }
 
 .btns-encl .addCarrinhoBTN {
     background-color: var(--branco00) !important;
     border: 1px solid var(--verde00);
-}
-
-.btns-encl .addCarrinhoBTN a {
+    padding: 10px 0;
+    border-radius: 10px;
     color: var(--verde00);
-    transition: color 0.3s;
-    /* Transição suave para a mudança de cor */
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
 }
 
 /* Estilo do botão em estado de hover */
 .btns-encl .addCarrinhoBTN:hover {
+    color: var(--branco00) !important;
     background-color: var(--verde00) !important;
 }
 
