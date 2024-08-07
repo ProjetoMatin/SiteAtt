@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/produto.css">
+<link rel="stylesheet" href="ASSETS/PAGINAS-CSS/cards.css">
 
 <?php
 require_once 'BASE/config.php';
@@ -269,5 +270,9 @@ function formatarCEP($cep)
         </div>
     </section>
 </form>
+
+<?php
+    require_once "BASE/cards.php";
+?>
 
 <?php require_once 'BASE/footer.php' ?>

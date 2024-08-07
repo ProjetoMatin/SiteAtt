@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--bege00);
 }
 
@@ -62,18 +64,13 @@ main{
 
 .no-photo .card-body .btnCard{
     width: 100%;
-    border: 0;
-    background-color: var(--bege01);
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--laranja00);
     outline: none;
     font-weight: bold;
     margin-top: 1rem;
-    color: var(--laranja00);
-}
-
-.card:hover .btnCard{
-    background-color: var(--laranja00);
     color: var(--branco00);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card .card-body h5{
@@ -206,6 +203,9 @@ section .cards-encl-ofertas:hover {
 }
 
 .card-redondo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -292,10 +292,6 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
     transition: transform 0.3s ease; /* Define a mesma transição para o estado normal */
 }
 
-.produtos {
-    background-color: var(--bege00);
-}
-
 .content {
     background-color: var(--branco00);
     border-radius: 10px;
@@ -313,114 +309,3 @@ section .cards-encl-ofertas .card-ofertas button img, .cards-encl-categoria .car
     font-size: 1.4em;
 }
 
-.content-title div {
-    display: flex;
-    gap: 5px;
-}
-
-.content-title div a {
-    color: var(--laranja00);
-    text-decoration: none;
-    transition: .2s;
-}
-
-.content-title div a:hover {
-    font-weight: bold;
-}
-
-.content-tile .mais-vendidos {
-    color: var(--laranja00);
-    text-decoration: none;
-}
-
-.botoes-carrossel span{
-    width: 10px;
-    height: 10px;
-    background-color: var(--cinza00);
-    border-radius: 20px;
-}
-
-.btn a {
-    text-decoration: none;
-    color: var(--laranja00);
-    font-weight: bold;    
-    transition: .2s;
-}
-
-.btn a:hover {
-    font-size: 1.2em;
-}
-
-.botoes-carrossel .ativo{
-    width: 40px;
-    background-color: var(--verde00);
-}
-.flex-ultimos-vistos {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: var(--branco00);
-    gap: 10px;
-}
-
-.ultimo-visto .card-ofertas {
-    width: 200px;
-    padding: 1rem;
-}
-
-.flex-avaliacoes {
-    display: flex;
-    justify-content: space-between;
-}
-
-.flex-avaliacoes img {
-    width: 15px;
-}
-
-.media-avaliacao {
-    font-style: italic;
-}
-
-.flex-img-acoes {
-    display: flex;
-    margin: 0.5rem 0;
-    justify-content: space-evenly;
-    align-items: flex-start;
-}
-
-.flex-img-acoes .acao {
-    width: 50px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.336);
-}
-
-.flex-img-acoes img {
-    width: 100%;
-    padding: 2px;
-}
-
-.flex-img-acoes .acao:hover {
-    cursor: pointer;
-}
-
-.desc-produto p {
-    margin: 0.5rem 0 !important;
-}
-
-.parcela {
-    color: var(--verde00);
-}
-
-.preco-flex {
-    display: flex;
-    gap: 5px;
-    align-items: flex-start;
-}
-
-.promocao {
-    font-size: 0.8em;
-    color: var(--verde00);
-}

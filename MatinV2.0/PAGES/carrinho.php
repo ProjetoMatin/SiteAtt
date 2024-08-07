@@ -64,6 +64,7 @@ if ($idUsu) {
             <div class="main">
                 <?php
                 while ($dados = $selectP->fetch(PDO::FETCH_ASSOC)) {
+                    echo "oi";
                     if ($dados) {
                         // Calcular o preço total por produto considerando a quantidade e desconto
                         $precoUnitario = $dados['preco_prod'];
