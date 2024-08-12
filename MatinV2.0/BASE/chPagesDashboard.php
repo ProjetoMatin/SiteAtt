@@ -71,6 +71,10 @@ if ($idUsu == '1') {
             require_once '../PAGES/DASHBOARD/perg_list.php';
             break;
 
+        case 'add_prod':
+            require_once '../PAGES/DASHBOARD/add_prod.php';
+            break;
+
         default:
             require_once '../PAGES/DASHBOARD/dash_ini.php';
             break;

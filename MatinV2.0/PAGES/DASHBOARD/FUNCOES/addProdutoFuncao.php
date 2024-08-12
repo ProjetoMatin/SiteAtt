@@ -38,12 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $insertQ = "INSERT INTO produto (nome_prod, qnt_prod_estoque, data_criacao_prod, preco_prod, fotos_prod, qnt_vendas, promocao, parcela, idCategoria) VALUES (:nome_prod, :qnt_prod_estoque, :data_criacao_prod, :preco_prod, :fotos_prod, 0, :promocao, 12, :idCategoria)";
         }else{
             $insertQ = "INSERT INTO produto (nome_prod, qnt_prod_estoque, data_criacao_prod, preco_prod, fotos_prod, qnt_vendas, promocao, parcela, idCategoria) VALUES (:nome_prod, :qnt_prod_estoque, :data_criacao_prod, :preco_prod, :fotos_prod, 0, :promocao, null, :idCategoria)";
-            
         }
+
         $insertP = $cx->prepare($insertQ);   
         
         try {
             $cx->beginTransaction();
+
             $insertP->execute([
                 ':nome_prod' => $nomeProduto,
                 ':qnt_prod_estoque' => $qntProd,
@@ -52,8 +53,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':fotos_prod' => $destino,
                 ':promocao' => $promocaoNumero,
                 ':idCategoria' => $categoria
-            ]);         
+            ]);       
+            
+            // Obtendo o último idProduto inserido
+            $lastInsertId = $cx->lastInsertId();
+
+            // Inserindo na tabela cria com o idProduto recém-inserido
+            $insertQ2 = "INSERT INTO cria (idUsu, idProduto) VALUES (:idUsu, :idProduto)";
+            $insertP2 = $cx->prepare($insertQ2);
+            $insertP2->execute([
+                ':idUsu' => $idUsu,
+                ':idProduto' => $lastInsertId
+            ]);
+
             $cx->commit();
+
             header("Location: ../../../PAGES/dashboard.php?page=prod_list&aviso=6");
         } catch(PDOException $e) {
             $cx->rollBack();

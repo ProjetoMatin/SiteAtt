@@ -138,12 +138,6 @@
         text-decoration: none;
     }
 
-    nav .info_add,
-    nav .info_add .redes_soc a {
-        display: flex;
-        align-items: center;
-    }
-
     nav .info_add .redes_soc a div {
         margin-left: 15px;
     }
@@ -261,6 +255,21 @@
 
     .hover-verde:hover {
         color: var(--verde00);
+    }
+
+    .redes_soc div{
+        margin-left: 10px !important;
+    }
+
+
+    .fotosRedesSociais{
+        width: 29px !important;
+        height: 29px !important;
+    }
+
+    .redes_soc{
+        display: flex;
+        align-items: center;
     }
 </style>
 <header>
@@ -504,11 +513,11 @@
     <ul class="info_add"> <!-- INFO ADICIONAL -->
         <li><a href="#" class="appAcesso">Acesso Nosso App</a></li>
         <li class="redes_soc">
-            <a href="#">Siga-nos em:
+            <a href="#" style="display: flex; align-items: center;">Siga-nos em:
                 <div>
-                    <img src="IMAGES/Vector.png" alt="Tiktok">
-                    <img src="IMAGES/instagram-logo-fill-svgrepo-com 1.png" alt="Instagram">
-                    <img src="IMAGES/layer1.png" alt="X (Twitter)">
+                    <a href="https://github.com/ProjetoMatin?tab=repositories" target="_blank"><img src="IMAGES/githubLogo.png" class="fotosRedesSociais" alt="Github"></a>
+                    <a href="https://www.instagram.com/equipematin/" target="_blank"><img src="IMAGES/instagram-logo-fill-svgrepo-com 1.png" alt="Instagram" class="fotosRedesSociais"></a>
+                    <a href="https://x.com/equipematin" target="_blank"><img src="IMAGES/layer1.png" alt="X (Twitter)" class="fotosRedesSociais"></a>
                 </div>
             </a>
             <input type="hidden" name="">
