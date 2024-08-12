@@ -23,9 +23,9 @@ if ($idUsu == '1') {
             require_once '../PAGES/DASHBOARD/prod_list.php';
             break;
 
-            case 'compra_list':
-                require_once '../PAGES/DASHBOARD/compra_list.php';
-                break;
+        case 'compra_list':
+            require_once '../PAGES/DASHBOARD/compra_list.php';
+            break;
 
         case 'loc_list':
             require_once '../PAGES/DASHBOARD/loc_list.php';
@@ -41,6 +41,14 @@ if ($idUsu == '1') {
 
         case 'add_loc';
             require_once '../PAGES/DASHBOARD/add_loc.php';
+            break;
+
+        case 'add_prod':
+            require_once '../PAGES/DASHBOARD/add_prod.php';
+            break;
+
+        case 'add_cat':
+            require_once '../PAGES/DASHBOARD/add_cat.php';
             break;
 
         default:
@@ -59,9 +67,9 @@ if ($idUsu == '1') {
             require_once '../PAGES/DASHBOARD/prod_list.php';
             break;
 
-            case 'perg_list':
-                require_once '../PAGES/DASHBOARD/perg_list.php';
-                break;
+        case 'perg_list':
+            require_once '../PAGES/DASHBOARD/perg_list.php';
+            break;
 
         default:
             require_once '../PAGES/DASHBOARD/dash_ini.php';

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/home.css">
+<link rel="stylesheet" href="ASSETS/PAGINAS-CSS/cards.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <?php require_once 'BASE/config.php'; ?>
 <style>
@@ -125,8 +126,9 @@
                     $precoAntigo = $dados['preco_prod'];
                     $promocao = $dados['promocao'];
                     $formula = ($promocao / 100) * $precoAntigo;
+                    $formulaFinal = $precoAntigo - $formula;
 
-                    $formulaFormatada = number_format($formula, 2);
+                    $formulaFormatada = number_format($formulaFinal, 2);
 
                     echo "<p class='precoNovo'>R$ {$formulaFormatada}</p>";
                     echo "<p class='promocao'>{$dados['promocao']}% OFF</p>";
@@ -208,18 +210,13 @@ SECTION 1
 
 <section class="categorias">
     <h1 class="tituloSection">Categorias mais buscadas</h1>
-
     <div class="cards-encl-categoria">
-
-        
         <?php
-
         $selectQ = "SELECT * FROM categoria ORDER BY qnt_vis DESC LIMIT 4 ";
         $selectP = $cx->prepare($selectQ);
         $selectP->setFetchMode(PDO::FETCH_ASSOC);
         $selectP->execute();
         $dados = $selectP->rowCount();
-
 
         while ($dados = $selectP->fetch()) {
             echo "<div class='card-redondo'>";
@@ -232,215 +229,18 @@ SECTION 1
     </div>
 
 </section>
-<style>
-    .produtos .content {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .produtos .content.ativo {
-        display: block;
-        opacity: 1;
-    }
-
-    .botoes-carrossel span {
-        transition: .2s;
-    }
-
-    .card-body a {
-        color: var(--preto00);
-        text-decoration: none;
-    }
-</style>
 
 <body>
-    <?php
-    $maxSectionsToShow = 10;
-    $sql = "SELECT COUNT(*) as total FROM produto";
-    $prepare = $cx->prepare($sql);
-    $prepare->setFetchMode(PDO::FETCH_ASSOC);
-    $prepare->execute();
-    $dados = $prepare->fetch();
-    $totalProdutos = $dados['total'];
-    $itemsPerSection = 4;
-    $totalSections = ceil($totalProdutos / $itemsPerSection);
+<?php 
 
-    $numSectionsToShow = min($totalSections, $maxSectionsToShow);
-    ?>
+require_once "BASE/cards.php";
 
-    <section class="produtos">
-        <div class="content-title">
-            <div>
-                <h1>Ofertas do dia</h1>
-            </div>
-            <div class="botoes-carrossel">
-                <?php
-                for ($i = 0; $i < $numSectionsToShow; $i++) {
-                    $activeClass = ($i == 0) ? 'ativo' : '';
-                    echo "<span class='$activeClass' data-index='$i'></span>";
-                }
-                ?>
-            </div>
-        </div>
-        <?php
-        $sql = "SELECT * FROM produto ORDER BY RAND()";
-        $prepare = $cx->prepare($sql);
-        $prepare->setFetchMode(PDO::FETCH_ASSOC);
-        $prepare->execute();
-        $sectionIndex = 0;
-        $currentItem = 0;
+$arrayTitulosProduto = ["Inspirado no visto por ultimo", "Também pode se interessar", "Ofertas do Dia"];
+gerarCards($cx, $arrayTitulosProduto);
 
-        while ($dados = $prepare->fetch()) {
-            if ($currentItem % $itemsPerSection == 0) {
-                if ($currentItem > 0) echo '</div></div>';
-                $sectionClass = ($sectionIndex == 0) ? 'content ativo' : 'content';
-                echo "<div class='$sectionClass'><div class='flex-ultimos-vistos'>";
-                $sectionIndex++;
-            }
-        ?>
-            <div class="carrossel0 cards-encl-ofertas">
-                <div class="card-ofertas">
-                    <div class="card-body">
-                        <div class="flex-avaliacoes">
-                            <p><?= $dados['qnt_vendas'] ?> vendidos</p>
-                            <div class="estrelas">
-                                <img src="IMAGES/fullStar.png" alt="">
-                                <img src="IMAGES/fullStar.png" alt="">
-                                <img src="IMAGES/fullStar.png" alt="">
-                                <img src="IMAGES/fullStar.png" alt="">
-                                <img src="IMAGES/halfStar.png" alt="">
-                                <span class="media-avaliacao">(4.2)</span>
-                            </div>
-                        </div>
-                        <div class="flex-img-acoes">
-                            <span class="acao"><img src="IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" class="acaoCart"></span>
-                            <img src="IMAGES-BD/PRODUTOS/<?= $dados['fotos_prod'] ?>" class="img-produto" alt="Kiwi Gold">
-                            <span class="acao"><img src="IMAGES/Union.png" alt="Adicionar aos favoritos" class="acaoFavorito"></span>
-                        </div>
-                        <a href="index.php?page=produto&idProd=<?= $dados['idProduto'] ?>" class="link-produto">
-                            <div class="desc-produto">
-                                <p class="card-text"><?= $dados['nome_prod'] ?></p>
-                                <div class="precos">
-                                    <?php
-                                    if (!is_null($dados['promocao'])) {
-                                        echo "<p class='precoAntigo'>De: R$ " . $dados['preco_prod'] . "</p>";
-                                        echo "<div class='preco-Promocao'>";
-                                        $precoAntigo = $dados['preco_prod'];
-                                        $promocao = $dados['promocao'];
-                                        $formula = $precoAntigo - (($promocao / 100) * $precoAntigo);
-                                        $formulaFormatada = number_format($formula, 2);
-                                        echo "<p class='precoNovo'>Por: <strong>R$" . $formulaFormatada . "</strong></p>";
-                                        echo "<p class='promocao'>" . $dados['promocao'] . "% OFF</p>";
-                                        echo "</div>";
-                                        if (!is_null($dados['parcela'])) {
-                                            $parcela = $dados['parcela'];
-                                            $formula2 = $formulaFormatada / $parcela;
-                                            $formulaFormatada2 = number_format($formula2, 2);
-                                            echo "<p>em<strong class='parcela'> " . $dados['parcela'] . "x de R$" . $formulaFormatada2 . " sem juros.</strong></p>";
-                                        }
-                                    } else {
-                                        echo "<div class='preco-Promocao'>";
-                                        echo "<p class='precoNovo'>R$ " . $dados['preco_prod'] . "</p>";
-                                        echo "</div>";
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        <?php
-            $currentItem++;
-        }
-        ?>
-        </div>
-        </div>
-    </section>
-    <section class="interesses">
-        <div class="content-title">
-            <div>
-                <h1>Também pode se interessar</h1>
-            </div>
-            <button class="btn"><a href="#">Ver mais produtos</a></button>
-        </div>
-        </div>
-        <?php
-        $sql = "SELECT * FROM produto ORDER BY RAND() DESC LIMIT 4";
-        $prepare = $cx->prepare($sql);
-        $prepare->setFetchMode(PDO::FETCH_ASSOC);
-        $prepare->execute();
-        $sectionIndex = 0;
-        $currentItem = 0;
-
-        while ($dados = $prepare->fetch()) {
-            if ($currentItem % $itemsPerSection == 0) {
-                if ($currentItem > 0) echo '</div></div>';
-                $sectionClass = ($sectionIndex == 0) ? 'content ativo' : 'content';
-                echo "<div class='$sectionClass'><div class='flex-ultimos-vistos'>";
-                $sectionIndex++;
-            }
-        ?>
-            <div class="carrossel0 cards-encl-ofertas">
-                <div class="card-ofertas">
-                    <div class="card-body">
-                        <a href="index.php?page=produto&idProd<?= $dados['idProduto'] ?>">
-                            <div class="flex-avaliacoes">
-                                <p><?= $dados['qnt_vendas'] ?> vendidos</p>
-                                <div class="estrelas">
-                                    <img src="IMAGES/fullStar.png" alt="">
-                                    <img src="IMAGES/fullStar.png" alt="">
-                                    <img src="IMAGES/fullStar.png" alt="">
-                                    <img src="IMAGES/fullStar.png" alt="">
-                                    <img src="IMAGES/halfStar.png" alt="">
-                                    <span class="media-avaliacao">(4.2)</span>
-                                </div>
-                            </div>
-                            <div class="flex-img-acoes">
-                                <span class="acao"><img src="IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" class="acaoCart"></span>
-                                <img src="IMAGES-BD/PRODUTOS/<?= $dados['fotos_prod'] ?>" class="img-produto" alt="Kiwi Gold">
-                                <span class="acao"><img src="IMAGES/Union.png" alt="Adicionar aos favoritos" class="acaoFavorito"></span>
-                            </div>
-                            <div class="desc-produto">
-                                <p class="card-text"><?= $dados['nome_prod'] ?></p>
-                                <div class="precos">
-                                    <?php
-                                    if (!is_null($dados['promocao'])) {
-                                        echo "<p class='precoAntigo'>De: R$ " . $dados['preco_prod'] . "</p>";
-                                        echo "<div class='preco-Promocao'>";
-                                        $precoAntigo = $dados['preco_prod'];
-                                        $promocao = $dados['promocao'];
-                                        $formula = $precoAntigo - (($promocao / 100) * $precoAntigo);
-                                        $formulaFormatada = number_format($formula, 2);
-                                        echo "<p class='precoNovo'>Por: <strong>R$" . $formulaFormatada . "</strong></p>";
-                                        echo "<p class='promocao'>" . $dados['promocao'] . "% OFF</p>";
-                                        echo "</div>";
-                                        if (!is_null($dados['parcela'])) {
-                                            $parcela = $dados['parcela'];
-                                            $formula2 = $formulaFormatada / $parcela;
-                                            $formulaFormatada2 = number_format($formula2, 2);
-                                            echo "<p>em<strong class='parcela'> " . $dados['parcela'] . "x de R$" . $formulaFormatada2 . " sem juros.</strong></p>";
-                                        }
-                                    } else {
-                                        echo "<div class='preco-Promocao'>";
-                                        echo "<p class='precoNovo'>R$ " . $dados['preco_prod'] . "</p>";
-                                        echo "</div>";
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        <?php
-            $currentItem++;
-        }
-        ?>
-        </div>
-        </div>
-    </section>
+?> 
+    
+</body>
     <?php require_once 'BASE/footer.php'?> 
 
     <form id="localStorageForm" action="" method="POST" style="display: none;">

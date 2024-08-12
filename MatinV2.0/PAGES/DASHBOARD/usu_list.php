@@ -16,6 +16,10 @@
     .search-bar {
         margin: 20px 0 !important;
     }
+
+    .search-bar input{
+        margin-right: 10px !important;
+    }
 </style>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
@@ -32,6 +36,7 @@
         <div class="pesq">
             <div class="input-group flex-nowrap search-bar">
                 <input type="search" class="form-control" placeholder="Filtre por ID's, nome de usuário ou situação" aria-label="Search" aria-describedby="addon-wrapping">
+                <a href="?page=add_usu&NdPAdd=1"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
             </div>
             <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>

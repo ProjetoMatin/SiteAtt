@@ -23,6 +23,10 @@
         padding: 5px 10px;
         border-radius: 5px;
     }
+
+    .search-bar input{
+        margin-right: 10px !important;    
+    }
 </style>
 
 <?php
@@ -70,8 +74,8 @@ if ($idCat != "geral") {
             <div class="pesq">
                 <div class="input-group flex-nowrap search-bar">
                     <input type="search" class="form-control" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping">
+                    <a href="?page=add_cat"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
                 </div>
-                <a href="?page=add_loc"><button class="btnAdd" type="button">Adicionar</button></a>
             </div>
 
             <table class="table table-striped">
@@ -166,8 +170,8 @@ if ($idCat != "geral") {
             <div class="pesq">
                 <div class="input-group flex-nowrap search-bar">
                     <input type="search" class="form-control" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping">
+                    <a href="?page=add_cat"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
                 </div>
-                <a href="?page=add_loc"><button class="btnAdd" type="button">Adicionar</button></a>
             </div>
 
             <table class="table table-striped">

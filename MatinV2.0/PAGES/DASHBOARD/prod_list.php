@@ -16,7 +16,12 @@
     .search-bar {
         margin: 20px 0 !important;
     }
+
+    .search-bar input{
+        margin-right: 10px !important;    
+    }
 </style>
+<?php require_once '../BASE/alerts.php'; ?>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
         <div class="local">
@@ -32,11 +37,9 @@
         <div class="pesq">
             <div class="input-group flex-nowrap search-bar">
                 <input type="search" class="form-control" placeholder="Filtre por ID's, nome de usuário ou situação" aria-label="Search" aria-describedby="addon-wrapping">
+                <a href="?page=add_prod"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
             </div>
-            <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
-
-        <?php require_once '../BASE/alerts.php'; ?>
 
         <table class="table table-striped">
             <thead>
@@ -61,7 +64,7 @@
 
                     $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria INNER JOIN cria c2 ON c2.idProduto = p.idProduto WHERE c2.idUsu = $idUsu ORDER BY p.idProduto LIMIT $inicio, $limite";
                 } else {
-                    $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria INNER JOIN cria c2 ON c2.idProduto = p.idProduto LIMIT $inicio, $limite";
+                    $selectQ = "SELECT * FROM produto p INNER JOIN categoria c ON p.idCategoria = c.idCategoria ORDER BY idProduto LIMIT $inicio, $limite";
                 }
 
                 $selectP = $cx->prepare($selectQ);
@@ -91,7 +94,7 @@
 
         <?php 
         
-        $selectAllQ = "SELECT COUNT(*) AS total FROM usuario";
+        $selectAllQ = "SELECT COUNT(*) AS total FROM produto";
         $selectAllP = $cx->prepare($selectAllQ);
         $selectAllP->execute();
         $totalRegistros = $selectAllP->fetch()['total'];
@@ -104,7 +107,7 @@
         }
 
         for ($i = 1; $i <= $totalPaginas; $i++) {
-            $active = $i == $pagina ? "active" : "";
+            $active = $i    == $pagina ? "active" : "";
             echo "<li class='page-item $active'><a class='page-link' href='?page=prod_list&pagina=$i'>$i</a></li>";
         }
 

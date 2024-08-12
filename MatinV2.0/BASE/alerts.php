@@ -49,6 +49,15 @@ switch ($aviso) {
         echo "<p class='aviso vermelho'>Houve um erro ao cadastrar usuario!</p>";
         break;
 
+        // DASHBOARD
+
+    case 6:
+        echo "<p class='aviso verde'>Cadastro realizado com sucesso</p>";
+        break;
+    case 7:
+        echo "<p class='aviso vermelho'>Houve um erro ao cadastrar!</p>";
+        break;
+
     default:
         # code...
         break;

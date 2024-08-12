@@ -94,3 +94,10 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 </main>
+
+<?php require_once 'BASE/cards.php';
+$cardsArray = ["Baseado nas suas buscas", "Ofertas do dia"];
+gerarCards($cx, $cardsArray);
+
+require_once 'BASE/footer.php';
+?>

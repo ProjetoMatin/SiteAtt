@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/produto.css">
+<link rel="stylesheet" href="ASSETS/PAGINAS-CSS/cards.css">
 
 <?php
 require_once 'BASE/config.php';
@@ -21,7 +22,7 @@ if (!empty($escolhaQnt) && !empty($qntPedida) && $qntPedida > 0 && $qntPedida <=
     $insertP->bindParam(':quantidadePedida', $qntPedida);
     $insertP->bindParam(':escolhaQntSelecionada', $escolhaQnt);
     $insertP->execute();
-    
+
     // Calcular o novo estoque
     // $novoEstoque = $qntProdEstoque - $qntPedida;
 
@@ -45,12 +46,6 @@ if (!empty($idProd) && !is_null($idProd)) {
     $RC = $selectP->rowCount();
     if ($RC != 0) {
         $dado = $selectP->fetch(PDO::FETCH_ASSOC);
-
-        echo "
-            <script>
-            localStorage.setItem('idProdVistoPorUltimo', '" . $dado['idProduto'] . "');
-            </script>
-        ";
     } else {
         echo "<script>location.href='index.php'</script>";
     }
@@ -152,12 +147,12 @@ function formatarCEP($cep)
                         $porcentagemDesconto = $dado['promocao'];
                         $valorDesconto = ($precoAntigo * $porcentagemDesconto) / 100;
                         $precoNovo = $precoAntigo - $valorDesconto;
-                        ?>
+                    ?>
                         <p id="precoAntigo">De: R$ <?php echo number_format($precoAntigo, 2, ',', '.') ?></p>
                         <p id="precoNovo">Por: <span id="preco"><?php echo "R$ " . number_format($precoNovo, 2, ',', '.') ?></span> <span id="desconto"><?php echo $dado['promocao'] ?>% OFF</span></p>
                     <?php
                     } else {
-                        ?>
+                    ?>
                         <p id="precoNovo">Por: <span id="preco"><?php echo "R$ " . number_format($dado['preco_prod'], 2, ',', '.') ?></span></p>
                     <?php
                     }
@@ -186,14 +181,28 @@ function formatarCEP($cep)
                         <p>Frete </p>
                         <div class="info-resposta">
                             <?php
+
                             $selectQ = "SELECT * FROM usuario usu INNER JOIN local loc ON usu.Local_CEP = loc.CEP WHERE idUsu = :idUsu";
                             $selectP = $cx->prepare($selectQ);
                             $selectP->bindParam(':idUsu', $idUsu, PDO::PARAM_INT);
                             $selectP->execute();
                             $dados = $selectP->fetch(PDO::FETCH_ASSOC);
+                            $RC = $selectP->rowCount();
+
+                            if ($RC != 0) {
                             ?>
-                            <p class="casaUsuario"><?php echo formatarCEP($dados['CEP']) . ", " . $dados['Cidade'] . ", " . $dados['Bairro'] ?></p>
-                            <p class="valor">Valor: R$7,00</p>
+                                <p class="casaUsuario"><?php echo formatarCEP($dados['CEP']) . ", " . $dados['Cidade'] . ", " . $dados['Bairro'] ?></p>
+                                <p class="valor">Valor: R$7,00</p>
+
+                            <?php
+                            } else {
+                            ?>
+                                <p class="casaUsuario"><mark>Faça login</mark></p>
+                                <p class="valor">Valor: <strong>Indefinido</strong></p>
+
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
 
@@ -209,13 +218,27 @@ function formatarCEP($cep)
 
             <div class="resumoCompraEncl">
                 <div class="resumoCompra">
-                    <p class="valorFrete">Frete: R$7,00</p>
+                    <?php
+
+                    if ($RC != 0) {
+                    ?>
+                        <p class="valorFrete">Frete: R$7,00</p>
+
+                    <?php
+                    } else {
+                    ?>
+
+                        <p class="valorFrete">Frete: <strong>Indefinido</strong></p>
+                    <?php
+                    }
+
+                    ?>
                     <p class="descResumoCompra">Saiba os prazos de entrega e as formas de envio.</p>
                     <a href="#" class="textoVerde">Calcular prazo de entrega</a>
                     <p class="qntEstoque">Estoque disponível para entrega: <mark style="color: var(--preto00); font-weight: bolder;"><?php echo $dado['qnt_prod_estoque'] ?> Unidades</mark></p>
 
                     <div class="btns-encl">
-                        <a href="?page=pagar&idProduto=<?php echo  $dado['idProduto']?>&qntPedida=" class="btnReformuladoLinkNaoMexe"><input type="button" value="Comprar Agora" class="comprarA"></a>
+                        <a href="?page=pagar&idProduto=<?php echo  $dado['idProduto'] ?>&qntPedida=" class="btnReformuladoLinkNaoMexe"><input type="button" value="Comprar Agora" class="comprarA"></a>
                         <input type="submit" value="Adicionar ao carrinho" class="addCarrinhoBTN">
                     </div>
 
@@ -269,5 +292,11 @@ function formatarCEP($cep)
         </div>
     </section>
 </form>
+
+<?php
+require_once "BASE/cards.php";
+$arrayTitulosProduto = ["Inspirado pelo seu visto por ultimo", "Para você", "Ofertas do dia"];
+gerarCards($cx, $arrayTitulosProduto);
+?>
 
 <?php require_once 'BASE/footer.php' ?>
