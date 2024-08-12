@@ -294,9 +294,11 @@ function formatarCEP($cep)
 </form>
 
 <?php
+
 require_once "BASE/cards.php";
 $arrayTitulosProduto = ["Inspirado pelo seu visto por ultimo", "Para você", "Ofertas do dia"];
 gerarCards($cx, $arrayTitulosProduto);
 ?>
 
 <?php require_once 'BASE/footer.php' ?>
+

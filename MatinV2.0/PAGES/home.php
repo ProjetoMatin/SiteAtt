@@ -231,6 +231,7 @@ SECTION 1
 </section>
 
 <body>
+    
 <?php 
 
 require_once "BASE/cards.php";
@@ -240,6 +241,7 @@ gerarCards($cx, $arrayTitulosProduto);
 
 ?> 
     
+
 </body>
     <?php require_once 'BASE/footer.php'?> 
 
