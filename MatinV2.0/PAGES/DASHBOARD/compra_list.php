@@ -34,12 +34,25 @@
         color: var(--branco00);
     }
 </style>
+<?php
+require_once '../MODEL/autenticacao.php';
+
+$idUsu = pegarIDUsuario();
+
+$selectQ = "SELECT max(idNPedido) AS ultimo FROM npedido WHERE idUsuVendedor = :idUsu";
+$selectP = $cx->prepare($selectQ);
+$selectP->bindValue(':idUsu', $idUsu);
+$selectP->execute();
+$dados = $selectP->fetch(PDO::FETCH_ASSOC);
+
+
+?>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
         <div class="local">
             <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Compras</mark></h6>
-
-            <a href="?page=relatorio&tipoLista=compra" target="_blank"><button>Gerar Relatório</button></a>
+            <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
+            <a href="RELATORIO/relatorio.php?tipoRelatorio=compra&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
         </div>
     </div>
     <div class="main-cont">
@@ -50,7 +63,7 @@
 
         <div class="pesq">
             <div class="input-group flex-nowrap search-bar">
-                <input type="search" class="form-control" placeholder="Filtre por ID's, nome de usuário ou situação" aria-label="Search" aria-describedby="addon-wrapping">
+                <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's ou Nomes de Usuário" aria-label="Search" aria-describedby="addon-wrapping" name="search">
             </div>
             <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
@@ -76,9 +89,16 @@
                 $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
                 $limite = 4;
                 $inicio = ($pagina * $limite) - $limite;
+                $search = $_REQUEST['search'] ?? "";
 
-                $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM 
-                npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu ORDER BY np.idNPedido LIMIT $inicio,$limite";
+                if ($search) {
+
+
+                    $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu WHERE p.nome_prod LIKE '%$search%' OR np.idNPedido = '$search' ORDER BY np.idNPedido LIMIT $inicio,$limite";
+
+                } else {
+                    $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu ORDER BY np.idNPedido LIMIT $inicio,$limite";
+                }
 
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
@@ -141,7 +161,17 @@
                 }
 
                 ?>
-            </div>
-        </div>
     </div>
 </div>
+</div>
+</div>
+<script>
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var searchValue = document.getElementById('searchInput').value;
+
+            window.location.href = "?page=compra_list" + "&search=" + encodeURIComponent(searchValue);
+        }
+    });
+</script>

@@ -11,7 +11,7 @@ require_once __DIR__ . '../../../vendor/autoload.php';
 $host = 'localhost';
 $db = 'matin';
 $user = 'root';
-$pass = ''; 
+$pass = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
@@ -20,7 +20,13 @@ try {
     die("Erro de conexão: " . $e->getMessage());
 }
 
-$sql = "
+$tipoRelatorio = $_REQUEST['tipoRelatorio'] ?? "";
+$recibo = $_REQUEST['recibo'] ?? "";
+$titulo = $_REQUEST['titulo'] ?? "";
+
+switch ($tipoRelatorio) {
+    case 'compra':
+        $sql = "
     SELECT 
         p.idProduto, 
         p.nome_prod, 
@@ -35,6 +41,13 @@ $sql = "
     JOIN usuario uv ON np.idUsuVendedor = uv.idUsu
     JOIN usuario uc ON np.idUsuComprador = uc.idUsu
 ";
+        break;
+
+    default:
+        header("Location: ../dashboard.php");
+        break;
+}
+
 
 $stmt = $pdo->query($sql);
 $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -47,31 +60,40 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $h = "<div style='text-align:right;'>Página {PAGENO} de {nbpg}</div>";
 
-$rec = "1337";
 $fornecedor = "DISTRIBUIDORA Mat-In PRODUTOS AGRONOMOS Ltda.";
+
 
 $html = "
 <fieldset>
 
 <div class='header'>
     <div class='titulo'><h2>SRMI - Sistema de Relatório Mat-In</h2></div>
-    <div class='img-matin'><img src='../../IMAGES/matin-logo-png.png'></div>
+
+</div>
+
 </div>
 
 <div class='main'>
-    <div class='tituloRel'><h1>Gerencimento de vendas</h1></div>
+    <div class='tituloRel'><h1>" . $titulo . "</h1></div>
 
     <div class='referencia'>
     
         <h4>
-            <div class='ref1'>Recibo: ".$rec." </div>
-			<div class='ref2'>Fornecedor: ".$fornecedor."</div>
+            <div class='ref1'>Recibo: " . $recibo . " </div>
+			<div class='ref2'>Fornecedor: " . $fornecedor . "</div>
         </h4>
 
     </div>
 </div>
 
 <hr>
+
+";
+
+switch ($tipoRelatorio) {
+    case 'compra':
+
+        $html .= "
 
 <div class='dados'>
     <table class='fontedados' cellspacing='2' cellpadding='2' width='100%'>
@@ -86,8 +108,8 @@ $html = "
             <th width='10%'>Preço</th>
         </tr>";
 
-foreach ($produtos as $produto) {
-    $html .= "
+        foreach ($produtos as $produto) {
+            $html .= "
         <tr>
             <td>{$produto['idProduto']}</td>
             <td>{$produto['nome_prod']}</td>
@@ -97,7 +119,13 @@ foreach ($produtos as $produto) {
             <td>{$produto['qnt_pedida']} {$produto['tipoqnt_ped']}</td>
             <td>R\$ {$produto['qnt_vendas']}</td>
         </tr>";
+        }
+        break;
+
+    default:
+        break;
 }
+
 
 $html .= "
     </table>
@@ -109,16 +137,18 @@ $html .= "
 
 $htmlfooter = "
 		<hr>
-		<div class='rodape'>Emissão: ".date('d/m/Y - H:i:s')." </div>
+		<div class='rodape'>Emissão: " . date('d/m/Y - H:i:s') . " </div>
 	</fieldset>
-	"; 
+	";
 
-$mpdf = new \Mpdf\Mpdf([
-    'mode' => 'utf-8',
-    'format' => [190, 236],
-    'orientation' => 'L',
-    'default_font' => 'arial'
-]);
+    $mpdf = new \Mpdf\Mpdf([
+        'mode' => 'utf-8',
+        'format' => [190, 236],
+        'orientation' => 'L',
+        'default_font' => 'DejaVuSans'
+    ]);
+    
+
 
 $mpdf->SetDisplayMode('fullpage');
 $css = file_get_contents('../../ASSETS/PAGINAS-CSS/relatorio.css');

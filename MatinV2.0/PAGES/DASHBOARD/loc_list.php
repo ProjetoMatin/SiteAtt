@@ -31,7 +31,7 @@
 
         <div class="pesq">
             <div class="input-group flex-nowrap search-bar">
-                <input type="search" class="form-control" placeholder="Filtre por ID's, nome de usuário ou situação" aria-label="Search" aria-describedby="addon-wrapping">
+            <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's ou Nomes de Usuário" aria-label="Search" aria-describedby="addon-wrapping" name="search">
             </div>
             <a href="?page=add_loc"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
@@ -54,11 +54,18 @@
                 $limite = 4;
                 $inicio = ($pagina * $limite) - $limite;
 
-                $selectQ = "SELECT * FROM local ORDER BY CEP LIMIT $inicio, $limite";
-                $selectP = $cx->prepare($selectQ);
-                $selectP->setFetchMode(PDO::FETCH_ASSOC);
-                $selectP->execute();
-                $total = $selectP->rowCount();
+                $search = $_REQUEST['search'] ?? "";
+
+                if($search){
+                    $selectQ = "SELECT * FROM local WHERE CEP LIKE '%$search%' OR Logradouro LIKE '%$search%' OR Bairro LIKE '%$search%' OR Cidade LIKE '%$search%' OR UF LIKE '%$search%' ORDER BY CEP LIMIT $inicio, $limite";
+                }else{
+                    $selectQ = "SELECT * FROM local ORDER BY CEP LIMIT $inicio, $limite";
+
+                }
+                    $selectP = $cx->prepare($selectQ);
+                    $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                    $selectP->execute();
+                    $total = $selectP->rowCount();
 
                 if ($total == 0) {
                     echo "<p class='txtVermelho'>Não há registros no momento...</p>";
@@ -70,7 +77,7 @@
                         echo "<td>{$dados['Bairro']}</td>";
                         echo "<td>{$dados['Cidade']}</td>";
                         echo "<td>{$dados['UF']}</td>";
-                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['CEP'] . "&tbl=produto'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }
@@ -81,7 +88,7 @@
 
         <?php
 
-        $selectAllQ = "SELECT COUNT(*) AS total FROM usuario";
+        $selectAllQ = "SELECT COUNT(*) AS total FROM local";
         $selectAllP = $cx->prepare($selectAllQ);
         $selectAllP->execute();
         $totalRegistros = $selectAllP->fetch()['total'];
@@ -108,3 +115,14 @@
         ?>
     </div>
 </div>
+
+<script>
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var searchValue = document.getElementById('searchInput').value;
+
+            window.location.href = "?page=loc_list" + "&search=" + encodeURIComponent(searchValue);
+        }
+    });
+</script>

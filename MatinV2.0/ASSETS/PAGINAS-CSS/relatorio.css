@@ -9,7 +9,6 @@
 
 .header .titulo h2{
     font-weight: normal;
-
 }
 
 .header .img-matin{
@@ -24,7 +23,8 @@
 
 .main .tituloRel{
     text-align: center;
-    background-color: #D9D9D9;
+    color: white;
+    background-color: #FF6600;
 }
 
 .main .tituloRel h1{

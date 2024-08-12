@@ -58,6 +58,14 @@ switch ($aviso) {
         echo "<p class='aviso vermelho'>Houve um erro ao cadastrar!</p>";
         break;
 
+    case 8:
+        echo "<p class='aviso verde'>Deleção feita com sucesso!</p>";
+        break;
+
+    case 9:
+        echo "<p class='aviso vermelho'>Houve um erro ao deletar!</p>";
+        break;
+
     default:
         # code...
         break;

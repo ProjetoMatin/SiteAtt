@@ -17,10 +17,11 @@
         margin: 20px 0 !important;
     }
 
-    .search-bar input{
+    .search-bar input {
         margin-right: 10px !important;
     }
 </style>
+<?php require_once '../BASE/alerts.php'; ?>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
         <div class="local">
@@ -35,13 +36,12 @@
 
         <div class="pesq">
             <div class="input-group flex-nowrap search-bar">
-                <input type="search" class="form-control" placeholder="Filtre por ID's, nome de usuário ou situação" aria-label="Search" aria-describedby="addon-wrapping">
+                <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's ou Nomes de Usuário" aria-label="Search" aria-describedby="addon-wrapping" name="search">
                 <a href="?page=add_usu&NdPAdd=1"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
             </div>
             <a href="?page=add_usu&NdPAdd=1"><button class="btnAdd" type="button">Adicionar</button></a>
         </div>
 
-        <?php require_once '../BASE/alerts.php'; ?>
 
         <table class="table table-striped">
             <thead>
@@ -60,8 +60,13 @@
                 $limite = 4;
                 $inicio = ($pagina * $limite) - $limite;
 
+                $search = $_REQUEST['search'] ?? "";
 
-                $selectQ = "SELECT * FROM usuario ORDER BY idUsu LIMIT $inicio, $limite";
+                if($search){
+                    $selectQ = "SELECT * FROM usuario WHERE nome_usu LIKE '%$search%' OR idUsu = '$search' ORDER BY idUsu LIMIT $inicio, $limite";
+                }else{
+                    $selectQ = "SELECT * FROM usuario ORDER BY idUsu LIMIT $inicio, $limite";
+                }
 
                 $selectP = $cx->prepare($selectQ);
                 $selectP->setFetchMode(PDO::FETCH_ASSOC);
@@ -81,7 +86,7 @@
                             echo "<td class='txtVermelho'>Bloqueado</td>";
                         }
                         echo "<td>{$dados['NRCIR']} - {$dados['TCIR']}</td>";
-                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idUsu'] . "&tbl=usuario'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }
@@ -119,3 +124,13 @@
         ?>
     </div>
 </div>
+<script>
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var searchValue = document.getElementById('searchInput').value;
+
+            window.location.href = "?page=usu_list" + "&search=" + encodeURIComponent(searchValue);
+        }
+    });
+</script>

@@ -24,14 +24,15 @@
         border-radius: 5px;
     }
 
-    .search-bar input{
-        margin-right: 10px !important;    
+    .search-bar input {
+        margin-right: 10px !important;
     }
 </style>
 
 <?php
 
 $idCat = $_REQUEST['idCat'] ?? "";
+
 
 if (!isset($idCat) || empty($idCat)) {
     echo "<script>location.href='?page=dash_ini'</script>";
@@ -55,6 +56,7 @@ if ($idCat != "geral") {
 
                 $inicio = ($pagina * $limite) - $limite;
 
+
                 $selectQ = "SELECT * FROM categoria WHERE idCategoria = $idCat ORDER BY idCategoria LIMIT $inicio,$limite";
                 $selectP = $cx->prepare($selectQ);
                 $selectP->execute();
@@ -73,7 +75,7 @@ if ($idCat != "geral") {
 
             <div class="pesq">
                 <div class="input-group flex-nowrap search-bar">
-                    <input type="search" class="form-control" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping">
+                    <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping" name="search">
                     <a href="?page=add_cat"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
                 </div>
             </div>
@@ -95,8 +97,13 @@ if ($idCat != "geral") {
                     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
                     $limite = 4;
                     $inicio = ($pagina * $limite) - $limite;
+                    $search = $_REQUEST['search'] ?? "";
 
-                    $selectQ = "SELECT * FROM produto WHERE idCategoria = $idCat LIMIT $inicio, $limite";
+                    if ($search) {
+                        $selectQ = "SELECT * FROM produto WHERE idCategoria = $idCat AND (nome_prod LIKE '%$search%' OR idProduto LIKE '$search') LIMIT $inicio, $limite";
+                    } else {
+                        $selectQ = "SELECT * FROM produto WHERE idCategoria = $idCat LIMIT $inicio, $limite";
+                    }
                     $selectP = $cx->prepare($selectQ);
                     $selectP->setFetchMode(PDO::FETCH_ASSOC);
                     $selectP->execute();
@@ -169,7 +176,7 @@ if ($idCat != "geral") {
 
             <div class="pesq">
                 <div class="input-group flex-nowrap search-bar">
-                    <input type="search" class="form-control" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping">
+                <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping" name="search">
                     <a href="?page=add_cat"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
                 </div>
             </div>
@@ -191,8 +198,14 @@ if ($idCat != "geral") {
                     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
                     $limite = 4;
                     $inicio = ($pagina * $limite) - $limite;
+                    $search = $_REQUEST['search'] ?? "";
 
-                    $selectQ = "SELECT * FROM categoria LIMIT $inicio, $limite";
+                    if ($search) {
+                        $selectQ = "SELECT * FROM categoria WHERE nome_cat LIKE '%$search%' OR idCategoria = '$search' LIMIT $inicio, $limite";
+                    } else {
+                        $selectQ = "SELECT * FROM categoria LIMIT $inicio, $limite";
+                    }
+
                     $selectP = $cx->prepare($selectQ);
                     $selectP->setFetchMode(PDO::FETCH_ASSOC);
                     $selectP->execute();
@@ -251,3 +264,16 @@ if ($idCat != "geral") {
 }
 
 ?>
+
+<script>
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Evita o comportamento padrão de submit do formulário
+            var searchValue = document.getElementById('searchInput').value;
+            var idCat = "<?php echo $idCat; ?>"; // Pega o valor de idCat do PHP
+
+            // Redireciona para a página com o valor do search como parâmetro
+            window.location.href = "?page=cat_list&idCat=" + idCat + "&search=" + encodeURIComponent(searchValue);
+        }
+    });
+</script>
