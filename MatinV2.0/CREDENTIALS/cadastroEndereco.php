@@ -20,7 +20,7 @@
     $cpf = $_REQUEST['cpf'] ?? "";
     $telefone = $_REQUEST['telefone'] ?? "";
     
-    echo $nome . $senha . $email . $cpf . $telefone;
+    // echo $nome . $senha . $email . $cpf . $telefone;
     ?>
 
     <?php require_once '../BASE/headerCredentials.php'; ?>

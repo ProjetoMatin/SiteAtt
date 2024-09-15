@@ -15,6 +15,7 @@
 
     .tituloSection {
         font-size: 1.4em;
+        margin-left: 30px !important;
         margin-bottom: 1.5rem !important;
     }
 

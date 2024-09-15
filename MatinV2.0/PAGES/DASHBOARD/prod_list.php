@@ -20,12 +20,42 @@
     .search-bar input{
         margin-right: 10px !important;    
     }
+    .local {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .local button {
+        padding: 10px;
+        background-color: var(--verde01);
+        border-radius: 05px;
+        color: var(--branco00);
+    }
+
+    .local button a {
+        color: var(--branco00);
+    }
 </style>
+
 <?php require_once '../BASE/alerts.php'; ?>
+
+<?php 
+
+
+$selectUltimoId = "SELECT MAX(idProduto) AS ultimo FROM produto";
+$stmtUltimoId = $cx->prepare($selectUltimoId);
+$stmtUltimoId->execute();
+$dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
         <div class="local">
             <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Produtos</mark></h6>
+            <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
+            <a href="RELATORIO/relatorio.php?tipoRelatorio=produtos&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
         </div>
     </div>
     <div class="main-cont">
@@ -89,11 +119,11 @@
                         echo "<tr>";
                         echo "<td scope='row'>{$dados['idProduto']}</td>";
                         echo "<td>{$dados['nome_prod']}</td>";
-                        echo "<td>{$dados['data_criacao_prod']}</td>";
+                        echo "<td>{$dados['qnt_prod_estoque']}</td>";
                         echo "<td>R$ {$dados['preco_prod']}</td>";
                         echo "<td>{$dados['qnt_vendas']}</td>";
                         echo "<td>{$dados['nome_cat']}</td>";
-                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idProduto'] . "&tbl=produto'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idProduto'] . "&tbl=produto'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='../index.php?page=produto&idProd=" . $dados['idProduto'] . "''><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                         echo "</tr>";
                     }
                 }

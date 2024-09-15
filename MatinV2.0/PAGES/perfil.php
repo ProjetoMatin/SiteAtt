@@ -28,7 +28,114 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <main>
-    <div class="div-principal">
+    <div class="info-perfil">
+        <img src="IMAGES-BD/USUARIOS/<?php echo $dados['fotos_usu']; ?>" alt="Foto de perfil">
+        <?php 
+            if ($selectP->rowCount() > 0) {
+                echo "<h2>{$dados['nome_usu']}</h2>";
+            } else {
+
+                echo "oi";
+            }
+        ?>
+        <a href="?page=editPerfil" class="btn_acoes_perfil link">Editar Perfil</a>
+        <div class="visao-geral">
+            <h3>Visão Geral</h3>
+            <div></div>
+        </div>
+        <a href="?config=sair" class="btn_acoes_perfil link">Sair</a>
+    </div>
+
+    <div class="flex-divs">
+        <div class="info1">
+            <h2>Olá, <strong><?=$dados['nome_usu']?>!</strong></h2>
+            <div class="botoes">
+                <figure>
+                    <a href="?page=historico" class="link"><img src="" alt="">Histórico</a>
+                    <a href="?page=cupons" class="link"><img src="" alt="">Cupons</a>
+                    <a href="?page=seguindo" class="link"><img src="" alt="">Seguindo</a>
+                    <a href="?page=notificacoes" class="link"><img src="" alt="">Notificações</a>
+                </figure>
+            </div>
+        </div>
+        <div class="acordeao">
+            <hr>
+            <div class="accordion accordion-flush" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <?php
+                    switch ($dados['nvl_usu']) {
+                        case 'A':
+                            echo "Pedidos";
+                            break;
+                        default:
+                            echo "Produtos";
+                            break;
+                    }
+                    ?>
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="flex-pagamentos">
+                                <div class="pag-situacao">
+                                    <figure class="icone-pag">
+                                        <img src="" alt="">
+                                    </figure>
+                                    <h2>Pedidos Aguardando Pagamento</h2>
+                                </div>
+                                <div class="pag-situacao">
+                                    <figure class="icone-pag">
+                                        <img src="" alt="">
+                                    </figure>
+                                    <h2>Aguardando Envio</h2>
+                                </div>
+                                <div class="pag-situacao">
+                                    <figure class="icone-pag">
+                                        <img src="" alt="">
+                                    </figure>
+                                    <h2>Enviado</h2>
+                                </div>
+                                <div class="pag-situacao">
+                                    <figure class="icone-pag">
+                                        <img src="" alt="">
+                                    </figure>
+                                    <h2>Aguardando Avaliação</h2>
+                                </div>
+                            </div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatem ipsam pariatur repellendus odit velit atque exercitationem sunt ut, accusantium dolore itaque, porro hic qui officia esse adipisci eveniet quia?
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Apelações
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illo, alias neque voluptatem dolor minima dolores, deserunt velit ea nihil ex quas quod iure nam suscipit accusantium debitis fugiat libero?
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Reembolsos e Devoluções
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim perspiciatis placeat similique eius? Facilis ea eius iure, in a eos illo illum sunt quisquam eaque. Officia sit eaque similique ullam.
+                        </div>
+                    </div>
+            </div>
+        </div>
+</main>
+
+<div class="div-principal">
         <div class="area-perfil">
             <div class="aba-perfil">
                 <nav>
@@ -54,7 +161,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             <div class="div-button">
 
                 <a href="?page=editPerfil" class="btn">Editar Perfil</a>
-                <a href="?config=sair" class="btn">Sair</a>
+               
             </div>
         </div>
 
@@ -79,7 +186,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             // Obtém os dados dos seguidores do usuário
             $dado = $selectPU->fetch();
             ?>
-
+ 
 
             <ul>
                 <li><img src="IMAGES/bebida.png" alt="" class="foto1">Produtos: <mark><?php echo $linhas ?></mark></li>
@@ -93,11 +200,5 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             </ul>
         </div>
     </div>
-</main>
 
-<?php require_once 'BASE/cards.php';
-$cardsArray = ["Baseado nas suas buscas", "Ofertas do dia"];
-gerarCards($cx, $cardsArray);
-
-require_once 'BASE/footer.php';
-?>
+<?php require_once 'BASE/footer.php'; ?>
