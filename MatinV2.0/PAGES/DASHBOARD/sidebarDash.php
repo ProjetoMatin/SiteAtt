@@ -171,6 +171,8 @@ if ($idUsu == '1') {
 
         <a href="?page=loc_list"><button class="btn" type="button"><img src="../IMAGES/local.png" alt=""></button></a>
 
+        
+
         <div class="btnoffcanvas">
             <div class="btn-group dropend">
                 <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

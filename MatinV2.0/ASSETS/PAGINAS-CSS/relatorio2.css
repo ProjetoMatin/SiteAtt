@@ -1,0 +1,54 @@
+.header{
+    padding-top: 10px;
+    /* background-color: red; */
+}
+
+.header .titulo{
+    float: left;
+}
+
+.header .titulo h2{
+    font-weight: normal;
+}
+
+.header .img-matin{
+    width: 60px;
+    margin-top: -70px;
+    float: right;
+}
+
+.main{
+    margin-top: 30px;
+}
+
+.main .tituloRel{
+    text-align: center;
+    color: white;
+    background-color: #FF6600;
+}
+
+.main .tituloRel h1{
+    font-size: 1.8em;
+}
+
+.ref1{
+	width:20%;
+    /* background: red; */
+	float:left;
+}
+.ref2{
+    width:68%;
+    /* background: blue; */
+    margin-left: 30px !important;
+	/* float:right; */
+	text-align:left;
+}
+
+.fontedados{
+	font-size:12px !important;
+	font-family:'Arial';
+}
+
+.fontedados tr td{
+    text-align: center;
+}

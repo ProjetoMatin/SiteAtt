@@ -16,11 +16,40 @@
     .search-bar {
         margin: 20px 0 !important;
     }
+
+    .local {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .local button {
+        padding: 10px;
+        background-color: var(--verde01);
+        border-radius: 05px;
+        color: var(--branco00);
+    }
+
+    .local button a {
+        color: var(--branco00);
+    }
 </style>
+
+<?php 
+
+$selectUltimoId = "SELECT MAX(idUsu) AS ultimo FROM usuario";
+$stmtUltimoId = $cx->prepare($selectUltimoId);
+$stmtUltimoId->execute();
+$dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
+
+
+?>
+
 <div class="conteudo" id="conteudo3">
     <div class="top-cont">
         <div class="local">
             <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Localizações</mark></h6>
+            <a href="RELATORIO/relatorio.php?tipoRelatorio=localizacao&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
         </div>
     </div>
     <div class="main-cont">

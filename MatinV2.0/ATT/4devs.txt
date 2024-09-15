@@ -13,13 +13,5 @@ A - ANALISE
 R - RESPONDIDA
 NR - NÃO RESPONDIDA
 
-
-TEM UM ERRO NO CARRINHO QUE SE TIVER O MESMO PRODUTO O LABEL BUGA, TENHO QUE CORRIGIR DEPOIS
-
-
-
-
-
-
 add as logos aqui so pra ficarem guardadas e a gnt n perder dps
 

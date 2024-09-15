@@ -45,20 +45,19 @@ $selectP->bindValue(':idUsu', $idUsu);
 $selectP->execute();
 $dados = $selectP->fetch(PDO::FETCH_ASSOC);
 
-
 ?>
 <div class="conteudo" id="conteudo2">
     <div class="top-cont">
         <div class="local">
-            <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Compras</mark></h6>
+            <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Vendas</mark></h6>
             <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
-            <a href="RELATORIO/relatorio.php?tipoRelatorio=compra&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
+            <a href="RELATORIO/relatorio.php?tipoRelatorio=venda&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
         </div>
     </div>
     <div class="main-cont">
         <div class="main-tit">
             <img src="../../IMG/folder-preto.png" alt="">
-            <h4>Lista de Produtos Comprados</h4>
+            <h4>Lista de Produtos Vendidos</h4>
         </div>
 
         <div class="pesq">
@@ -94,7 +93,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                 if ($search) {
 
 
-                    $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu WHERE p.nome_prod LIKE '%$search%' OR np.idNPedido = '$search' ORDER BY np.idNPedido LIMIT $inicio,$limite";
+                    $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu WHERE p.nome_prod LIKE '%$search%' OR np.idNPedido LIKE '%$search%' ORDER BY np.idNPedido LIMIT $inicio,$limite";
 
                 } else {
                     $selectQ = "SELECT np.*, p.*, uComprador.nome_usu AS nomeComprador, uComprador.email_usu AS emailComprador, uVendedor.nome_usu AS nomeVendedor, uVendedor.email_usu AS emailVendedor FROM npedido np INNER JOIN produto p ON np.idProduto = p.idProduto INNER JOIN usuario uComprador ON np.idUsuComprador = uComprador.idUsu INNER JOIN usuario uVendedor ON np.idUsuVendedor = uVendedor.idUsu ORDER BY np.idNPedido LIMIT $inicio,$limite";

@@ -27,6 +27,23 @@
     .search-bar input {
         margin-right: 10px !important;
     }
+
+    .local {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .local button {
+        padding: 10px;
+        background-color: var(--verde01);
+        border-radius: 05px;
+        color: var(--branco00);
+    }
+
+    .local button a {
+        color: var(--branco00);
+    }
 </style>
 
 <?php
@@ -42,7 +59,7 @@ if (!isset($idCat) || empty($idCat)) {
 
 <?php
 
-if ($idCat != "geral") {
+if ($idCat != "geral") { // ESPECIFICO
 ?>
 
     <div class="conteudo" id="conteudo3">
@@ -63,8 +80,17 @@ if ($idCat != "geral") {
 
                 $dado = $selectP->fetch(PDO::FETCH_ASSOC);
 
+
+                $selectUltimoId = "SELECT MAX(idUsu) AS ultimo FROM usuario";
+                $stmtUltimoId = $cx->prepare($selectUltimoId);
+                $stmtUltimoId->execute();
+                $dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
+
+
                 ?>
                 <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > Categorias > <mark><?php echo $dado['nome_cat'] ?></mark></h6>
+                <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
+                <a href="RELATORIO/relatorio.php?tipoRelatorio=categorias_<?= $dado['idCategoria'] ?>&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
             </div>
         </div>
         <div class="main-cont">
@@ -161,11 +187,21 @@ if ($idCat != "geral") {
 
 <?php
 } else {
+
+
+    $selectUltimoId = "SELECT MAX(idUsu) AS ultimo FROM usuario";
+    $stmtUltimoId = $cx->prepare($selectUltimoId);
+    $stmtUltimoId->execute();
+    $dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
+
+
 ?>
     <div class="conteudo" id="conteudo3">
         <div class="top-cont">
             <div class="local">
                 <h6><a href="../DASHBOARD/adminDash.php">Painel</a> ><mark>Categorias</mark></h6>
+                <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
+                <a href="RELATORIO/relatorio.php?tipoRelatorio=categorias_geral&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
             </div>
         </div>
         <div class="main-cont">
@@ -176,7 +212,7 @@ if ($idCat != "geral") {
 
             <div class="pesq">
                 <div class="input-group flex-nowrap search-bar">
-                <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping" name="search">
+                    <input type="search" class="form-control" id="searchInput" placeholder="Filtre por ID's" aria-label="Search" aria-describedby="addon-wrapping" name="search">
                     <a href="?page=add_cat"><button type="button" class="btn btn-outline-success">Adicionar</button></a>
                 </div>
             </div>

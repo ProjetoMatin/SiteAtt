@@ -1,54 +1,55 @@
-.header{
-    padding-top: 10px;
+.h1-header{
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: -100px !important;
+}
+
+.title{
+    margin-top: 60px;
+    font-size: 1.4em;
+    background-color: #CDCDCD;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.bo01{
+    border: 1px solid black;
+    padding: 15px;
     /* background-color: red; */
 }
 
-.header .titulo{
-    float: left;
+.titbo01{
+    font-weight: normal;
+    font-size: 1.2em;
 }
 
-.header .titulo h2{
+.periodo, .status{
+    font-size: 0.9em;
     font-weight: normal;
 }
 
-.header .img-matin{
-    width: 60px;
-    margin-top: -70px;
-    float: right;
-}
-
-.main{
-    margin-top: 30px;
-}
-
-.main .tituloRel{
+table thead tr th{
+    font-weight: normal;
     text-align: center;
-    color: white;
-    background-color: #FF6600;
+    font-size: 0.9em;
 }
 
-.main .tituloRel h1{
-    font-size: 1.8em;
+table tr td{
+    text-align: center !important;
+    font-size: 0.9em;
 }
 
-.ref1{
-	width:20%;
-    /* background: red; */
-	float:left;
-}
-.ref2{
-    width:68%;
-    /* background: blue; */
-    margin-left: 30px !important;
-	/* float:right; */
-	text-align:left;
+.resumo{
+    width: 100%;
+    margin-top: 20px;
 }
 
-.fontedados{
-	font-size:12px !important;
-	font-family:'Arial';
+.resumo p{
+    margin: 10px 0 0 0;
 }
 
-.fontedados tr td{
-    text-align: center;
+.explicacao{
+    background-color: #CDCDCD;
+    font-size: 1em;
+    padding: 0 30px;
 }
