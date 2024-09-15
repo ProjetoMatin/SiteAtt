@@ -5,6 +5,7 @@ main {
 }
 
 .acordeao {
+    width: 90%;
     padding: 0.5rem;
     background-color: var(--branco00);
 }
@@ -25,8 +26,34 @@ main {
 
 .info1 {
     background-color: var(--branco00);
-    padding: 1rem;
-    width: fit-content;
+    padding: 2rem;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 5em;
+    margin-top: 1rem;
+}
+
+.botoes-gerais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botoes-gerais a {
+    margin: 0.5rem 0;
+}
+
+.botoes-gerais img {
+    width: 50px;
+}
+
+.info1 h2 {
+    font-size: 1.2em;
+    margin: 0.5rem;
 }
 
 .link { 
@@ -52,74 +79,96 @@ main {
 
 .info-perfil {
     width: max-content;
-    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
     background: var(--branco00);
 }
 
-.div-principal{
-    height: 270px;
-    padding: 30px;
-    padding-left: 50px;
-    display: flex;
+.img-perfil {
+    width: 60px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
 }
 
-.aba-perfil{
-    display: flex;
-    justify-content: space-between;
+.link {
+    width: 80px;
 }
 
-.aba-perfil nav{
+.link img {
+    width: 100%;
+}
+
+.visao-geral {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
-    background-color: transparent;
-    padding: 0;
-    color: var(--branco00);
+    justify-content: center;
+    font-weight: regular;
+    color: var(--verde00);
 }
 
-.aba-perfil nav img{
-    width: 100px;
+.visao-geral ul {
+    list-style-type: none;
+    padding: 0 0.5rem!important;
 }
 
-.aba-perfil .acesso-dashboard img{
-    width: 30px;
+hr {
+    margin: 0.2em;
 }
 
-.area-perfil{
-    background-color: var(--pretoAzulado);
-    /* background-repeat: no-repeat; */
-    width: 500px !important;
-    padding: 20px;
-    height: 200px;
-    border-radius: 10px;
+.visao-geral h3 {
+    font-size: 1em;
 }
 
-.titulo-perfil{
-    color: var(--branco00);
-   
+.visao-geral li {
+    margin: 0.5rem 0;
 }
 
-.div-button{
-    margin-top: 20px;
+.visao-geral li a {
+    text-decoration: none;
+    color: var(--preto00);
+}
+
+.visao-geral img {
+    width: 4px;
+    height: 30px;
+}
+
+.flex-perfil {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+}
+
+.flex-perfil h2 {
+    cursor: default;
+    font-size: 1.4em;
+}
+
+.flex-mais-flex {
+    display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 
-.div-ul{
-    margin: auto;
+.flex-pagamentos {
     display: flex;
+    padding: 0.5rem;
     justify-content: space-between;
-    width: 700px;
+    align-items: center;
+    gap: 2rem;
 }
 
-.foto1{
-    width: 20px;
-    margin-right: 8px !important;
+.pag-situacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
 }
 
-.foto2{
-    width: 23px;
+.pag-situacao h2 {
+    font-size: 1em;
 }
 
 .btn{
@@ -136,20 +185,4 @@ main {
 .btn:hover{
     color: var(--preto00);
     background-color: var(--branco00);
-}
-
-ul{
-    list-style: none;
-    padding: 0px;
-}
-
-.div-ul li{
-   margin-top: 20px;
-   margin-bottom: 20px;
-   font-size: 0.9em;
-}
-
-mark{
-    background-color: transparent;
-    color: red;
 }
