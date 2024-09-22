@@ -4,10 +4,6 @@ body {
     background-color: var(--bege00);
 }
 
-p{
-    margin: 0 !important;
-}
-
 main{
     /* background-color: var(--bege00); */
     padding-bottom: 50px;

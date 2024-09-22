@@ -29,7 +29,10 @@ switch ($page) {
     case 'pagar':
         echo "<script>location.href='PAGES/pagar.php'</script>";
         break;
-
+    
+    case 'sac':
+        require_once "PAGES/PERFIL/sac.php";
+        break;
 
     default:
         require_once 'PAGES/home.php';
