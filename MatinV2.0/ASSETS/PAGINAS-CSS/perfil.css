@@ -74,7 +74,7 @@ main {
 }
 
 .info-perfil {
-    width: max-content;
+    width: 300px;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
@@ -88,6 +88,10 @@ main {
 }
 
 .link_perfil {
+    width: 50px;
+}
+
+.icone_perfil {
     width: 80px;
 }
 

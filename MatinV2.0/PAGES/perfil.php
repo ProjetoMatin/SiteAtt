@@ -40,7 +40,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
             
                         echo 'oi';
                     }
-                    echo "<a href='?page=editPerfil' class='btn_acoes_perfil link_perfil'><img src='IMAGES/editar.png'></a></div>
+                    echo "<a href='?page=editPerfil' class='btn_acoes_perfil icone_perfil'><img src='IMAGES/editar.png'></a></div>
         </div>
             <div class='visao-geral'>
                 <h3><img src='IMAGES/quadrado_verde.png'> Visão Geral</h3>
