@@ -9,16 +9,7 @@ main{
     padding-bottom: 50px;
 }
 
-.carousel-item::after {
-    content: "";
-    position: absolute;
-    top: 20%; /* Ajuste a altura do gradiente */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0), #f1f2eb 100%);
-    pointer-events: none; /* Garante que o evento de clique passe através do overlay */
-}
+
 
 .imgtop{
     height: 550px !important;
@@ -31,7 +22,6 @@ main{
 .cards-encl{
     display: flex;
     justify-content: center;
-    margin-top: -150px;
     gap: 20px !important;
 }
 
@@ -123,7 +113,7 @@ SECTION 1
 
 .tituloSection{
     font-size: 1.4em;
-    margin-bottom: 1.5rem!important;
+    margin: 1.5rem!important;
 }
 
 section{
@@ -140,9 +130,9 @@ section{
 }
 
 .cards-encl-categoria .card-redondo img{
-    width: 134px !important;
+    width: 200px !important;
     object-fit: contain;
-    height: 134px !important;
+    height: 200px !important;
     background-color: var(--laranjaClaro);
     padding: 20px;
     border-radius: 50%;

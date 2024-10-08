@@ -12,16 +12,15 @@
         padding: 1.5rem;
     }
 
-
     .tituloSection {
         font-size: 1.4em;
-        margin-left: 30px !important;
-        margin-bottom: 1.5rem !important;
+        margin: 1.5rem!important;
     }
 
     .section-produtos {
         display: flex;
         justify-content: space-evenly;
+        flex-direction: column;
         height: max-content;
         padding: 1rem;
         margin: 1.5rem;
@@ -35,7 +34,7 @@
         padding: 1rem;
         border-radius: 10px;
         background-color: var(--branco00);
-        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.158);
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     }
 
     .card-produto .nome-produto {
@@ -129,6 +128,12 @@
     .preco-parcela {
         margin: 2rem 0 !important;
     }
+
+    .naoaguentomaisflex {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
 </style>
 
 <?php
@@ -141,65 +146,67 @@ function gerarCards($cx, $titulosCard)
         $prepare->execute();
 ?>
 
-        <h1 class='tituloSection'><?php echo $titulosCard[$i]; ?></h1>
 
-        <div class="section-produtos">
-            <?php
-            while ($dados = $prepare->fetch()) {
-            ?>
-                <div class="card-produto">
-                    <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
-                        <div class="info-cima">
-                            <p><?= $dados['qnt_vendas'] ?> vendidos</p>
-                            <div class="avaliacoes">
-                                <img src="./IMAGES/fullstar.png" alt="">
-                                <img src="./IMAGES/fullstar.png" alt="">
-                                <img src="./IMAGES/fullstar.png" alt="">
-                                <img src="./IMAGES/fullstar.png" alt="">
-                                <img src="./IMAGES/halfstar.png" alt="">
+    <div class="section-produtos">
+            <h1 class='tituloSection'><?php echo $titulosCard[$i]; ?></h1>
+            <div class="naoaguentomaisflex">
+                <?php
+                while ($dados = $prepare->fetch()) {
+                ?>
+                    <div class="card-produto">
+                        <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
+                            <div class="info-cima">
+                                <p><?= $dados['qnt_vendas'] ?> vendidos</p>
+                                <div class="avaliacoes">
+                                    <img src="./IMAGES/fullstar.png" alt="">
+                                    <img src="./IMAGES/fullstar.png" alt="">
+                                    <img src="./IMAGES/fullstar.png" alt="">
+                                    <img src="./IMAGES/fullstar.png" alt="">
+                                    <img src="./IMAGES/halfstar.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="info-meio">
+                            <div class="add-cart">
+                                <button class="acao" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <img src="./IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" onclick="addCarrinho(<?php echo $dados['idProduto']; ?>);">
+                                </button>
+                                <?php
+                                echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
+                                ?>
+                                <button class="acao">
+                                    <img src="./IMAGES/Union.png" alt="Adicionar ao carrinho">
+                                </button>
                             </div>
                         </div>
-                    </a>
-                    <div class="info-meio">
-                        <div class="add-cart">
-                            <button class="acao" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <img src="./IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" onclick="addCarrinho(<?php echo $dados['idProduto']; ?>);">
-                            </button>
-                            <?php
-                            echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
-                            ?>
-                            <button class="acao">
-                                <img src="./IMAGES/Union.png" alt="Adicionar ao carrinho">
-                            </button>
+                        <div class="info-baixo">
+                            <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
+                                <p class="nome-produto"><?= $dados['nome_prod'] ?></p>
+                                <?php
+                                if (!is_null($dados['promocao'])) {
+                                    echo "<p class='precoAntigo'>De: R$ " . $dados['preco_prod'] . "</p>";
+                                    $precoAntigo = $dados['preco_prod'];
+                                    $promocao = $dados['promocao'];
+                                    $formula = $precoAntigo - (($promocao / 100) * $precoAntigo);
+                                    $formulaFormatada = number_format($formula, 2);
+                                    echo "<p class='precoNovo'>Por: R$ " . $formulaFormatada . " <span class='promocao'>" . $dados['promocao'] . "% OFF</span></p>";
+                                    if (!is_null($dados['parcela'])) {
+                                        $parcela = $dados['parcela'];
+                                        $formula2 = $formulaFormatada / $parcela;
+                                        $formulaFormatada2 = number_format($formula2, 2);
+                                        echo "<p>em<strong class='parcela'> " . $dados['parcela'] . "x de R$" . $formulaFormatada2 . " sem juros.</strong></p>";
+                                    }
+                                } else {
+                                    echo "<div class='preco-Promocao'>";
+                                    echo "<p class='preco-parcela'>Não há parcelas para este produto, <strong class='parcela'>pague à vista.</strong></p>";
+                                    echo "<p class='precoNovo'>R$" . $dados['preco_prod'] . "</p></div>";
+                                }
+                                ?>
+                            </a>
                         </div>
                     </div>
-                    <div class="info-baixo">
-                        <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
-                            <p class="nome-produto"><?= $dados['nome_prod'] ?></p>
-                            <?php
-                            if (!is_null($dados['promocao'])) {
-                                echo "<p class='precoAntigo'>De: R$ " . $dados['preco_prod'] . "</p>";
-                                $precoAntigo = $dados['preco_prod'];
-                                $promocao = $dados['promocao'];
-                                $formula = $precoAntigo - (($promocao / 100) * $precoAntigo);
-                                $formulaFormatada = number_format($formula, 2);
-                                echo "<p class='precoNovo'>Por: R$ " . $formulaFormatada . " <span class='promocao'>" . $dados['promocao'] . "% OFF</span></p>";
-                                if (!is_null($dados['parcela'])) {
-                                    $parcela = $dados['parcela'];
-                                    $formula2 = $formulaFormatada / $parcela;
-                                    $formulaFormatada2 = number_format($formula2, 2);
-                                    echo "<p>em<strong class='parcela'> " . $dados['parcela'] . "x de R$" . $formulaFormatada2 . " sem juros.</strong></p>";
-                                }
-                            } else {
-                                echo "<div class='preco-Promocao'>";
-                                echo "<p class='preco-parcela'>Não há parcelas para este produto, <strong class='parcela'>pague à vista.</strong></p>";
-                                echo "<p class='precoNovo'>R$" . $dados['preco_prod'] . "</p></div>";
-                            }
-                            ?>
-                        </a>
-                    </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
 
         <form action="#">
