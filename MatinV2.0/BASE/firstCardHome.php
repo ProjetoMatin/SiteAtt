@@ -123,6 +123,7 @@
     }
 
     .info-meio {
+        text-align: center;
         margin: 2rem 0;
     }
 
@@ -142,6 +143,31 @@
         display: flex;
         justify-content: center;
         gap: 10px;
+    }
+
+    .button-card {
+        background-color: var(--laranja00);
+        color: var(--branco00);
+        text-align: center;
+        width: 100%;
+        height: 30px;
+        transition: .2s;
+    }
+
+    .button-card:hover {
+        background-color: var(--branco00);
+        color: var(--laranja00);
+    }
+
+    .espec {
+        display: flex;
+        flex-direction: column;
+        align-items: space-evenly;
+        gap: 20px;
+    }
+
+    .espec-meio {
+        height: 200px;
     }
 
 </style>
@@ -285,9 +311,23 @@
     }  
 ?>
 
-<div class="card-produto-home">
+<div class="card-produto-home espec">
     <h1 class="titulo-info">Acesse nosso app!</h1>
+    <div class="info-meio espec-meio">
+        <figure><img src="IMAGES/celular.png" alt="App"></figure>
+        <p>Disponível para Android e IOS</p>
+    </div>
+    <div class="info-baixo">
+        <button class="button-card">Baixar agora</button>
+    </div>
 </div>
-<div class="card-produto-home">
-    <h1 class="titulo-info">Acesse nosso app!</h1>
+<div class="card-produto-home espec">
+    <h1 class="titulo-info">Administre sua conta</h1>
+    <div class="info-meio espec-meio">
+        <figure><img src="IMAGES/conta.png" alt="Conta"></figure>
+        <p>Desfrute de diversas vantagens e compre livremente</p>
+    </div>
+    <div class="info-baixo">
+        <button class="button-card">Entrar na conta</button>
+    </div>
 </div>

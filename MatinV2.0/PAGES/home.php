@@ -130,17 +130,15 @@
     const carrosselContainer = document.querySelector('.carrossel-container');
 
     function mostrarImagem(index) {
-        const offset = -index * 100; // Calcula o deslocamento baseado no índice atual
+        const offset = -index * 100; 
         carrosselContainer.style.transform = `translateX(${offset}%)`;
     }
 
-    // Função para mudar a imagem automaticamente
     function mudarImagemAutomaticamente() {
         currentIndex = (currentIndex + 1) % totalImagens; 
         mostrarImagem(currentIndex);
     }
 
-    // Configura a mudança automática a cada 4 segundos
     setInterval(mudarImagemAutomaticamente, 10000);
 
     document.querySelector('.botao-direita').addEventListener('click', () => {
@@ -153,7 +151,6 @@
         mostrarImagem(currentIndex);
     });
 
-    // Inicializa a primeira imagem
     mostrarImagem(currentIndex);
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -164,4 +161,15 @@
             document.getElementById('localStorageForm').submit();
         }
     });
+</script>
+<script src="https://unpkg.com/scrollreveal"></script> 
+<script>
+    window.sr = ScrollReveal({
+        reset: true
+    });
+    sr.reveal('.cards-encl', {
+        duration: 800
+    });
+    sr.reveal('.cards-encl-categoria');
+    sr.reveal('.cards-encl-ofertas');
 </script>
