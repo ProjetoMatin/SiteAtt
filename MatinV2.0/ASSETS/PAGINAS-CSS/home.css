@@ -4,12 +4,9 @@ body {
     background-color: var(--bege00);
 }
 
-main{
-    /* background-color: var(--bege00); */
-    padding-bottom: 50px;
+section.carrossel {
+    padding: 0!important;
 }
-
-
 
 .imgtop{
     height: 550px !important;

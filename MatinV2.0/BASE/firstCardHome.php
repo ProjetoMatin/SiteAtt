@@ -16,22 +16,142 @@
         text-align: center;
     }
 
+    .produtos {
+        background-color: var(--bege00);
+    }
+
+    .cards-produtos {
+        background-color: var(--bege03);
+        padding: 1.5rem;
+    }
+
+    .tituloSection {
+        font-size: 1.4em;
+        margin: 1.5rem!important;
+    }
+
+    .section-produtos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: max-content;
+        padding: 1rem;
+        margin: 1.5rem;
+        background-color: var(--branco00);
+    }
+
+    .card-produto-home {
+        width: 250px!important;
+        margin: 0 1rem;
+        height: auto;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: var(--branco00);
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    }
+
+    .card-produto-home a {
+        text-decoration: none;
+        color: var(--preto00);
+    }
+
+    .card-produto-home .precoAntigo {
+        text-decoration: line-through;
+        color: var(--cinza00);
+    }
+
+    .card-produto-home .precoNovo {
+        font-size: 1.2em;
+    }
+
+    .card-produto-home .precoNovo span {
+        font-size: 0.5em;
+        border-radius: 20px;
+        padding: 0.2rem;
+        font-weight: bold;
+        background-color: var(--verde00);
+        color: var(--branco00);
+    }
+
+    .card-produto-home figure {
+        width: 150px;
+        margin: auto!important;
+    }
+
+    .card-produto-home .img-produto {
+        width: 100%;
+        height: 140px;
+        object-fit: contain;
+    }
+
+    .card-produto-home strong {
+        color: var(--verde00);
+    }
+
+    .card-produto-home .info-cima {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .add-cart {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .acao {
+        z-index: 1;
+        background-color: var(--branco00);
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.098);
+        max-width: 50px;
+        height: auto;
+        padding: 0.5rem;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .acao img {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .info-cima {
+        margin: 0 0 2rem 0;
+    }
+
+    .info-meio {
+        margin: 2rem 0;
+    }
+
+    .info-baixo {
+        margin-top: 2rem;
+    }
+
+    .card-produto p {
+        margin: 1rem 0;
+    }
+
+    .preco-parcela {
+        margin: 2rem 0 !important;
+    }
+
+    .naoaguentomaisflex {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
 </style>
 
-<div class="card-produto">
+<div class="card-produto-home">
     <h1 class="titulo-info">Visto recentemente</h1>
     <div class="info-meio">
-        <div class="add-cart">
-            <button class="acao" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="./IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" onclick="addCarrinho(<?php echo $dados['idProduto']; ?>);">
-            </button>
-            <?php
-            echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
-            ?>
-            <button class="acao">
-                <img src="./IMAGES/Union.png" alt="Adicionar ao carrinho">
-            </button>
-        </div>
+        <?php
+        echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
+        ?>
     </div>
     <div class="info-baixo">
         <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
@@ -72,20 +192,12 @@
 
     while ($dados = $selectP->fetch()) {
 ?>
-    <div class="card-produto">
+    <div class="card-produto-home">
     <h1 class="titulo-info">Oferta do Dia</h1>
     <div class="info-meio">
-        <div class="add-cart">
-            <button class="acao" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="./IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" onclick="addCarrinho(<?php echo $dados['idProduto']; ?>);">
-            </button>
-            <?php
-            echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
-            ?>
-            <button class="acao">
-                <img src="./IMAGES/Union.png" alt="Adicionar ao carrinho">
-            </button>
-        </div>
+        <?php
+        echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
+        ?>
     </div>
     <div class="info-baixo">
         <a href="./index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
@@ -132,20 +244,12 @@
 
     while ($dados = $selectP->fetch()) {
 ?>
-    <div class="card-produto">
+    <div class="card-produto-home">
     <h1 class="titulo-info">Mais vendido</h1>
     <div class="info-meio">
-        <div class="add-cart">
-            <button class="acao" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="./IMAGES/shoppingcart.png" alt="Adicionar ao carrinho" onclick="addCarrinho(<?php echo $dados['idProduto']; ?>);">
-            </button>
-            <?php
-            echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
-            ?>
-            <button class="acao">
-                <img src="./IMAGES/Union.png" alt="Adicionar ao carrinho">
-            </button>
-        </div>
+        <?php
+        echo "<a href='./index.php?page=produto&idProd=" . $dados['idProduto'] . "'><figure><img class='img-produto' src='./IMAGES-BD/PRODUTOS/" . $dados['fotos_prod'] . "' alt='" . $dados['nome_prod'] . "'></figure></a>"
+        ?>            
     </div>
     <div class="info-baixo">
         <a href=".  /index.php?page=produto&idProd=<?= $dados['idProduto'] ?>">
@@ -181,12 +285,9 @@
     }  
 ?>
 
-<div class="card-produto">
+<div class="card-produto-home">
     <h1 class="titulo-info">Acesse nosso app!</h1>
 </div>
-<div class="card-produto">
-    <h1 class="titulo-info">Acesse nosso app!</h1>
-</div>
-<div class="card-produto">
+<div class="card-produto-home">
     <h1 class="titulo-info">Acesse nosso app!</h1>
 </div>
