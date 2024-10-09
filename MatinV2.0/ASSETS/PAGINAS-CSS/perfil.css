@@ -147,7 +147,9 @@ hr {
 .flex-perfil {
     display: flex;
     flex-direction: column;
+
     margin-left: 10px;
+
 }
 
 .flex-perfil h2 {
