@@ -128,7 +128,11 @@ if ($idCat != "geral") { // ESPECIFICO
                     if ($search) {
                         $selectQ = "SELECT * FROM produto WHERE idCategoria = $idCat AND (nome_prod LIKE '%$search%' OR idProduto LIKE '$search') LIMIT $inicio, $limite";
                     } else {
-                        $selectQ = "SELECT * FROM produto WHERE idCategoria = $idCat LIMIT $inicio, $limite";
+                        if($idUsu == 1){
+                            $selectQ = "SELECT * FROM produto p WHERE idCategoria = $idCat LIMIT $inicio, $limite";
+                        }else{
+                            $selectQ = "SELECT * FROM produto p INNER JOIN cria c ON p.idProduto = c.idProduto WHERE idCategoria = $idCat AND c.idUsu = $idUsu LIMIT $inicio, $limite";
+                        }
                     }
                     $selectP = $cx->prepare($selectQ);
                     $selectP->setFetchMode(PDO::FETCH_ASSOC);

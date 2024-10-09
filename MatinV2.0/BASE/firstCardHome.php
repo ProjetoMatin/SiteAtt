@@ -33,7 +33,7 @@
     .section-produtos {
         display: flex;
         justify-content: space-evenly;
-        flex-direction: column;
+        flex-direction: row;
         height: max-content;
         padding: 1rem;
         margin: 1.5rem;

@@ -74,7 +74,7 @@ main {
 }
 
 .info-perfil {
-    min-width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
@@ -147,6 +147,9 @@ hr {
 .flex-perfil {
     display: flex;
     flex-direction: column;
+
+    margin-left: 10px;
+
 }
 
 .flex-perfil h2 {
@@ -157,8 +160,6 @@ hr {
 .flex-mais-flex {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 15px;
 }
 
 .flex-pagamentos {
