@@ -23,6 +23,7 @@
         margin: 0 !important;
     }
 
+    scroll-behavior: smooth;
 }
 
 :root{

@@ -51,6 +51,10 @@ if ($idUsu == '1') {
             require_once '../PAGES/DASHBOARD/add_cat.php';
             break;
 
+        case 'rel_list':
+            require_once '../PAGES/DASHBOARD/rel_list.php';
+            break;
+
         default:
             require_once '../PAGES/DASHBOARD/dash_ini.php';
             break;
@@ -73,6 +77,10 @@ if ($idUsu == '1') {
 
         case 'add_prod':
             require_once '../PAGES/DASHBOARD/add_prod.php';
+            break;
+
+        case 'cat_list':
+            require_once '../PAGES/DASHBOARD/cat_list.php';
             break;
 
         default:

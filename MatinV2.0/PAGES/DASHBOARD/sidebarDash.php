@@ -11,7 +11,7 @@
     .sidebar {
         background-color: var(--pretoAzulado);
         padding-bottom: 20px;
-        height: 100vh;
+        height: 105vh;
     }
 
     #offcanvasScrollingLabel {
@@ -171,6 +171,8 @@ if ($idUsu == '1') {
 
         <a href="?page=loc_list"><button class="btn" type="button"><img src="../IMAGES/local.png" alt=""></button></a>
 
+        <a href="?page=rel_list"><button class="btn" type="button"><img src="../IMAGES/relatorio.png" alt=""></button></a>
+
         
 
         <div class="btnoffcanvas">
@@ -299,9 +301,31 @@ if ($idUsu == '1') {
 
         <a href="?page=perg_list"><button class="btn" type="button"><img src="../IMAGES/question.png" alt=""></button></a>
 
+        <div class="btnoffcanvas">
+            <div class="btn-group dropend">
+                <button type="button" class="btn btn-custom dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../IMAGES/categorias.png" alt="">
+                </button>
+
+               <ul class="dropdown-menu">
+               <li><a class='dropdown-item' href='?page=cat_list&idCat=geral'>Geral</a></li>
+                <?php 
+                
+                $selectQ = "SELECT * FROM categoria";
+                $selectP = $cx->prepare($selectQ);
+                $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                $selectP->execute();
+
+                while($dados = $selectP->fetch()){
+                    echo "<li><a class='dropdown-item' href='?page=cat_list&idCat=" . $dados['idCategoria'] . "'>" . $dados['nome_cat'] . "</a></li>";
+                }
+                
+                ?>
+                </ul>
+            </div>
+        </div>
+
         <a href="?sair=true"><button class="btn" type="button"><img src="../IMAGES/sair.png" alt=""></button></a>
-
-
 
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
             <div class="offcanvas-header">
@@ -333,6 +357,32 @@ if ($idUsu == '1') {
                         </button>
                     </a>
                 </div>
+
+                <li>
+
+                    <div class="btnoffcanvas">
+                        <a href="#" class="arrow">
+                            <button class="btn doffcanvas" type="button"><img src="../IMAGES/categorias.png" alt="">
+                                <h6>Categorias</h6>
+                            </button>
+                        </a>
+                    </div>
+
+                    <ul class="sub-menu">
+                    <?php 
+                        
+                        $selectQ = "SELECT * FROM categoria";
+                        $selectP = $cx->prepare($selectQ);
+                        $selectP->setFetchMode(PDO::FETCH_ASSOC);
+                        $selectP->execute();
+                        
+                        while($dados = $selectP->fetch()){
+                            echo "<li><a href='?page=cat_list&idCat=" . $dados['idCategoria'] .  "'>". $dados['nome_cat'] . "</a></li>";
+                        }
+
+                        ?>
+                    </ul>
+                </li>
 
                 <div class="btnoffcanvas">
                     <a href="?sair=true">
