@@ -312,4 +312,5 @@ hr {
 
 .link_info {
     text-decoration: none;
+    color: var(--preto00)!important;
 }
