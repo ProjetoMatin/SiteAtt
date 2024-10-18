@@ -38,15 +38,58 @@
     }
 </style>
 
-<?php require_once '../BASE/alerts.php'; ?>
-
 <?php 
+require_once '../BASE/alerts.php';
 
+function gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo)
+{
+    date_default_timezone_set('America/Sao_Paulo');
+
+    $dataAtual = date("d-m-Y");
+    $horaAtual = date("H-i-s");
+    $nomeArquivo = $tipoRelatorio . "-" . "($idUsu)-z" . $dataAtual . "_" . $horaAtual . ".pdf";
+    
+    $sql = "INSERT INTO relatorios (nomeArquivo ,idUsu, titulo, tipoRelatorio, recibo) VALUES (:nomeArquivo, :idUsu, :titulo, :tipoRelatorio, :recibo)";
+    $stmt = $cx->prepare($sql);
+    $stmt->bindParam(':idUsu', $idUsu, PDO::PARAM_INT);
+    $stmt->bindParam(':titulo', $tituloRelatorio, PDO::PARAM_STR);
+    $stmt->bindParam(':tipoRelatorio', $tipoRelatorio, PDO::PARAM_STR);
+    $stmt->bindParam(':nomeArquivo', $nomeArquivo, PDO::PARAM_STR);
+    $stmt->bindParam(':recibo', $recibo, PDO::PARAM_INT);
+
+    if ($stmt->execute()) {
+        return $cx->lastInsertId();
+    } else {
+        return false;
+    }
+}
 
 $selectUltimoId = "SELECT MAX(idProduto) AS ultimo FROM produto";
 $stmtUltimoId = $cx->prepare($selectUltimoId);
 $stmtUltimoId->execute();
 $dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
+
+if (isset($_REQUEST['gerarRelatorio']) && $_REQUEST['gerarRelatorio'] == 'true') {
+    $idUsu = $_SESSION['idUsu'];
+    $tituloRelatorio = "Gerenciamento de compras";
+    $tipoRelatorio = "produtos";
+    $recibo = $dados['ultimo'];
+
+    $idRelatorio = gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo);
+    
+    if ($idRelatorio) {
+        // echo "<script>alert('oi')</script>";
+        // RELATORIO/relatorio.php?tipoRelatorio=usuario&idUsu= $idUsu &recibo=$dados['ultimo'] &titulo= $tituloRelatorio " target="_blank";
+
+
+
+        // echo "('RELATORIO/relatorio.php?tipoRelatorio=produto&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'";
+        echo "<script>location.href='RELATORIO/relatorio.php?tipoRelatorio=produtos&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'</script>";
+        // header("Location: RELATORIO/relatorio.php?tipoRelatorio=produto&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'");
+    } else {
+        echo "<p class='alert-danger'>Erro ao gerar o relatório.</p>";
+    }
+}
 
 ?>
 
@@ -55,7 +98,7 @@ $dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
         <div class="local">
             <h6><a href="../DASHBOARD/adminDash.php">Painel</a> > <mark>Produtos</mark></h6>
             <?php $tituloRelatorio = "Gerenciamento de compras"; ?>
-            <a href="RELATORIO/relatorio.php?tipoRelatorio=produtos&idUsu=<?= $idUsu ?>&recibo=<?= $dados['ultimo'] ?>&titulo=<?= $tituloRelatorio ?>" target="_blank"><button>Gerar Relatório</button></a>
+            <a href="?page=prod_list&gerarRelatorio=true" target="_blank"><button>Gerar Relatório</button></a>
         </div>
     </div>
     <div class="main-cont">

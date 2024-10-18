@@ -31,6 +31,9 @@
     $dataAtual = date("Y-m-d");
     $dataInicio = date("Y-m-d", strtotime("-1 month"));
 
+    
+    $dataAtualNomeRel = date("d-m-Y_H-i-s");
+
     $dataAtualFormatada = date("d/m/Y");
     $dataInicioFormatada = date("d/m/Y", strtotime("-1 month"));
 
@@ -522,5 +525,6 @@
     $mpdf->SetHTMLFooter($htmlfooter);
 
     $mpdf->WriteHTML($html);
+    $mpdf->OutputFile(__DIR__ . "/RELATORIO-USUARIO/" . $tipoRelatorio . "-(" . $idUsu . ")-z" . $dataAtualNomeRel . ".pdf");
     $mpdf->Output();
     $mpdf->showImageErrors = true;

@@ -11,16 +11,17 @@ main {
     flex-direction: column;
 }
 
-.info1, .pedidos-produtos, .info-perfil, .pedidos {
+.info1, .pedidos-produtos, .info-perfil, .pedidos, .minha_conta {
     border-radius: 5px;
     margin: 0.5rem;
 }
 
 .info-perfil {
+    min-width: 250px;
     height: max-content;
 }
 
-.info1, .pedidos {
+.info1, .pedidos, .minhas_vendas {
     background-color: var(--branco00);
     padding: 2rem;
 }
@@ -47,7 +48,7 @@ main {
     width: 50px;
 }
 
-.info1 h2, .pedidos h2 {
+.info1 h2, .pedidos h2, .minhas_vendas h2 {
     font-size: 1.2em;
     margin: 0.5rem;
 }
@@ -74,7 +75,7 @@ main {
 }
 
 .info-perfil {
-    min-width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
@@ -147,6 +148,7 @@ hr {
 .flex-perfil {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
 }
 
 .flex-perfil h2 {
@@ -157,8 +159,6 @@ hr {
 .flex-mais-flex {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 15px;
 }
 
 .flex-pagamentos {
@@ -207,7 +207,7 @@ hr {
     background-color: var(--branco00);
 }
 
-.pedidos a {
+.pedidos a, .minhas_vendas a, .minha_conta a {
     text-decoration: none;
     color: var(--cinza01);
 }
@@ -217,6 +217,10 @@ hr {
     border-bottom: 1px solid var(--cinza00);
     padding: 2rem 1rem;
     margin: 1rem 0;
+}
+
+.minhas_vendas {
+    margin: 0.5rem;
 }
 
 .reembolsos {
@@ -232,4 +236,80 @@ hr {
 
 .reembolsos p {
     margin: 0;
+}
+
+.selos {
+    display: flex;
+    gap: 20px;
+    margin: 0.5rem;
+}
+
+.selos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+hr {
+    margin: 1rem 0;
+    background-color: var(--cinza00);
+}
+
+.flex-servicos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.5rem 1rem;
+}
+
+.servico {
+    background-color: var(--branco00);
+    width: 500px;
+    padding: 1rem;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    gap: 10px;
+}
+
+.icon img {
+    width: 40px;
+}
+
+.icon h2 {
+    font-size: 1.2rem;
+}
+
+.politicas {
+    height: 150px;
+}
+
+.minha_conta {
+    width: 80%;
+    background-color: var(--branco00);
+    padding: 1.5rem;
+}
+
+.flex-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-perfil2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lado2 a {
+    font-size: 1.2rem;
+}
+
+.link_info {
+    text-decoration: none;
 }

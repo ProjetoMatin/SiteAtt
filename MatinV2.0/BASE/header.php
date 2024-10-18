@@ -121,6 +121,7 @@
         border: 0;
         max-width: 300px !important;
         color: var(--preto00);
+        font-weight: bold;
     }
 
     .dropdown button:hover,
@@ -133,6 +134,7 @@
     nav .ul_menus li a,
     nav .info_add li a {
         color: var(--preto00);
+        font-weight: bold;
         text-decoration: none;
     }
 
