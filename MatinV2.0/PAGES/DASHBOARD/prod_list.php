@@ -50,6 +50,10 @@ function gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo)
     $nomeArquivo = $tipoRelatorio . "-" . "($idUsu)-z" . $dataAtual . "_" . $horaAtual . ".pdf";
     
     $sql = "INSERT INTO relatorios (nomeArquivo ,idUsu, titulo, tipoRelatorio, recibo) VALUES (:nomeArquivo, :idUsu, :titulo, :tipoRelatorio, :recibo)";
+// Função para gerar o relatório e adicionar ao banco de dados
+function gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo)
+{
+    $sql = "INSERT INTO relatorios (idUsu, titulo, tipoRelatorio, recibo) VALUES (:idUsu, :titulo, :tipoRelatorio, :recibo)";
     $stmt = $cx->prepare($sql);
     $stmt->bindParam(':idUsu', $idUsu, PDO::PARAM_INT);
     $stmt->bindParam(':titulo', $tituloRelatorio, PDO::PARAM_STR);
@@ -63,7 +67,16 @@ function gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo)
         return false;
     }
 }
+    $stmt->bindParam(':recibo', $recibo, PDO::PARAM_INT);
 
+    if ($stmt->execute()) {
+        return $cx->lastInsertId(); // Retorna o ID do relatório gerado
+    } else {
+        return false;
+    }
+}
+
+// Obtém o ID do último produto para usar como "recibo" no relatório
 $selectUltimoId = "SELECT MAX(idProduto) AS ultimo FROM produto";
 $stmtUltimoId = $cx->prepare($selectUltimoId);
 $stmtUltimoId->execute();
@@ -71,6 +84,9 @@ $dados = $stmtUltimoId->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_REQUEST['gerarRelatorio']) && $_REQUEST['gerarRelatorio'] == 'true') {
     $idUsu = $_SESSION['idUsu'];
+// Verifica se o botão "Gerar Relatório" foi clicado
+if (isset($_GET['gerarRelatorio']) && $_GET['gerarRelatorio'] == 'true') {
+    $idUsu = $_SESSION['idUsu']; // Pega o ID do usuário logado
     $tituloRelatorio = "Gerenciamento de compras";
     $tipoRelatorio = "produtos";
     $recibo = $dados['ultimo'];
@@ -86,6 +102,12 @@ if (isset($_REQUEST['gerarRelatorio']) && $_REQUEST['gerarRelatorio'] == 'true')
         // echo "('RELATORIO/relatorio.php?tipoRelatorio=produto&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'";
         echo "<script>location.href='RELATORIO/relatorio.php?tipoRelatorio=produtos&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'</script>";
         // header("Location: RELATORIO/relatorio.php?tipoRelatorio=produto&idUsu=$idUsu&recibo=$recibo&titulo=$tituloRelatorio'");
+    // Gera o relatório e insere no banco de dados
+    $idRelatorio = gerarRelatorio($cx, $idUsu, $tituloRelatorio, $tipoRelatorio, $recibo);
+    
+    if ($idRelatorio) {
+        echo "<script>window.open('RELATORIO/relatorio.php?idRelatorio=$idRelatorio', '_blank');</script>"; // Abre o relatório
+        echo "<p class='alert-success'>Relatório gerado com sucesso e registrado no banco de dados.</p>";
     } else {
         echo "<p class='alert-danger'>Erro ao gerar o relatório.</p>";
     }
@@ -213,5 +235,5 @@ if (isset($_REQUEST['gerarRelatorio']) && $_REQUEST['gerarRelatorio'] == 'true')
 
             window.location.href = "?page=prod_list" + "&search=" + encodeURIComponent(searchValue);
         }
-    });
+    })
 </script>

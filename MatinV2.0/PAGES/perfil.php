@@ -56,6 +56,8 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=minha_conta'>Minha Conta</a></li>
                             <li><a href='?page=perfil&type=minhas_compras'><h3><img src='IMAGES/quadrado_verde.png'> Minhas Compras</a></h3></li>
                             <li><a href='?page=perfil&type=sac'>Serviço ao Cliente</a></li>
+                            <li><a href='PAGES/dashboard.php'>Dashboard</a></li>
+
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
@@ -68,6 +70,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=minha_conta'><h3><img src='IMAGES/quadrado_verde.png'> Minha Conta</a></h3></a></li>
                             <li><a href='?page=perfil&type=minhas_compras'>Minhas Compras</li>
                             <li><a href='?page=perfil&type=sac'>Serviço ao Cliente</a></li>
+                            <li><a href='PAGES/dashboard.php'>Dashboard</a></li>
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
@@ -80,6 +83,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=minha_conta'>Minha Conta</li>
                             <li><a href='?page=perfil&type=minhas_compras'>Minhas Compras</li>
                              <li><a href='?page=perfil&type=sac'><h3><img src='IMAGES/quadrado_verde.png'> Serviço ao Cliente</a></h3></a></li>
+
+                             <li><a href='PAGES/dashboard.php'>Dashboard</a></li>
+
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
@@ -92,6 +98,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=minha_conta'>Minha Conta</li>
                             <li><a href='?page=perfil&type=minhas_compras'>Minhas Compras</li>
                             <li><a href='?page=perfil&type=sac'>Serviço ao Cliente</a></li>
+
+                            <li><a href='PAGES/dashboard.php'>Dashboard</a></li>
+
                              <li><a href='?page=perfil&type=politicas'><h3><img src='IMAGES/quadrado_verde.png'> Políticas</a></h3></a></li>
                             </ul>
                         <hr>";
@@ -106,6 +115,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=minha_conta'>Minha Conta</a></li>
                             <li><a href='?page=perfil&type=minhas_compras'>Minhas Compras</a></li>
                             <li><a href='?page=perfil&type=sac'>Serviço ao Cliente</a></li>
+
+                            <li><a href='PAGES/dashboard.php'>Dashboard</a></li>
+
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                         </ul>
                         <hr>";

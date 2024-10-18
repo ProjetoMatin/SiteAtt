@@ -38,7 +38,7 @@
         color: var(--branco00);
     }
 
-    .slot {
+    .slot{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -178,6 +178,7 @@ if ($RC >= $limiteRelatorios && $isPremium == '0') {
             }
 
             if ($pagina < $RC) {
+            if ($pagina < $totalPaginas) {
                 echo "<li class='page-item'><a class='page-link' href='?page=rel_list&pagina=" . ($pagina + 1) . "'>Próximo</a></li>";
             }
             ?>
@@ -218,3 +219,36 @@ if ($RC >= $limiteRelatorios && $isPremium == '0') {
                 });
             });
         </script>
+</div>
+
+<script>
+    function goToParentUrl(urlString) {
+        let url = new URL(urlString);
+
+        url.pathname = url.pathname.split('/').slice(0, -1).join('/');
+
+        return url.href;
+    }
+
+    let currentUrl = "http://localhost/cursophp/MatinV2.0/PAGES/DASHBOARD";
+    let parentUrl = goToParentUrl(currentUrl);
+
+    document.querySelectorAll('.rel').forEach(div => {
+        div.addEventListener('click', function() {
+            const nomeArquivo = this.querySelector('.apagado').innerText.split(": ")[1].trim();
+            const caminhoArquivo = `${parentUrl}/RELATORIO/RELATORIO-USUARIO/${encodeURIComponent(nomeArquivo)}`;
+
+            // Cria um link temporário
+            const link = document.createElement('a');
+            link.href = caminhoArquivo;
+            link.download = nomeArquivo; // Define o nome do arquivo para download
+
+            // Adiciona o link ao DOM
+            document.body.appendChild(link);
+            link.click(); // Simula o clique no link para iniciar o download
+
+            // Remove o link do DOM
+            document.body.removeChild(link);
+        });
+    });
+</script>

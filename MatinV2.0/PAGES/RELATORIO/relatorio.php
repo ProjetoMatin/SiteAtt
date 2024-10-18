@@ -525,6 +525,9 @@
     $mpdf->SetHTMLFooter($htmlfooter);
 
     $mpdf->WriteHTML($html);
+
     $mpdf->OutputFile(__DIR__ . "/RELATORIO-USUARIO/" . $tipoRelatorio . "-(" . $idUsu . ")-z" . $dataAtualNomeRel . ".pdf");
+
+    $mpdf->OutputFile(__DIR__ . "/RELATORIO-USUARIO/" . $tipoRelatorio . "-(" . $idUsu . ")-#" . $dataAtualNomeRel . ".pdf");
     $mpdf->Output();
     $mpdf->showImageErrors = true;
