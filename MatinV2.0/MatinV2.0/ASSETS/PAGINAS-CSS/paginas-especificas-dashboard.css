@@ -1,0 +1,157 @@
+.container-main {
+    padding: 30px 30px 0 30px !important;
+}
+
+mark {
+    background-color: transparent !important;
+    color: var(--verde02);
+}
+
+.card-encl .row .col-md-3 {
+    padding: 0 !important;
+}
+
+h6 a {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+.card-encl .row {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.card-encl .cardS {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    background-color: var(--branco00);
+    min-width: 300px;
+    padding: 25px;
+}
+
+.card-encl .azul {
+    border-bottom: 5px solid var(--azulClaro);
+}
+
+.card-encl .verde {
+    border-bottom: 5px solid var(--verde02);
+}
+
+.card-encl .vermelho {
+    border-bottom: 5px solid var(--vermelho00);
+}
+
+.card-encl .laranja {
+    border-bottom: 5px solid var(--laranja01);
+}
+
+#fotocard {
+    width: 45px;
+}
+
+.card-encl {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-encl .cardS .card-title h6 {
+    font-weight: normal;
+}
+
+.card-encl .cardS .card-title .azulT {
+    color: var(--azulClaro);
+}
+
+.card-encl .cardS .card-title .verdeT {
+    color: var(--verde02);
+}
+
+.card-encl .cardS .card-title .vermelhoT {
+    color: var(--vermelho00);
+}
+
+.card-encl .cardS .card-title .laranjaT {
+    color: var(--laranja01);
+}
+
+.card-encl .cardS .card-title h4 {
+    font-weight: normal;
+}
+
+.card-encl .cardS .card-foto img {
+    width: 35px;
+}
+
+.listas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.listUsu,
+.prodlist {
+    width: 590px !important;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--branco00);
+    width: 45vw;
+}
+
+table {
+    margin-top: 10px;
+}
+
+table tr th,
+table tr td {
+    text-align: center;
+}
+
+.listUsu table tr th,
+.prodlist table tr th,
+.main-cont .table tr th {
+    background-color: var(--cinza5);
+    color: var(--branco);
+    border-left: 3px solid var(--cinza5);
+    border-right: 3px solid var(--cinza5);
+}
+
+.listUsu table tr,
+.prodlist table tr,
+.main-cont .table tr {
+    border-left: 3px solid var(--cinza5);
+    border-right: 3px solid var(--cinza5);
+}
+
+.listUsu table tr:last-child,
+.prodlist table tr:last-child,
+.main-cont .table tr:last-child {
+    border-bottom: 3px solid var(--cinza5);
+
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border: none;
+}
+
+.txtVermelho {
+    color: var(--vermelho) !important;
+}
+
+.txtVerde {
+    color: var(--verdeescuroTabela3) !important;
+}
+
+.txtAzul {
+    color: var(--azulClaro) !important;
+}

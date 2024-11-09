@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+main {
+    background-color: var(--bege00);
+    padding: 15px;
+}
+
+.height90 {
+    height: 90vh !important;
+}
+
+main p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+main .carrinho-icone {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    height: 500px !important;
+    justify-content: center;
+    background-color: var(--branco00);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: -3px 1px 5px var(--cinza00);
+}
+
+section .bolsaDescontoEncl {
+    background-color: var(--cinza02);
+    border-radius: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section img {
+    width: 180px;
+    height: 200px;
+    padding: 15px;
+    object-fit: contain;
+}
+
+section h1 {
+    font-size: 1.3em;
+    margin-top: 30px !important;
+}
+
+section button {
+    background-color: var(--laranja00);
+    color: var(--branco00);
+    margin-top: 30px;
+    padding: 10px 100px;
+    border-radius: 15px;
+}
+
+.info-carrinho-encl {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    margin: auto;
+}
+
+.info-carrinho-encl .top {
+    background-color: var(--branco00);
+    padding: 15px 50px;
+    box-shadow: -3px 3px 5px var(--cinza02) !important;
+    width: 100% !important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-carrinho-encl .top label {
+    font-size: 0.9em;
+}
+
+
+
+.info-carrinho-encl .top .info-table {
+    display: flex;
+    gap: 60px;
+}
+
+.info-carrinho-encl .top .info-table p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.info-carrinho-encl .main {
+    background-color: var(--branco00);
+    padding: 15px 40px;
+    border-radius: 10px;
+    box-shadow: -3px 3px 5px var(--cinza02) !important;
+}
+
+.info-carrinho-encl .main .info-vendedor,
+.info-carrinho-encl .main .info-vendedor .nome-vendedor {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-carrinho-encl .main .info-vendedor .nome-vendedor .logo {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    background-color: var(--preto00);
+    border-radius: 100%;
+}
+
+.info-carrinho-encl .main .info-produto {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.info-carrinho-encl .main .info-produto .direita .top-bottom .precoAntigo {
+    margin-bottom: 0;
+}
+
+.info-carrinho-encl .main .info-produto img {
+    width: 50px;
+}
+
+.info-carrinho-encl .main .info-produto .esquerda {
+    display: flex;
+    align-items: center !important;
+    gap: 20px;
+}
+
+.info-carrinho-encl .main .info-produto .direita {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.info-carrinho-encl .main .info-produto .direita .top-bottom .precoAntigo {
+    text-decoration: line-through;
+    color: var(--cinza01);
+}
+
+.info-carrinho-encl .main .info-produto .direita .precoTotal {
+    color: var(--verde00);
+}
+
+.info-carrinho-encl .main .info-produto .direita .top-bottom p {
+    font-size: 0.9em;
+}
+
+.info-carrinho-encl .main .info-produto .direita .top-bottom p a {
+    color: var(--preto00);
+    text-decoration: none;
+}
+
+.semelhante {
+    color: var(--laranja00) !important;
+}
+
+.pagamentos {
+    background-color: var(--branco00);
+    padding: 15px 50px;
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -3px 3px 5px var(--cinza02) !important;
+}
+
+.cardTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resumoPedido{
+    background-color: var(--branco00);
+    padding: 22px 40px;
+    border-radius: 10px;
+    box-shadow: -3px 3px 5px var(--cinza02) !important;
+    width: 68%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.resumoPedido .acoesPedido .cardTitle {
+    justify-content: flex-start;
+}
+
+.acoesPedido input {
+    margin-top: 50px;
+}
+
+.comprar {
+    background-color: var(--laranja00);
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 180px;
+}
+
+.comprar a {
+    text-decoration: none;
+    color: var(--branco00);
+}
+
+.divPrecoTotal, .divPrecoEconomia {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.divPrecoTotal .tot .precoNovo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--verde00);
+}
+
+.precoEconomia {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.acoesPedidoProduto {
+    text-decoration: none;
+    color: var(--preto00);
+    margin: 0 0.5rem;
+}
+
+#laranja {
+    color: var(--laranja00);
+}
+
+.tot {
+    margin-bottom: 0;
+}
+
+.divs-left-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkBoxProduto{
+    display: block;
+}
+
+.btns-encl button{
+    border: 1px solid var(--preto00);
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.ativo {
+    border-color: var(--laranja00) !important; /* Cor da margem quando ativo */
+    color: var(--laranja00); /* Cor do texto quando ativo */
+}
+
+.inativo {
+    border-color: var(--preto00); /* Cor da margem quando inativo */
+    color:  var(--preto00); /* Cor do texto quando inativo */
+}
+
+.top-bottom label, #qntPedida{
+    margin-top: 10px;
+}
+
+#qntPedida{
+    width: 55px;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    background-color: var(--cinza02);
+    border: 1px solid var(--cinza02);
+}

@@ -1,0 +1,55 @@
+.h1-header{
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: -100px !important;
+}
+
+.title{
+    margin-top: 60px;
+    font-size: 1.4em;
+    background-color: #CDCDCD;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.bo01{
+    border: 1px solid black;
+    padding: 15px;
+    /* background-color: red; */
+}
+
+.titbo01{
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.periodo, .status{
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+table thead tr th{
+    font-weight: normal;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+table tr td{
+    text-align: center !important;
+    font-size: 0.9em;
+}
+
+.resumo{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.resumo p{
+    margin: 10px 0 0 0;
+}
+
+.explicacao{
+    background-color: #CDCDCD;
+    font-size: 1em;
+    padding: 0 30px;
+}

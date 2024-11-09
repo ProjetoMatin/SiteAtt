@@ -1,0 +1,1646 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç 206C-C90E
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0
+
+12/08/2024  18:15    <DIR>          .
+10/08/2024  19:43    <DIR>          ..
+08/08/2024  21:01    <DIR>          ARQUIVOS-ANTIGOS
+08/08/2024  21:01    <DIR>          ASSETS
+08/08/2024  21:01    <DIR>          ATT
+08/08/2024  21:51    <DIR>          BASE
+08/08/2024  20:56                55 composer.json
+08/08/2024  20:56            17.516 composer.lock
+08/08/2024  21:01    <DIR>          CREDENTIALS
+08/08/2024  21:01    <DIR>          DOCS
+12/08/2024  16:56    <DIR>          IMAGES
+08/08/2024  21:01    <DIR>          IMAGES-BD
+08/08/2024  20:56             1.186 index.php
+08/08/2024  21:01    <DIR>          JS
+12/08/2024  18:15                 0 lista_de_arquivos.txt
+08/08/2024  21:01    <DIR>          MODEL
+08/08/2024  21:01    <DIR>          PAGES
+08/08/2024  21:01    <DIR>          vendor
+               4 arquivo(s)         18.757 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\ARQUIVOS-ANTIGOS
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56             1.761 cadastro.txt
+08/08/2024  20:56             4.248 cadastroUsuAntigo.php
+08/08/2024  20:56            11.040 cadUserCommonAccount.php
+08/08/2024  20:56            11.250 cadUserEnterprise.php
+08/08/2024  20:56             2.641 login.txt
+08/08/2024  20:56             4.258 loginUsuAntigo.php
+               6 arquivo(s)         35.198 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\ASSETS
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  21:01    <DIR>          CREDENTIALS
+08/08/2024  20:56             1.138 GERAL.css
+10/08/2024  19:02    <DIR>          PAGINAS-CSS
+               1 arquivo(s)          1.138 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\ASSETS\CREDENTIALS
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.961 cadastro.css
+08/08/2024  20:56             2.461 cadastroEndereco.css
+08/08/2024  20:56             3.383 login.css
+08/08/2024  20:56               927 procurarCEP.css
+               4 arquivo(s)          9.732 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\ASSETS\PAGINAS-CSS
+
+10/08/2024  19:02    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             5.502 carrinho.css
+08/08/2024  20:56               247 dashboard.css
+08/08/2024  20:56             6.327 home.css
+08/08/2024  20:56             4.387 ouvidoria.css
+08/08/2024  20:56             2.944 pagar.css
+08/08/2024  20:56             2.587 paginas-especificas-dashboard.css
+08/08/2024  20:56             1.483 perfil.css
+08/08/2024  20:56             6.942 produto.css
+12/08/2024  17:51               702 relatorio.css
+               9 arquivo(s)         31.121 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\ATT
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56               419 4devs.txt
+08/08/2024  20:56            11.518 matin-svg.svg
+08/08/2024  20:56           171.542 svg-matin-3-semcontorno.png
+08/08/2024  20:56            37.025 svg-matin-3-transparente.png
+08/08/2024  20:56            35.250 svg-matin-3.png
+               5 arquivo(s)        255.754 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\BASE
+
+08/08/2024  21:51    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+12/08/2024  15:13             1.253 alerts.php
+12/08/2024  15:42             9.541 cards.php
+08/08/2024  20:56               750 chPages.php
+12/08/2024  16:40             2.155 chPagesDashboard.php
+08/08/2024  20:56               252 config.php
+08/08/2024  20:56             3.847 footer.php
+12/08/2024  17:04            17.821 header.php
+08/08/2024  20:56             2.125 header2.php
+08/08/2024  20:56               889 headerCredentials.php
+08/08/2024  20:56               217 viaCep.php
+              10 arquivo(s)         38.850 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\CREDENTIALS
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56             4.338 cadastrarUsuario.php
+08/08/2024  20:56             6.520 cadastroEndereco.php
+08/08/2024  20:56            10.287 cadastroUsu.php
+08/08/2024  20:56             5.527 loginUsu.php
+08/08/2024  20:56             5.650 procurarCEP.php
+               5 arquivo(s)         32.322 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\DOCS
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56               467 LEIA-ME-DEV.txt
+08/08/2024  21:01    <DIR>          SQL
+               1 arquivo(s)            467 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\DOCS\SQL
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            19.265 matin.sql
+               1 arquivo(s)         19.265 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\IMAGES
+
+12/08/2024  16:56    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56            23.185 adicionarIcone.png
+08/08/2024  20:56             5.774 apple-logo.png
+08/08/2024  20:56               719 arrow-right.png
+08/08/2024  20:56               260 arrowLeft.png
+08/08/2024  20:56               255 arrowRight.png
+08/08/2024  20:56               634 back.png
+08/08/2024  20:56               365 bater-papo.png
+08/08/2024  20:56               807 bebida.png
+08/08/2024  20:56            13.767 bolsaDesconto.png
+08/08/2024  20:56               756 botao-de-menu.png
+08/08/2024  20:56             3.145 building.png
+08/08/2024  20:56             3.218 buildingBranco.png
+08/08/2024  20:56             5.307 caixa.png
+08/08/2024  20:56             7.270 carrinhoVazio.png
+08/08/2024  20:56               690 cart-laranja.png
+08/08/2024  20:56            14.503 cartoes.png
+08/08/2024  20:56             8.064 categorias.png
+08/08/2024  20:56               595 close.png
+08/08/2024  20:56             9.716 compra.png
+08/08/2024  20:56               640 computador-portatil.png
+08/08/2024  20:56            11.384 coroaPremium.png
+08/08/2024  20:56               431 danger.png
+08/08/2024  20:56            19.628 dashboardIcone.png
+08/08/2024  20:56            32.529 div-img-produto (1).png
+08/08/2024  20:56            68.878 div-img-produto (2).png
+08/08/2024  20:56            19.885 div-img-produto.png
+08/08/2024  20:56             2.086 down-arrow.png
+08/08/2024  20:56             2.497 email.png
+08/08/2024  20:56               704 emptyStar.png
+08/08/2024  20:56             9.343 escudo.png
+08/08/2024  20:56               863 estrela.png
+08/08/2024  20:56            10.265 facebook-azul.png
+08/08/2024  20:56             7.786 facebook.png
+08/08/2024  20:56             3.015 folder.png
+08/08/2024  20:56               427 fullStar.png
+12/08/2024  16:56             8.640 githubLogo.png
+08/08/2024  20:56            10.454 gmail.png
+08/08/2024  20:56             8.029 grocery-store.png
+08/08/2024  20:56             1.784 grupo-de-usuarios.png
+08/08/2024  20:56            10.634 halfStar.png
+08/08/2024  20:56               786 headphones-laranja.png
+08/08/2024  20:56               558 headphones.png
+08/08/2024  20:56               922 heart-laranja.png
+08/08/2024  20:56               594 heart.png
+08/08/2024  20:56             2.114 home.png
+08/08/2024  20:56             8.020 homeIcone.png
+08/08/2024  20:56             2.339 icone.png
+08/08/2024  20:56           516.432 img-login.jpg
+08/08/2024  20:56               496 instagram-logo-fill-svgrepo-com 1.png
+08/08/2024  20:56               644 layer1.png
+08/08/2024  20:56             1.086 local.png
+08/08/2024  20:56               742 login-icon.png
+08/08/2024  20:56           372.740 MAC (2).png
+08/08/2024  20:56           337.415 MAC.png
+08/08/2024  20:56           142.560 manguinha.png
+08/08/2024  20:56            35.250 matin-logo-png.png
+08/08/2024  20:56            11.518 matin-svg.svg
+08/08/2024  20:56         1.839.193 matinBanner.png
+08/08/2024  20:56           772.909 OMG.png
+08/08/2024  20:56             2.384 padlock.png
+08/08/2024  20:56               982 perfil-verificado.png
+08/08/2024  20:56            19.869 pessoa01.png
+08/08/2024  20:56         1.214.293 pessoaChat.jpg
+08/08/2024  20:56             2.454 phone-call.png
+08/08/2024  20:56             7.982 pix.png
+08/08/2024  20:56               795 plus.png
+08/08/2024  20:56            13.803 premium.png
+08/08/2024  20:56               891 profile-laranja.png
+08/08/2024  20:56            49.116 qrCodeMatin.png
+08/08/2024  20:56             5.044 question-sign.png
+08/08/2024  20:56             8.859 question.png
+08/08/2024  20:56             6.799 sair.png
+08/08/2024  20:56               880 search.png
+08/08/2024  20:56               847 seguidor.png
+08/08/2024  20:56               764 seguidores.png
+08/08/2024  20:56               510 segurancaMatinLaranja.png
+08/08/2024  20:56             3.951 shoppingcart.png
+08/08/2024  20:56             2.820 smartphone-call.png
+08/08/2024  20:56               444 Subtract.png
+08/08/2024  20:56           171.542 svg-matin-3-semcontorno.png
+08/08/2024  20:56            37.025 svg-matin-3-transparente.png
+08/08/2024  20:56            16.858 telegram.png
+08/08/2024  20:56            13.332 twitter.png
+08/08/2024  20:56               500 Union (Stroke).png
+08/08/2024  20:56             3.322 Union.png
+08/08/2024  20:56             7.374 user(1).png
+08/08/2024  20:56               649 user.png
+08/08/2024  20:56             7.037 userBranco.png
+08/08/2024  20:56            16.826 usuario.png
+08/08/2024  20:56               414 Vector (2).png
+08/08/2024  20:56               887 Vector (3).png
+08/08/2024  20:56               425 Vector (4).png
+08/08/2024  20:56               421 Vector.png
+08/08/2024  20:56            19.080 warning.png
+08/08/2024  20:56            20.818 whatsapp.png
+08/08/2024  20:56             7.745 work.png
+              96 arquivo(s)      6.042.992 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\IMAGES-BD
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+12/08/2024  16:25    <DIR>          CATEGORIAS
+12/08/2024  16:47    <DIR>          PRODUTOS
+08/08/2024  21:01    <DIR>          USUARIOS
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\IMAGES-BD\CATEGORIAS
+
+12/08/2024  16:25    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            69.025 carnes.png
+08/08/2024  20:56            16.993 defensivos.png
+08/08/2024  20:56            22.878 especiais.png
+08/08/2024  20:56            23.858 fertilizantes.png
+12/08/2024  16:25         2.840.314 foto-produto-1-6.png
+08/08/2024  20:56            48.822 frutas.png
+08/08/2024  20:56            44.536 laticinios.png
+08/08/2024  20:56            99.524 sementes.png
+08/08/2024  20:56            19.631 sem_foto.png
+               9 arquivo(s)      3.185.581 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\IMAGES-BD\PRODUTOS
+
+12/08/2024  16:47    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            53.964 adubo-verde.png
+08/08/2024  20:56            31.726 carne.png
+08/08/2024  20:56           368.684 carne2.png
+08/08/2024  20:56            20.782 fertilizante-liquido.png
+08/08/2024  20:56            29.500 fertilizanteOrganico.png
+08/08/2024  20:56            27.412 fertilizantesNPK.png
+12/08/2024  15:39           138.687 foto-produto-1-18.png
+12/08/2024  15:45           138.687 foto-produto-1-19.png
+12/08/2024  16:27           313.884 foto-produto-1-21.png
+12/08/2024  16:47           138.687 foto-produto-2-22.png
+08/08/2024  20:56           285.683 fungicida-sistemico.png
+08/08/2024  20:56         1.800.781 HerbicidaGlifosato.png
+08/08/2024  20:56           205.913 inseticidaBiologico.png
+08/08/2024  20:56         1.437.879 Leite-UHT-Integral.png
+08/08/2024  20:56            74.430 leite.jpg
+08/08/2024  20:56           270.266 leiteCondensadoPiracanjuba.png
+08/08/2024  20:56            43.973 leiteCondensadoPiracanjuba2.png
+08/08/2024  20:56            50.318 leite_condensado.jpeg
+08/08/2024  20:56            18.778 maca.jpeg
+08/08/2024  20:56           136.128 milho-hibrido.png
+08/08/2024  20:56           180.965 semente-soja.png
+08/08/2024  20:56            30.168 semente-trigo.png
+08/08/2024  20:56            19.631 sem_foto.png
+              23 arquivo(s)      5.816.926 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\IMAGES-BD\USUARIOS
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56           550.849 foto-lucas.png
+08/08/2024  20:56            11.851 matinADM.png
+08/08/2024  20:56            19.631 sem_foto.png
+               3 arquivo(s)        582.331 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\JS
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  21:01    <DIR>          FIREBASE
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\JS\FIREBASE
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.093 firebaseConfig.js
+08/08/2024  20:56             9.432 realTimeDatabase.js
+               2 arquivo(s)         10.525 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\MODEL
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56               295 autenticacao.php
+08/08/2024  20:56             2.542 FreteAPI.php
+               2 arquivo(s)          2.837 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\PAGES
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56            11.177 carrinho.php
+12/08/2024  15:58    <DIR>          DASHBOARD
+10/08/2024  20:28             1.866 dashboard.php
+08/08/2024  22:01            13.391 home.php
+08/08/2024  20:56             5.295 ouvidoria.php
+08/08/2024  20:56             5.600 pagar.php
+10/08/2024  19:02             3.524 perfil.php
+08/08/2024  22:08            14.060 produto.php
+12/08/2024  17:56    <DIR>          RELATORIO
+               7 arquivo(s)         54.913 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\PAGES\DASHBOARD
+
+12/08/2024  15:58    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+12/08/2024  16:08             3.651 add_cat.php
+12/08/2024  15:46             7.181 add_prod.php
+10/08/2024  21:08            15.008 add_usu.php
+12/08/2024  15:58             9.536 cat_list.php
+12/08/2024  17:48             6.456 compra_list.php
+08/08/2024  20:56            20.557 dash_ini.php
+12/08/2024  16:06    <DIR>          FUNCOES
+08/08/2024  20:56             1.356 headerDash.php
+08/08/2024  20:56             4.005 loc_list.php
+08/08/2024  20:56             4.676 perg_list.php
+12/08/2024  16:30             4.688 prod_list.php
+08/08/2024  20:56            12.456 sidebarDash.php
+12/08/2024  17:55             4.382 usu_list.php
+              12 arquivo(s)         93.952 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\PAGES\DASHBOARD\FUNCOES
+
+12/08/2024  16:06    <DIR>          .
+12/08/2024  15:58    <DIR>          ..
+12/08/2024  16:25             1.461 addCategoriaFuncao.php
+12/08/2024  16:47             2.959 addProdutoFuncao.php
+               2 arquivo(s)          4.420 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\PAGES\RELATORIO
+
+12/08/2024  17:56    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+12/08/2024  18:08             4.275 relatorio.php
+               1 arquivo(s)          4.275 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor
+
+08/08/2024  21:01    <DIR>          .
+12/08/2024  18:15    <DIR>          ..
+08/08/2024  20:56               771 autoload.php
+08/08/2024  21:01    <DIR>          composer
+08/08/2024  21:01    <DIR>          mpdf
+08/08/2024  21:01    <DIR>          myclabs
+08/08/2024  21:01    <DIR>          paragonie
+08/08/2024  21:01    <DIR>          psr
+08/08/2024  21:01    <DIR>          setasign
+               1 arquivo(s)            771 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\composer
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               222 autoload_classmap.php
+08/08/2024  20:56               325 autoload_files.php
+08/08/2024  20:56               139 autoload_namespaces.php
+08/08/2024  20:56               639 autoload_psr4.php
+08/08/2024  20:56             1.672 autoload_real.php
+08/08/2024  20:56             2.401 autoload_static.php
+08/08/2024  20:56            16.378 ClassLoader.php
+08/08/2024  20:56            18.137 installed.json
+08/08/2024  20:56             3.639 installed.php
+08/08/2024  20:56            16.143 InstalledVersions.php
+08/08/2024  20:56             1.070 LICENSE
+08/08/2024  20:56               925 platform_check.php
+              12 arquivo(s)         61.690 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          mpdf
+08/08/2024  21:01    <DIR>          psr-http-message-shim
+08/08/2024  21:01    <DIR>          psr-log-aware-trait
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          .github
+08/08/2024  20:56                23 .gitignore
+08/08/2024  20:56            40.268 CHANGELOG.md
+08/08/2024  20:56             1.896 composer.json
+08/08/2024  20:56             4.829 CREDITS.txt
+08/08/2024  21:01    <DIR>          data
+08/08/2024  20:56            15.220 LICENSE.txt
+08/08/2024  20:56               517 phpunit.xml
+08/08/2024  20:56             5.564 README.md
+08/08/2024  20:56             1.877 ruleset.xml
+08/08/2024  21:01    <DIR>          src
+12/08/2024  16:38    <DIR>          tmp
+08/08/2024  21:01    <DIR>          ttfonts
+               8 arquivo(s)         70.194 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\.github
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.309 CONTRIBUTING.md
+08/08/2024  20:56                35 FUNDING.yml
+08/08/2024  21:01    <DIR>          ISSUE_TEMPLATE
+08/08/2024  20:56               298 SECURITY.md
+08/08/2024  21:01    <DIR>          workflows
+               3 arquivo(s)          2.642 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\.github\ISSUE_TEMPLATE
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.057 01_bug_report.yml
+08/08/2024  20:56               236 02_feature_request.yml
+08/08/2024  20:56               568 config.yml
+               3 arquivo(s)          1.861 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\.github\workflows
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               859 coverage.yml
+08/08/2024  20:56               839 cs.yml
+08/08/2024  20:56             1.093 tests.yml
+               3 arquivo(s)          2.791 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\data
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             6.585 CJKdata.php
+08/08/2024  21:01    <DIR>          collations
+08/08/2024  20:56             4.523 entity_substitutions.php
+08/08/2024  21:01    <DIR>          font
+08/08/2024  21:01    <DIR>          iccprofiles
+08/08/2024  20:56             9.126 lang2fonts.css
+08/08/2024  20:56         1.053.144 linebrdictK.dat
+08/08/2024  20:56           126.932 linebrdictL.dat
+08/08/2024  20:56           301.751 linebrdictT.dat
+08/08/2024  20:56             2.106 mpdf.css
+08/08/2024  20:56             7.888 no_image.jpg
+08/08/2024  20:56             2.229 out.php
+08/08/2024  21:01    <DIR>          patterns
+08/08/2024  20:56             5.692 subs_core.php
+08/08/2024  20:56             8.476 subs_win-1252.php
+08/08/2024  20:56            13.433 upperCase.php
+              12 arquivo(s)      1.541.885 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\data\collations
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.385 Afrikaans_South_Africa.php
+08/08/2024  20:56             1.471 Albanian_Albania.php
+08/08/2024  20:56             1.385 Alsatian_France.php
+08/08/2024  20:56               918 Arabic_Algeria.php
+08/08/2024  20:56               918 Arabic_Bahrain.php
+08/08/2024  20:56               918 Arabic_Egypt.php
+08/08/2024  20:56               918 Arabic_Iraq.php
+08/08/2024  20:56               918 Arabic_Jordan.php
+08/08/2024  20:56               918 Arabic_Kuwait.php
+08/08/2024  20:56               918 Arabic_Lebanon.php
+08/08/2024  20:56               918 Arabic_Libya.php
+08/08/2024  20:56               918 Arabic_Morocco.php
+08/08/2024  20:56               918 Arabic_Oman.php
+08/08/2024  20:56               918 Arabic_Pseudo_RTL.php
+08/08/2024  20:56               918 Arabic_Qatar.php
+08/08/2024  20:56               918 Arabic_Saudi_Arabia.php
+08/08/2024  20:56               918 Arabic_Syria.php
+08/08/2024  20:56               918 Arabic_Tunisia.php
+08/08/2024  20:56               918 Arabic_Yemen.php
+08/08/2024  20:56             1.153 Azeri_(Cyrillic)_Azerbaijan.php
+08/08/2024  20:56             1.289 Azeri_(Latin)_Azerbaijan.php
+08/08/2024  20:56             1.153 Bashkir_Russia.php
+08/08/2024  20:56             1.385 Basque_Spain.php
+08/08/2024  20:56             1.153 Belarusian_Belarus.php
+08/08/2024  20:56             1.153 Bosnian_(Cyrillic)_Bosnia_and_Herzegovina.php
+08/08/2024  20:56             1.419 Bosnian_(Latin)_Bosnia_and_Herzegovina.php
+08/08/2024  20:56             1.385 Breton_France.php
+08/08/2024  20:56             1.153 Bulgarian_Bulgaria.php
+08/08/2024  20:56             1.385 Catalan_Spain.php
+08/08/2024  20:56             1.385 Corsican_France.php
+08/08/2024  20:56             1.419 Croatian_(Latin)_Bosnia_and_Herzegovina.php
+08/08/2024  20:56             1.419 Croatian_Croatia.php
+08/08/2024  20:56             1.431 Czech_Czech_Republic.php
+08/08/2024  20:56             1.349 Danish_Denmark.php
+08/08/2024  20:56               870 Dari_Afghanistan.php
+08/08/2024  20:56             1.385 Dutch_Belgium.php
+08/08/2024  20:56             1.385 Dutch_Netherlands.php
+08/08/2024  20:56             1.385 English_Australia.php
+08/08/2024  20:56             1.385 English_Belize.php
+08/08/2024  20:56             1.385 English_Canada.php
+08/08/2024  20:56             1.385 English_Caribbean.php
+08/08/2024  20:56             1.385 English_India.php
+08/08/2024  20:56             1.385 English_Ireland.php
+08/08/2024  20:56             1.385 English_Jamaica.php
+08/08/2024  20:56             1.385 English_Malaysia.php
+08/08/2024  20:56             1.385 English_New_Zealand.php
+08/08/2024  20:56             1.385 English_Republic_of_the_Philippines.php
+08/08/2024  20:56             1.385 English_Singapore.php
+08/08/2024  20:56             1.385 English_South_Africa.php
+08/08/2024  20:56             1.385 English_Trinidad_and_Tobago.php
+08/08/2024  20:56             1.371 English_United_Kingdom.php
+08/08/2024  20:56             1.371 English_United_States.php
+08/08/2024  20:56             1.385 English_Zimbabwe.php
+08/08/2024  20:56             1.237 Estonian_Estonia.php
+08/08/2024  20:56             1.385 Faroese_Faroe_Islands.php
+08/08/2024  20:56             1.385 Filipino_Philippines.php
+08/08/2024  20:56             1.361 Finnish_Finland.php
+08/08/2024  20:56             1.385 French_Belgium.php
+08/08/2024  20:56             1.385 French_Canada.php
+08/08/2024  20:56             1.385 French_France.php
+08/08/2024  20:56             1.385 French_Luxembourg.php
+08/08/2024  20:56             1.385 French_Principality_of_Monaco.php
+08/08/2024  20:56             1.385 French_Switzerland.php
+08/08/2024  20:56             1.385 Frisian_Netherlands.php
+08/08/2024  20:56             1.385 Galician_Spain.php
+08/08/2024  20:56             1.385 German_Austria.php
+08/08/2024  20:56             1.385 German_Germany.php
+08/08/2024  20:56             1.385 German_Liechtenstein.php
+08/08/2024  20:56             1.385 German_Luxembourg.php
+08/08/2024  20:56             1.385 German_Switzerland.php
+08/08/2024  20:56               983 Greek_Greece.php
+08/08/2024  20:56             1.349 Greenlandic_Greenland.php
+08/08/2024  20:56             1.385 Hausa_(Latin)_Nigeria.php
+08/08/2024  20:56               806 Hebrew_Israel.php
+08/08/2024  20:56               927 Hungarian_Hungary.php
+08/08/2024  20:56             1.249 Icelandic_Iceland.php
+08/08/2024  20:56             1.385 Igbo_Nigeria.php
+08/08/2024  20:56             1.385 Indonesian_Indonesia.php
+08/08/2024  20:56             1.385 Inuktitut_(Latin)_Canada.php
+08/08/2024  20:56             1.385 Invariant_Language_Invariant_Country.php
+08/08/2024  20:56             1.385 Irish_Ireland.php
+08/08/2024  20:56             1.385 isiXhosa_South_Africa.php
+08/08/2024  20:56             1.385 isiZulu_South_Africa.php
+08/08/2024  20:56             1.385 Italian_Italy.php
+08/08/2024  20:56             1.385 Italian_Switzerland.php
+08/08/2024  20:56             1.385 Kinyarwanda_Rwanda.php
+08/08/2024  20:56             1.385 Kiswahili_Kenya.php
+08/08/2024  20:56             1.153 Kyrgyz_Kyrgyzstan.php
+08/08/2024  20:56             1.155 Latvian_Latvia.php
+08/08/2024  20:56             1.211 Lithuanian_Lithuania.php
+08/08/2024  20:56             1.385 Lower_Sorbian_Germany.php
+08/08/2024  20:56             1.385 Luxembourgish_Luxembourg.php
+08/08/2024  20:56             1.137 Macedonian_(FYROM)_Macedonia_(FYROM).php
+08/08/2024  20:56             1.385 Malay_Brunei_Darussalam.php
+08/08/2024  20:56             1.385 Malay_Malaysia.php
+08/08/2024  20:56             1.357 Mapudungun_Chile.php
+08/08/2024  20:56             1.385 Mohawk_Canada.php
+08/08/2024  20:56             1.153 Mongolian_(Cyrillic)_Mongolia.php
+08/08/2024  20:56             1.349 Norwegian_(Nynorsk)_Norway.php
+08/08/2024  20:56             1.385 Occitan_France.php
+08/08/2024  20:56               886 Persian_Iran.php
+08/08/2024  20:56             1.363 Polish_Poland.php
+08/08/2024  20:56             1.385 Portuguese_Brazil.php
+08/08/2024  20:56             1.385 Portuguese_Portugal.php
+08/08/2024  20:56             1.385 Quechua_Bolivia.php
+08/08/2024  20:56             1.385 Quechua_Ecuador.php
+08/08/2024  20:56             1.385 Quechua_Peru.php
+08/08/2024  20:56             1.433 Romanian_Romania.php
+08/08/2024  20:56             1.141 Romansh_Switzerland.php
+08/08/2024  20:56             1.153 Russian_Russia.php
+08/08/2024  20:56             1.255 Sami_(Inari)_Finland.php
+08/08/2024  20:56             1.255 Sami_(Lule)_Norway.php
+08/08/2024  20:56             1.255 Sami_(Lule)_Sweden.php
+08/08/2024  20:56             1.255 Sami_(Northern)_Finland.php
+08/08/2024  20:56             1.255 Sami_(Northern)_Norway.php
+08/08/2024  20:56             1.255 Sami_(Northern)_Sweden.php
+08/08/2024  20:56             1.255 Sami_(Skolt)_Finland.php
+08/08/2024  20:56             1.255 Sami_(Southern)_Norway.php
+08/08/2024  20:56             1.255 Sami_(Southern)_Sweden.php
+08/08/2024  20:56             1.153 Serbian_(Cyrillic)_Bosnia_and_Herzegovina.php
+08/08/2024  20:56             1.153 Serbian_(Cyrillic)_Serbia.php
+08/08/2024  20:56             1.419 Serbian_(Latin)_Bosnia_and_Herzegovina.php
+08/08/2024  20:56             1.419 Serbian_(Latin)_Serbia.php
+08/08/2024  20:56             1.385 Sesotho_sa_Leboa_South_Africa.php
+08/08/2024  20:56             1.385 Setswana_South_Africa.php
+08/08/2024  20:56             1.405 Slovak_Slovakia.php
+08/08/2024  20:56             1.391 Slovenian_Slovenia.php
+08/08/2024  20:56             1.371 Spanish_Argentina.php
+08/08/2024  20:56             1.371 Spanish_Bolivia.php
+08/08/2024  20:56             1.371 Spanish_Chile.php
+08/08/2024  20:56             1.371 Spanish_Colombia.php
+08/08/2024  20:56             1.371 Spanish_Costa_Rica.php
+08/08/2024  20:56             1.371 Spanish_Dominican_Republic.php
+08/08/2024  20:56             1.371 Spanish_Ecuador.php
+08/08/2024  20:56             1.371 Spanish_El_Salvador.php
+08/08/2024  20:56             1.371 Spanish_Guatemala.php
+08/08/2024  20:56             1.371 Spanish_Honduras.php
+08/08/2024  20:56             1.371 Spanish_Mexico.php
+08/08/2024  20:56             1.371 Spanish_Nicaragua.php
+08/08/2024  20:56             1.371 Spanish_Panama.php
+08/08/2024  20:56             1.371 Spanish_Paraguay.php
+08/08/2024  20:56             1.371 Spanish_Peru.php
+08/08/2024  20:56             1.371 Spanish_Puerto_Rico.php
+08/08/2024  20:56             1.371 Spanish_Spain.php
+08/08/2024  20:56             1.385 Spanish_United_States.php
+08/08/2024  20:56             1.371 Spanish_Uruguay.php
+08/08/2024  20:56             1.371 Spanish_Venezuela.php
+08/08/2024  20:56             1.361 Swedish_Finland.php
+08/08/2024  20:56             1.361 Swedish_Sweden.php
+08/08/2024  20:56             1.153 Tajik_(Cyrillic)_Tajikistan.php
+08/08/2024  20:56             1.385 Tamazight_(Latin)_Algeria.php
+08/08/2024  20:56             1.153 Tatar_Russia.php
+08/08/2024  20:56             1.289 Turkish_Turkey.php
+08/08/2024  20:56             1.389 Turkmen_Turkmenistan.php
+08/08/2024  20:56             1.137 Ukrainian_Ukraine.php
+08/08/2024  20:56             1.357 Upper_Sorbian_Germany.php
+08/08/2024  20:56               902 Urdu_Islamic_Republic_of_Pakistan.php
+08/08/2024  20:56             1.153 Uzbek_(Cyrillic)_Uzbekistan.php
+08/08/2024  20:56             1.357 Uzbek_(Latin)_Uzbekistan.php
+08/08/2024  20:56             1.193 Vietnamese_Vietnam.php
+08/08/2024  20:56             1.385 Welsh_United_Kingdom.php
+08/08/2024  20:56             1.385 Wolof_Senegal.php
+08/08/2024  20:56             1.137 Yakut_Russia.php
+08/08/2024  20:56             1.385 Yoruba_Nigeria.php
+             164 arquivo(s)        210.286 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\data\font
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               444 ccourier.php
+08/08/2024  20:56               447 ccourierb.php
+08/08/2024  20:56               447 ccourierbi.php
+08/08/2024  20:56               457 ccourieri.php
+08/08/2024  20:56             6.074 chelvetica.php
+08/08/2024  20:56             6.039 chelveticab.php
+08/08/2024  20:56             6.001 chelveticabi.php
+08/08/2024  20:56             5.965 chelveticai.php
+08/08/2024  20:56             4.133 csymbol.php
+08/08/2024  20:56             6.133 ctimes.php
+08/08/2024  20:56             6.264 ctimesb.php
+08/08/2024  20:56             6.091 ctimesbi.php
+08/08/2024  20:56             6.333 ctimesi.php
+08/08/2024  20:56             4.082 czapfdingbats.php
+              14 arquivo(s)         58.910 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\data\iccprofiles
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             3.052 sRGB_IEC61966-2-1.icc
+               1 arquivo(s)          3.052 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\data\patterns
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            90.319 de.php
+08/08/2024  20:56                29 dictionary.txt
+08/08/2024  20:56            27.396 en.php
+08/08/2024  20:56            30.689 es.php
+08/08/2024  20:56             2.031 fi.php
+08/08/2024  20:56            16.662 fr.php
+08/08/2024  20:56             1.758 it.php
+08/08/2024  20:56            84.405 nl.php
+08/08/2024  20:56               227 NOTES.txt
+08/08/2024  20:56            49.033 pl.php
+08/08/2024  20:56           149.928 ru.php
+08/08/2024  20:56            35.133 sv.php
+              12 arquivo(s)        487.610 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             3.630 AssetFetcher.php
+08/08/2024  21:01    <DIR>          Barcode
+08/08/2024  20:56             6.059 Barcode.php
+08/08/2024  20:56             2.374 Cache.php
+08/08/2024  21:01    <DIR>          Color
+08/08/2024  21:01    <DIR>          Config
+08/08/2024  21:01    <DIR>          Container
+08/08/2024  21:01    <DIR>          Conversion
+08/08/2024  21:01    <DIR>          Css
+08/08/2024  20:56            78.247 CssManager.php
+08/08/2024  20:56            14.929 DirectWrite.php
+08/08/2024  21:01    <DIR>          Exception
+08/08/2024  21:01    <DIR>          File
+08/08/2024  21:01    <DIR>          Fonts
+08/08/2024  20:56            69.010 Form.php
+08/08/2024  20:56            11.873 FpdiTrait.php
+08/08/2024  20:56               165 functions-dev.php
+08/08/2024  20:56               521 functions.php
+08/08/2024  21:01    <DIR>          Gif
+08/08/2024  20:56            34.875 Gradient.php
+08/08/2024  20:56               731 HTMLParserMode.php
+08/08/2024  21:01    <DIR>          Http
+08/08/2024  20:56             5.087 Hyphenator.php
+08/08/2024  21:01    <DIR>          Image
+08/08/2024  21:01    <DIR>          Language
+08/08/2024  21:01    <DIR>          Log
+08/08/2024  20:56           961.355 Mpdf.php
+08/08/2024  20:56                73 MpdfException.php
+08/08/2024  20:56                82 MpdfImageException.php
+08/08/2024  20:56           254.426 Otl.php
+08/08/2024  20:56           167.010 OtlDump.php
+08/08/2024  21:01    <DIR>          Output
+08/08/2024  20:56             1.049 PageBox.php
+08/08/2024  20:56             2.391 PageFormat.php
+08/08/2024  21:01    <DIR>          Pdf
+08/08/2024  20:56             5.929 ServiceFactory.php
+08/08/2024  21:01    <DIR>          Shaper
+08/08/2024  20:56             3.388 SizeConverter.php
+08/08/2024  20:56             1.535 Strict.php
+08/08/2024  20:56            33.451 TableOfContents.php
+08/08/2024  21:01    <DIR>          Tag
+08/08/2024  20:56             7.402 Tag.php
+08/08/2024  20:56           173.378 TTFontFile.php
+08/08/2024  20:56            14.561 TTFontFileAnalysis.php
+08/08/2024  20:56           131.957 Ucdn.php
+08/08/2024  21:01    <DIR>          Utils
+08/08/2024  20:56                49 Watermark.php
+08/08/2024  20:56             1.196 WatermarkImage.php
+08/08/2024  20:56               887 WatermarkText.php
+08/08/2024  21:01    <DIR>          Writer
+              30 arquivo(s)      1.987.620 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Barcode
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.103 AbstractBarcode.php
+08/08/2024  20:56                88 BarcodeException.php
+08/08/2024  20:56               330 BarcodeInterface.php
+08/08/2024  20:56             2.301 Codabar.php
+08/08/2024  20:56             2.832 Code11.php
+08/08/2024  20:56             7.552 Code128.php
+08/08/2024  20:56             6.894 Code39.php
+08/08/2024  20:56             7.712 Code93.php
+08/08/2024  20:56             3.122 EanExt.php
+08/08/2024  20:56             7.013 EanUpc.php
+08/08/2024  20:56             3.332 I25.php
+08/08/2024  20:56            10.527 Imb.php
+08/08/2024  20:56             2.489 Msi.php
+08/08/2024  20:56             2.835 Postnet.php
+08/08/2024  20:56             4.317 Rm4Scc.php
+08/08/2024  20:56             2.619 S25.php
+              16 arquivo(s)         65.066 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Color
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             9.669 ColorConverter.php
+08/08/2024  20:56             3.650 ColorModeConverter.php
+08/08/2024  20:56             6.364 ColorSpaceRestrictor.php
+08/08/2024  20:56             4.214 NamedColors.php
+               4 arquivo(s)         23.897 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Config
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            23.292 ConfigVariables.php
+08/08/2024  20:56            10.728 FontVariables.php
+               2 arquivo(s)         34.020 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Container
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               124 ContainerInterface.php
+08/08/2024  20:56                91 NotFoundException.php
+08/08/2024  20:56               542 SimpleContainer.php
+               3 arquivo(s)            757 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Conversion
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               910 DecToAlpha.php
+08/08/2024  20:56               390 DecToCjk.php
+08/08/2024  20:56             2.275 DecToHebrew.php
+08/08/2024  20:56             1.309 DecToOther.php
+08/08/2024  20:56             3.015 DecToRoman.php
+               5 arquivo(s)          7.899 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Css
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               133 Border.php
+08/08/2024  20:56             4.411 DefaultCss.php
+08/08/2024  20:56               403 TextVars.php
+               3 arquivo(s)          4.947 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Exception
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56                96 AssetFetchingException.php
+08/08/2024  20:56                87 FontException.php
+08/08/2024  20:56                98 InvalidArgumentException.php
+               3 arquivo(s)            281 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\File
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               180 LocalContentLoader.php
+08/08/2024  20:56               137 LocalContentLoaderInterface.php
+08/08/2024  20:56               828 StreamWrapperChecker.php
+               3 arquivo(s)          1.145 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Fonts
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.374 FontCache.php
+08/08/2024  20:56               651 FontFileFinder.php
+08/08/2024  20:56               178 GlyphOperator.php
+08/08/2024  20:56             3.467 MetricsGenerator.php
+               4 arquivo(s)          5.670 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Gif
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.628 ColorTable.php
+08/08/2024  20:56             1.946 FileHeader.php
+08/08/2024  20:56             1.285 Gif.php
+08/08/2024  20:56             3.248 Image.php
+08/08/2024  20:56             1.751 ImageHeader.php
+08/08/2024  20:56             4.919 Lzw.php
+               6 arquivo(s)         14.777 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Http
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               158 ClientInterface.php
+08/08/2024  20:56             3.084 CurlHttpClient.php
+08/08/2024  21:01    <DIR>          Exception
+08/08/2024  20:56             2.519 SocketHttpClient.php
+               3 arquivo(s)          5.761 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Http\Exception
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56                94 ClientException.php
+08/08/2024  20:56               104 ForbiddenRequestException.php
+08/08/2024  20:56                95 NetworkException.php
+08/08/2024  20:56                95 RequestException.php
+               4 arquivo(s)            388 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Image
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             7.581 Bmp.php
+08/08/2024  20:56            45.056 ImageProcessor.php
+08/08/2024  20:56               826 ImageTypeGuesser.php
+08/08/2024  20:56           135.103 Svg.php
+08/08/2024  20:56             7.263 Wmf.php
+               5 arquivo(s)        195.829 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Language
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            11.779 LanguageToFont.php
+08/08/2024  20:56             1.489 LanguageToFontInterface.php
+08/08/2024  20:56             4.820 ScriptToLanguage.php
+08/08/2024  20:56               174 ScriptToLanguageInterface.php
+               4 arquivo(s)         18.262 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Log
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               298 Context.php
+               1 arquivo(s)            298 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Output
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               148 Destination.php
+               1 arquivo(s)            148 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Pdf
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          Protection
+08/08/2024  20:56             7.311 Protection.php
+               1 arquivo(s)          7.311 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Pdf\Protection
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               568 UniqidGenerator.php
+               1 arquivo(s)            568 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Shaper
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            68.388 Indic.php
+08/08/2024  20:56            14.161 Myanmar.php
+08/08/2024  20:56            10.153 Sea.php
+               3 arquivo(s)         92.702 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Tag
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.508 A.php
+08/08/2024  20:56                66 Acronym.php
+08/08/2024  20:56                65 Address.php
+08/08/2024  20:56             2.787 Annotation.php
+08/08/2024  20:56                65 Article.php
+08/08/2024  20:56                63 Aside.php
+08/08/2024  20:56                60 B.php
+08/08/2024  20:56             9.900 BarCode.php
+08/08/2024  20:56                62 Bdi.php
+08/08/2024  20:56                62 Bdo.php
+08/08/2024  20:56                62 Big.php
+08/08/2024  20:56                68 BlockQuote.php
+08/08/2024  20:56            52.257 BlockTag.php
+08/08/2024  20:56               785 Bookmark.php
+08/08/2024  20:56             3.154 Br.php
+08/08/2024  20:56                65 Caption.php
+08/08/2024  20:56                64 Center.php
+08/08/2024  20:56                63 Cite.php
+08/08/2024  20:56                63 Code.php
+08/08/2024  20:56                69 ColumnBreak.php
+08/08/2024  20:56             1.527 Columns.php
+08/08/2024  20:56                60 Dd.php
+08/08/2024  20:56                62 Del.php
+08/08/2024  20:56                65 Details.php
+08/08/2024  20:56                61 Div.php
+08/08/2024  20:56                60 Dl.php
+08/08/2024  20:56             2.282 DotTab.php
+08/08/2024  20:56                60 Dt.php
+08/08/2024  20:56                61 Em.php
+08/08/2024  20:56                66 FieldSet.php
+08/08/2024  20:56                68 FigCaption.php
+08/08/2024  20:56                64 Figure.php
+08/08/2024  20:56                63 Font.php
+08/08/2024  20:56                64 Footer.php
+08/08/2024  20:56                62 Form.php
+08/08/2024  20:56             7.930 FormFeed.php
+08/08/2024  20:56                60 H1.php
+08/08/2024  20:56                60 H2.php
+08/08/2024  20:56                60 H3.php
+08/08/2024  20:56                60 H4.php
+08/08/2024  20:56                60 H5.php
+08/08/2024  20:56                60 H6.php
+08/08/2024  20:56                64 Header.php
+08/08/2024  20:56                64 HGroup.php
+08/08/2024  20:56             4.725 Hr.php
+08/08/2024  20:56                60 I.php
+08/08/2024  20:56            15.291 Img.php
+08/08/2024  20:56               856 IndexEntry.php
+08/08/2024  20:56               815 IndexInsert.php
+08/08/2024  20:56             7.256 InlineTag.php
+08/08/2024  20:56            14.662 Input.php
+08/08/2024  20:56                62 Ins.php
+08/08/2024  20:56                62 Kbd.php
+08/08/2024  20:56             1.209 Legend.php
+08/08/2024  20:56                60 Li.php
+08/08/2024  20:56                62 Main.php
+08/08/2024  20:56                63 Mark.php
+08/08/2024  20:56            17.461 Meter.php
+08/08/2024  20:56                61 Nav.php
+08/08/2024  20:56               327 NewColumn.php
+08/08/2024  20:56                64 NewPage.php
+08/08/2024  20:56                60 Ol.php
+08/08/2024  20:56             1.082 Option.php
+08/08/2024  20:56                59 P.php
+08/08/2024  20:56                66 PageBreak.php
+08/08/2024  20:56             5.195 PageFooter.php
+08/08/2024  20:56                69 PageHeader.php
+08/08/2024  20:56               281 Pre.php
+08/08/2024  20:56             2.490 Progress.php
+08/08/2024  20:56                60 Q.php
+08/08/2024  20:56                60 S.php
+08/08/2024  20:56                63 Samp.php
+08/08/2024  20:56                65 Section.php
+08/08/2024  20:56             5.278 Select.php
+08/08/2024  20:56             2.328 SetHtmlPageFooter.php
+08/08/2024  20:56                84 SetHtmlPageHeader.php
+08/08/2024  20:56                80 SetPageFooter.php
+08/08/2024  20:56                80 SetPageHeader.php
+08/08/2024  20:56                64 Small.php
+08/08/2024  20:56                63 Span.php
+08/08/2024  20:56                65 Strike.php
+08/08/2024  20:56                65 Strong.php
+08/08/2024  20:56                62 Sub.php
+08/08/2024  20:56               382 SubstituteTag.php
+08/08/2024  20:56                65 Summary.php
+08/08/2024  20:56                62 Sup.php
+08/08/2024  20:56            56.293 Table.php
+08/08/2024  20:56             2.210 Tag.php
+08/08/2024  20:56               542 TBody.php
+08/08/2024  20:56            19.070 Td.php
+08/08/2024  20:56             5.697 TextArea.php
+08/08/2024  20:56             8.516 TextCircle.php
+08/08/2024  20:56             1.678 TFoot.php
+08/08/2024  20:56               170 Th.php
+08/08/2024  20:56             1.692 THead.php
+08/08/2024  20:56                63 Time.php
+08/08/2024  20:56               262 Toc.php
+08/08/2024  20:56               932 TocEntry.php
+08/08/2024  20:56               300 TocPageBreak.php
+08/08/2024  20:56             5.876 Tr.php
+08/08/2024  20:56                61 Tt.php
+08/08/2024  20:56               578 Tta.php
+08/08/2024  20:56               340 Tts.php
+08/08/2024  20:56               346 Ttz.php
+08/08/2024  20:56                60 U.php
+08/08/2024  20:56                60 Ul.php
+08/08/2024  20:56                65 VarTag.php
+08/08/2024  20:56               705 WatermarkImage.php
+08/08/2024  20:56               430 WatermarkText.php
+             109 arquivo(s)        271.601 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Utils
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.075 Arrays.php
+08/08/2024  20:56               244 NumericString.php
+08/08/2024  20:56               901 PdfDate.php
+08/08/2024  20:56             1.431 UtfString.php
+               4 arquivo(s)          4.651 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\src\Writer
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            15.362 BackgroundWriter.php
+08/08/2024  20:56             6.490 BaseWriter.php
+08/08/2024  20:56             3.644 BookmarkWriter.php
+08/08/2024  20:56               971 ColorWriter.php
+08/08/2024  20:56            22.479 FontWriter.php
+08/08/2024  20:56             1.427 FormWriter.php
+08/08/2024  20:56             3.697 ImageWriter.php
+08/08/2024  20:56               878 JavaScriptWriter.php
+08/08/2024  20:56            28.403 MetadataWriter.php
+08/08/2024  20:56             1.287 ObjectWriter.php
+08/08/2024  20:56             1.886 OptionalContentWriter.php
+08/08/2024  20:56             8.619 PageWriter.php
+08/08/2024  20:56             6.388 ResourceWriter.php
+              13 arquivo(s)        101.531 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\tmp
+
+12/08/2024  16:38    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56                48 .gitignore
+12/08/2024  16:38    <DIR>          mpdf
+               1 arquivo(s)             48 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\tmp\mpdf
+
+12/08/2024  16:38    <DIR>          .
+12/08/2024  16:38    <DIR>          ..
+12/08/2024  18:02    <DIR>          ttfontdata
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\tmp\mpdf\ttfontdata
+
+12/08/2024  18:02    <DIR>          .
+12/08/2024  16:38    <DIR>          ..
+12/08/2024  18:02           131.072 dejavusans.cw.dat
+12/08/2024  18:02               830 dejavusans.cw127.json
+12/08/2024  18:02            47.213 dejavusans.GDEFdata.json
+12/08/2024  18:02           196.608 dejavusans.gid.dat
+12/08/2024  18:02             4.484 dejavusans.GPOSdata.json
+12/08/2024  18:02             5.064 dejavusans.GSUB.arab.DFLT.json
+12/08/2024  18:02             5.064 dejavusans.GSUB.arab.KUR .json
+12/08/2024  18:02             5.064 dejavusans.GSUB.arab.SND .json
+12/08/2024  18:02             5.064 dejavusans.GSUB.arab.URD .json
+12/08/2024  18:02             1.634 dejavusans.GSUB.nko .DFLT.json
+12/08/2024  18:02             6.844 dejavusans.GSUBdata.json
+12/08/2024  18:02            45.690 dejavusans.GSUBGPOStables.dat
+12/08/2024  18:02            37.633 dejavusans.mtx.json
+12/08/2024  18:02           131.072 dejavusansB.cw.dat
+12/08/2024  18:02            43.606 dejavusansB.GDEFdata.json
+12/08/2024  18:02           196.608 dejavusansB.gid.dat
+12/08/2024  18:02             4.144 dejavusansB.GPOSdata.json
+12/08/2024  18:02             5.064 dejavusansB.GSUB.arab.DFLT.json
+12/08/2024  18:02             5.064 dejavusansB.GSUB.arab.KUR .json
+12/08/2024  18:02             5.064 dejavusansB.GSUB.arab.SND .json
+12/08/2024  18:02             5.064 dejavusansB.GSUB.arab.URD .json
+12/08/2024  18:02             1.634 dejavusansB.GSUB.nko .DFLT.json
+12/08/2024  18:02             6.809 dejavusansB.GSUBdata.json
+12/08/2024  18:02            39.864 dejavusansB.GSUBGPOStables.dat
+12/08/2024  18:02            25.317 dejavusansB.mtx.json
+12/08/2024  16:38           131.072 dejavusanscondensed.cw.dat
+12/08/2024  16:38               829 dejavusanscondensed.cw127.json
+12/08/2024  16:38            48.231 dejavusanscondensed.GDEFdata.json
+12/08/2024  16:38           196.608 dejavusanscondensed.gid.dat
+12/08/2024  16:38             4.484 dejavusanscondensed.GPOSdata.json
+12/08/2024  16:38             5.200 dejavusanscondensed.GSUB.arab.DFLT.json
+12/08/2024  16:38             5.200 dejavusanscondensed.GSUB.arab.KUR .json
+12/08/2024  16:38             5.200 dejavusanscondensed.GSUB.arab.SND .json
+12/08/2024  16:38             5.200 dejavusanscondensed.GSUB.arab.URD .json
+12/08/2024  16:38             1.634 dejavusanscondensed.GSUB.nko .DFLT.json
+12/08/2024  16:38             6.929 dejavusanscondensed.GSUBdata.json
+12/08/2024  16:38            46.180 dejavusanscondensed.GSUBGPOStables.dat
+12/08/2024  16:38            37.916 dejavusanscondensed.mtx.json
+12/08/2024  16:38           131.072 dejavusanscondensedB.cw.dat
+12/08/2024  16:38               827 dejavusanscondensedB.cw127.json
+12/08/2024  16:38            44.744 dejavusanscondensedB.GDEFdata.json
+12/08/2024  16:38           196.608 dejavusanscondensedB.gid.dat
+12/08/2024  16:38             4.144 dejavusanscondensedB.GPOSdata.json
+12/08/2024  16:38             5.200 dejavusanscondensedB.GSUB.arab.DFLT.json
+12/08/2024  16:38             5.200 dejavusanscondensedB.GSUB.arab.KUR .json
+12/08/2024  16:38             5.200 dejavusanscondensedB.GSUB.arab.SND .json
+12/08/2024  16:38             5.200 dejavusanscondensedB.GSUB.arab.URD .json
+12/08/2024  16:38             1.634 dejavusanscondensedB.GSUB.nko .DFLT.json
+12/08/2024  16:38             6.929 dejavusanscondensedB.GSUBdata.json
+12/08/2024  16:38            40.458 dejavusanscondensedB.GSUBGPOStables.dat
+12/08/2024  16:38            25.782 dejavusanscondensedB.mtx.json
+              51 arquivo(s)      1.929.255 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\mpdf\ttfonts
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56           800.480 AboriginalSansREGULAR.ttf
+08/08/2024  20:56           619.012 Abyssinica_SIL.ttf
+08/08/2024  20:56         1.747.560 Aegean.otf
+08/08/2024  20:56         5.841.368 Aegyptus.otf
+08/08/2024  20:56         1.501.384 Akkadian.otf
+08/08/2024  20:56           282.664 ayar.ttf
+08/08/2024  20:56           900.260 damase_v.2.ttf
+08/08/2024  20:56            83.524 DBSILBR.ttf
+08/08/2024  20:56             4.817 DejaVuinfo.txt
+08/08/2024  20:56           693.876 DejaVuSans-Bold.ttf
+08/08/2024  20:56           632.168 DejaVuSans-BoldOblique.ttf
+08/08/2024  20:56           632.416 DejaVuSans-Oblique.ttf
+08/08/2024  20:56           741.536 DejaVuSans.ttf
+08/08/2024  20:56           676.456 DejaVuSansCondensed-Bold.ttf
+08/08/2024  20:56           621.680 DejaVuSansCondensed-BoldOblique.ttf
+08/08/2024  20:56           609.268 DejaVuSansCondensed-Oblique.ttf
+08/08/2024  20:56           690.388 DejaVuSansCondensed.ttf
+08/08/2024  20:56           318.392 DejaVuSansMono-Bold.ttf
+08/08/2024  20:56           239.876 DejaVuSansMono-BoldOblique.ttf
+08/08/2024  20:56           245.948 DejaVuSansMono-Oblique.ttf
+08/08/2024  20:56           335.068 DejaVuSansMono.ttf
+08/08/2024  20:56           345.364 DejaVuSerif-Bold.ttf
+08/08/2024  20:56           336.884 DejaVuSerif-BoldItalic.ttf
+08/08/2024  20:56           343.388 DejaVuSerif-Italic.ttf
+08/08/2024  20:56           367.260 DejaVuSerif.ttf
+08/08/2024  20:56           320.720 DejaVuSerifCondensed-Bold.ttf
+08/08/2024  20:56           335.940 DejaVuSerifCondensed-BoldItalic.ttf
+08/08/2024  20:56           342.736 DejaVuSerifCondensed-Italic.ttf
+08/08/2024  20:56           334.040 DejaVuSerifCondensed.ttf
+08/08/2024  20:56            61.304 Dhyana-Bold.ttf
+08/08/2024  20:56            72.348 Dhyana-Regular.ttf
+08/08/2024  20:56             4.398 DhyanaOFL.txt
+08/08/2024  20:56           584.424 FreeMono.ttf
+08/08/2024  20:56           296.284 FreeMonoBold.ttf
+08/08/2024  20:56           295.360 FreeMonoBoldOblique.ttf
+08/08/2024  20:56           390.692 FreeMonoOblique.ttf
+08/08/2024  20:56         1.563.256 FreeSans.ttf
+08/08/2024  20:56           416.128 FreeSansBold.ttf
+08/08/2024  20:56           342.488 FreeSansBoldOblique.ttf
+08/08/2024  20:56           763.696 FreeSansOblique.ttf
+08/08/2024  20:56         3.303.588 FreeSerif.ttf
+08/08/2024  20:56         1.310.828 FreeSerifBold.ttf
+08/08/2024  20:56           608.708 FreeSerifBoldItalic.ttf
+08/08/2024  20:56           922.088 FreeSerifItalic.ttf
+08/08/2024  20:56            57.796 Garuda-Bold.ttf
+08/08/2024  20:56            57.460 Garuda-BoldOblique.ttf
+08/08/2024  20:56            57.412 Garuda-Oblique.ttf
+08/08/2024  20:56            55.756 Garuda.ttf
+08/08/2024  20:56             4.314 GNUFreeFontinfo.txt
+08/08/2024  20:56             4.345 Jomolhari-OFL.txt
+08/08/2024  20:56         2.269.108 Jomolhari.ttf
+08/08/2024  20:56           159.696 kaputaunicode.ttf
+08/08/2024  20:56             4.389 KhmerOFL.txt
+08/08/2024  20:56           265.988 KhmerOS.ttf
+08/08/2024  20:56           136.648 lannaalif-v1-03.ttf
+08/08/2024  20:56             4.419 Lateef font OFL.txt
+08/08/2024  20:56           246.224 LateefRegOT.ttf
+08/08/2024  20:56           197.872 Lohit-Kannada.ttf
+08/08/2024  20:56             4.388 LohitKannadaOFL.txt
+08/08/2024  20:56            23.112 ocrb10.ttf
+08/08/2024  20:56             3.361 ocrbinfo.txt
+08/08/2024  20:56           476.528 Padauk-book.ttf
+08/08/2024  20:56           194.268 Pothana2000.ttf
+08/08/2024  20:56         1.475.236 Quivira.otf
+08/08/2024  20:56        22.993.540 Sun-ExtA.ttf
+08/08/2024  20:56        17.632.200 Sun-ExtB.ttf
+08/08/2024  20:56            54.000 SundaneseUnicode-1.0.5.ttf
+08/08/2024  20:56            79.668 SyrCOMEdessa.otf
+08/08/2024  20:56             2.658 SyrCOMEdessa_license.txt
+08/08/2024  20:56               877 TaameyDavidCLM-LICENSE.txt
+08/08/2024  20:56            96.284 TaameyDavidCLM-Medium.ttf
+08/08/2024  20:56           210.336 TaiHeritagePro.ttf
+08/08/2024  20:56           353.228 Tharlon-Regular.ttf
+08/08/2024  20:56             4.697 TharlonOFL.txt
+08/08/2024  20:56         6.937.228 UnBatang_0613.ttf
+08/08/2024  20:56           172.980 Uthman.otf
+08/08/2024  20:56         1.144.764 XB Riyaz.ttf
+08/08/2024  20:56         1.159.192 XB RiyazBd.ttf
+08/08/2024  20:56         1.159.500 XB RiyazBdIt.ttf
+08/08/2024  20:56         1.131.668 XB RiyazIt.ttf
+08/08/2024  20:56             4.303 XW Zar Font Info.txt
+08/08/2024  20:56           341.264 ZawgyiOne.ttf
+              82 arquivo(s)     91.056.770 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\psr-http-message-shim
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               685 composer.json
+08/08/2024  20:56               507 README.md
+08/08/2024  21:01    <DIR>          src
+               2 arquivo(s)          1.192 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\psr-http-message-shim\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             6.932 Request.php
+08/08/2024  20:56             7.738 Response.php
+08/08/2024  20:56             5.134 Stream.php
+08/08/2024  20:56             6.975 Uri.php
+               4 arquivo(s)         26.779 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\psr-log-aware-trait
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56                22 .gitignore
+08/08/2024  20:56               550 composer.json
+08/08/2024  20:56               662 README.md
+08/08/2024  21:01    <DIR>          src
+               3 arquivo(s)          1.234 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\mpdf\psr-log-aware-trait\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               508 MpdfPsrLogAwareTrait.php
+08/08/2024  20:56               258 PsrLogAwareTrait.php
+               2 arquivo(s)            766 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          deep-copy
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.022 composer.json
+08/08/2024  20:56             1.077 LICENSE
+08/08/2024  20:56            10.767 README.md
+08/08/2024  21:01    <DIR>          src
+               3 arquivo(s)         12.866 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          DeepCopy
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             8.320 DeepCopy.php
+08/08/2024  20:56               396 deep_copy.php
+08/08/2024  21:01    <DIR>          Exception
+08/08/2024  21:01    <DIR>          Filter
+08/08/2024  21:01    <DIR>          Matcher
+08/08/2024  21:01    <DIR>          Reflection
+08/08/2024  21:01    <DIR>          TypeFilter
+08/08/2024  21:01    <DIR>          TypeMatcher
+               2 arquivo(s)          8.716 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Exception
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               127 CloneException.php
+08/08/2024  20:56               120 PropertyException.php
+               2 arquivo(s)            247 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Filter
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               449 ChainableFilter.php
+08/08/2024  21:01    <DIR>          Doctrine
+08/08/2024  20:56               348 Filter.php
+08/08/2024  20:56               263 KeepFilter.php
+08/08/2024  20:56               912 ReplaceFilter.php
+08/08/2024  20:56               482 SetNullFilter.php
+               5 arquivo(s)          2.454 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Filter\Doctrine
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               788 DoctrineCollectionFilter.php
+08/08/2024  20:56               705 DoctrineEmptyCollectionFilter.php
+08/08/2024  20:56               403 DoctrineProxyFilter.php
+               3 arquivo(s)          1.896 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Matcher
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          Doctrine
+08/08/2024  20:56               213 Matcher.php
+08/08/2024  20:56               691 PropertyMatcher.php
+08/08/2024  20:56               504 PropertyNameMatcher.php
+08/08/2024  20:56             1.316 PropertyTypeMatcher.php
+               4 arquivo(s)          2.724 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Matcher\Doctrine
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               360 DoctrineProxyMatcher.php
+               1 arquivo(s)            360 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\Reflection
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.174 ReflectionHelper.php
+               1 arquivo(s)          2.174 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\TypeFilter
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          Date
+08/08/2024  20:56               524 ReplaceFilter.php
+08/08/2024  20:56               223 ShallowCopyFilter.php
+08/08/2024  21:01    <DIR>          Spl
+08/08/2024  20:56               194 TypeFilter.php
+               3 arquivo(s)            941 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\TypeFilter\Date
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               639 DateIntervalFilter.php
+               1 arquivo(s)            639 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\TypeFilter\Spl
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               720 ArrayObjectFilter.php
+08/08/2024  20:56               176 SplDoublyLinkedList.php
+08/08/2024  20:56             1.040 SplDoublyLinkedListFilter.php
+               3 arquivo(s)          1.936 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\myclabs\deep-copy\src\DeepCopy\TypeMatcher
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               468 TypeMatcher.php
+               1 arquivo(s)            468 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\paragonie
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          random_compat
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\paragonie\random_compat
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               134 build-phar.sh
+08/08/2024  20:56               870 composer.json
+08/08/2024  21:01    <DIR>          dist
+08/08/2024  21:01    <DIR>          lib
+08/08/2024  20:56             1.098 LICENSE
+08/08/2024  21:01    <DIR>          other
+08/08/2024  20:56               231 psalm-autoload.php
+08/08/2024  20:56               596 psalm.xml
+               5 arquivo(s)          2.929 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\paragonie\random_compat\dist
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               215 random_compat.phar.pubkey
+08/08/2024  20:56               488 random_compat.phar.pubkey.asc
+               2 arquivo(s)            703 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\paragonie\random_compat\lib
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.327 random.php
+               1 arquivo(s)          1.327 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\paragonie\random_compat\other
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.633 build_phar.php
+               1 arquivo(s)          1.633 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          http-message
+08/08/2024  21:01    <DIR>          log
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr\http-message
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.075 CHANGELOG.md
+08/08/2024  20:56               627 composer.json
+08/08/2024  21:01    <DIR>          docs
+08/08/2024  20:56             1.085 LICENSE
+08/08/2024  20:56               508 README.md
+08/08/2024  21:01    <DIR>          src
+               4 arquivo(s)          3.295 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr\http-message\docs
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             9.548 PSR7-Interfaces.md
+08/08/2024  20:56             5.492 PSR7-Usage.md
+               2 arquivo(s)         15.040 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr\http-message\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             7.102 MessageInterface.php
+08/08/2024  20:56             4.919 RequestInterface.php
+08/08/2024  20:56             2.634 ResponseInterface.php
+08/08/2024  20:56            10.298 ServerRequestInterface.php
+08/08/2024  20:56             4.860 StreamInterface.php
+08/08/2024  20:56             4.748 UploadedFileInterface.php
+08/08/2024  20:56            12.831 UriInterface.php
+               7 arquivo(s)         47.392 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr\log
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               555 composer.json
+08/08/2024  20:56             1.085 LICENSE
+08/08/2024  20:56             1.346 README.md
+08/08/2024  21:01    <DIR>          src
+               3 arquivo(s)          2.986 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\psr\log\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               414 AbstractLogger.php
+08/08/2024  20:56                96 InvalidArgumentException.php
+08/08/2024  20:56               303 LoggerAwareInterface.php
+08/08/2024  20:56               432 LoggerAwareTrait.php
+08/08/2024  20:56             3.393 LoggerInterface.php
+08/08/2024  20:56             3.703 LoggerTrait.php
+08/08/2024  20:56               336 LogLevel.php
+08/08/2024  20:56               738 NullLogger.php
+               8 arquivo(s)          9.415 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          fpdi
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             1.616 composer.json
+08/08/2024  20:56             1.114 LICENSE.txt
+08/08/2024  20:56             4.679 README.md
+08/08/2024  20:56               193 SECURITY.md
+08/08/2024  21:01    <DIR>          src
+               4 arquivo(s)          7.602 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               629 autoload.php
+08/08/2024  20:56               389 FpdfTpl.php
+08/08/2024  20:56            14.453 FpdfTplTrait.php
+08/08/2024  20:56             6.665 FpdfTrait.php
+08/08/2024  20:56               748 Fpdi.php
+08/08/2024  20:56               355 FpdiException.php
+08/08/2024  20:56            23.516 FpdiTrait.php
+08/08/2024  20:56             1.972 GraphicsState.php
+08/08/2024  21:01    <DIR>          Math
+08/08/2024  21:01    <DIR>          PdfParser
+08/08/2024  21:01    <DIR>          PdfReader
+08/08/2024  21:01    <DIR>          Tcpdf
+08/08/2024  20:56               559 TcpdfFpdi.php
+08/08/2024  21:01    <DIR>          Tfpdf
+               9 arquivo(s)         49.286 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\Math
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.073 Matrix.php
+08/08/2024  20:56             1.146 Vector.php
+               2 arquivo(s)          3.219 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfParser
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          CrossReference
+08/08/2024  21:01    <DIR>          Filter
+08/08/2024  20:56            12.661 PdfParser.php
+08/08/2024  20:56               843 PdfParserException.php
+08/08/2024  20:56            12.117 StreamReader.php
+08/08/2024  20:56             3.628 Tokenizer.php
+08/08/2024  21:01    <DIR>          Type
+               4 arquivo(s)         29.249 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfParser\CrossReference
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.500 AbstractReader.php
+08/08/2024  20:56             9.949 CrossReference.php
+08/08/2024  20:56             1.277 CrossReferenceException.php
+08/08/2024  20:56             5.890 FixedReader.php
+08/08/2024  20:56             4.801 LineReader.php
+08/08/2024  20:56               766 ReaderInterface.php
+               6 arquivo(s)         25.183 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfParser\Filter
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.960 Ascii85.php
+08/08/2024  20:56               519 Ascii85Exception.php
+08/08/2024  20:56             1.140 AsciiHex.php
+08/08/2024  20:56               486 FilterException.php
+08/08/2024  20:56               486 FilterInterface.php
+08/08/2024  20:56             2.294 Flate.php
+08/08/2024  20:56               506 FlateException.php
+08/08/2024  20:56             4.004 Lzw.php
+08/08/2024  20:56               446 LzwException.php
+               9 arquivo(s)         12.841 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfParser\Type
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             2.110 PdfArray.php
+08/08/2024  20:56               911 PdfBoolean.php
+08/08/2024  20:56             3.544 PdfDictionary.php
+08/08/2024  20:56             1.838 PdfHexString.php
+08/08/2024  20:56             2.545 PdfIndirectObject.php
+08/08/2024  20:56             1.184 PdfIndirectObjectReference.php
+08/08/2024  20:56             1.912 PdfName.php
+08/08/2024  20:56               373 PdfNull.php
+08/08/2024  20:56               920 PdfNumeric.php
+08/08/2024  20:56            11.243 PdfStream.php
+08/08/2024  20:56             6.082 PdfString.php
+08/08/2024  20:56               897 PdfToken.php
+08/08/2024  20:56             2.952 PdfType.php
+08/08/2024  20:56               508 PdfTypeException.php
+              14 arquivo(s)         37.019 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfReader
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  21:01    <DIR>          DataStructure
+08/08/2024  20:56            13.730 Page.php
+08/08/2024  20:56             2.295 PageBoundaries.php
+08/08/2024  20:56             7.190 PdfReader.php
+08/08/2024  20:56               602 PdfReaderException.php
+               4 arquivo(s)         23.817 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\PdfReader\DataStructure
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56             3.895 Rectangle.php
+               1 arquivo(s)          3.895 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\Tcpdf
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56            13.697 Fpdi.php
+               1 arquivo(s)         13.697 bytes
+
+ Pasta de C:\xampp\htdocs\cursophp\MatinV2.0\vendor\setasign\fpdi\src\Tfpdf
+
+08/08/2024  21:01    <DIR>          .
+08/08/2024  21:01    <DIR>          ..
+08/08/2024  20:56               499 FpdfTpl.php
+08/08/2024  20:56               603 Fpdi.php
+               2 arquivo(s)          1.102 bytes
+
+     Total de Arquivos na Lista:
+             927 arquivo(s)    114.871.272 bytes
+             305 pasta(s)    7.687.712.768 bytes dispon°veis

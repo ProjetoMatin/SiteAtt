@@ -1,0 +1,229 @@
+main {
+    background-color: var(--bege00) !important;
+    padding: 15px;
+}
+
+.flex-direita-esquerda{
+    display: flex;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.title{
+    padding-top: 16px !important;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.div-esquerda p {
+    margin: 0 !important;
+}
+
+.div-esquerda p mark{
+    font-weight: bolder;
+    font-size: 2em;
+    background-color: transparent;
+    padding: 0 !important;
+}
+
+.div-esquerda .flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-esquerda .flex-column .inputs-encl{
+    display: flex;
+    align-items: center;
+}
+
+.div-esquerda .flex-column .inputs-encl hr{
+    width: 20px;
+    height: 1px;
+    margin: 0 15px !important;
+}
+
+.div-esquerda .flex-column .inputs-encl input{
+    text-align: center;
+    width: 130px;
+    padding: 5px 0;
+    border: 1px solid var(--cinza00);
+    border-radius: 5px;
+}
+
+.div-esquerda .flex-column .inputs-encl button{
+    padding: 6px 9px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: var(--verde00);
+}
+
+.check{
+    width: 20px;
+}
+
+.avaliacoes-encl .flex-numeros{
+    display: flex;
+    gap: 16px;
+    /* background-color: red; */
+    font-size: 1.2em;
+    flex-direction: row !important;
+}
+
+.selected{
+    color: var(--laranja00);
+}
+
+.frete-encl div{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px !important;
+    width: 160px;
+    text-align: left;
+    background-color: var(--verde00);
+}
+
+.frete-encl div label{
+    color: var(--branco00);
+    margin-left: 10px;
+}
+
+.frete-encl div input{
+    float: left !important;
+    margin: 0 !important;
+}
+
+.div-direita{
+    margin-left: 16px !important;
+    width: 100%;
+}
+
+.div-direita .card-encl .card {
+    display: flex;
+    padding: 15px;
+    flex-direction: row;
+}
+
+.div-direita .card-encl .card .foto-esquerda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.div-direita .card-encl .card .foto-esquerda img{
+    width: 150px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.div-direita .card-encl .card .parte-direita{
+    width: 75%;
+}
+
+.div-direita .card-encl .card .parte-direita .freteAnuncio{
+    display: inline;
+    padding: 10px;
+    color: var(--branco00);
+    background-color: var(--verde00);
+    font-weight: lighter;
+}
+
+.div-direita .card-encl .card .parte-direita .freteAnuncio .frete {
+    font-weight: bolder;
+    background-color: transparent;
+    color: var(--branco00);
+}
+
+
+.preco{
+    margin-top: 20px;
+    
+}
+
+.precoAntigo{
+    color: var(--laranja00);
+    margin-top: 20px;
+    text-decoration: line-through;
+}
+
+.precos{
+    display: flex;
+    align-items: baseline;
+}
+
+.precoNovo .letraGrande{
+    font-size: 1.5em;
+    font-weight: bolder;
+    background-color: transparent;
+}
+
+.promocao{
+    color: var(--verde00);
+}
+
+.avaliacoes-card-encl{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aval{
+    font-size: 1.4em;
+    font-weight: bolder;
+    background-color: transparent;
+}
+
+.avaliacoes-card{
+    display: flex;
+    align-items: center;
+}
+
+.avaliacoes-card hr{
+    padding: 1px;
+    width: 2px;
+    margin-right: 15px;
+    height: 55px;
+    background-color: var(--preto00);
+}
+
+.avaliacoes-card-encl button{
+    border: 1px solid var(--verde00);
+    border-radius: 5px;
+    height: 40px;
+    padding: 0px 15px !important;
+    color: var(--verde00);
+}
+
+.avaliacoes-card-encl button img{
+    width: 20px !important;
+}
+
+.title-fav{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.title-fav img{
+    width: 35px;
+    border: 1px solid var(--cinza00);
+    border-radius: 100%;
+    padding: 5px;
+    height: 35px;
+}
+
+.media{
+    margin-bottom: 10px !important;
+}
+
+.aval-card-flex p{
+    margin: 0 !important;
+}

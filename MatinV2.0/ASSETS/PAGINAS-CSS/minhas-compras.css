@@ -1,0 +1,91 @@
+.minhas-compras {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.situacoes-compra {
+    display: flex;
+    background-color: var(--branco00);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
+.selecionado {
+    font-weight: bold;
+    color: var(--laranja00);
+}
+
+.searchbar {
+    margin: 0.5rem!important;
+}
+
+.situacao-compra h2 {
+    font-size: 1.1em;
+}
+
+.info-compras {
+    background-color: var(--branco00);
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.info-vendedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-vendedor h3 {
+    font-size: 1em;
+}
+
+.situacao-pedido {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.borda {
+    height: 20px;
+    margin: 0 0.5rem;
+    border: 1px solid var(--cinza00);
+}
+
+.situacao1, .situacao2 {
+    font-size: 1em;
+}
+
+.situacao1 {
+    color: var(--verde00);
+}
+
+.situacao2 {
+    color: var(--laranja00);
+}
+
+.info-produto {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.img-produto {
+    width: 200px;
+}
+
+.img-produto img {
+    width: 100%;
+}
+
+.info-data-pedido {
+    color: var(--cinza01);
+}
+
+.info-data-pedido p {
+    margin: 0.5rem;
+}

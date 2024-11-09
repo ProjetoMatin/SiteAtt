@@ -1,0 +1,7 @@
+-- YHUREEI --
+
+01/01/2024
+
+Então, eu pensei em botar a home page na pasta BASE, pq a gnt nao vai usar tanto ela, ela vai servir só pra ser a base do programa então não tem pq ela estar dentro de PHP na minha cabeça. (e eu tb peguei referencia de um projeto q o freitas passou pra gnt em 2023 e ele fez isso então se o freitas fez, quem sou eu para julgar).
+
+O CHpages serve pra redirecionamento de páginas, qualquer <a> que vcs botarem, manda por CHpages pls. 

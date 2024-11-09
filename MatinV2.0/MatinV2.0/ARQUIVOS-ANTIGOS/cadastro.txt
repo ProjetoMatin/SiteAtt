@@ -1,0 +1,100 @@
+body{
+    background-image: url("../../IMAGES/img-login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    display: block;
+    padding: 15px;
+    margin: auto;
+    background-color: var(--branco00);
+    width: 90%;
+    padding-bottom: 8.5vh;
+}
+
+main .logo{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center;
+}
+
+main .logo img{
+    width: 70px;
+}
+
+hr{
+    display: block;
+    margin: 30px auto !important;
+    border: 1px solid var(--preto00) !important;
+    width: 50%;
+    transition: transform 0.3s ease;
+}
+
+.h1cad{
+    font-size: 1.5em;
+    text-align: center;
+    margin: 30px 50px !important;
+}
+
+.card-encl{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card-encl .card{
+    cursor: pointer;
+    border-radius: 15px;
+    display: flex;
+    transition: transform 0.3s ease;
+    padding: 30px;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    box-shadow: 0px 4px 15px var(--cinza00);
+    /* justify-content: center; */
+}
+
+.lifted{
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+    background-color: var(--laranja00) !important;
+}
+
+.lifted hr{
+    border: 1px solid var(--branco00) !important;
+}
+
+.lifted h1 {
+    color: white; /* Adicione a cor desejada para o texto */
+}
+
+.card-encl .card img{
+    width: 100px;
+}
+
+.card-encl .card .card-body h1{
+    font-size: 1.5em;
+}
+
+.cadTxt{
+    margin-top: 12vh;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.cadTxt a{
+    color: var(--verde00);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.backbtn img{
+    position: absolute;
+    margin: 20px 0 0 20px !important;
+    width: 20px !important;
+    cursor: pointer;
+}

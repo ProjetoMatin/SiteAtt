@@ -1,0 +1,14 @@
+body {
+    background-color: var(--bege00) !important;
+}
+
+.container {
+    max-width: 110% !important;
+    display: grid;
+    padding: 0 !important;
+    grid-template-columns: 80px auto;
+}
+
+.container .sidebar {
+    max-width: 1300px !important;
+}
