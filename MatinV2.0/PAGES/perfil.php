@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/perfil.css">
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/SAC.css">
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/compras.css">
@@ -31,25 +32,25 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
 
 <main>
     <?php
-
-    echo "<div class='info-perfil'>
+        
+        echo "<div class='info-perfil'>
         <div class='flex-mais-flex'>
             <img src='IMAGES-BD/USUARIOS/" . $dados['fotos_usu'] . "?>' class='img-perfil' alt='Foto de perfil'><div class='flex-perfil'>";
-    if ($selectP->rowCount() > 0) {
-        echo '<h2>' . $dados['nome_usu'] . '</h2>';
-    } else {
-
-        echo 'oi';
-    }
-    echo "<a href='?page=editPerfil' class='btn_acoes_perfil icone_perfil'><img src='IMAGES/editar.png'></a></div>
+                    if ($selectP->rowCount() > 0) {
+                        echo '<h2>' . $dados['nome_usu'] . '</h2>';
+                    } else {
+            
+                        echo 'oi';
+                    }
+                    echo "<a href='?page=editPerfil' class='btn_acoes_perfil icone_perfil'><img src='IMAGES/editar.png'></a></div>
         </div>
             <div class='visao-geral'>
                
                 <div class='itens'>
                 ";
-    switch ($type) {
-        case "minhas_compras":
-            echo "
+                switch($type) {
+                    case "minhas_compras":
+                        echo "
                         <ul>
                             <li><a href='?page=perfil'>Visão Geral</a></li>
                             <hr>    
@@ -61,9 +62,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
-            break;
-        case "minha_conta":
-            echo "
+                        break;
+                    case "minha_conta":
+                        echo "
                         <ul>
                             <li><a href='?page=perfil'>Visão Geral</a></li>
                             <hr>    
@@ -74,9 +75,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
-            break;
-        case "sac":
-            echo "
+                        break;
+                    case "sac":
+                        echo "
                         <ul>
                             <li><a href='?page=perfil'>Visão Geral</a></li>
                             <hr>    
@@ -89,9 +90,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                             </ul>
                         <hr>";
-            break;
-        case "politicas":
-            echo "
+                        break;
+                    case "politicas":
+                        echo "
                         <ul>
                             <li><a href='?page=perfil'>Visão Geral</a></li>
                             <hr>    
@@ -104,9 +105,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                              <li><a href='?page=perfil&type=politicas'><h3><img src='IMAGES/quadrado_verde.png'> Políticas</a></h3></a></li>
                             </ul>
                         <hr>";
-            break;
-        default:
-            echo "
+                        break;
+                    default:
+                        echo "
                         <ul>
                             <li>
                             <h3><img src='IMAGES/quadrado_verde.png'> Visão Geral</h3>
@@ -121,20 +122,20 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <li><a href='?page=perfil&type=politicas'>Políticas</a></li> 
                         </ul>
                         <hr>";
-            break;
-    }
-
-    echo "</div>
+                        break;
+                }
+                
+                echo "</div>
             </div>
             <a href='?config=sair' class='btn_acoes_perfil link_perfil'>Sair</a>
         </div>
                     ";
-    switch ($type) {
-        case "minhas_compras":
-            include_once "minhas_compras.php";
-            break;
-        case "minha_conta":
-            echo "<div class='minha_conta'>
+        switch($type) {
+            case "minhas_compras":
+                echo "";
+                break;
+            case "minha_conta":
+                echo "<div class='minha_conta'>
                         <div class='flex-infos'>
                             <div class='info-perfil2'>
                                 <a href='#' class='link_info'>
@@ -222,9 +223,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             </div>
                         </div>'
                     </div>";
-            break;
-        case "sac":
-            echo "<div class='flex-servicos'>
+                break;
+            case "sac":
+                echo "<div class='flex-servicos'>
                         <div class='servico'>
                             <div class='icon'>
                                 <figure>
@@ -271,9 +272,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             <p>Descubra como se tornar um Parceiro MAT-IN e aproveite os benefícios de fazer parte da nossa rede. Veja os critérios e o processo para se unir a nós.</p>
                         </div>
                     </div>";
-            break;
-        case "politicas":
-            echo "<div class='flex-servicos'>
+                break;
+            case "politicas":
+                echo "<div class='flex-servicos'>
                 <div class='servico politicas'>
                     <div class='icon'>
                         <figure>
@@ -311,9 +312,9 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                     <p>Conheça as opções de acessibilidade disponíveis para melhorar sua experiência.</p>
                 </div>
             </div>";
-            break;
-        default:
-            echo "
+                break;
+            default:
+                echo "
                 <div class='flex-divs'>
                     <div class='info1'>
                     <h2>Olá, <strong>" . $dados['nome_usu'] . "!</strong></h2>
@@ -341,8 +342,8 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                     </div>
                 </div>";
             echo "<div class='pedidos'><div class='ver-tudo'>";
-            echo '<h2>Minhas compras - Resumo</h2>';
-            echo "  <a href='#'>Ver tudo ></a></div>
+                    echo '<h2>Minhas compras - Resumo</h2>';
+                    echo "  <a href='#'>Ver tudo ></a></div>
                     <div class='flex-pagamentos'>
                         <div class='pag-situacao'>
                             <figure class='icone-pag'>
@@ -372,15 +373,15 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                     <div class='reembolsos'><p style='display: flex; align-items: center; gap:5px;'><img src='IMAGES/moeda.png'><a href='#'>     Reembolsos e Devoluções</a></p>
                     <p><a href='#'>></a></a></p></div>    
                     </div>";
-            if ($dados['nvl_usu'] == 'F' || $dados['nvl_usu'] == 'A') {
+            if($dados['nvl_usu'] == 'F' || $dados['nvl_usu'] == 'A') {
                 echo "<div class='minhas_vendas'>
                         <div class='ver-tudo'>
                             <h2>Minhas vendas - Resumo</h2>
                             <a href='#'>Ver tudo ></a>
                         </div>
                         <hr>";
-
-                echo "
+        
+                    echo "
                     <div class='selos'>
                     <a href='?page=selos' class='selos'>
                             <figure>
@@ -392,10 +393,11 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                             </div>
                             </a>
                             </div>";
+                
+                }
+                    echo "</div>";
             }
-            echo "</div>";
-    }
-    echo "</div>";
+        echo "</div>";     
     ?>
 </main>
 

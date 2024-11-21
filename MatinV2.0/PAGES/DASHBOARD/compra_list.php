@@ -126,7 +126,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
 
                         echo "<td>{$dados['qnt_pedida']}</td>";
                         echo "<td>{$dados['data_criacao']}</td>";
-                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                        echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a><a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idNPedido'] . "&tbl=nPedido'> <button type='button' class='btn btn-danger'>Excluir</button></a> </a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
 
                         echo "</tr>";
                     }

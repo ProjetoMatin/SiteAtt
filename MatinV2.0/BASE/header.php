@@ -280,13 +280,15 @@
         <h1>Mat-in</h1>
     </div>
 
-    <div class="search-inp">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Busque aqui seu produto">
-
-            <span class="input-group-text" id="inputGroup-sizing-default"><img src="IMAGES/search.png" alt=""></span>
+    <form action="#" method="get">
+        <div class="search-inp">
+            <div class="input-group mb-3">
+                <input type="hidden" name="page" value="pesquisa">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Busque aqui seu produto" name="search">
+                <span class="input-group-text" id="inputGroup-sizing-default"><img src="IMAGES/search.png" alt=""></span>
+            </div>
         </div>
-    </div>
+    </form>
 
     <div class="info">
         <ul>

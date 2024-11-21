@@ -34,6 +34,11 @@ switch ($page) {
         require_once "PAGES/PERFIL/selos.php";
         break;
 
+    case 'pesquisa':
+        require_once "PAGES/pesquisa.php";
+        break;
+
+
     default:
         require_once 'PAGES/home.php';
         break;

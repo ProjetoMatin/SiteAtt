@@ -198,7 +198,6 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
     border: 1px solid var(--laranja00);
     transition-duration: 0.2s;
     transition-property: all;
-    text-align: center;
     transition-timing-function: ease-in-out;
 }
 

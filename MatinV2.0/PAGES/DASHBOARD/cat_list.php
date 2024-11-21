@@ -149,7 +149,7 @@ if ($idCat != "geral") { // ESPECIFICO
                             echo "<td>{$dados['qnt_prod_estoque']}</td>";
                             echo "<td>R$ {$dados['preco_prod']}</td>";
                             echo "<td>{$dados['qnt_vendas']}</td>";
-                            echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                            echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idProduto'] . "&tbl=categoria&tipo=especifico'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
 
                             echo "</tr>";
                         }
@@ -262,7 +262,7 @@ if ($idCat != "geral") { // ESPECIFICO
                             echo "<td>{$dados['img_cat']}</td>";
                             echo "<td>{$descricao}</td>";
                             echo "<td>{$dados['qnt_vis']}</td>";
-                            echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='#'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
+                            echo "<td><a href='#'><button type='button' class='btn btn-primary'>Editar</button></a> <a href='DASHBOARD/FUNCOES/excluir.php?ref=" . $dados['idCategoria'] . "&tbl=categoria&tipo=geral'><button type='button' class='btn btn-danger'>Excluir</button></a> <a href='#'><button type='button' class='btn btn-warning'>Visualizar</button></a></td>";
                             echo "</tr>";
                         }
                     }

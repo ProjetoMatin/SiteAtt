@@ -65,6 +65,11 @@ switch ($aviso) {
     case 9:
         echo "<p class='aviso vermelho'>Houve um erro ao deletar!</p>";
         break;
+        
+        case 10:
+            echo "<p class='aviso vermelho'>Não é possível deletar uma categoria com produtos vinculados!</p>";
+            break;
+            
 
     default:
         # code...

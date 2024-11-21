@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/home.css">
 <link rel="stylesheet" href="ASSETS/PAGINAS-CSS/cards.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<?php require_once 'BASE/config.php'; ?>
 <style>
     .img-produto {
         width: 200px;

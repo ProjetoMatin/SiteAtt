@@ -238,7 +238,7 @@ function formatarCEP($cep)
                     <p class="qntEstoque">Estoque disponível para entrega: <mark style="color: var(--preto00); font-weight: bolder;"><?php echo $dado['qnt_prod_estoque'] ?> Unidades</mark></p>
 
                     <div class="btns-encl">
-                        <a href="PAGES/pagar.php" class="btnReformuladoLinkNaoMexe comprarA">Comprar Agora</a>
+                        <a href="?page=produto&idProduto=<?php echo  $dado['idProduto'] ?>&qntPedida=" class="btnReformuladoLinkNaoMexe"><input type="submit" value="Comprar Agora" class="comprarA"></a>
                         <input type="submit" value="Adicionar ao carrinho" class="addCarrinhoBTN">
                     </div>
 
