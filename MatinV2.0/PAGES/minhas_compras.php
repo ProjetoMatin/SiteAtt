@@ -78,6 +78,7 @@ $exec->execute();
             $fotosProd = $dados['imagemProduto'];
             $produtoNome = $dados['produto_nome'];
             $produtoPreco = $dados['produto_preco'];
+            $precoAntigo = $produtoPreco + 10.99;
             $situacaoPedido = $dados['situacao'];
             $valorTotal = $dados['produto_preco'] + 5;
             $dataPedido = $dados['data_criacao'];
@@ -144,7 +145,7 @@ $exec->execute();
                         </div>
                     </div>
                     <div class="preco">
-                        <p class="precoAntigo">R$ <?php echo number_format($produtoPreco, 2, ',', '.'); ?></p>
+                        <p class="precoAntigo">R$ <?php echo number_format($precoAntigo, 2, ',', '.'); ?></p>
                         <p class="precoNovo">R$ <?php echo number_format($produtoPreco, 2, ',', '.'); ?></p>
                     </div>
                 </div>
@@ -156,40 +157,45 @@ $exec->execute();
             <div class="info-data-pedido">
                 <div>
                     <p>Pedido feito em: <?php echo date("d M, Y", strtotime($dataPedido)); ?></p>
-                    <p>ID do pedido: <?php echo $idPedido; ?></p>
+                    <p>ID do pedido: <?php echo $idPedido;?></p>
                 </div>
                 <div class="botoes-acoes-pedido">
-                <?php 
-                        switch($situacao) {
+                <?php   
+                        switch($situacaoPedido) {
                             case 'CNR':
                                 // compra não realizada
                                 echo " <button class='btn pagar'>Comprar novamente</button>
                                         <button class='btn outras-acoes'>Comprar semelhantes</button>";
                                 break;
-                        case 'CAC':
-                            // compra a caminho
-                            echo "  <button class='btn pagar'>Comprar novamente</button>
-                                    <button class='btn outras-acoes'>Falar com Vendedor</button>
-                                    <button class='btn outras-acoes'>Método de pagamento</button>";
-                            break;
-                        case 'CA':
-                            // compra em andamento
-                            echo "  <button class='btn pagar'>Pagar Agora</button>
-                                    <button class='btn outras-acoes'>Falar com Vendedor</button>
-                                    <button class='btn outras-acoes'>Método de pagamento</button>
-                                    <button class='btn outras-acoes'>Cancelar Pedido</button> ";
-                            break;
-                        case 'A':
-                            // compra em analise
-                            echo "
-                                    <button class='btn outras-acoes'>Falar com Vendedor</button>
-                                    <button class='btn outras-acoes'>Método de pagamento</button>
-                                    <button class='btn outras-acoes'>Cancelar Pedido</button> ";
-                            break;
-                        case 'D':
-                            // devolução ou reembolso
-                            echo " <button class='btn outras-acoes'>Falar com Vendedor</button>";
-                            break;
+                            case 'CAC':
+                                // compra a caminho
+                                echo "  <button class='btn pagar'>Comprar novamente</button>
+                                        <button class='btn outras-acoes'>Falar com Vendedor</button>
+                                        <button class='btn outras-acoes'>Método de pagamento</button>";
+                                break;
+                            case 'CF':
+                                echo "  <button class='btn pagar'>Comprar novamente</button>
+                                        <button class='btn outras-acoes'>Falar com Vendedor</button>
+                                        <button class='btn outras-acoes'>Comprar semelhantes</button>";
+                                break;
+                            case 'CA':
+                                // compra em andamento
+                                echo "  <button class='btn pagar'>Pagar Agora</button>
+                                        <button class='btn outras-acoes'>Falar com Vendedor</button>
+                                        <button class='btn outras-acoes'>Método de pagamento</button>
+                                        <button class='btn outras-acoes'>Cancelar Pedido</button> ";
+                                break;
+                            case 'A':
+                                // compra em analise
+                                echo "
+                                        <button class='btn outras-acoes'>Falar com Vendedor</button>
+                                        <button class='btn outras-acoes'>Método de pagamento</button>
+                                        <button class='btn outras-acoes'>Cancelar Pedido</button> ";
+                                break;
+                            case 'D':
+                                // devolução ou reembolso
+                                echo " <button class='btn outras-acoes'>Falar com Vendedor</button>";
+                                break;
                         }
                     ?>
                 </div>

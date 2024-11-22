@@ -7,7 +7,7 @@ CA - COMPRA EM ANDAMENTO
 CAC - COMPRA A CAMINHO
 CNR - COMPRA NAO REALIZADA
 A - ANALISE
-DEV - DEVOLUÇÃO/REEMBOLSO
+D - DEVOLUÇÃO/REEMBOLSO
 
 
 USUARIO_HAS_PERGUNTA
@@ -17,4 +17,5 @@ R - RESPONDIDA
 NR - NÃO RESPONDIDA
 
 add as logos aqui so pra ficarem guardadas e a gnt n perder dps
-tive q fzr uma situacao nova pros prods p poder puxar tudo com base na situacao do pedido :)
+tive q fzr uma situacao nova pros prods p poder puxar tudo com base na situacao do pedido :) - LT
+
