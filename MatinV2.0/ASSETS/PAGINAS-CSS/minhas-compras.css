@@ -33,15 +33,19 @@
     margin: 0.5rem;
 }
 
-.info-vendedor {
+.info-vendedor, .infos {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
+.info-vendedor .infos img {
+    width: 30px;
+}
+
 .info-vendedor h3 {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .situacao-pedido {
@@ -71,11 +75,17 @@
 .info-produto {
     display: flex;
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.info-produto h3 {
+    font-size: 1.1em;
 }
 
 .img-produto {
-    width: 200px;
+    width: 140px;
 }
 
 .img-produto img {
@@ -88,4 +98,96 @@
 
 .info-data-pedido p {
     margin: 0.5rem;
+}
+
+.preco {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.precoAntigo {
+    text-decoration: line-through;
+    color: var(--cinza01);
+    font-size: 1em;
+}
+
+.precoNovo {
+    font-size: 1.2em;
+}
+
+.nome-prod {
+    display: flex;
+}
+
+.searchbar {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.valor-total {
+    text-align: right;
+    margin: 0.5rem;
+}
+
+.valor-total .tot {
+    font-size: 1.4em;
+}
+
+.searchbar input {
+    width: 80%;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.searchbar, .searchbar input, .searchbar span {
+    background-color: var(--cinza05);
+    border-radius: 5px;
+}
+
+.busca_prod {
+    width: 100%;
+    margin: 0.5rem;
+    background-color: var(--cinza00);
+}
+
+.situacao-compra a {
+    color: var(--preto00);
+    text-decoration: none;
+}
+
+.info-data-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.info-data-pedido .btn {
+    width: 180px;
+    background-color: var(--branco00);
+    margin: 0 0.2rem!important;
+    height: auto;
+    color: var(--preto00);
+    font-weight: normal;
+    border: 1px solid var(--cinza01);
+    transition: .2s;
+}
+
+.info-data-pedido .btn:hover {
+    color: var(--laranja00);
+    border: 1px solid var(--laranja00);
+}
+
+.info-data-pedido .pagar {
+    background-color: var(--laranja00);
+    color: var(--branco00);
+    border: 0;
+}
+
+.info-data-pedido .pagar:hover {
+    background-color: var(--branco00);
+    color: var(--preto00);
+    border: 1px solid var(--preto00);
 }

@@ -132,7 +132,7 @@ $dados = $selectP->fetch(PDO::FETCH_ASSOC);
                     ";
         switch($type) {
             case "minhas_compras":
-                echo "";
+                require_once "minhas_compras.php";
                 break;
             case "minha_conta":
                 echo "<div class='minha_conta'>
