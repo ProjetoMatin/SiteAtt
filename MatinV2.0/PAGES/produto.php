@@ -242,53 +242,58 @@ function formatarCEP($cep)
                         <input type="submit" value="Adicionar ao carrinho" class="addCarrinhoBTN">
                     </div>
 
-                    <div class="infoContaVendedor">
-                        <?php
-                        $selectQ3 = "SELECT * FROM cria c INNER JOIN usuario u ON c.idUsu = u.idUsu INNER JOIN produto p ON c.idProduto = p.idProduto WHERE c.idProduto = :idProd";
-                        $selectP3 = $cx->prepare($selectQ3);
-                        $selectP3->bindParam(':idProd', $idProd, PDO::PARAM_INT);
-                        $selectP3->execute();
-
-                        $dado = $selectP3->fetch(PDO::FETCH_ASSOC);
-                        ?>
-                        <figure>
-                            <img src="IMAGES-BD/USUARIOS/<?php echo $dado['fotos_usu'] ?>" alt="">
-                        </figure>
-                        <div class="infoPerfil">
-                            <p class="nomeUsu"><?php echo $dado['nome_usu'] ?></p>
                             <?php
-                            if ($dado['qnt_vendas_usuario'] > 1000) {
-                                echo "<p class='qntVendas'>+1000 vendas</p>";
-                            } else {
-                                echo "<p class='qntVendas'>" . $dado['qnt_vendas_usuario'] . " vendas</p>";
-                            }
-                            if ($dado['premium'] == 1) {
-                                echo "<div class='perfilVerificado'>";
-                                echo "<p class='verificado'>Vendedor verificado</p>";
-                                echo "<img src='IMAGES/premium.png' alt=''>";
-                                echo "</div>";
-                            }
+                            $selectQ3 = "SELECT * FROM cria c INNER JOIN usuario u ON c.idUsu = u.idUsu INNER JOIN produto p ON c.idProduto = p.idProduto WHERE c.idProduto = :idProd";
+                            $selectP3 = $cx->prepare($selectQ3);
+                            $selectP3->bindParam(':idProd', $idProd, PDO::PARAM_INT);
+                            $selectP3->execute();
+
+                            $dado = $selectP3->fetch(PDO::FETCH_ASSOC);
                             ?>
-                        </div>
+                    <?php 
+                    echo "<a href='?page=perfilVendedor&idUsuario=" . $dado['idUsu'] . "' class='infoContaVendedorA'>"
+                    ?>
+                    
+                        <div class="infoContaVendedor">
+                            <figure>
+                                <img src="IMAGES-BD/USUARIOS/<?php echo $dado['fotos_usu'] ?>" alt="">
+                            </figure>
+                            <div class="infoPerfil">
+                                <p class="nomeUsu"><?php echo $dado['nome_usu'] ?></p>
+                                <?php
+                                if ($dado['qnt_vendas_usuario'] > 1000) {
+                                    echo "<p class='qntVendas'>+1000 vendas</p>";
+                                } else {
+                                    echo "<p class='qntVendas'>" . $dado['qnt_vendas_usuario'] . " vendas</p>";
+                                }
+                                if ($dado['premium'] == 1) {
+                                    echo "<div class='perfilVerificado'>";
+                                    echo "<p class='verificado'>Vendedor verificado</p>";
+                                    echo "<img src='IMAGES/premium.png' alt=''>";
+                                    echo "</div>";
+                                }
+                                ?>
+                            </div>
+                    </a>
+                </div>
+
+                <div class="informacoes-extras">
+                    <div class="devolucao">
+                        <figure>
+                            <img src="IMAGES/back.png" alt="">
+                        </figure>
+                        <p><mark style="font-weight: bolder;">Devolução ou reembolso gratuita/o</mark>, você tem 7 dias a partir da data de recebimento.</p>
                     </div>
 
-                    <div class="informacoes-extras">
-                        <div class="devolucao">
-                            <figure>
-                                <img src="IMAGES/back.png" alt="">
-                            </figure>
-                            <p><mark style="font-weight: bolder;">Devolução ou reembolso gratuita/o</mark>, você tem 7 dias a partir da data de recebimento.</p>
-                        </div>
-
-                        <div class="segurancaCompra" style="margin-top: 30px !important;">
-                            <figure>
-                                <img src="IMAGES/escudo.png" alt="">
-                            </figure>
-                            <p><mark style="font-weight: bolder;">Segurança de Compra</mark>, receba o produto que está esperando ou devolvemos o dinheiro.</p>
-                        </div>
+                    <div class="segurancaCompra" style="margin-top: 30px !important;">
+                        <figure>
+                            <img src="IMAGES/escudo.png" alt="">
+                        </figure>
+                        <p><mark style="font-weight: bolder;">Segurança de Compra</mark>, receba o produto que está esperando ou devolvemos o dinheiro.</p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </form>

@@ -1,0 +1,101 @@
+body{
+    background-color: var(--bege00);
+}
+
+.div-principal{
+    height: 270px;
+    padding: 30px;
+    display: flex;
+}
+
+.aba-perfil{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aba-perfil nav{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: transparent;
+    padding: 0px;
+    color: var(--branco00);
+}
+
+.aba-perfil nav img{
+    width: 100px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.aba-perfil .acesso-dashboard img{
+    width: 30px;
+}
+
+.area-perfil{
+    background: linear-gradient(to right, #666666, #000000);
+    width: 500px !important;
+    padding: 20px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.titulo-perfil{
+    color: var(--branco00);
+   
+}
+
+.div-button{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.div-ul{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.foto1{
+    width: 20px;
+    margin-right: 8px !important;
+}
+
+.foto2{
+    width: 23px;
+}
+
+.btn{
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--branco00);
+    padding: 5px 0px !important;
+    width: 230px;
+    background-color: transparent;
+    border: 1px solid var(--branco00);
+    transition: all 0.1s ease-in-out;
+}
+
+.btn:hover{
+    color: var(--preto00);
+    background-color: var(--branco00);
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+.div-ul li{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 0.9em;
+}
+
+mark{
+    background-color: transparent;
+    color: red;
+}

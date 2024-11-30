@@ -229,6 +229,11 @@ section .produto-encl .produto-main .fotos-prod .outras-fotos-encl .outra-foto {
     /* Cor do link quando o botão está em hover */
 }
 
+.infoContaVendedorA{
+    display: flex;
+    align-items: center;
+}
+
 .infoContaVendedor {
     display: flex;
     margin-top: 20px;

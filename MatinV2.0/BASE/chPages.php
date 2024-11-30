@@ -18,6 +18,10 @@ switch ($page) {
         require_once 'PAGES/produto.php';
         break;
 
+    case 'perfilVendedor':
+        require_once 'PAGES/perfilVendedor.php';
+        break;
+
     case 'cadastro':
         header("Location: ../CREDENTIALS/cadastroUsu.php");
         break;
